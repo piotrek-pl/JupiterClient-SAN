@@ -126,11 +126,11 @@ void MainWindow::checkConnection()
         updateConnectionStatus("Connection lost - attempting to reconnect...");
         scheduleReconnection();
     } else if (isAuthenticated) {
-        // Sprawdź timeout ostatniego ponga
+        // Sprawdzamy tylko timeout ostatniej odpowiedzi od serwera
         qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
         if (currentTime - lastPongTime > connectionConfig.connectionTimeout) {
             missedPings++;
-            LOG_WARNING(QString("Missed ping count: %1").arg(missedPings));
+            LOG_WARNING(QString("No response from server for %1 ms").arg(currentTime - lastPongTime));
 
             if (missedPings >= 3) {
                 LOG_WARNING("Connection timeout - reconnecting...");
@@ -139,14 +139,6 @@ void MainWindow::checkConnection()
                 return;
             }
         }
-
-        // Wyślij ping
-        QJsonObject pingMessage = Protocol::MessageStructure::createPing();
-        QByteArray data = QJsonDocument(pingMessage).toJson();
-
-        LOG_DEBUG("Sending ping to server");
-        socket->write(data);
-        socket->flush();
     }
 }
 
@@ -195,7 +187,17 @@ void MainWindow::processIncomingMessage(const QJsonObject& json)
     QString type = json["type"].toString();
     LOG_DEBUG(QString("Processing message type: %1").arg(type));
 
-    if (type == Protocol::MessageType::PING && isAuthenticated) {
+    if (type == Protocol::MessageType::LOGIN_RESPONSE) {
+        if (json["status"].toString() == "success") {
+            isAuthenticated = true;
+            currentUsername = json["username"].toString();
+            // Zaraz po zalogowaniu, wysyłamy żądanie o listę znajomych
+            QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
+            socket->write(QJsonDocument(getFriendsRequest).toJson());
+            socket->flush();
+        }
+    }
+    else if (type == Protocol::MessageType::PING && isAuthenticated) {
         LOG_DEBUG("Ping received from server");
         sendPong(json["timestamp"].toInteger());
     }
