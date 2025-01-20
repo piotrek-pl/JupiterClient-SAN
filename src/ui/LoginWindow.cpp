@@ -6,6 +6,7 @@
  */
 
 #include "LoginWindow.h"
+#include "network/Protocol.h"
 #include "ui_LoginWindow.h"
 #include <QJsonDocument>
 #include <QMessageBox>
@@ -18,6 +19,7 @@ LoginWindow::LoginWindow(QWidget *parent)
     , reconnectAttempts(0)
     , isReconnecting(false)
     , isAuthenticated(false)
+    , state(Protocol::SessionState::INITIAL)  // Dodaj stan początkowy
 {
     ui->setupUi(this);
 
@@ -77,16 +79,19 @@ void LoginWindow::initializeNetworking()
     connect(&socket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::errorOccurred),
             this, &LoginWindow::onError);
 
-    // Ustaw opcje socketa
-    socket.setSocketOption(QAbstractSocket::KeepAliveOption, 1);
-    socket.setSocketOption(QAbstractSocket::LowDelayOption, 1);
-
     // Initialize connection check timer
     connectionCheckTimer = new QTimer(this);
-    connect(connectionCheckTimer, &QTimer::timeout, this, &LoginWindow::checkConnection);
-    connectionCheckTimer->start(connectionConfig.pingInterval);
+    connectionCheckTimer->setInterval(Protocol::Timeouts::PING); // 10 sekund
+    connect(connectionCheckTimer, &QTimer::timeout, this, [this]() {
+        LOG_INFO("Timer triggered - checking connection");
+        checkConnection();
+    });
 
-    // Wykonaj pierwszą próbę połączenia bezpośrednio
+    // Explicitnie startujemy timer
+    connectionCheckTimer->start();
+    LOG_INFO(QString("Connection check timer started with interval: %1 ms").arg(Protocol::Timeouts::PING));
+
+    // Pierwsza próba połączenia
     LOG_INFO(QString("Initiating first connection attempt to %1:%2")
                  .arg(connectionConfig.host)
                  .arg(connectionConfig.port));
@@ -101,81 +106,23 @@ void LoginWindow::checkConnection()
 {
     LOG_DEBUG(QString("Checking connection... Socket state: %1").arg(socket.state()));
 
-    // Przenosimy deklaracje zmiennych przed switch
-    qint64 currentTime;
-    QJsonObject pingMessage;
-    QByteArray data;
+    qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
 
-    switch(socket.state()) {
-    case QAbstractSocket::UnconnectedState:
-        LOG_DEBUG("Socket state: UnconnectedState");
-        if (reconnectAttempts < connectionConfig.maxReconnectAttempts) {
-            LOG_INFO(QString("Attempting to connect to %1:%2 (attempt %3/%4)")
-                         .arg(connectionConfig.host)
-                         .arg(connectionConfig.port)
-                         .arg(reconnectAttempts + 1)
-                         .arg(connectionConfig.maxReconnectAttempts));
-
-            socket.connectToHost(connectionConfig.host, connectionConfig.port);
-            reconnectAttempts++;
-
-            updateConnectionStatus(QString("Connecting... (attempt %1/%2)")
-                                       .arg(reconnectAttempts)
-                                       .arg(connectionConfig.maxReconnectAttempts));
-        } else {
-            LOG_ERROR("Max reconnection attempts reached");
-            updateConnectionStatus("Failed to connect. Please try again later.");
-            connectionCheckTimer->stop();
-        }
-        break;
-
-    case QAbstractSocket::ConnectingState:
-        LOG_DEBUG("Socket state: ConnectingState - Connection in progress...");
-        break;
-
-    case QAbstractSocket::ConnectedState:
-        LOG_DEBUG("Socket state: ConnectedState - Checking ping status...");
-        currentTime = QDateTime::currentMSecsSinceEpoch();
-
-        // Debug info about ping timing
-        LOG_DEBUG(QString("Current time: %1, Last pong time: %2, Diff: %3 ms")
-                      .arg(currentTime)
-                      .arg(lastPongTime)
-                      .arg(currentTime - lastPongTime));
-
-        if (!isAuthenticated) {
-            // Jeśli nie jesteśmy zalogowani, nie wysyłamy pingów
-            LOG_DEBUG("Not sending ping - not authenticated");
-            lastPongTime = currentTime; // Reset timer
-            missedPings = 0;
-            break;
-        }
-
-        if (currentTime - lastPongTime > connectionConfig.connectionTimeout) {
+    // Sprawdzamy połączenie tylko jeśli socket jest połączony
+    if (socket.state() == QAbstractSocket::ConnectedState) {
+        if (currentTime - lastPongTime > Protocol::Timeouts::CONNECTION) { // 30 sekund zamiast 10
+            LOG_WARNING(QString("No ping from server for %1 ms").arg(currentTime - lastPongTime));
             missedPings++;
-            LOG_WARNING(QString("Missed ping count: %1").arg(missedPings));
 
-            if (missedPings >= 3) {
-                LOG_WARNING("Connection timeout - reconnecting...");
+            if (missedPings >= 3) {  // Dodajemy licznik brakujących pingów
+                LOG_WARNING("Connection timeout - disconnecting");
                 socket.disconnectFromHost();
                 scheduleReconnection();
-                return;
             }
         }
-
-        // Wysyłamy ping tylko gdy jesteśmy zalogowani
-        pingMessage = Protocol::MessageStructure::createPing();
-        data = QJsonDocument(pingMessage).toJson();
-
-        LOG_INFO("Sending ping to server");
-        updateConnectionStatus("Sending ping to server...");
-        socket.write(data);
-        socket.flush();
-        break;
-
-    default:
-        LOG_WARNING(QString("Unexpected socket state: %1").arg(socket.state()));
-        break;
+    } else if (socket.state() == QAbstractSocket::UnconnectedState) {
+        LOG_INFO("Socket unconnected - attempting reconnection");
+        socket.connectToHost(connectionConfig.host, connectionConfig.port);
     }
 }
 
@@ -257,26 +204,27 @@ void LoginWindow::onError(QTcpSocket::SocketError socketError)
 
 void LoginWindow::onReadyRead()
 {
-    QByteArray data = socket.readAll();
-    LOG_INFO(QString("Received raw data: %1").arg(QString(data))); // Debug raw data
-    LOG_DEBUG(QString("Received data size: %1 bytes").arg(data.size()));
+    while (socket.bytesAvailable() > 0) {
+        QByteArray data = socket.readAll();
+        LOG_INFO(QString("Received raw data size: %1").arg(data.size()));
+        LOG_DEBUG(QString("Raw data: %1").arg(QString(data)));
 
-    if (data.isEmpty()) {
-        LOG_WARNING("Empty data received from server");
-        return;
+        if (data.isEmpty()) {
+            LOG_WARNING("Empty data received from server");
+            continue;
+        }
+
+        QJsonParseError error;
+        QJsonDocument doc = QJsonDocument::fromJson(data, &error);
+        if (error.error != QJsonParseError::NoError) {
+            LOG_ERROR(QString("JSON parse error: %1").arg(error.errorString()));
+            LOG_ERROR(QString("Invalid JSON data: %1").arg(QString(data)));
+            continue;
+        }
+
+        QJsonObject json = doc.object();
+        processIncomingMessage(json);
     }
-
-    QJsonParseError error;
-    QJsonDocument doc = QJsonDocument::fromJson(data, &error);
-    if (error.error != QJsonParseError::NoError) {
-        LOG_ERROR(QString("JSON parse error: %1").arg(error.errorString()));
-        LOG_ERROR(QString("Received invalid JSON data: %1").arg(QString(data)));
-        return;
-    }
-
-    QJsonObject json = doc.object();
-    LOG_DEBUG(QString("Parsed JSON: %1").arg(QString(QJsonDocument(json).toJson()))); // Debug parsed JSON
-    processIncomingMessage(json);
 }
 
 void LoginWindow::processIncomingMessage(const QJsonObject& json)
@@ -293,19 +241,19 @@ void LoginWindow::processIncomingMessage(const QJsonObject& json)
         return;
     }
 
+    // Odpowiadamy na PING od serwera
     if (type == Protocol::MessageType::PING) {
         qint64 timestamp = json["timestamp"].toInteger();
-        LOG_INFO(QString("Ping received from server (timestamp: %1)").arg(timestamp));
+        LOG_INFO(QString("CLIENT: Received PING from server at %1 (timestamp: %2)")
+                     .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss.zzz"))
+                     .arg(timestamp));
         updateConnectionStatus(QString("Received ping (timestamp: %1)").arg(timestamp));
+
+        // Wysyłamy PONG
         sendPong(timestamp);
         lastPongTime = QDateTime::currentMSecsSinceEpoch();
         missedPings = 0;
-    }
-    else if (type == Protocol::MessageType::PONG) {
-        qint64 timestamp = json["timestamp"].toInteger();
-        LOG_INFO(QString("Pong received from server (timestamp: %1)").arg(timestamp));
-        lastPongTime = QDateTime::currentMSecsSinceEpoch();
-        missedPings = 0;
+        return;
     }
     else if (type == Protocol::MessageType::LOGIN_RESPONSE) {
         if (json["status"].toString() == "success") {

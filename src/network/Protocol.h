@@ -58,6 +58,14 @@ const QString AWAY = "away";
 const QString BUSY = "busy";
 }
 
+// Stan sesji
+namespace SessionState {
+const QString INITIAL = "initial";         // Stan początkowy po połączeniu
+const QString AUTHENTICATING = "authenticating"; // W trakcie procesu logowania
+const QString AUTHENTICATED = "authenticated";   // Zalogowany
+const QString DISCONNECTING = "disconnecting";  // W trakcie rozłączania
+}
+
 // Struktury wiadomości
 namespace MessageStructure {
 // Podstawowe operacje

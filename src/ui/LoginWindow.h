@@ -58,6 +58,7 @@ private:
     int reconnectAttempts;
     QString currentUsername;
     QString currentPassword;
+    QString state;  // Stan sesji klienta
     bool isReconnecting;
     bool isAuthenticated;
 

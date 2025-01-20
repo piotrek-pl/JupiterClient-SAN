@@ -652,7 +652,7 @@ JupiterClient_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp \
-	D:/programowanie/Qt/SAN/JupiterClient/src/network/protocol.h \
+	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.cpp \
