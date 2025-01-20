@@ -318,6 +318,7 @@
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake",
+		"D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/programowanie/Qt/SAN/JupiterClient",
@@ -326,6 +327,12 @@
 	"DEP_FILE_RULE_NAME" : "JupiterClient_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h",
+			"MU",
+			"6DQYUKT47J/moc_ConfigManager.cpp",
+			null
+		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/models/User.h",
 			"MU",
@@ -339,9 +346,9 @@
 			null
 		],
 		[
-			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h",
+			"D:/programowanie/Qt/SAN/JupiterClient/src/network/protocol.h",
 			"MU",
-			"UFQQIFJZKK/moc_Protocol.cpp",
+			"UFQQIFJZKK/moc_protocol.cpp",
 			null
 		],
 		[
@@ -361,6 +368,12 @@
 			"MU",
 			"YPKJ5OE7LN/moc_MainWindow.cpp",
 			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h",
+			"MU",
+			"VSCBVMNR7M/moc_Logger.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -371,7 +384,6 @@
 		"MINGW_HAS_SECURE_API=1",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
-		"QT_NEEDS_QMAIN",
 		"QT_NETWORK_LIB",
 		"QT_WIDGETS_LIB",
 		"UNICODE",
@@ -391,7 +403,7 @@
 	"MOC_INCLUDES" : 
 	[
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/network",
+		"D:/programowanie/Qt/SAN/JupiterClient/src",
 		"C:/Qt/6.7.2/mingw_64/include/QtCore",
 		"C:/Qt/6.7.2/mingw_64/include",
 		"C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++",
@@ -438,6 +450,11 @@
 	"SETTINGS_FILE" : "D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/JupiterClient_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp",
+			"MU",
+			null
+		],
 		[ "D:/programowanie/Qt/SAN/JupiterClient/src/main.cpp", "MU", null ],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/models/User.cpp",
@@ -466,6 +483,11 @@
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp",
 			"MU",
 			null
 		]

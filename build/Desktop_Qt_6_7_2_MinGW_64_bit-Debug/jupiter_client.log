@@ -1,0 +1,950 @@
+[2025-01-20 14:48:00.534] [INFO] Jupiter Client starting...
+[2025-01-20 14:48:00.534] [INFO] Protocol version: 1
+[2025-01-20 14:48:00.534] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 14:48:00.534] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 14:48:00.537] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:48:00.538] [INFO] LoginWindow initialized
+[2025-01-20 14:48:00.544] [INFO] MainWindow initialized
+[2025-01-20 14:48:00.610] [INFO] Login window displayed
+[2025-01-20 14:48:01.547] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 14:48:01.547] [ERROR] Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:48:01.547] [INFO] Connection status: Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:48:02.540] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 3/3)
+[2025-01-20 14:48:02.540] [ERROR] Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:48:02.540] [INFO] Connection status: Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:48:03.538] [ERROR] Max reconnection attempts reached
+[2025-01-20 14:48:03.538] [INFO] Connection status: Maximum reconnection attempts reached. Please try again later.
+[2025-01-20 14:48:04.619] [ERROR] Connection error: Connection refused
+[2025-01-20 14:48:04.619] [INFO] Connection status: Connection error: Connection refused
+[2025-01-20 14:48:26.172] [INFO] Application shutdown requested
+[2025-01-20 14:48:26.172] [INFO] LoginWindow destroyed
+[2025-01-20 14:48:26.172] [INFO] MainWindow destroyed
+[2025-01-20 14:48:26.173] [INFO] Application shutdown initiated
+[2025-01-20 14:48:26.173] [INFO] Cleanup completed successfully
+[2025-01-20 14:48:37.285] [INFO] Jupiter Client starting...
+[2025-01-20 14:48:37.285] [INFO] Protocol version: 1
+[2025-01-20 14:48:37.285] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 14:48:37.285] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 14:48:37.288] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:48:37.289] [INFO] LoginWindow initialized
+[2025-01-20 14:48:37.295] [INFO] MainWindow initialized
+[2025-01-20 14:48:37.355] [INFO] Login window displayed
+[2025-01-20 14:48:37.364] [INFO] Connected to server
+[2025-01-20 14:48:37.365] [INFO] Connection status: Connected to server
+[2025-01-20 14:48:43.296] [WARNING] Missed ping count: 1
+[2025-01-20 14:48:44.293] [WARNING] Missed ping count: 2
+[2025-01-20 14:48:45.291] [WARNING] Missed ping count: 3
+[2025-01-20 14:48:45.291] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:48:45.291] [WARNING] Disconnected from server
+[2025-01-20 14:48:45.291] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:48:46.300] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:48:46.316] [INFO] Connected to server
+[2025-01-20 14:48:46.316] [INFO] Connection status: Connected to server
+[2025-01-20 14:48:52.295] [WARNING] Missed ping count: 1
+[2025-01-20 14:48:53.287] [WARNING] Missed ping count: 2
+[2025-01-20 14:48:54.291] [WARNING] Missed ping count: 3
+[2025-01-20 14:48:54.292] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:48:54.292] [WARNING] Disconnected from server
+[2025-01-20 14:48:54.292] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:48:55.294] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:48:55.309] [INFO] Connected to server
+[2025-01-20 14:48:55.309] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:01.296] [WARNING] Missed ping count: 1
+[2025-01-20 14:49:02.289] [WARNING] Missed ping count: 2
+[2025-01-20 14:49:03.300] [WARNING] Missed ping count: 3
+[2025-01-20 14:49:03.300] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:49:03.300] [WARNING] Disconnected from server
+[2025-01-20 14:49:03.300] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:04.298] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:04.313] [INFO] Connected to server
+[2025-01-20 14:49:04.313] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:10.300] [WARNING] Missed ping count: 1
+[2025-01-20 14:49:11.297] [WARNING] Missed ping count: 2
+[2025-01-20 14:49:12.291] [WARNING] Missed ping count: 3
+[2025-01-20 14:49:12.291] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:49:12.291] [WARNING] Disconnected from server
+[2025-01-20 14:49:12.291] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:13.297] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:13.313] [INFO] Connected to server
+[2025-01-20 14:49:13.313] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:19.290] [WARNING] Missed ping count: 1
+[2025-01-20 14:49:20.288] [WARNING] Missed ping count: 2
+[2025-01-20 14:49:21.293] [WARNING] Missed ping count: 3
+[2025-01-20 14:49:21.293] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:49:21.293] [WARNING] Disconnected from server
+[2025-01-20 14:49:21.293] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:22.296] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:22.312] [INFO] Connected to server
+[2025-01-20 14:49:22.312] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:28.298] [WARNING] Missed ping count: 1
+[2025-01-20 14:49:29.296] [WARNING] Missed ping count: 2
+[2025-01-20 14:49:30.295] [WARNING] Missed ping count: 3
+[2025-01-20 14:49:30.295] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:49:30.295] [WARNING] Disconnected from server
+[2025-01-20 14:49:30.295] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:31.289] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:31.304] [INFO] Connected to server
+[2025-01-20 14:49:31.304] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:37.300] [WARNING] Missed ping count: 1
+[2025-01-20 14:49:38.296] [WARNING] Missed ping count: 2
+[2025-01-20 14:49:39.294] [WARNING] Missed ping count: 3
+[2025-01-20 14:49:39.294] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:49:39.294] [WARNING] Disconnected from server
+[2025-01-20 14:49:39.294] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:40.298] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:40.314] [INFO] Connected to server
+[2025-01-20 14:49:40.314] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:46.295] [WARNING] Missed ping count: 1
+[2025-01-20 14:49:47.298] [WARNING] Missed ping count: 2
+[2025-01-20 14:49:48.288] [WARNING] Missed ping count: 3
+[2025-01-20 14:49:48.288] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:49:48.288] [WARNING] Disconnected from server
+[2025-01-20 14:49:48.288] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:49.290] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:49.306] [INFO] Connected to server
+[2025-01-20 14:49:49.306] [INFO] Connection status: Connected to server
+[2025-01-20 14:49:52.599] [ERROR] Connection error: The remote host closed the connection
+[2025-01-20 14:49:52.599] [INFO] Connection status: Connection error: The remote host closed the connection
+[2025-01-20 14:49:52.599] [WARNING] Disconnected from server
+[2025-01-20 14:49:52.599] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:49:53.290] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:49:54.295] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 14:49:54.295] [ERROR] Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:49:54.295] [INFO] Connection status: Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:49:55.297] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 3/3)
+[2025-01-20 14:49:55.297] [ERROR] Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:49:55.297] [INFO] Connection status: Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:49:56.296] [ERROR] Max reconnection attempts reached
+[2025-01-20 14:49:56.296] [INFO] Connection status: Maximum reconnection attempts reached. Please try again later.
+[2025-01-20 14:49:57.372] [ERROR] Connection error: Connection refused
+[2025-01-20 14:49:57.372] [INFO] Connection status: Connection error: Connection refused
+[2025-01-20 14:50:17.668] [INFO] Application shutdown requested
+[2025-01-20 14:50:17.668] [INFO] LoginWindow destroyed
+[2025-01-20 14:50:17.669] [INFO] MainWindow destroyed
+[2025-01-20 14:50:17.669] [INFO] Application shutdown initiated
+[2025-01-20 14:50:17.669] [INFO] Cleanup completed successfully
+[2025-01-20 14:50:22.514] [INFO] Jupiter Client starting...
+[2025-01-20 14:50:22.515] [INFO] Protocol version: 1
+[2025-01-20 14:50:22.515] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 14:50:22.515] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 14:50:22.517] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:50:22.518] [INFO] LoginWindow initialized
+[2025-01-20 14:50:22.524] [INFO] MainWindow initialized
+[2025-01-20 14:50:22.585] [INFO] Login window displayed
+[2025-01-20 14:50:22.586] [INFO] Connected to server
+[2025-01-20 14:50:22.586] [INFO] Connection status: Connected to server
+[2025-01-20 14:50:28.517] [WARNING] Missed ping count: 1
+[2025-01-20 14:50:29.514] [WARNING] Missed ping count: 2
+[2025-01-20 14:50:30.511] [WARNING] Missed ping count: 3
+[2025-01-20 14:50:30.511] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:50:30.511] [WARNING] Disconnected from server
+[2025-01-20 14:50:30.511] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:50:31.520] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:50:31.535] [INFO] Connected to server
+[2025-01-20 14:50:31.535] [INFO] Connection status: Connected to server
+[2025-01-20 14:50:37.512] [WARNING] Missed ping count: 1
+[2025-01-20 14:50:38.509] [WARNING] Missed ping count: 2
+[2025-01-20 14:50:39.518] [WARNING] Missed ping count: 3
+[2025-01-20 14:50:39.518] [WARNING] Connection lost - reconnecting...
+[2025-01-20 14:50:39.518] [WARNING] Disconnected from server
+[2025-01-20 14:50:39.518] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:50:40.508] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:50:40.524] [INFO] Connected to server
+[2025-01-20 14:50:40.524] [INFO] Connection status: Connected to server
+[2025-01-20 14:50:41.076] [ERROR] Connection error: The remote host closed the connection
+[2025-01-20 14:50:41.076] [INFO] Connection status: Connection error: The remote host closed the connection
+[2025-01-20 14:50:41.076] [WARNING] Disconnected from server
+[2025-01-20 14:50:41.076] [INFO] Connection status: Disconnected from server
+[2025-01-20 14:50:41.515] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:50:42.514] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 14:50:42.514] [ERROR] Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:50:42.514] [INFO] Connection status: Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:50:43.026] [INFO] Application shutdown requested
+[2025-01-20 14:50:43.026] [INFO] LoginWindow destroyed
+[2025-01-20 14:50:43.026] [INFO] MainWindow destroyed
+[2025-01-20 14:50:43.026] [INFO] Application shutdown initiated
+[2025-01-20 14:50:43.026] [INFO] Cleanup completed successfully
+[2025-01-20 14:59:58.717] [INFO] Jupiter Client starting...
+[2025-01-20 14:59:58.717] [INFO] Protocol version: 1
+[2025-01-20 14:59:58.717] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 14:59:58.718] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 14:59:58.720] [INFO] Status update: Connecting to server...
+[2025-01-20 14:59:58.720] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 14:59:58.722] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 14:59:58.722] [INFO] LoginWindow initialized
+[2025-01-20 14:59:58.728] [INFO] Status update: Initializing...
+[2025-01-20 14:59:58.728] [INFO] MainWindow initialized
+[2025-01-20 14:59:58.802] [INFO] Login window displayed
+[2025-01-20 14:59:59.717] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 14:59:59.717] [ERROR] Socket error: 19 (Trying to connect while connection is in progress)
+[2025-01-20 14:59:59.717] [INFO] Status update: Connection error: Trying to connect while connection is in progress
+[2025-01-20 14:59:59.717] [INFO] Scheduling reconnection attempt
+[2025-01-20 14:59:59.717] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:00:00.715] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 15:00:00.715] [ERROR] Socket error: 19 (Trying to connect while connection is in progress)
+[2025-01-20 15:00:00.715] [INFO] Status update: Connection error: Trying to connect while connection is in progress
+[2025-01-20 15:00:00.715] [INFO] Status update: Connecting... (attempt 2/3)
+[2025-01-20 15:00:01.727] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 3/3)
+[2025-01-20 15:00:01.727] [ERROR] Socket error: 19 (Trying to connect while connection is in progress)
+[2025-01-20 15:00:01.727] [INFO] Status update: Connection error: Trying to connect while connection is in progress
+[2025-01-20 15:00:01.727] [INFO] Status update: Connecting... (attempt 3/3)
+[2025-01-20 15:00:02.722] [ERROR] Max reconnection attempts reached
+[2025-01-20 15:00:02.722] [INFO] Status update: Failed to connect. Please try again later.
+[2025-01-20 15:00:02.830] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:00:02.830] [ERROR] Connection refused by server
+[2025-01-20 15:00:02.830] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:00:04.721] [ERROR] Max reconnection attempts reached
+[2025-01-20 15:00:04.721] [INFO] Status update: Failed to connect. Please try again later.
+[2025-01-20 15:00:08.296] [INFO] Application shutdown requested
+[2025-01-20 15:00:08.296] [INFO] LoginWindow destroyed
+[2025-01-20 15:00:08.296] [INFO] MainWindow destroyed
+[2025-01-20 15:00:08.297] [INFO] Application shutdown initiated
+[2025-01-20 15:00:08.297] [INFO] Cleanup completed successfully
+[2025-01-20 15:00:18.150] [INFO] Jupiter Client starting...
+[2025-01-20 15:00:18.150] [INFO] Protocol version: 1
+[2025-01-20 15:00:18.150] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:00:18.150] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:00:18.153] [INFO] Status update: Connecting to server...
+[2025-01-20 15:00:18.153] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:00:18.154] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:00:18.154] [INFO] LoginWindow initialized
+[2025-01-20 15:00:18.160] [INFO] Status update: Initializing...
+[2025-01-20 15:00:18.160] [INFO] MainWindow initialized
+[2025-01-20 15:00:18.222] [INFO] Login window displayed
+[2025-01-20 15:00:18.233] [INFO] Connected to server
+[2025-01-20 15:00:18.233] [INFO] Status update: Connected to server
+[2025-01-20 15:00:19.159] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:19.159] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:20.157] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:20.157] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:21.167] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:21.167] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:22.158] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:22.158] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:23.158] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:23.158] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:24.156] [WARNING] Missed ping count: 1
+[2025-01-20 15:00:24.156] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:24.156] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:25.159] [WARNING] Missed ping count: 2
+[2025-01-20 15:00:25.159] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:25.159] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:26.162] [WARNING] Missed ping count: 3
+[2025-01-20 15:00:26.162] [WARNING] Connection timeout - reconnecting...
+[2025-01-20 15:00:26.162] [WARNING] Disconnected from server
+[2025-01-20 15:00:26.162] [INFO] Status update: Disconnected from server
+[2025-01-20 15:00:26.162] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:00:27.153] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:00:27.168] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:00:27.168] [INFO] Connected to server
+[2025-01-20 15:00:27.168] [INFO] Status update: Connected to server
+[2025-01-20 15:00:28.163] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:28.163] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:29.157] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:29.157] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:30.155] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:30.155] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:31.162] [ERROR] Server error: Invalid JSON format
+[2025-01-20 15:00:31.162] [INFO] Status update: Server error: Invalid JSON format
+[2025-01-20 15:00:32.167] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:32.167] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:33.167] [WARNING] Missed ping count: 1
+[2025-01-20 15:00:33.167] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:33.167] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:34.158] [WARNING] Missed ping count: 2
+[2025-01-20 15:00:34.158] [ERROR] Server error: Not authenticated
+[2025-01-20 15:00:34.158] [INFO] Status update: Server error: Not authenticated
+[2025-01-20 15:00:35.160] [WARNING] Missed ping count: 3
+[2025-01-20 15:00:35.160] [WARNING] Connection timeout - reconnecting...
+[2025-01-20 15:00:35.160] [WARNING] Disconnected from server
+[2025-01-20 15:00:35.160] [INFO] Status update: Disconnected from server
+[2025-01-20 15:00:35.160] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:00:36.159] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:00:36.159] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:00:37.155] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 15:00:37.155] [ERROR] Socket error: 19 (Trying to connect while connection is in progress)
+[2025-01-20 15:00:37.155] [INFO] Status update: Connection error: Trying to connect while connection is in progress
+[2025-01-20 15:00:37.155] [INFO] Status update: Connecting... (attempt 2/3)
+[2025-01-20 15:00:38.160] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 3/3)
+[2025-01-20 15:00:38.160] [ERROR] Socket error: 19 (Trying to connect while connection is in progress)
+[2025-01-20 15:00:38.160] [INFO] Status update: Connection error: Trying to connect while connection is in progress
+[2025-01-20 15:00:38.160] [INFO] Status update: Connecting... (attempt 3/3)
+[2025-01-20 15:00:39.161] [ERROR] Max reconnection attempts reached
+[2025-01-20 15:00:39.161] [INFO] Status update: Failed to connect. Please try again later.
+[2025-01-20 15:00:40.156] [ERROR] Max reconnection attempts reached
+[2025-01-20 15:00:40.156] [INFO] Status update: Failed to connect. Please try again later.
+[2025-01-20 15:00:40.204] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:00:40.204] [ERROR] Connection refused by server
+[2025-01-20 15:00:40.204] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:00:40.204] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:00:45.213] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:00:45.214] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:00:49.298] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:00:49.298] [ERROR] Connection refused by server
+[2025-01-20 15:00:49.298] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:00:49.298] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:00:54.299] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:00:54.299] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:00:58.361] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:00:58.361] [ERROR] Connection refused by server
+[2025-01-20 15:00:58.361] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:00:58.361] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:01:03.369] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:01:03.369] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:01:07.435] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:01:07.435] [ERROR] Connection refused by server
+[2025-01-20 15:01:07.435] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:01:07.435] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:01:12.424] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:01:12.424] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:01:16.483] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:01:16.483] [ERROR] Connection refused by server
+[2025-01-20 15:01:16.483] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:01:16.483] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:01:21.495] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:01:21.495] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:01:25.553] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:01:25.553] [ERROR] Connection refused by server
+[2025-01-20 15:01:25.553] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:01:25.553] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:01:30.548] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:01:30.548] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:01:34.608] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:01:34.608] [ERROR] Connection refused by server
+[2025-01-20 15:01:34.608] [INFO] Status update: Connection refused - check server status
+[2025-01-20 15:01:34.608] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:01:37.095] [INFO] Application shutdown requested
+[2025-01-20 15:01:37.095] [INFO] LoginWindow destroyed
+[2025-01-20 15:01:37.095] [INFO] MainWindow destroyed
+[2025-01-20 15:01:37.095] [INFO] Application shutdown initiated
+[2025-01-20 15:01:37.095] [INFO] Cleanup completed successfully
+[2025-01-20 15:10:59.875] [INFO] Jupiter Client starting...
+[2025-01-20 15:10:59.876] [INFO] Protocol version: 1
+[2025-01-20 15:10:59.876] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:10:59.876] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:10:59.879] [INFO] Status update: Connecting to server...
+[2025-01-20 15:10:59.879] [INFO] LoginWindow initialized
+[2025-01-20 15:10:59.885] [INFO] Status update: Initializing...
+[2025-01-20 15:10:59.885] [INFO] MainWindow initialized
+[2025-01-20 15:10:59.948] [INFO] Login window displayed
+[2025-01-20 15:11:18.926] [INFO] Status update: Not connected to server - trying to reconnect...
+[2025-01-20 15:11:29.717] [INFO] Application shutdown requested
+[2025-01-20 15:11:29.717] [INFO] LoginWindow destroyed
+[2025-01-20 15:11:29.717] [INFO] MainWindow destroyed
+[2025-01-20 15:11:29.717] [INFO] Application shutdown initiated
+[2025-01-20 15:11:29.717] [INFO] Cleanup completed successfully
+[2025-01-20 15:11:58.210] [INFO] Jupiter Client starting...
+[2025-01-20 15:11:58.210] [INFO] Protocol version: 1
+[2025-01-20 15:11:58.210] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:11:58.210] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:11:58.213] [INFO] Status update: Connecting to server...
+[2025-01-20 15:11:58.213] [INFO] LoginWindow initialized
+[2025-01-20 15:11:58.219] [INFO] Status update: Initializing...
+[2025-01-20 15:11:58.219] [INFO] MainWindow initialized
+[2025-01-20 15:11:58.284] [INFO] Login window displayed
+[2025-01-20 15:12:15.407] [INFO] Application shutdown requested
+[2025-01-20 15:12:15.407] [INFO] LoginWindow destroyed
+[2025-01-20 15:12:15.407] [INFO] MainWindow destroyed
+[2025-01-20 15:12:15.407] [INFO] Application shutdown initiated
+[2025-01-20 15:12:15.407] [INFO] Cleanup completed successfully
+[2025-01-20 15:15:18.139] [INFO] Jupiter Client starting...
+[2025-01-20 15:15:18.139] [INFO] Protocol version: 1
+[2025-01-20 15:15:18.139] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:15:18.139] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:15:18.142] [INFO] Status update: Connecting to server...
+[2025-01-20 15:15:18.142] [INFO] Initiating first connection attempt to 127.0.0.1:1234
+[2025-01-20 15:15:18.143] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-20 15:15:18.143] [INFO] LoginWindow initialized
+[2025-01-20 15:15:18.149] [INFO] Status update: Initializing...
+[2025-01-20 15:15:18.149] [INFO] MainWindow initialized
+[2025-01-20 15:15:18.211] [INFO] Login window displayed
+[2025-01-20 15:15:18.212] [INFO] Connected to server
+[2025-01-20 15:15:18.212] [INFO] Status update: Connected to server
+[2025-01-20 15:16:08.160] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:16:08.160] [WARNING] Server closed connection
+[2025-01-20 15:16:08.160] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:16:08.160] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:16:08.160] [WARNING] Disconnected from server
+[2025-01-20 15:16:08.160] [INFO] Status update: Disconnected from server
+[2025-01-20 15:16:09.149] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:16:09.165] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:16:09.166] [INFO] Connected to server
+[2025-01-20 15:16:09.166] [INFO] Status update: Connected to server
+[2025-01-20 15:16:22.413] [INFO] Application shutdown requested
+[2025-01-20 15:16:22.413] [WARNING] Disconnected from server
+[2025-01-20 15:16:22.413] [INFO] Status update: Disconnected from server
+[2025-01-20 15:16:22.413] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:16:22.413] [INFO] LoginWindow destroyed
+[2025-01-20 15:16:22.413] [INFO] MainWindow destroyed
+[2025-01-20 15:16:22.413] [INFO] Application shutdown initiated
+[2025-01-20 15:16:22.413] [INFO] Cleanup completed successfully
+[2025-01-20 15:20:32.737] [INFO] Jupiter Client starting...
+[2025-01-20 15:20:32.738] [INFO] Protocol version: 1
+[2025-01-20 15:20:32.738] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:20:32.738] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:20:32.741] [INFO] Status update: Connecting to server...
+[2025-01-20 15:20:32.741] [INFO] Initiating first connection attempt to 127.0.0.1:1234
+[2025-01-20 15:20:32.742] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-20 15:20:32.742] [INFO] LoginWindow initialized
+[2025-01-20 15:20:32.748] [INFO] Status update: Initializing...
+[2025-01-20 15:20:32.748] [INFO] MainWindow initialized
+[2025-01-20 15:20:32.811] [INFO] Login window displayed
+[2025-01-20 15:20:36.814] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:20:36.814] [ERROR] Connection refused by server
+[2025-01-20 15:20:36.814] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:20:36.814] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:20:37.743] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:20:37.743] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:20:41.842] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:20:41.842] [ERROR] Connection refused by server
+[2025-01-20 15:20:41.842] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:20:41.842] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:20:42.737] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:20:42.737] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:20:46.814] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:20:46.814] [ERROR] Connection refused by server
+[2025-01-20 15:20:46.814] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:20:46.830] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 15:20:46.830] [INFO] Status update: Connecting... (attempt 2/3)
+[2025-01-20 15:20:50.933] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:20:50.933] [ERROR] Connection refused by server
+[2025-01-20 15:20:50.933] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:20:50.933] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:20:51.734] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:20:51.735] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:20:55.797] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:20:55.797] [ERROR] Connection refused by server
+[2025-01-20 15:20:55.797] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:20:55.922] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 15:20:55.922] [INFO] Status update: Connecting... (attempt 2/3)
+[2025-01-20 15:21:00.009] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:21:00.009] [ERROR] Connection refused by server
+[2025-01-20 15:21:00.009] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:21:00.009] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:21:00.738] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:21:00.738] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:21:04.820] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-20 15:21:04.820] [ERROR] Connection refused by server
+[2025-01-20 15:21:04.820] [INFO] Status update: Connection refused - check if server is running
+[2025-01-20 15:21:05.002] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 2/3)
+[2025-01-20 15:21:05.002] [INFO] Status update: Connecting... (attempt 2/3)
+[2025-01-20 15:21:05.803] [INFO] Application shutdown requested
+[2025-01-20 15:21:05.803] [INFO] LoginWindow destroyed
+[2025-01-20 15:21:05.804] [INFO] MainWindow destroyed
+[2025-01-20 15:21:05.804] [INFO] Application shutdown initiated
+[2025-01-20 15:21:05.804] [INFO] Cleanup completed successfully
+[2025-01-20 15:21:13.204] [INFO] Jupiter Client starting...
+[2025-01-20 15:21:13.204] [INFO] Protocol version: 1
+[2025-01-20 15:21:13.204] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:21:13.204] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:21:13.207] [INFO] Status update: Connecting to server...
+[2025-01-20 15:21:13.207] [INFO] Initiating first connection attempt to 127.0.0.1:1234
+[2025-01-20 15:21:13.208] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-20 15:21:13.208] [INFO] LoginWindow initialized
+[2025-01-20 15:21:13.214] [INFO] Status update: Initializing...
+[2025-01-20 15:21:13.214] [INFO] MainWindow initialized
+[2025-01-20 15:21:13.277] [INFO] Login window displayed
+[2025-01-20 15:21:13.278] [INFO] Connected to server
+[2025-01-20 15:21:13.278] [INFO] Status update: Connected to server
+[2025-01-20 15:22:03.206] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:22:03.207] [WARNING] Server closed connection
+[2025-01-20 15:22:03.207] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:22:03.207] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:22:03.207] [WARNING] Disconnected from server
+[2025-01-20 15:22:03.207] [INFO] Status update: Disconnected from server
+[2025-01-20 15:22:04.217] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:22:04.232] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:22:04.233] [INFO] Connected to server
+[2025-01-20 15:22:04.233] [INFO] Status update: Connected to server
+[2025-01-20 15:22:11.401] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:22:11.401] [WARNING] Server closed connection
+[2025-01-20 15:22:11.401] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:22:11.401] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:22:11.401] [WARNING] Disconnected from server
+[2025-01-20 15:22:11.401] [INFO] Status update: Disconnected from server
+[2025-01-20 15:22:12.086] [INFO] Application shutdown requested
+[2025-01-20 15:22:12.086] [INFO] LoginWindow destroyed
+[2025-01-20 15:22:12.086] [INFO] MainWindow destroyed
+[2025-01-20 15:22:12.086] [INFO] Application shutdown initiated
+[2025-01-20 15:22:12.086] [INFO] Cleanup completed successfully
+[2025-01-20 15:24:40.202] [INFO] Jupiter Client starting...
+[2025-01-20 15:24:40.202] [INFO] Protocol version: 1
+[2025-01-20 15:24:40.203] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:24:40.203] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:24:40.205] [INFO] Status update: Connecting to server...
+[2025-01-20 15:24:40.205] [INFO] Initiating first connection attempt to 127.0.0.1:1234
+[2025-01-20 15:24:40.207] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-20 15:24:40.207] [INFO] LoginWindow initialized
+[2025-01-20 15:24:40.213] [INFO] Status update: Initializing...
+[2025-01-20 15:24:40.213] [INFO] MainWindow initialized
+[2025-01-20 15:24:40.278] [INFO] Login window displayed
+[2025-01-20 15:24:40.279] [INFO] Connected to server
+[2025-01-20 15:24:40.279] [INFO] Status update: Connected to server
+[2025-01-20 15:25:40.202] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:25:40.202] [WARNING] Server closed connection
+[2025-01-20 15:25:40.202] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:25:40.202] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:25:40.202] [WARNING] Disconnected from server
+[2025-01-20 15:25:40.202] [INFO] Status update: Disconnected from server
+[2025-01-20 15:25:40.218] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:25:40.234] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:25:40.235] [INFO] Connected to server
+[2025-01-20 15:25:40.235] [INFO] Status update: Connected to server
+[2025-01-20 15:26:30.224] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:26:30.225] [WARNING] Server closed connection
+[2025-01-20 15:26:30.225] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:26:30.225] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:26:30.225] [WARNING] Disconnected from server
+[2025-01-20 15:26:30.225] [INFO] Status update: Disconnected from server
+[2025-01-20 15:26:31.217] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:26:31.234] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:26:31.235] [INFO] Connected to server
+[2025-01-20 15:26:31.235] [INFO] Status update: Connected to server
+[2025-01-20 15:27:21.223] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:27:21.223] [WARNING] Server closed connection
+[2025-01-20 15:27:21.223] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:27:21.223] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:27:21.223] [WARNING] Disconnected from server
+[2025-01-20 15:27:21.223] [INFO] Status update: Disconnected from server
+[2025-01-20 15:27:22.227] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:27:22.243] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:27:22.244] [INFO] Connected to server
+[2025-01-20 15:27:22.244] [INFO] Status update: Connected to server
+[2025-01-20 15:28:22.231] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:28:22.231] [WARNING] Server closed connection
+[2025-01-20 15:28:22.231] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:28:22.231] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:28:22.231] [WARNING] Disconnected from server
+[2025-01-20 15:28:22.231] [INFO] Status update: Disconnected from server
+[2025-01-20 15:28:23.229] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:28:23.245] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:28:23.246] [INFO] Connected to server
+[2025-01-20 15:28:23.246] [INFO] Status update: Connected to server
+[2025-01-20 15:29:23.230] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:29:23.230] [WARNING] Server closed connection
+[2025-01-20 15:29:23.230] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:29:23.230] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:29:23.231] [WARNING] Disconnected from server
+[2025-01-20 15:29:23.231] [INFO] Status update: Disconnected from server
+[2025-01-20 15:29:24.236] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:29:24.252] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:29:24.252] [INFO] Connected to server
+[2025-01-20 15:29:24.252] [INFO] Status update: Connected to server
+[2025-01-20 15:30:24.236] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:30:24.236] [WARNING] Server closed connection
+[2025-01-20 15:30:24.236] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:30:24.236] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:30:24.236] [WARNING] Disconnected from server
+[2025-01-20 15:30:24.236] [INFO] Status update: Disconnected from server
+[2025-01-20 15:30:24.246] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:30:24.267] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:30:24.267] [INFO] Connected to server
+[2025-01-20 15:30:24.267] [INFO] Status update: Connected to server
+[2025-01-20 15:31:24.249] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:31:24.249] [WARNING] Server closed connection
+[2025-01-20 15:31:24.249] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:31:24.249] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:31:24.249] [WARNING] Disconnected from server
+[2025-01-20 15:31:24.249] [INFO] Status update: Disconnected from server
+[2025-01-20 15:31:25.255] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:31:25.271] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:31:25.271] [INFO] Connected to server
+[2025-01-20 15:31:25.272] [INFO] Status update: Connected to server
+[2025-01-20 15:32:15.258] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:32:15.259] [WARNING] Server closed connection
+[2025-01-20 15:32:15.259] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:32:15.259] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:32:15.259] [WARNING] Disconnected from server
+[2025-01-20 15:32:15.259] [INFO] Status update: Disconnected from server
+[2025-01-20 15:32:16.259] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:32:16.275] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:32:16.276] [INFO] Connected to server
+[2025-01-20 15:32:16.276] [INFO] Status update: Connected to server
+[2025-01-20 15:33:16.249] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:33:16.249] [WARNING] Server closed connection
+[2025-01-20 15:33:16.249] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:33:16.249] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:33:16.249] [WARNING] Disconnected from server
+[2025-01-20 15:33:16.249] [INFO] Status update: Disconnected from server
+[2025-01-20 15:33:17.257] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:33:17.273] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:33:17.273] [INFO] Connected to server
+[2025-01-20 15:33:17.273] [INFO] Status update: Connected to server
+[2025-01-20 15:34:17.251] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:34:17.251] [WARNING] Server closed connection
+[2025-01-20 15:34:17.251] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:34:17.251] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:34:17.251] [WARNING] Disconnected from server
+[2025-01-20 15:34:17.251] [INFO] Status update: Disconnected from server
+[2025-01-20 15:34:17.266] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:34:17.282] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:34:17.282] [INFO] Connected to server
+[2025-01-20 15:34:17.282] [INFO] Status update: Connected to server
+[2025-01-20 15:35:07.270] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:35:07.270] [WARNING] Server closed connection
+[2025-01-20 15:35:07.270] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:35:07.270] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:35:07.270] [WARNING] Disconnected from server
+[2025-01-20 15:35:07.270] [INFO] Status update: Disconnected from server
+[2025-01-20 15:35:08.278] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:35:08.294] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:35:08.294] [INFO] Connected to server
+[2025-01-20 15:35:08.294] [INFO] Status update: Connected to server
+[2025-01-20 15:35:58.280] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:35:58.280] [WARNING] Server closed connection
+[2025-01-20 15:35:58.280] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:35:58.280] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:35:58.280] [WARNING] Disconnected from server
+[2025-01-20 15:35:58.280] [INFO] Status update: Disconnected from server
+[2025-01-20 15:35:59.271] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:35:59.287] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:35:59.288] [INFO] Connected to server
+[2025-01-20 15:35:59.288] [INFO] Status update: Connected to server
+[2025-01-20 15:36:59.273] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:36:59.273] [WARNING] Server closed connection
+[2025-01-20 15:36:59.273] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:36:59.273] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:36:59.273] [WARNING] Disconnected from server
+[2025-01-20 15:36:59.273] [INFO] Status update: Disconnected from server
+[2025-01-20 15:37:00.275] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:37:00.290] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:37:00.290] [INFO] Connected to server
+[2025-01-20 15:37:00.290] [INFO] Status update: Connected to server
+[2025-01-20 15:37:50.286] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:37:50.286] [WARNING] Server closed connection
+[2025-01-20 15:37:50.286] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:37:50.286] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:37:50.286] [WARNING] Disconnected from server
+[2025-01-20 15:37:50.286] [INFO] Status update: Disconnected from server
+[2025-01-20 15:37:50.318] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:37:50.334] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:37:50.334] [INFO] Connected to server
+[2025-01-20 15:37:50.334] [INFO] Status update: Connected to server
+[2025-01-20 15:38:35.661] [INFO] Application shutdown requested
+[2025-01-20 15:38:35.661] [WARNING] Disconnected from server
+[2025-01-20 15:38:35.661] [INFO] Status update: Disconnected from server
+[2025-01-20 15:38:35.661] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:38:35.661] [INFO] LoginWindow destroyed
+[2025-01-20 15:38:35.661] [INFO] MainWindow destroyed
+[2025-01-20 15:38:35.662] [INFO] Application shutdown initiated
+[2025-01-20 15:38:35.662] [INFO] Cleanup completed successfully
+[2025-01-20 15:39:38.371] [INFO] Jupiter Client starting...
+[2025-01-20 15:39:38.371] [INFO] Protocol version: 1
+[2025-01-20 15:39:38.371] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 15:39:38.371] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 15:39:38.374] [INFO] Status update: Connecting to server...
+[2025-01-20 15:39:38.374] [INFO] Initiating first connection attempt to 127.0.0.1:1234
+[2025-01-20 15:39:38.375] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-20 15:39:38.375] [INFO] LoginWindow initialized
+[2025-01-20 15:39:38.382] [INFO] Status update: Initializing...
+[2025-01-20 15:39:38.382] [INFO] MainWindow initialized
+[2025-01-20 15:39:38.446] [INFO] Login window displayed
+[2025-01-20 15:39:38.448] [INFO] Connected to server
+[2025-01-20 15:39:38.448] [INFO] Status update: Connected to server
+[2025-01-20 15:39:39.371] [INFO] Sending ping to server
+[2025-01-20 15:39:39.371] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:39.372] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383979371,
+    "type": "error"
+}
+
+[2025-01-20 15:39:39.372] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383979371,
+    "type": "error"
+}
+
+[2025-01-20 15:39:40.382] [INFO] Sending ping to server
+[2025-01-20 15:39:40.382] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:40.382] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383980382,
+    "type": "error"
+}
+
+[2025-01-20 15:39:40.382] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383980382,
+    "type": "error"
+}
+
+[2025-01-20 15:39:41.385] [INFO] Sending ping to server
+[2025-01-20 15:39:41.385] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:41.385] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383981385,
+    "type": "error"
+}
+
+[2025-01-20 15:39:41.385] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383981385,
+    "type": "error"
+}
+
+[2025-01-20 15:39:42.375] [INFO] Sending ping to server
+[2025-01-20 15:39:42.375] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:42.375] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383982375,
+    "type": "error"
+}
+
+[2025-01-20 15:39:42.375] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383982375,
+    "type": "error"
+}
+
+[2025-01-20 15:39:43.378] [INFO] Sending ping to server
+[2025-01-20 15:39:43.378] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:43.379] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383983378,
+    "type": "error"
+}
+
+[2025-01-20 15:39:43.379] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383983378,
+    "type": "error"
+}
+
+[2025-01-20 15:39:44.371] [WARNING] Missed ping count: 1
+[2025-01-20 15:39:44.371] [INFO] Sending ping to server
+[2025-01-20 15:39:44.371] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:44.372] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383984371,
+    "type": "error"
+}
+
+[2025-01-20 15:39:44.372] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383984371,
+    "type": "error"
+}
+
+[2025-01-20 15:39:45.377] [WARNING] Missed ping count: 2
+[2025-01-20 15:39:45.377] [INFO] Sending ping to server
+[2025-01-20 15:39:45.377] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:45.377] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383985377,
+    "type": "error"
+}
+
+[2025-01-20 15:39:45.377] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383985377,
+    "type": "error"
+}
+
+[2025-01-20 15:39:46.373] [WARNING] Missed ping count: 3
+[2025-01-20 15:39:46.373] [WARNING] Connection timeout - reconnecting...
+[2025-01-20 15:39:46.373] [WARNING] Disconnected from server
+[2025-01-20 15:39:46.373] [INFO] Status update: Disconnected from server
+[2025-01-20 15:39:46.373] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:39:47.381] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:39:47.396] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:39:47.397] [INFO] Connected to server
+[2025-01-20 15:39:47.397] [INFO] Status update: Connected to server
+[2025-01-20 15:39:48.375] [INFO] Sending ping to server
+[2025-01-20 15:39:48.375] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:48.376] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383988375,
+    "type": "error"
+}
+
+[2025-01-20 15:39:48.376] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383988375,
+    "type": "error"
+}
+
+[2025-01-20 15:39:49.381] [INFO] Sending ping to server
+[2025-01-20 15:39:49.381] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:49.381] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383989381,
+    "type": "error"
+}
+
+[2025-01-20 15:39:49.381] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383989381,
+    "type": "error"
+}
+
+[2025-01-20 15:39:50.374] [INFO] Sending ping to server
+[2025-01-20 15:39:50.374] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:50.374] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383990374,
+    "type": "error"
+}
+
+[2025-01-20 15:39:50.374] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383990374,
+    "type": "error"
+}
+
+[2025-01-20 15:39:51.378] [INFO] Sending ping to server
+[2025-01-20 15:39:51.378] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:51.378] [INFO] Sending ping to server
+[2025-01-20 15:39:51.378] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:51.378] [INFO] Received raw data: {
+    "message": "Invalid JSON format",
+    "timestamp": 1737383991378,
+    "type": "error"
+}
+
+[2025-01-20 15:39:51.379] [INFO] Processing message type: error with content: {
+    "message": "Invalid JSON format",
+    "timestamp": 1737383991378,
+    "type": "error"
+}
+
+[2025-01-20 15:39:51.379] [ERROR] Server error: Invalid JSON format
+[2025-01-20 15:39:51.379] [INFO] Status update: Server error: Invalid JSON format
+[2025-01-20 15:39:52.383] [INFO] Sending ping to server
+[2025-01-20 15:39:52.383] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:52.384] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383992383,
+    "type": "error"
+}
+
+[2025-01-20 15:39:52.384] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383992383,
+    "type": "error"
+}
+
+[2025-01-20 15:39:53.382] [WARNING] Missed ping count: 1
+[2025-01-20 15:39:53.382] [INFO] Sending ping to server
+[2025-01-20 15:39:53.382] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:53.382] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383993382,
+    "type": "error"
+}
+
+[2025-01-20 15:39:53.382] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383993382,
+    "type": "error"
+}
+
+[2025-01-20 15:39:54.374] [WARNING] Missed ping count: 2
+[2025-01-20 15:39:54.374] [INFO] Sending ping to server
+[2025-01-20 15:39:54.374] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:54.375] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383994375,
+    "type": "error"
+}
+
+[2025-01-20 15:39:54.375] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383994375,
+    "type": "error"
+}
+
+[2025-01-20 15:39:55.380] [WARNING] Missed ping count: 3
+[2025-01-20 15:39:55.380] [WARNING] Connection timeout - reconnecting...
+[2025-01-20 15:39:55.380] [WARNING] Disconnected from server
+[2025-01-20 15:39:55.380] [INFO] Status update: Disconnected from server
+[2025-01-20 15:39:55.380] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:39:56.382] [INFO] Attempting to connect to 127.0.0.1:1234 (attempt 1/3)
+[2025-01-20 15:39:56.397] [INFO] Status update: Connecting... (attempt 1/3)
+[2025-01-20 15:39:56.397] [INFO] Connected to server
+[2025-01-20 15:39:56.397] [INFO] Status update: Connected to server
+[2025-01-20 15:39:57.373] [INFO] Sending ping to server
+[2025-01-20 15:39:57.373] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:57.375] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383997374,
+    "type": "error"
+}
+
+[2025-01-20 15:39:57.375] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383997374,
+    "type": "error"
+}
+
+[2025-01-20 15:39:58.378] [INFO] Sending ping to server
+[2025-01-20 15:39:58.378] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:58.379] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383998379,
+    "type": "error"
+}
+
+[2025-01-20 15:39:58.379] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383998379,
+    "type": "error"
+}
+
+[2025-01-20 15:39:59.378] [INFO] Sending ping to server
+[2025-01-20 15:39:59.378] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:39:59.378] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737383999378,
+    "type": "error"
+}
+
+[2025-01-20 15:39:59.378] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737383999378,
+    "type": "error"
+}
+
+[2025-01-20 15:40:00.382] [INFO] Sending ping to server
+[2025-01-20 15:40:00.382] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:40:00.382] [INFO] Sending ping to server
+[2025-01-20 15:40:00.382] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:40:00.382] [INFO] Received raw data: {
+    "message": "Invalid JSON format",
+    "timestamp": 1737384000382,
+    "type": "error"
+}
+
+[2025-01-20 15:40:00.383] [INFO] Processing message type: error with content: {
+    "message": "Invalid JSON format",
+    "timestamp": 1737384000382,
+    "type": "error"
+}
+
+[2025-01-20 15:40:00.383] [ERROR] Server error: Invalid JSON format
+[2025-01-20 15:40:00.383] [INFO] Status update: Server error: Invalid JSON format
+[2025-01-20 15:40:01.382] [INFO] Sending ping to server
+[2025-01-20 15:40:01.382] [INFO] Status update: Sending ping to server...
+[2025-01-20 15:40:01.383] [INFO] Received raw data: {
+    "message": "Not authenticated",
+    "timestamp": 1737384001382,
+    "type": "error"
+}
+
+[2025-01-20 15:40:01.383] [INFO] Processing message type: error with content: {
+    "message": "Not authenticated",
+    "timestamp": 1737384001382,
+    "type": "error"
+}
+
+[2025-01-20 15:40:01.619] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 15:40:01.619] [WARNING] Server closed connection
+[2025-01-20 15:40:01.619] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 15:40:01.619] [INFO] Scheduling reconnection attempt
+[2025-01-20 15:40:01.619] [WARNING] Disconnected from server
+[2025-01-20 15:40:01.619] [INFO] Status update: Disconnected from server
+[2025-01-20 15:40:02.311] [INFO] Application shutdown requested
+[2025-01-20 15:40:02.312] [INFO] LoginWindow destroyed
+[2025-01-20 15:40:02.312] [INFO] MainWindow destroyed
+[2025-01-20 15:40:02.312] [INFO] Application shutdown initiated
+[2025-01-20 15:40:02.312] [INFO] Cleanup completed successfully

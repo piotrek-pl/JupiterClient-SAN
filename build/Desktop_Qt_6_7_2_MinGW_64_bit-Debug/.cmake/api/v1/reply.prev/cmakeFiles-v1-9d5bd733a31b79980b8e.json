@@ -1322,6 +1322,9 @@
 			"path" : "C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake"
 		},
 		{
+			"path" : "src/config/jupiter.conf"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"

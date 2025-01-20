@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-7006f8876ea5a616bba5.json",
+					"jsonFile" : "directory-.-Debug-8c9c55e9862a50bf0174.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "JupiterClient::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-JupiterClient-Debug-285ed6c6019eb85eb12c.json",
+					"jsonFile" : "target-JupiterClient-Debug-3e8cc01a1674c8281ed4.json",
 					"name" : "JupiterClient",
 					"projectIndex" : 0
 				},

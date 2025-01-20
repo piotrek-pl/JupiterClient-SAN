@@ -17,7 +17,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 68,
+				"line" : 73,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 80,
 				"parent" : 0
 			}
 		]
@@ -35,6 +41,16 @@
 			"targetId" : "JupiterClient::@6890427a1f51a3e7e1df",
 			"targetIndex" : 0,
 			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "C:/Program Files (x86)/JupiterClient/config",
+			"paths" : 
+			[
+				"src/config/jupiter.conf"
+			],
+			"type" : "file"
 		}
 	],
 	"paths" : 

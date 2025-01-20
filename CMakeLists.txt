@@ -18,18 +18,27 @@ set(PROJECT_SOURCES
     src/ui/MainWindow.cpp
     src/ui/ChatWindow.cpp
     src/network/Client.cpp
-    src/network/Protocol.cpp      # Dodaj Protocol.cpp
+    src/network/Protocol.cpp
     src/models/User.cpp
+    src/config/ConfigManager.cpp
+    src/utils/Logger.cpp
     src/ui/LoginWindow.h
     src/ui/MainWindow.h
     src/ui/ChatWindow.h
     src/network/Client.h
-    src/network/Protocol.h        # Dodaj Protocol.h
+    src/network/Protocol.h
     src/models/User.h
+    src/config/ConfigManager.h
+    src/utils/Logger.h
     src/ui/LoginWindow.ui
     src/ui/MainWindow.ui
     src/ui/ChatWindow.ui
 )
+
+# Konfiguracja pliku konfiguracyjnego
+configure_file(${CMAKE_SOURCE_DIR}/src/config/jupiter.conf
+               ${CMAKE_BINARY_DIR}/config/jupiter.conf
+               COPYONLY)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(JupiterClient
@@ -48,20 +57,18 @@ else()
     endif()
 endif()
 
-target_link_libraries(JupiterClient PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Network)
-
-# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
-if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.JupiterClient)
-endif()
-set_target_properties(JupiterClient PROPERTIES
-    ${BUNDLE_ID_OPTION}
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+target_link_libraries(JupiterClient PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Network
 )
 
+# Dodaj ścieżki include
+target_include_directories(JupiterClient PRIVATE
+    ${CMAKE_BINARY_DIR}
+    ${CMAKE_SOURCE_DIR}/src
+)
+
+# Instalacja
 include(GNUInstallDirs)
 install(TARGETS JupiterClient
     BUNDLE DESTINATION .
@@ -69,8 +76,9 @@ install(TARGETS JupiterClient
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-# Add the build directory to the include paths
-target_include_directories(JupiterClient PRIVATE ${CMAKE_BINARY_DIR} src/network)
+# Instalacja pliku konfiguracyjnego
+install(FILES ${CMAKE_SOURCE_DIR}/src/config/jupiter.conf
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/config)
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(JupiterClient)
