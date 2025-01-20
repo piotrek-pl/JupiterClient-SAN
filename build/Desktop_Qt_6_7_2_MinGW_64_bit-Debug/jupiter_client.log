@@ -13172,3 +13172,121 @@
 [2025-01-20 20:48:32.427] [INFO] MainWindow destroyed
 [2025-01-20 20:48:32.427] [INFO] Application shutdown initiated
 [2025-01-20 20:48:32.427] [INFO] Cleanup completed successfully
+[2025-01-20 20:57:19.487] [INFO] Jupiter Client starting...
+[2025-01-20 20:57:19.488] [INFO] Protocol version: 1
+[2025-01-20 20:57:19.488] [INFO] Configuration loaded from: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/config/jupiter.conf
+[2025-01-20 20:57:19.488] [INFO] Server configuration - Host: 127.0.0.1, Port: 1234
+[2025-01-20 20:57:19.491] [INFO] Status update: Connecting to server...
+[2025-01-20 20:57:19.491] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-20 20:57:19.491] [INFO] Initiating first connection attempt to 127.0.0.1:1234
+[2025-01-20 20:57:19.492] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-20 20:57:19.492] [INFO] LoginWindow initialized
+[2025-01-20 20:57:19.499] [INFO] Status update: Initializing...
+[2025-01-20 20:57:19.499] [INFO] MainWindow initialized
+[2025-01-20 20:57:19.566] [INFO] Login window displayed
+[2025-01-20 20:57:19.567] [INFO] Connected to server
+[2025-01-20 20:57:19.567] [INFO] Status update: Connected to server
+[2025-01-20 20:57:29.488] [INFO] Timer triggered - checking connection
+[2025-01-20 20:57:29.489] [INFO] Received raw data size: 55
+[2025-01-20 20:57:29.489] [INFO] CLIENT: Received PING from server at 2025-01-20 20:57:29.489 (timestamp: 1737403049488)
+[2025-01-20 20:57:29.489] [INFO] Status update: Received ping (timestamp: 1737403049488)
+[2025-01-20 20:57:29.489] [INFO] Sending pong response (timestamp: 1737403049488)
+[2025-01-20 20:57:29.489] [INFO] Status update: Sent pong response (timestamp: 1737403049488)
+[2025-01-20 20:57:33.036] [INFO] Attempting login for user: test1
+[2025-01-20 20:57:33.036] [INFO] Status update: Logging in...
+[2025-01-20 20:57:33.039] [INFO] Received raw data size: 107
+[2025-01-20 20:57:33.039] [INFO] Login successful
+[2025-01-20 20:57:33.039] [INFO] Status update: Login successful - Connected
+[2025-01-20 20:57:33.039] [INFO] Login successful, switching to main window
+[2025-01-20 20:57:33.042] [INFO] MainWindow networking initialized
+[2025-01-20 20:57:33.042] [INFO] Socket set and networking initialized in MainWindow
+[2025-01-20 20:57:39.488] [INFO] Timer triggered - checking connection
+[2025-01-20 20:57:39.488] [INFO] Received raw data size: 55
+[2025-01-20 20:57:39.488] [INFO] CLIENT: Received PING from server at 2025-01-20 20:57:39.488 (timestamp: 1737403059488)
+[2025-01-20 20:57:39.488] [INFO] Status update: Received ping (timestamp: 1737403059488)
+[2025-01-20 20:57:39.488] [INFO] Sending pong response (timestamp: 1737403059488)
+[2025-01-20 20:57:39.488] [INFO] Status update: Sent pong response (timestamp: 1737403059488)
+[2025-01-20 20:57:39.488] [WARNING] Empty data received from server
+[2025-01-20 20:57:48.031] [INFO] Received raw data size: 243
+[2025-01-20 20:57:48.031] [WARNING] Unknown message type received: friends_status_update
+[2025-01-20 20:57:48.031] [WARNING] Empty data received from server
+[2025-01-20 20:57:49.482] [INFO] Timer triggered - checking connection
+[2025-01-20 20:57:49.484] [INFO] Received raw data size: 55
+[2025-01-20 20:57:49.484] [INFO] CLIENT: Received PING from server at 2025-01-20 20:57:49.484 (timestamp: 1737403069482)
+[2025-01-20 20:57:49.484] [INFO] Status update: Received ping (timestamp: 1737403069482)
+[2025-01-20 20:57:49.484] [INFO] Sending pong response (timestamp: 1737403069482)
+[2025-01-20 20:57:49.484] [INFO] Status update: Sent pong response (timestamp: 1737403069482)
+[2025-01-20 20:57:49.484] [WARNING] Empty data received from server
+[2025-01-20 20:57:59.490] [INFO] Timer triggered - checking connection
+[2025-01-20 20:57:59.491] [INFO] Received raw data size: 55
+[2025-01-20 20:57:59.491] [INFO] CLIENT: Received PING from server at 2025-01-20 20:57:59.491 (timestamp: 1737403079490)
+[2025-01-20 20:57:59.491] [INFO] Status update: Received ping (timestamp: 1737403079490)
+[2025-01-20 20:57:59.491] [INFO] Sending pong response (timestamp: 1737403079490)
+[2025-01-20 20:57:59.491] [INFO] Status update: Sent pong response (timestamp: 1737403079490)
+[2025-01-20 20:57:59.491] [WARNING] Empty data received from server
+[2025-01-20 20:58:03.034] [INFO] Received raw data size: 243
+[2025-01-20 20:58:03.034] [WARNING] Unknown message type received: friends_status_update
+[2025-01-20 20:58:03.034] [WARNING] Empty data received from server
+[2025-01-20 20:58:09.494] [INFO] Timer triggered - checking connection
+[2025-01-20 20:58:09.494] [INFO] Received raw data size: 55
+[2025-01-20 20:58:09.494] [INFO] CLIENT: Received PING from server at 2025-01-20 20:58:09.494 (timestamp: 1737403089494)
+[2025-01-20 20:58:09.494] [INFO] Status update: Received ping (timestamp: 1737403089494)
+[2025-01-20 20:58:09.494] [INFO] Sending pong response (timestamp: 1737403089494)
+[2025-01-20 20:58:09.495] [INFO] Status update: Sent pong response (timestamp: 1737403089494)
+[2025-01-20 20:58:09.495] [WARNING] Empty data received from server
+[2025-01-20 20:58:18.041] [INFO] Received raw data size: 243
+[2025-01-20 20:58:18.041] [WARNING] Unknown message type received: friends_status_update
+[2025-01-20 20:58:18.041] [WARNING] Empty data received from server
+[2025-01-20 20:58:19.492] [INFO] Timer triggered - checking connection
+[2025-01-20 20:58:19.492] [INFO] Received raw data size: 55
+[2025-01-20 20:58:19.492] [INFO] CLIENT: Received PING from server at 2025-01-20 20:58:19.492 (timestamp: 1737403099492)
+[2025-01-20 20:58:19.492] [INFO] Status update: Received ping (timestamp: 1737403099492)
+[2025-01-20 20:58:19.492] [INFO] Sending pong response (timestamp: 1737403099492)
+[2025-01-20 20:58:19.492] [INFO] Status update: Sent pong response (timestamp: 1737403099492)
+[2025-01-20 20:58:19.492] [WARNING] Empty data received from server
+[2025-01-20 20:58:29.494] [INFO] Timer triggered - checking connection
+[2025-01-20 20:58:29.495] [INFO] Received raw data size: 55
+[2025-01-20 20:58:29.495] [INFO] CLIENT: Received PING from server at 2025-01-20 20:58:29.495 (timestamp: 1737403109494)
+[2025-01-20 20:58:29.495] [INFO] Status update: Received ping (timestamp: 1737403109494)
+[2025-01-20 20:58:29.495] [INFO] Sending pong response (timestamp: 1737403109494)
+[2025-01-20 20:58:29.495] [INFO] Status update: Sent pong response (timestamp: 1737403109494)
+[2025-01-20 20:58:29.495] [WARNING] Empty data received from server
+[2025-01-20 20:58:33.040] [INFO] Received raw data size: 243
+[2025-01-20 20:58:33.040] [WARNING] Unknown message type received: friends_status_update
+[2025-01-20 20:58:33.040] [WARNING] Empty data received from server
+[2025-01-20 20:58:39.485] [INFO] Timer triggered - checking connection
+[2025-01-20 20:58:39.486] [INFO] Received raw data size: 55
+[2025-01-20 20:58:39.486] [INFO] CLIENT: Received PING from server at 2025-01-20 20:58:39.486 (timestamp: 1737403119485)
+[2025-01-20 20:58:39.486] [INFO] Status update: Received ping (timestamp: 1737403119485)
+[2025-01-20 20:58:39.486] [INFO] Sending pong response (timestamp: 1737403119485)
+[2025-01-20 20:58:39.486] [INFO] Status update: Sent pong response (timestamp: 1737403119485)
+[2025-01-20 20:58:39.486] [WARNING] Empty data received from server
+[2025-01-20 20:58:48.044] [INFO] Received raw data size: 243
+[2025-01-20 20:58:48.044] [WARNING] Unknown message type received: friends_status_update
+[2025-01-20 20:58:48.044] [WARNING] Empty data received from server
+[2025-01-20 20:58:49.495] [INFO] Timer triggered - checking connection
+[2025-01-20 20:58:49.496] [INFO] Received raw data size: 55
+[2025-01-20 20:58:49.496] [INFO] CLIENT: Received PING from server at 2025-01-20 20:58:49.496 (timestamp: 1737403129495)
+[2025-01-20 20:58:49.496] [INFO] Status update: Received ping (timestamp: 1737403129495)
+[2025-01-20 20:58:49.496] [INFO] Sending pong response (timestamp: 1737403129495)
+[2025-01-20 20:58:49.496] [INFO] Status update: Sent pong response (timestamp: 1737403129495)
+[2025-01-20 20:58:49.496] [WARNING] Empty data received from server
+[2025-01-20 20:58:51.019] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 20:58:51.019] [WARNING] Server closed connection
+[2025-01-20 20:58:51.019] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 20:58:51.019] [INFO] Scheduling reconnection attempt
+[2025-01-20 20:58:51.019] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-20 20:58:51.019] [WARNING] Server closed connection
+[2025-01-20 20:58:51.019] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-20 20:58:51.019] [INFO] Scheduling reconnection attempt
+[2025-01-20 20:58:51.019] [WARNING] Disconnected from server
+[2025-01-20 20:58:51.019] [INFO] Status update: Disconnected from server
+[2025-01-20 20:58:51.019] [WARNING] Disconnected from server
+[2025-01-20 20:58:51.019] [INFO] Status update: Disconnected from server - attempting to reconnect...
+[2025-01-20 20:58:51.034] [WARNING] Socket disconnected
+[2025-01-20 20:58:51.034] [INFO] Status update: Connection lost - attempting to reconnect...
+[2025-01-20 20:58:51.429] [INFO] Application shutdown requested
+[2025-01-20 20:58:51.429] [INFO] LoginWindow destroyed
+[2025-01-20 20:58:51.429] [INFO] MainWindow destroyed
+[2025-01-20 20:58:51.430] [INFO] Application shutdown initiated
+[2025-01-20 20:58:51.430] [INFO] Cleanup completed successfully

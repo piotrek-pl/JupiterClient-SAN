@@ -21,15 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
     , missedPings(0)
     , reconnectAttempts(0)
     , isReconnecting(false)
-    , isAuthenticated(true)  // W MainWindow zaczynamy od true, bo przechodzimy tu po zalogowaniu
+    , isAuthenticated(false)  // Zmienione z true na false
 {
     ui->setupUi(this);
-
     setWindowTitle("Jupiter Client");
-
-    // Pobierz konfigurację
     connectionConfig = ConfigManager::getInstance().getConnectionConfig();
-
     initializeUI();
     LOG_INFO("MainWindow initialized");
 }
@@ -86,14 +82,11 @@ void MainWindow::setSocket(QTcpSocket *sharedSocket)
     if (socket) {
         initializeNetworking();
         LOG_INFO("Socket set and networking initialized in MainWindow");
-
-        // Pobierz początkową listę znajomych
-        QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-        socket->write(QJsonDocument(getFriendsRequest).toJson());
     } else {
         LOG_ERROR("Attempted to set null socket in MainWindow");
     }
 }
+
 
 void MainWindow::initializeNetworking()
 {
@@ -191,7 +184,9 @@ void MainWindow::processIncomingMessage(const QJsonObject& json)
         if (json["status"].toString() == "success") {
             isAuthenticated = true;
             currentUsername = json["username"].toString();
-            // Zaraz po zalogowaniu, wysyłamy żądanie o listę znajomych
+            LOG_INFO("Successfully logged in");
+
+            // Po zalogowaniu wysyłamy żądanie o listę znajomych
             QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
             socket->write(QJsonDocument(getFriendsRequest).toJson());
             socket->flush();
