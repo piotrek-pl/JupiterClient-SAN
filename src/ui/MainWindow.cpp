@@ -82,8 +82,26 @@ void MainWindow::setSocket(QTcpSocket *sharedSocket)
     if (socket) {
         initializeNetworking();
         LOG_INFO("Socket set and networking initialized in MainWindow");
+
+        // Aktualizuj status połączenia
+        updateConnectionStatus("Connected");
+
+        // Najpierw wyślij status
+        QString status = Protocol::UserStatus::ONLINE;
+        QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(status);
+        socket->write(QJsonDocument(statusUpdate).toJson());
+        socket->flush();
+
+        // Poczekaj chwilę przed wysłaniem kolejnego żądania
+        QTimer::singleShot(100, this, [this]() {
+            // Pobierz początkową listę znajomych
+            QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
+            socket->write(QJsonDocument(getFriendsRequest).toJson());
+            socket->flush();
+        });
     } else {
         LOG_ERROR("Attempted to set null socket in MainWindow");
+        updateConnectionStatus("Connection failed");
     }
 }
 
@@ -180,19 +198,7 @@ void MainWindow::processIncomingMessage(const QJsonObject& json)
     QString type = json["type"].toString();
     LOG_DEBUG(QString("Processing message type: %1").arg(type));
 
-    if (type == Protocol::MessageType::LOGIN_RESPONSE) {
-        if (json["status"].toString() == "success") {
-            isAuthenticated = true;
-            currentUsername = json["username"].toString();
-            LOG_INFO("Successfully logged in");
-
-            // Po zalogowaniu wysyłamy żądanie o listę znajomych
-            QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-            socket->write(QJsonDocument(getFriendsRequest).toJson());
-            socket->flush();
-        }
-    }
-    else if (type == Protocol::MessageType::PING && isAuthenticated) {
+    if (type == Protocol::MessageType::PING && isAuthenticated) {
         LOG_DEBUG("Ping received from server");
         sendPong(json["timestamp"].toInteger());
     }
@@ -209,10 +215,8 @@ void MainWindow::processIncomingMessage(const QJsonObject& json)
         bool isOwn = (sender == currentUsername);
         addMessageToChat(sender, content, timestamp, isOwn);
     }
-    else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE) {
-        updateFriendsList(json["friends"].toArray());
-    }
-    else if (type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
+    else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
+             type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {  // Dodano obsługę friends_status_update
         updateFriendsList(json["friends"].toArray());
     }
     else if (type == Protocol::MessageType::ERROR) {
@@ -298,6 +302,7 @@ void MainWindow::onRefreshFriendsListClicked()
 
 void MainWindow::updateFriendsList(const QJsonArray& friends)
 {
+    LOG_INFO(QString("Updating friends list with %1 friends").arg(friends.size()));
     ui->friendsList->clear();
 
     for (const QJsonValue &friendValue : friends) {
@@ -305,6 +310,11 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
         QString friendName = friendObj["username"].toString();
         QString friendStatus = friendObj["status"].toString();
         int friendId = friendObj["id"].toInt();
+
+        LOG_DEBUG(QString("Adding friend: %1 (ID: %2) with status: %3")
+                      .arg(friendName)
+                      .arg(friendId)
+                      .arg(friendStatus));
 
         QString displayText = QString("%1 (%2)").arg(friendName).arg(friendStatus);
 
@@ -323,6 +333,8 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
 
         ui->friendsList->addItem(item);
     }
+
+    updateConnectionStatus(QString("Friends list updated (%1 friends)").arg(friends.size()));
 }
 
 void MainWindow::addMessageToChat(const QString& sender, const QString& content,
