@@ -154,7 +154,9 @@ void LoginWindow::onConnectionStatusChanged(const QString& status)
 void LoginWindow::onNetworkError(const QString& error)
 {
     updateStatus("Error: " + error);
-    updateButtonStates(false);
+    if (!error.contains("Authentication") && !error.contains("Invalid credentials")) {
+        updateButtonStates(false);
+    }
 }
 
 void LoginWindow::onLoginSuccess()
