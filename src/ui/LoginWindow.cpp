@@ -75,11 +75,9 @@ void LoginWindow::setupNetworkConnections()
             this, &LoginWindow::onRegistrationSuccess);
 }
 
-void LoginWindow::onNetworkConnected()
-{
+void LoginWindow::onNetworkConnected() {
     isConnecting = false;
     updateButtonStates(true);
-    updateStatus("Connected to server");
 }
 
 void LoginWindow::onNetworkDisconnected()
@@ -172,9 +170,7 @@ void LoginWindow::onRegistrationSuccess()
     updateStatus("Registration successful - please login");
 }
 
-void LoginWindow::updateStatus(const QString& status)
-{
-    LOG_INFO(QString("Status update: %1").arg(status));
+void LoginWindow::updateStatus(const QString& status) {
     ui->statusLabel->setText(status);
 }
 

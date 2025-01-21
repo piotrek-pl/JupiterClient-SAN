@@ -153,11 +153,12 @@ void NetworkManager::scheduleReconnection() {
 }
 
 void NetworkManager::onConnected() {
-    LOG_INFO("Connected to server");
-    emitConnectionStatus("Connected to server");
     lastPongTime = QDateTime::currentMSecsSinceEpoch();
     missedPings = 0;
     reconnectAttempts = 0;
+
+    LOG_INFO("Connected to server");
+    emitConnectionStatus("Connected to server");
     emit connected();
 
     if (!currentUsername.isEmpty() && !currentPassword.isEmpty()) {
@@ -337,6 +338,10 @@ void NetworkManager::sendPong(qint64 timestamp) {
 }
 
 void NetworkManager::emitConnectionStatus(const QString& status) {
-    LOG_INFO(QString("Status update: %1").arg(status));
-    emit connectionStatusChanged(status);
+    static QString lastStatus;
+    if (lastStatus != status) {  // Zapobieganie duplikatom
+        lastStatus = status;
+        LOG_INFO(QString("Status update: %1").arg(status));
+        emit connectionStatusChanged(status);
+    }
 }
