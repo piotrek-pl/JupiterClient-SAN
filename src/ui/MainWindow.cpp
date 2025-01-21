@@ -93,7 +93,11 @@ void MainWindow::setupNetworkConnections()
 void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
-    LOG_DEBUG(QString("Processing message type: %1").arg(type));
+
+    // Logujemy debug info tylko dla wiadomości innych niż status_response
+    if (type != "status_response") {
+        LOG_DEBUG(QString("Processing message type: %1").arg(type));
+    }
 
     if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
         QString sender = json["sender"].toString();
@@ -277,6 +281,5 @@ void MainWindow::onMenuAboutTriggered()
 
 void MainWindow::updateConnectionStatus(const QString& status)
 {
-    LOG_INFO(QString("Status update: %1").arg(status));
     ui->statusBar->showMessage(status);
 }

@@ -78,6 +78,7 @@ void LoginWindow::setupNetworkConnections()
 void LoginWindow::onNetworkConnected() {
     isConnecting = false;
     updateButtonStates(true);
+    updateStatus("Connected to server");
 }
 
 void LoginWindow::onNetworkDisconnected()
