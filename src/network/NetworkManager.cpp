@@ -273,6 +273,14 @@ void NetworkManager::processIncomingMessage(const QJsonObject& json) {
             m_isAuthenticated = true;
             lastPongTime = QDateTime::currentMSecsSinceEpoch();
             missedPings = 0;
+
+            // Wysyłamy status online i od razu pobieramy listę znajomych
+            QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(Protocol::UserStatus::ONLINE);
+            sendMessage(statusUpdate);
+
+            //QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
+            //sendMessage(getFriendsRequest);
+
             emitConnectionStatus("Login successful - Connected");
             emit loginSuccessful();
         } else {

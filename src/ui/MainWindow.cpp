@@ -78,16 +78,12 @@ void MainWindow::setupNetworkConnections()
             this, &MainWindow::onDisconnected);
 
     if (networkManager.isConnected() && networkManager.isAuthenticated()) {
-        QTimer::singleShot(100, this, [this]() {
-            // Wyślij status online
-            currentStatus = Protocol::UserStatus::ONLINE;
-            QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(currentStatus);
-            networkManager.sendMessage(statusUpdate);
+        currentStatus = Protocol::UserStatus::ONLINE;
+        QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(currentStatus);
+        networkManager.sendMessage(statusUpdate);
 
-            // Pobierz listę znajomych
-            QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-            networkManager.sendMessage(getFriendsRequest);
-        });
+        QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
+        networkManager.sendMessage(getFriendsRequest);
     }
 }
 
@@ -193,8 +189,10 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
             item->setForeground(Qt::yellow);
         } else if (friendStatus == Protocol::UserStatus::BUSY) {
             item->setForeground(Qt::red);
-        } else {
+        } else if (friendStatus == Protocol::UserStatus::OFFLINE) {  // Dodajemy explicit sprawdzenie OFFLINE
             item->setForeground(Qt::gray);
+        } else {
+            item->setForeground(Qt::gray);  // Dla nieznanych statusów
         }
 
         ui->friendsList->addItem(item);
