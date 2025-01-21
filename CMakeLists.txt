@@ -44,6 +44,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(JupiterClient
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        src/network/NetworkManager.h
+        src/network/NetworkManager.cpp
     )
 else()
     if(ANDROID)

@@ -2,19 +2,13 @@
  * @file LoginWindow.h
  * @brief Login window class definition
  * @author piotrek-pl
- * @date 2025-01-20 14:01:42
+ * @date 2025-01-21 12:58:36
  */
 
 #pragma once
 
 #include <QWidget>
-#include <QTcpSocket>
-#include <QTimer>
-#include <QJsonObject>
-#include <QDateTime>
-#include "config/ConfigManager.h"
-#include "utils/Logger.h"
-#include "network/Protocol.h"
+#include "network/NetworkManager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginWindow; }
@@ -27,8 +21,6 @@ public:
     explicit LoginWindow(QWidget *parent = nullptr);
     ~LoginWindow();
 
-    QTcpSocket* getSocket() { return &socket; }
-
 signals:
     void loginSuccessful();
     void registrationSuccessful();
@@ -36,31 +28,18 @@ signals:
 private slots:
     void onLoginButtonClicked();
     void onRegisterButtonClicked();
-    void onReadyRead();
-    void onConnected();
-    void onDisconnected();
-    void onError(QTcpSocket::SocketError socketError);
-    void checkConnection();
+    void onConnectionStatusChanged(const QString& status);
+    void onNetworkError(const QString& error);
+    void onLoginSuccess();
+    void onRegistrationSuccess();
 
 private:
     void initializeUI();
-    void initializeNetworking();
-    void updateConnectionStatus(const QString& status);
-    void sendPong(qint64 timestamp);
-    void processIncomingMessage(const QJsonObject& json);
-    void scheduleReconnection();
+    void updateStatus(const QString& status);
+    void setupNetworkConnections();
+    void validateAndSubmitRegistration();
+    void validateAndSubmitLogin();
 
     Ui::LoginWindow *ui;
-    QTcpSocket socket;
-    QTimer* connectionCheckTimer;
-    qint64 lastPongTime;
-    int missedPings;
-    int reconnectAttempts;
-    QString currentUsername;
-    QString currentPassword;
-    QString state;  // Stan sesji klienta
-    bool isReconnecting;
-    bool isAuthenticated;
-
-    ConfigManager::ConnectionConfig connectionConfig;
+    NetworkManager& networkManager;
 };

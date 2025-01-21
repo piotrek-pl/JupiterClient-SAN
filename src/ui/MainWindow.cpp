@@ -2,7 +2,7 @@
  * @file MainWindow.cpp
  * @brief Main window class implementation
  * @author piotrek-pl
- * @date 2025-01-20 14:03:26
+ * @date 2025-01-21 13:01:30
  */
 
 #include "MainWindow.h"
@@ -15,33 +15,23 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , socket(nullptr)
-    , connectionCheckTimer(nullptr)
-    , lastPongTime(QDateTime::currentMSecsSinceEpoch())
-    , missedPings(0)
-    , reconnectAttempts(0)
-    , isReconnecting(false)
-    , isAuthenticated(false)  // Zmienione z true na false
+    , networkManager(NetworkManager::getInstance())
 {
     ui->setupUi(this);
     setWindowTitle("Jupiter Client");
     connectionConfig = ConfigManager::getInstance().getConnectionConfig();
+
     initializeUI();
+    setupNetworkConnections();
+
     LOG_INFO("MainWindow initialized");
 }
 
 MainWindow::~MainWindow()
 {
-    if (connectionCheckTimer) {
-        connectionCheckTimer->stop();
-        delete connectionCheckTimer;
-    }
-
-    if (socket && socket->state() == QAbstractSocket::ConnectedState) {
+    if (networkManager.isConnected()) {
         QJsonObject logoutRequest = Protocol::MessageStructure::createLogoutRequest();
-        socket->write(QJsonDocument(logoutRequest).toJson());
-        socket->flush();
-        socket->disconnectFromHost();
+        networkManager.sendMessage(logoutRequest);
     }
 
     delete ui;
@@ -76,138 +66,38 @@ void MainWindow::initializeUI()
     updateConnectionStatus("Initializing...");
 }
 
-void MainWindow::setSocket(QTcpSocket *sharedSocket)
+void MainWindow::setupNetworkConnections()
 {
-    socket = sharedSocket;
-    if (socket) {
-        initializeNetworking();
-        LOG_INFO("Socket set and networking initialized in MainWindow");
+    connect(&networkManager, &NetworkManager::connectionStatusChanged,
+            this, &MainWindow::onConnectionStatusChanged);
+    connect(&networkManager, &NetworkManager::messageReceived,
+            this, &MainWindow::onMessageReceived);
+    connect(&networkManager, &NetworkManager::error,
+            this, &MainWindow::onNetworkError);
+    connect(&networkManager, &NetworkManager::disconnected,
+            this, &MainWindow::onDisconnected);
 
-        // Aktualizuj status połączenia
-        updateConnectionStatus("Connected");
-
-        // Najpierw wyślij status
-        QString status = Protocol::UserStatus::ONLINE;
-        QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(status);
-        socket->write(QJsonDocument(statusUpdate).toJson());
-        socket->flush();
-
-        // Poczekaj chwilę przed wysłaniem kolejnego żądania
+    // Ustaw początkowy status i pobierz listę znajomych
+    if (networkManager.isConnected() && networkManager.isAuthenticated()) {
         QTimer::singleShot(100, this, [this]() {
-            // Pobierz początkową listę znajomych
+            // Wyślij status online
+            QString status = Protocol::UserStatus::ONLINE;
+            QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(status);
+            networkManager.sendMessage(statusUpdate);
+
+            // Pobierz listę znajomych
             QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-            socket->write(QJsonDocument(getFriendsRequest).toJson());
-            socket->flush();
-        });
-    } else {
-        LOG_ERROR("Attempted to set null socket in MainWindow");
-        updateConnectionStatus("Connection failed");
-    }
-}
-
-
-void MainWindow::initializeNetworking()
-{
-    if (!socket) return;
-
-    // Socket connections
-    connect(socket, &QTcpSocket::readyRead, this, &MainWindow::onReadyRead);
-    connect(socket, &QTcpSocket::disconnected, this, &MainWindow::onDisconnected);
-    connect(socket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::errorOccurred),
-            this, &MainWindow::onError);
-
-    // Initialize connection check timer
-    connectionCheckTimer = new QTimer(this);
-    connect(connectionCheckTimer, &QTimer::timeout, this, &MainWindow::checkConnection);
-    connectionCheckTimer->start(connectionConfig.pingInterval);
-
-    LOG_INFO("MainWindow networking initialized");
-}
-
-void MainWindow::checkConnection()
-{
-    if (!socket || !socket->isValid()) {
-        return;
-    }
-
-    LOG_DEBUG(QString("Checking connection... Socket state: %1").arg(socket->state()));
-
-    if (socket->state() != QAbstractSocket::ConnectedState) {
-        LOG_WARNING("Socket disconnected");
-        updateConnectionStatus("Connection lost - attempting to reconnect...");
-        scheduleReconnection();
-    } else if (isAuthenticated) {
-        // Sprawdzamy tylko timeout ostatniej odpowiedzi od serwera
-        qint64 currentTime = QDateTime::currentMSecsSinceEpoch();
-        if (currentTime - lastPongTime > connectionConfig.connectionTimeout) {
-            missedPings++;
-            LOG_WARNING(QString("No response from server for %1 ms").arg(currentTime - lastPongTime));
-
-            if (missedPings >= 3) {
-                LOG_WARNING("Connection timeout - reconnecting...");
-                socket->disconnectFromHost();
-                scheduleReconnection();
-                return;
-            }
-        }
-    }
-}
-
-void MainWindow::scheduleReconnection()
-{
-    if (!isReconnecting) {
-        isReconnecting = true;
-        reconnectAttempts = 0;
-        missedPings = 0;
-
-        LOG_INFO("Scheduling reconnection attempt");
-        QTimer::singleShot(connectionConfig.reconnectDelay, this, [this]() {
-            isReconnecting = false;
-            if (socket && socket->state() != QAbstractSocket::ConnectedState) {
-                socket->connectToHost(connectionConfig.host, connectionConfig.port);
-            }
+            networkManager.sendMessage(getFriendsRequest);
         });
     }
 }
 
-void MainWindow::onReadyRead()
-{
-    if (!socket) return;
-
-    QByteArray data = socket->readAll();
-    LOG_DEBUG(QString("Received data size: %1 bytes").arg(data.size()));
-
-    if (data.isEmpty()) {
-        LOG_WARNING("Empty data received from server");
-        return;
-    }
-
-    QJsonParseError error;
-    QJsonDocument doc = QJsonDocument::fromJson(data, &error);
-    if (error.error != QJsonParseError::NoError) {
-        LOG_ERROR(QString("JSON parse error: %1").arg(error.errorString()));
-        return;
-    }
-
-    QJsonObject json = doc.object();
-    processIncomingMessage(json);
-}
-
-void MainWindow::processIncomingMessage(const QJsonObject& json)
+void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
     LOG_DEBUG(QString("Processing message type: %1").arg(type));
 
-    if (type == Protocol::MessageType::PING && isAuthenticated) {
-        LOG_DEBUG("Ping received from server");
-        sendPong(json["timestamp"].toInteger());
-    }
-    else if (type == Protocol::MessageType::PONG && isAuthenticated) {
-        LOG_DEBUG("Pong received from server");
-        lastPongTime = QDateTime::currentMSecsSinceEpoch();
-        missedPings = 0;
-    }
-    else if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
+    if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
         QString sender = json["sender"].toString();
         QString content = json["content"].toString();
         QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(json["timestamp"].toInteger());
@@ -216,37 +106,14 @@ void MainWindow::processIncomingMessage(const QJsonObject& json)
         addMessageToChat(sender, content, timestamp, isOwn);
     }
     else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
-             type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {  // Dodano obsługę friends_status_update
+             type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
         updateFriendsList(json["friends"].toArray());
     }
-    else if (type == Protocol::MessageType::ERROR) {
-        if (!isAuthenticated && json["message"].toString() == "Not authenticated") {
-            // Ignoruj błędy autentykacji przed zalogowaniem
-            return;
-        }
-        LOG_ERROR(QString("Server error: %1").arg(json["message"].toString()));
-        updateConnectionStatus("Server error: " + json["message"].toString());
-    }
-    else {
-        LOG_WARNING(QString("Unknown message type received: %1").arg(type));
-    }
-}
-
-void MainWindow::sendPong(qint64 timestamp)
-{
-    if (!socket || !isAuthenticated) return;
-
-    QJsonObject pongMessage = Protocol::MessageStructure::createPong(timestamp);
-    QByteArray data = QJsonDocument(pongMessage).toJson();
-
-    LOG_DEBUG(QString("Sending pong with timestamp: %1").arg(timestamp));
-    socket->write(data);
-    socket->flush();
 }
 
 void MainWindow::onSendMessageClicked()
 {
-    if (!socket || socket->state() != QAbstractSocket::ConnectedState) {
+    if (!networkManager.isConnected() || !networkManager.isAuthenticated()) {
         updateConnectionStatus("Cannot send message - not connected");
         return;
     }
@@ -269,14 +136,14 @@ void MainWindow::onSendMessageClicked()
     }
 
     QJsonObject messageRequest = Protocol::MessageStructure::createMessage(selectedFriendId, message);
-    socket->write(QJsonDocument(messageRequest).toJson());
+    networkManager.sendMessage(messageRequest);
 
     ui->messageLineEdit->clear();
 }
 
 void MainWindow::onStatusChanged(int index)
 {
-    if (!socket || socket->state() != QAbstractSocket::ConnectedState) {
+    if (!networkManager.isConnected() || !networkManager.isAuthenticated()) {
         updateConnectionStatus("Cannot update status - not connected");
         return;
     }
@@ -285,19 +152,19 @@ void MainWindow::onStatusChanged(int index)
     if (newStatus != currentStatus) {
         currentStatus = newStatus;
         QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(newStatus);
-        socket->write(QJsonDocument(statusUpdate).toJson());
+        networkManager.sendMessage(statusUpdate);
     }
 }
 
 void MainWindow::onRefreshFriendsListClicked()
 {
-    if (!socket || socket->state() != QAbstractSocket::ConnectedState) {
+    if (!networkManager.isConnected() || !networkManager.isAuthenticated()) {
         updateConnectionStatus("Cannot refresh - not connected");
         return;
     }
 
     QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-    socket->write(QJsonDocument(getFriendsRequest).toJson());
+    networkManager.sendMessage(getFriendsRequest);
 }
 
 void MainWindow::updateFriendsList(const QJsonArray& friends)
@@ -365,57 +232,34 @@ void MainWindow::addMessageToChat(const QString& sender, const QString& content,
 void MainWindow::onDisconnected()
 {
     LOG_WARNING("Disconnected from server");
-    updateConnectionStatus("Disconnected from server - attempting to reconnect...");
-    isAuthenticated = false;
-    scheduleReconnection();
-    // Wyczyść listę znajomych przy rozłączeniu
+    updateConnectionStatus("Disconnected from server");
     ui->friendsList->clear();
 }
 
-void MainWindow::onError(QTcpSocket::SocketError socketError)
+void MainWindow::onConnectionStatusChanged(const QString& status)
 {
-    if (!socket) return;
+    updateConnectionStatus(status);
+}
 
-    QString errorMsg = socket->errorString();
-    LOG_ERROR(QString("Socket error: %1 (%2)").arg(socketError).arg(errorMsg));
-
-    switch (socketError) {
-    case QAbstractSocket::RemoteHostClosedError:
-        LOG_WARNING("Server closed connection");
-        updateConnectionStatus("Server closed connection - reconnecting...");
-        break;
-
-    case QAbstractSocket::ConnectionRefusedError:
-        LOG_ERROR("Connection refused by server");
-        updateConnectionStatus("Connection refused - check server status");
-        break;
-
-    default:
-        updateConnectionStatus("Connection error: " + errorMsg);
-        break;
-    }
-
-    isAuthenticated = false;
-    scheduleReconnection();
+void MainWindow::onNetworkError(const QString& error)
+{
+    LOG_ERROR(QString("Network error: %1").arg(error));
+    updateConnectionStatus("Error: " + error);
+    QMessageBox::warning(this, "Network Error", error);
 }
 
 void MainWindow::onMenuSettingsTriggered()
 {
-    // TODO: Implement settings dialog
     QMessageBox::information(this, "Settings",
                              "Settings functionality will be implemented in future versions.");
 }
 
 void MainWindow::onMenuExitTriggered()
 {
-    // Wyślij informację o wylogowaniu przed zamknięciem
-    if (socket && socket->state() == QAbstractSocket::ConnectedState) {
+    if (networkManager.isConnected()) {
         QJsonObject logoutRequest = Protocol::MessageStructure::createLogoutRequest();
-        socket->write(QJsonDocument(logoutRequest).toJson());
-        socket->flush();
+        networkManager.sendMessage(logoutRequest);
     }
-
-    // Zamknij aplikację
     QApplication::quit();
 }
 

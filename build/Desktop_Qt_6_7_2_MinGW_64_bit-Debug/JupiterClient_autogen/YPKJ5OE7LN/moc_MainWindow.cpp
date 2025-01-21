@@ -36,20 +36,21 @@ namespace {
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
     "MainWindow",
-    "onReadyRead",
-    "",
-    "onDisconnected",
-    "onError",
-    "QTcpSocket::SocketError",
-    "socketError",
-    "checkConnection",
     "onSendMessageClicked",
+    "",
     "onStatusChanged",
     "index",
     "onRefreshFriendsListClicked",
     "onMenuSettingsTriggered",
     "onMenuExitTriggered",
-    "onMenuAboutTriggered"
+    "onMenuAboutTriggered",
+    "onConnectionStatusChanged",
+    "status",
+    "onMessageReceived",
+    "message",
+    "onNetworkError",
+    "error",
+    "onDisconnected"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -71,26 +72,26 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   74,    2, 0x08,    1 /* Private */,
-       3,    0,   75,    2, 0x08,    2 /* Private */,
-       4,    1,   76,    2, 0x08,    3 /* Private */,
-       7,    0,   79,    2, 0x08,    5 /* Private */,
-       8,    0,   80,    2, 0x08,    6 /* Private */,
-       9,    1,   81,    2, 0x08,    7 /* Private */,
-      11,    0,   84,    2, 0x08,    9 /* Private */,
-      12,    0,   85,    2, 0x08,   10 /* Private */,
-      13,    0,   86,    2, 0x08,   11 /* Private */,
-      14,    0,   87,    2, 0x08,   12 /* Private */,
+       3,    1,   75,    2, 0x08,    2 /* Private */,
+       5,    0,   78,    2, 0x08,    4 /* Private */,
+       6,    0,   79,    2, 0x08,    5 /* Private */,
+       7,    0,   80,    2, 0x08,    6 /* Private */,
+       8,    0,   81,    2, 0x08,    7 /* Private */,
+       9,    1,   82,    2, 0x08,    8 /* Private */,
+      11,    1,   85,    2, 0x08,   10 /* Private */,
+      13,    1,   88,    2, 0x08,   12 /* Private */,
+      15,    0,   91,    2, 0x08,   14 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 5,    6,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, QMetaType::QJsonObject,   12,
+    QMetaType::Void, QMetaType::QString,   14,
     QMetaType::Void,
 
        0        // eod
@@ -105,15 +106,6 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
-        // method 'onReadyRead'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onDisconnected'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'onError'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QTcpSocket::SocketError, std::false_type>,
-        // method 'checkConnection'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onSendMessageClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onStatusChanged'
@@ -126,6 +118,17 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'onMenuExitTriggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onMenuAboutTriggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onConnectionStatusChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'onMessageReceived'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QJsonObject &, std::false_type>,
+        // method 'onNetworkError'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'onDisconnected'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -137,16 +140,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->onReadyRead(); break;
-        case 1: _t->onDisconnected(); break;
-        case 2: _t->onError((*reinterpret_cast< std::add_pointer_t<QTcpSocket::SocketError>>(_a[1]))); break;
-        case 3: _t->checkConnection(); break;
-        case 4: _t->onSendMessageClicked(); break;
-        case 5: _t->onStatusChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 6: _t->onRefreshFriendsListClicked(); break;
-        case 7: _t->onMenuSettingsTriggered(); break;
-        case 8: _t->onMenuExitTriggered(); break;
-        case 9: _t->onMenuAboutTriggered(); break;
+        case 0: _t->onSendMessageClicked(); break;
+        case 1: _t->onStatusChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->onRefreshFriendsListClicked(); break;
+        case 3: _t->onMenuSettingsTriggered(); break;
+        case 4: _t->onMenuExitTriggered(); break;
+        case 5: _t->onMenuAboutTriggered(); break;
+        case 6: _t->onConnectionStatusChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 7: _t->onMessageReceived((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1]))); break;
+        case 8: _t->onNetworkError((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 9: _t->onDisconnected(); break;
         default: ;
         }
     }

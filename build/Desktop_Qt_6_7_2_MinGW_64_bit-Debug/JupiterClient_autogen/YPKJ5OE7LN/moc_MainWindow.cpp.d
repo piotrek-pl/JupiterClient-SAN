@@ -1,5 +1,6 @@
 D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/YPKJ5OE7LN/moc_MainWindow.cpp: D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.h \
   D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/moc_predefs.h \
+  C:/Qt/6.7.2/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QDateTime \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QFile \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonArray \
@@ -413,5 +414,6 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h \
+  D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h

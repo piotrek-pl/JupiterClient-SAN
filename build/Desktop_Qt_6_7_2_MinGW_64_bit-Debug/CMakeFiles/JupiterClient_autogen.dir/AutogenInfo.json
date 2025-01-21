@@ -346,6 +346,12 @@
 			null
 		],
 		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h",
+			"MU",
+			"UFQQIFJZKK/moc_NetworkManager.cpp",
+			null
+		],
+		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h",
 			"MU",
 			"UFQQIFJZKK/moc_Protocol.cpp",
@@ -463,6 +469,11 @@
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.cpp",
 			"MU",
 			null
 		],
