@@ -52,6 +52,9 @@ void LoginWindow::initializeUI()
 
 void LoginWindow::setupNetworkConnections()
 {
+    // Usuń poprzednie połączenia przed dodaniem nowych
+    disconnect(&networkManager, nullptr, this, nullptr);
+
     connect(&networkManager, &NetworkManager::connectionStatusChanged,
             this, &LoginWindow::onConnectionStatusChanged);
     connect(&networkManager, &NetworkManager::error,

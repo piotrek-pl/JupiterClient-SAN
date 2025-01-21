@@ -26,6 +26,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void setCurrentUsername(const QString& username) {
+        currentUsername = username;
+    }
+
 private slots:
     // UI event handlers
     void onSendMessageClicked();

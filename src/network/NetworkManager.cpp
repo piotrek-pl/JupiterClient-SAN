@@ -1,8 +1,6 @@
 /**
  * @file NetworkManager.cpp
  * @brief Network manager class implementation
- * @author piotrek-pl
- * @date 2025-01-21 12:56:05
  */
 
 #include "NetworkManager.h"

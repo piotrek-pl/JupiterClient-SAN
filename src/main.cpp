@@ -1,8 +1,6 @@
 /**
  * @file main.cpp
  * @brief Application entry point
- * @author piotrek-pl
- * @date 2025-01-21 13:04:54
  */
 
 #include "ui/MainWindow.h"
@@ -22,6 +20,9 @@ int main(int argc, char *argv[])
 
     // Inicjalizacja NetworkManager
     auto& networkManager = NetworkManager::getInstance();
+
+    // Połączenie z serwerem
+    networkManager.connectToServer();
 
     // Tworzenie okien
     LoginWindow* loginWindow = new LoginWindow();

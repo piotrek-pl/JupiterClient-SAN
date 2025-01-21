@@ -77,12 +77,11 @@ void MainWindow::setupNetworkConnections()
     connect(&networkManager, &NetworkManager::disconnected,
             this, &MainWindow::onDisconnected);
 
-    // Ustaw początkowy status i pobierz listę znajomych
     if (networkManager.isConnected() && networkManager.isAuthenticated()) {
         QTimer::singleShot(100, this, [this]() {
             // Wyślij status online
-            QString status = Protocol::UserStatus::ONLINE;
-            QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(status);
+            currentStatus = Protocol::UserStatus::ONLINE;
+            QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(currentStatus);
             networkManager.sendMessage(statusUpdate);
 
             // Pobierz listę znajomych
