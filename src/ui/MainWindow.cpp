@@ -81,7 +81,7 @@ void MainWindow::setupNetworkConnections()
 
     if (networkManager.isConnected() && networkManager.isAuthenticated()) {
         currentStatus = Protocol::UserStatus::ONLINE;
-        // Usuwamy stąd getFriendsList - lista przyjdzie automatycznie przez friends_status_update
+        updateConnectionStatus("Connected");
     }
 }
 
@@ -186,16 +186,19 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
             item->setForeground(Qt::yellow);
         } else if (friendStatus == Protocol::UserStatus::BUSY) {
             item->setForeground(Qt::red);
-        } else if (friendStatus == Protocol::UserStatus::OFFLINE) {  // Dodajemy explicit sprawdzenie OFFLINE
+        } else if (friendStatus == Protocol::UserStatus::OFFLINE) {
             item->setForeground(Qt::gray);
         } else {
-            item->setForeground(Qt::gray);  // Dla nieznanych statusów
+            item->setForeground(Qt::gray);
         }
 
         ui->friendsList->addItem(item);
     }
 
-    updateConnectionStatus(QString("Friends list updated (%1 friends)").arg(friends.size()));
+    // Zmiana: zachowaj status "Connected" i dodaj informację o liczbie znajomych
+    if (networkManager.isConnected() && networkManager.isAuthenticated()) {
+        updateConnectionStatus(QString("Connected - Friends list updated (%1)").arg(friends.size()));
+    }
 }
 
 void MainWindow::addMessageToChat(const QString& sender, const QString& content,
@@ -232,14 +235,17 @@ void MainWindow::onDisconnected()
 
 void MainWindow::onConnectionStatusChanged(const QString& status)
 {
-    updateConnectionStatus(status);
+    if (networkManager.isConnected() && networkManager.isAuthenticated()) {
+        updateConnectionStatus("Connected");
+    } else {
+        updateConnectionStatus(status);
+    }
 }
 
 void MainWindow::onNetworkError(const QString& error)
 {
     LOG_ERROR(QString("Network error: %1").arg(error));
     updateConnectionStatus("Error: " + error);
-    QMessageBox::warning(this, "Network Error", error);
 }
 
 void MainWindow::onMenuSettingsTriggered()
