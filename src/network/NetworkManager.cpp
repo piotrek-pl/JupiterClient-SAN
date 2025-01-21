@@ -78,7 +78,8 @@ void NetworkManager::sendMessage(const QJsonObject& message) {
         return;
     }
 
-    QByteArray data = QJsonDocument(message).toJson();
+    QByteArray data = QJsonDocument(message).toJson(QJsonDocument::Compact);  // Używamy formatu compact
+    data.append('\n');  // Dodajemy pojedynczy znak nowej linii
     LOG_INFO("Sending message: " + QString::fromUtf8(data));
     socket.write(data);
     socket.flush();

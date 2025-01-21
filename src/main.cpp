@@ -24,21 +24,38 @@ int main(int argc, char *argv[])
     // Połączenie z serwerem
     networkManager.connectToServer();
 
-    // Tworzenie okien
+    // Tworzenie okna logowania
     LoginWindow* loginWindow = new LoginWindow();
-    MainWindow* mainWindow = new MainWindow();
+
+    // Utworzenie wskaźnika na MainWindow (początkowo nullptr)
+    MainWindow* mainWindow = nullptr;
 
     // Konfiguracja połączeń między oknami
-    QObject::connect(loginWindow, &LoginWindow::loginSuccessful, [=]() {
-        loginWindow->hide();
+    QObject::connect(loginWindow, &LoginWindow::loginSuccessful, [&mainWindow, loginWindow]() {
+        // Tworzenie MainWindow dopiero po udanym logowaniu
+        mainWindow = new MainWindow();
+
+        // Połączenie sygnału zamknięcia MainWindow z zakończeniem aplikacji
+        QObject::connect(mainWindow, &MainWindow::destroyed, []() {
+            LOG_INFO("MainWindow destroyed, closing application");
+            QApplication::quit();
+        });
+
         mainWindow->show();
-        delete loginWindow;  // LoginWindow nie będzie już potrzebne
+        loginWindow->hide();
+        loginWindow->deleteLater();  // Bezpieczniejsze niż bezpośrednie delete
     });
 
     // Wyświetl okno logowania
     loginWindow->show();
 
     int result = a.exec();
+
+    // Cleanup
+    if (mainWindow) {
+        delete mainWindow;
+    }
+
     LOG_INFO("Application shutting down");
     return result;
 }

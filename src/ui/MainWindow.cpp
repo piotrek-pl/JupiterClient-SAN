@@ -68,6 +68,9 @@ void MainWindow::initializeUI()
 
 void MainWindow::setupNetworkConnections()
 {
+    // Najpierw odłącz wszystkie poprzednie połączenia
+    disconnect(&networkManager, nullptr, this, nullptr);
+
     connect(&networkManager, &NetworkManager::connectionStatusChanged,
             this, &MainWindow::onConnectionStatusChanged);
     connect(&networkManager, &NetworkManager::messageReceived,

@@ -47,13 +47,23 @@ void LoginWindow::initializeUI()
     ui->usernameLineEdit->setMaxLength(32);
     ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
 
+    // Początkowo wyłącz przyciski
+    isConnecting = true;
+    updateButtonStates(false);
     updateStatus("Connecting to server...");
 }
+
 
 void LoginWindow::setupNetworkConnections()
 {
     // Usuń poprzednie połączenia przed dodaniem nowych
     disconnect(&networkManager, nullptr, this, nullptr);
+
+    // Dodaj nowe połączenia dla stanu połączenia
+    connect(&networkManager, &NetworkManager::connected,
+            this, &LoginWindow::onNetworkConnected);
+    connect(&networkManager, &NetworkManager::disconnected,
+            this, &LoginWindow::onNetworkDisconnected);
 
     connect(&networkManager, &NetworkManager::connectionStatusChanged,
             this, &LoginWindow::onConnectionStatusChanged);
@@ -65,6 +75,18 @@ void LoginWindow::setupNetworkConnections()
             this, &LoginWindow::onRegistrationSuccess);
 }
 
+void LoginWindow::onNetworkConnected()
+{
+    isConnecting = false;
+    updateButtonStates(true);
+    updateStatus("Connected to server");
+}
+
+void LoginWindow::onNetworkDisconnected()
+{
+    updateButtonStates(false);
+    updateStatus("Disconnected from server");
+}
 void LoginWindow::onLoginButtonClicked()
 {
     validateAndSubmitLogin();
@@ -124,12 +146,16 @@ void LoginWindow::validateAndSubmitRegistration()
 void LoginWindow::onConnectionStatusChanged(const QString& status)
 {
     updateStatus(status);
+    if (status.contains("Connecting")) {
+        isConnecting = true;
+        updateButtonStates(false);
+    }
 }
 
 void LoginWindow::onNetworkError(const QString& error)
 {
-    QMessageBox::warning(this, "Connection Error", error);
     updateStatus("Error: " + error);
+    updateButtonStates(false);
 }
 
 void LoginWindow::onLoginSuccess()
@@ -150,4 +176,41 @@ void LoginWindow::updateStatus(const QString& status)
 {
     LOG_INFO(QString("Status update: %1").arg(status));
     ui->statusLabel->setText(status);
+}
+
+void LoginWindow::setupConnectionHandling()
+{
+    isConnecting = true;
+    updateButtonStates(false);
+
+    connect(&networkManager, &NetworkManager::connected, this, [this]() {
+        isConnecting = false;
+        updateButtonStates(true);
+    });
+
+    connect(&networkManager, &NetworkManager::disconnected, this, [this]() {
+        updateButtonStates(false);
+    });
+}
+
+void LoginWindow::updateButtonStates(bool enabled)
+{
+    if (isConnecting) {
+        enabled = false;
+    }
+
+    ui->loginButton->setEnabled(enabled);
+    ui->registerButton->setEnabled(enabled);
+    ui->usernameLineEdit->setEnabled(enabled);
+    ui->passwordLineEdit->setEnabled(enabled);
+    if (ui->emailLineEdit->isVisible()) {
+        ui->emailLineEdit->setEnabled(enabled);
+    }
+}
+
+void LoginWindow::closeEvent(QCloseEvent* event)
+{
+    // Odłącz wszystkie połączenia z NetworkManager
+    disconnect(&networkManager, nullptr, this, nullptr);
+    QWidget::closeEvent(event);
 }

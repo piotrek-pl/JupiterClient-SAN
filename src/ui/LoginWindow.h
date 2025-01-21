@@ -32,6 +32,8 @@ private slots:
     void onNetworkError(const QString& error);
     void onLoginSuccess();
     void onRegistrationSuccess();
+    void onNetworkConnected();
+    void onNetworkDisconnected();
 
 private:
     void initializeUI();
@@ -39,7 +41,13 @@ private:
     void setupNetworkConnections();
     void validateAndSubmitRegistration();
     void validateAndSubmitLogin();
+    void updateButtonStates(bool enabled);
+    void setupConnectionHandling();
 
     Ui::LoginWindow *ui;
     NetworkManager& networkManager;
+    bool isConnecting;
+
+protected:
+    void closeEvent(QCloseEvent* event) override;
 };
