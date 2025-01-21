@@ -11,17 +11,16 @@
 
 int main(int argc, char *argv[])
 {
+    // Najpierw tworzymy QApplication
     QApplication a(argc, argv);
 
-    // Inicjalizacja loggera
+    // Następnie inicjalizujemy logger
     Logger::getInstance().setLogFile("jupiter_client.log");
     Logger::getInstance().setLogLevel(LogLevel::DEBUG);
     LOG_INFO("Application started");
 
-    // Inicjalizacja NetworkManager
+    // Teraz dopiero inicjalizujemy NetworkManager
     auto& networkManager = NetworkManager::getInstance();
-
-    // Połączenie z serwerem
     networkManager.connectToServer();
 
     // Tworzenie okna logowania

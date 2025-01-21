@@ -19070,3 +19070,367 @@
 [2025-01-21 20:44:17.084] [INFO] Status update: Disconnected from server
 [2025-01-21 20:44:17.084] [INFO] Scheduling reconnection attempt 1/5
 [2025-01-21 20:44:17.084] [INFO] NetworkManager destroyed
+[2025-01-21 20:45:37.414] [INFO] Application started
+[2025-01-21 20:45:37.415] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:45:37.415] [INFO] NetworkManager initialized
+[2025-01-21 20:45:37.415] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:45:37.415] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:45:37.419] [INFO] LoginWindow initialized
+[2025-01-21 20:45:37.486] [INFO] Connected to server
+[2025-01-21 20:45:37.486] [INFO] Status update: Connected to server
+[2025-01-21 20:45:41.080] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:45:41.080] [INFO] Status update: Logging in...
+[2025-01-21 20:45:41.084] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737488741084,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:45:41.084] [DEBUG] Processing message type: login_response
+[2025-01-21 20:45:41.084] [INFO] Login successful
+[2025-01-21 20:45:41.084] [INFO] Sending message: {"status":"online","timestamp":1737488741084,"type":"status_response"}
+
+[2025-01-21 20:45:41.084] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:45:41.090] [INFO] MainWindow initialized
+[2025-01-21 20:45:41.099] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737488741084,
+    "type": "status_response"
+}
+[2025-01-21 20:45:41.099] [DEBUG] Processing message type: status_response
+[2025-01-21 20:45:41.099] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737488741085,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:45:41.099] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:45:41.099] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:45:41.099] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:45:41.099] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:45:41.110] [INFO] LoginWindow destroyed
+[2025-01-21 20:45:45.074] [INFO] Sending message: {"timestamp":1737488745074,"type":"logout"}
+
+[2025-01-21 20:45:45.074] [INFO] MainWindow destroyed
+[2025-01-21 20:45:45.075] [INFO] Application shutting down
+[2025-01-21 20:45:45.081] [WARNING] Disconnected from server
+[2025-01-21 20:45:45.081] [INFO] Status update: Disconnected from server
+[2025-01-21 20:45:45.081] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:45:45.081] [INFO] NetworkManager destroyed
+[2025-01-21 20:46:05.205] [INFO] Application started
+[2025-01-21 20:46:05.205] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:46:05.205] [INFO] NetworkManager initialized
+[2025-01-21 20:46:05.205] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:46:05.205] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:46:05.209] [INFO] LoginWindow initialized
+[2025-01-21 20:46:05.276] [INFO] Connected to server
+[2025-01-21 20:46:05.276] [INFO] Status update: Connected to server
+[2025-01-21 20:46:14.375] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:46:14.375] [INFO] Status update: Logging in...
+[2025-01-21 20:46:14.377] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737488774377,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:46:14.377] [DEBUG] Processing message type: login_response
+[2025-01-21 20:46:14.377] [INFO] Login successful
+[2025-01-21 20:46:14.377] [INFO] Sending message: {"status":"online","timestamp":1737488774377,"type":"status_response"}
+
+[2025-01-21 20:46:14.378] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:46:14.384] [INFO] MainWindow initialized
+[2025-01-21 20:46:14.393] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737488774378,
+    "type": "status_response"
+}
+[2025-01-21 20:46:14.393] [DEBUG] Processing message type: status_response
+[2025-01-21 20:46:14.393] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737488774379,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:46:14.393] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:46:14.393] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:46:14.393] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:46:14.393] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:46:14.408] [INFO] LoginWindow destroyed
+[2025-01-21 20:46:15.209] [INFO] Processing JSON: {
+    "timestamp": 1737488775207,
+    "type": "ping"
+}
+[2025-01-21 20:46:15.209] [DEBUG] Processing message type: ping
+[2025-01-21 20:46:15.209] [INFO] Received PING (timestamp: 1737488775207)
+[2025-01-21 20:46:15.209] [INFO] Sending message: {"timestamp":1737488775207,"type":"pong"}
+
+[2025-01-21 20:46:15.209] [INFO] Sent PONG (timestamp: 1737488775207)
+[2025-01-21 20:46:18.072] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-21 20:46:18.072] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-21 20:46:18.072] [ERROR] Network error: The remote host closed the connection
+[2025-01-21 20:46:18.072] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:46:18.072] [WARNING] Disconnected from server
+[2025-01-21 20:46:18.073] [INFO] Status update: Disconnected from server
+[2025-01-21 20:46:18.073] [WARNING] Disconnected from server
+[2025-01-21 20:46:21.127] [INFO] MainWindow destroyed
+[2025-01-21 20:46:21.128] [INFO] Application shutting down
+[2025-01-21 20:46:21.129] [INFO] NetworkManager destroyed
+[2025-01-21 20:46:28.185] [INFO] Application started
+[2025-01-21 20:46:28.186] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:46:28.186] [INFO] NetworkManager initialized
+[2025-01-21 20:46:28.186] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:46:28.186] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:46:28.190] [INFO] LoginWindow initialized
+[2025-01-21 20:46:28.254] [INFO] Connected to server
+[2025-01-21 20:46:28.254] [INFO] Status update: Connected to server
+[2025-01-21 20:46:32.542] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:46:32.542] [INFO] Status update: Logging in...
+[2025-01-21 20:46:32.545] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737488792545,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:46:32.545] [DEBUG] Processing message type: login_response
+[2025-01-21 20:46:32.545] [INFO] Login successful
+[2025-01-21 20:46:32.545] [INFO] Sending message: {"status":"online","timestamp":1737488792545,"type":"status_response"}
+
+[2025-01-21 20:46:32.545] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:46:32.552] [INFO] MainWindow initialized
+[2025-01-21 20:46:32.560] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737488792546,
+    "type": "status_response"
+}
+[2025-01-21 20:46:32.560] [DEBUG] Processing message type: status_response
+[2025-01-21 20:46:32.560] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737488792547,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:46:32.560] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:46:32.560] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:46:32.560] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:46:32.560] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:46:32.569] [INFO] LoginWindow destroyed
+[2025-01-21 20:46:37.961] [INFO] Sending message: {"timestamp":1737488797961,"type":"logout"}
+
+[2025-01-21 20:46:37.961] [INFO] MainWindow destroyed
+[2025-01-21 20:46:37.961] [INFO] Application shutting down
+[2025-01-21 20:46:37.963] [WARNING] Disconnected from server
+[2025-01-21 20:46:37.963] [INFO] Status update: Disconnected from server
+[2025-01-21 20:46:37.963] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:46:37.963] [INFO] NetworkManager destroyed
+[2025-01-21 20:48:34.921] [INFO] Application started
+[2025-01-21 20:48:34.921] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:48:34.921] [INFO] NetworkManager initialized
+[2025-01-21 20:48:34.921] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:48:34.921] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:48:34.925] [INFO] LoginWindow initialized
+[2025-01-21 20:48:34.991] [INFO] Connected to server
+[2025-01-21 20:48:34.991] [INFO] Status update: Connected to server
+[2025-01-21 20:48:38.916] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:48:38.916] [INFO] Status update: Logging in...
+[2025-01-21 20:48:38.919] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737488918919,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:48:38.919] [DEBUG] Processing message type: login_response
+[2025-01-21 20:48:38.919] [INFO] Login successful
+[2025-01-21 20:48:38.919] [INFO] Sending message: {"status":"online","timestamp":1737488918919,"type":"status_response"}
+
+[2025-01-21 20:48:38.919] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:48:38.925] [INFO] MainWindow initialized
+[2025-01-21 20:48:38.933] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737488918919,
+    "type": "status_response"
+}
+[2025-01-21 20:48:38.933] [DEBUG] Processing message type: status_response
+[2025-01-21 20:48:38.933] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737488918920,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:48:38.933] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:48:38.933] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:48:38.933] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:48:38.933] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:48:38.947] [INFO] LoginWindow destroyed
+[2025-01-21 20:48:44.084] [INFO] Sending message: {"timestamp":1737488924084,"type":"logout"}
+
+[2025-01-21 20:48:44.084] [INFO] MainWindow destroyed
+[2025-01-21 20:48:44.084] [INFO] Application shutting down
+[2025-01-21 20:48:44.086] [WARNING] Disconnected from server
+[2025-01-21 20:48:44.086] [INFO] Status update: Disconnected from server
+[2025-01-21 20:48:44.086] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:48:44.086] [INFO] NetworkManager destroyed
+[2025-01-21 20:51:10.613] [INFO] Application started
+[2025-01-21 20:51:10.613] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:51:10.613] [INFO] NetworkManager initialized
+[2025-01-21 20:51:10.613] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:51:10.613] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:51:10.617] [INFO] LoginWindow initialized
+[2025-01-21 20:51:10.682] [INFO] Connected to server
+[2025-01-21 20:51:10.682] [INFO] Status update: Connected to server
+[2025-01-21 20:51:15.919] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:51:15.919] [INFO] Status update: Logging in...
+[2025-01-21 20:51:15.921] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737489075921,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:51:15.921] [DEBUG] Processing message type: login_response
+[2025-01-21 20:51:15.921] [INFO] Login successful
+[2025-01-21 20:51:15.921] [INFO] Sending message: {"status":"online","timestamp":1737489075921,"type":"status_response"}
+
+[2025-01-21 20:51:15.921] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:51:15.928] [INFO] MainWindow initialized
+[2025-01-21 20:51:15.937] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737489075922,
+    "type": "status_response"
+}
+[2025-01-21 20:51:15.937] [DEBUG] Processing message type: status_response
+[2025-01-21 20:51:15.937] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737489075922,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:51:15.937] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:51:15.937] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:51:15.937] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:51:15.937] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:51:15.952] [INFO] LoginWindow destroyed
+[2025-01-21 20:51:17.622] [INFO] Sending message: {"timestamp":1737489077622,"type":"logout"}
+
+[2025-01-21 20:51:17.622] [INFO] MainWindow destroyed
+[2025-01-21 20:51:17.623] [INFO] Application shutting down
+[2025-01-21 20:51:17.624] [WARNING] Disconnected from server
+[2025-01-21 20:51:17.624] [INFO] Status update: Disconnected from server
+[2025-01-21 20:51:17.624] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:51:17.624] [INFO] NetworkManager destroyed
+[2025-01-21 20:56:46.716] [INFO] Application started
+[2025-01-21 20:56:46.716] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:56:46.716] [INFO] NetworkManager initialized
+[2025-01-21 20:56:46.716] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:56:46.716] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:56:46.721] [INFO] LoginWindow initialized
+[2025-01-21 20:56:46.796] [INFO] Connected to server
+[2025-01-21 20:56:46.796] [INFO] Status update: Connected to server
+[2025-01-21 20:56:48.058] [INFO] Application shutting down
+[2025-01-21 20:56:55.175] [INFO] Application started
+[2025-01-21 20:56:55.175] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:56:55.175] [INFO] NetworkManager initialized
+[2025-01-21 20:56:55.175] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:56:55.175] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:56:55.179] [INFO] LoginWindow initialized
+[2025-01-21 20:56:55.242] [INFO] Connected to server
+[2025-01-21 20:56:55.242] [INFO] Status update: Connected to server
+[2025-01-21 20:57:00.669] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:57:00.669] [INFO] Status update: Logging in...
+[2025-01-21 20:57:00.672] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737489420672,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:57:00.672] [DEBUG] Processing message type: login_response
+[2025-01-21 20:57:00.672] [INFO] Login successful
+[2025-01-21 20:57:00.672] [INFO] Sending message: {"status":"online","timestamp":1737489420672,"type":"status_response"}
+
+[2025-01-21 20:57:00.672] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:57:00.678] [INFO] MainWindow initialized
+[2025-01-21 20:57:00.687] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737489420672,
+    "type": "status_response"
+}
+[2025-01-21 20:57:00.687] [DEBUG] Processing message type: status_response
+[2025-01-21 20:57:00.688] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737489420673,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:57:00.688] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:57:00.688] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:57:00.688] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:57:00.688] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:57:00.700] [INFO] LoginWindow destroyed
+[2025-01-21 20:57:02.973] [INFO] Sending message: {"timestamp":1737489422973,"type":"logout"}
+
+[2025-01-21 20:57:02.973] [INFO] MainWindow destroyed
+[2025-01-21 20:57:02.974] [INFO] Application shutting down

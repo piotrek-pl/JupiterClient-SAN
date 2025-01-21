@@ -4,16 +4,22 @@
  */
 
 #include "NetworkManager.h"
+#include <QApplication>
 #include <QJsonDocument>
 #include <QJsonObject>
 
 NetworkManager& NetworkManager::getInstance() {
-    static NetworkManager instance;
-    return instance;
+    static NetworkManager* instance = nullptr;
+    if (!instance && QApplication::instance()) {  // Sprawdź czy QApplication istnieje
+        instance = new NetworkManager();
+        instance->moveToThread(QApplication::instance()->thread());  // Przenieś do głównego wątku
+    }
+    return *instance;
 }
 
 NetworkManager::NetworkManager()
-    : connectionCheckTimer(nullptr)
+    : QObject(nullptr)
+    , connectionCheckTimer(nullptr)
     , lastPongTime(QDateTime::currentMSecsSinceEpoch())
     , missedPings(0)
     , reconnectAttempts(0)
