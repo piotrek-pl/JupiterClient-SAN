@@ -68,7 +68,6 @@ void MainWindow::initializeUI()
 
 void MainWindow::setupNetworkConnections()
 {
-    // Najpierw odłącz wszystkie poprzednie połączenia
     disconnect(&networkManager, nullptr, this, nullptr);
 
     connect(&networkManager, &NetworkManager::connectionStatusChanged,
@@ -82,22 +81,13 @@ void MainWindow::setupNetworkConnections()
 
     if (networkManager.isConnected() && networkManager.isAuthenticated()) {
         currentStatus = Protocol::UserStatus::ONLINE;
-        QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(currentStatus);
-        networkManager.sendMessage(statusUpdate);
-
-        QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-        networkManager.sendMessage(getFriendsRequest);
+        // Usuwamy stąd getFriendsList - lista przyjdzie automatycznie przez friends_status_update
     }
 }
 
 void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
-
-    // Logujemy debug info tylko dla wiadomości innych niż status_response
-    if (type != "status_response") {
-        LOG_DEBUG(QString("Processing message type: %1").arg(type));
-    }
 
     if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
         QString sender = json["sender"].toString();

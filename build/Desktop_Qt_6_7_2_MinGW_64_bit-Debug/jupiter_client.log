@@ -15935,3 +15935,2262 @@
 [2025-01-21 20:03:23.046] [INFO] Status update: Disconnected from server
 [2025-01-21 20:03:23.046] [INFO] Scheduling reconnection attempt 1/5
 [2025-01-21 20:03:23.046] [INFO] NetworkManager destroyed
+[2025-01-21 20:08:39.405] [INFO] Application started
+[2025-01-21 20:08:39.406] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:08:39.406] [INFO] NetworkManager initialized
+[2025-01-21 20:08:39.406] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:08:39.406] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:08:39.410] [INFO] LoginWindow initialized
+[2025-01-21 20:08:39.477] [INFO] Connected to server
+[2025-01-21 20:08:39.477] [INFO] Status update: Connected to server
+[2025-01-21 20:08:44.578] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-21 20:08:44.578] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-21 20:08:44.579] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:08:44.579] [WARNING] Disconnected from server
+[2025-01-21 20:08:44.579] [INFO] Status update: Disconnected from server
+[2025-01-21 20:08:49.576] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:08:49.576] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:08:49.592] [INFO] Connected to server
+[2025-01-21 20:08:49.592] [INFO] Status update: Connected to server
+[2025-01-21 20:08:59.578] [INFO] Processing JSON: {
+    "timestamp": 1737486539578,
+    "type": "ping"
+}
+[2025-01-21 20:08:59.579] [DEBUG] Processing message type: ping
+[2025-01-21 20:08:59.579] [INFO] Received PING (timestamp: 1737486539578)
+[2025-01-21 20:08:59.579] [INFO] Sending message: {"timestamp":1737486539578,"type":"pong"}
+
+[2025-01-21 20:08:59.579] [INFO] Sent PONG (timestamp: 1737486539578)
+[2025-01-21 20:09:00.209] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:09:00.209] [INFO] Status update: Logging in...
+[2025-01-21 20:09:00.212] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737486540212,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:09:00.212] [DEBUG] Processing message type: login_response
+[2025-01-21 20:09:00.212] [INFO] Login successful
+[2025-01-21 20:09:00.212] [INFO] Sending message: {"status":"online","timestamp":1737486540212,"type":"status_response"}
+
+[2025-01-21 20:09:00.212] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:09:00.219] [INFO] Sending message: {"status":"online","timestamp":1737486540219,"type":"status_response"}
+
+[2025-01-21 20:09:00.219] [INFO] Sending message: {"timestamp":1737486540219,"type":"get_friends_list"}
+
+[2025-01-21 20:09:00.219] [INFO] MainWindow initialized
+[2025-01-21 20:09:00.227] [DEBUG] Processing message type: login_response
+[2025-01-21 20:09:00.227] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737486540213,
+    "type": "status_response"
+}
+[2025-01-21 20:09:00.227] [DEBUG] Processing message type: status_response
+[2025-01-21 20:09:00.227] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486540213,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:09:00.227] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:00.227] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:00.228] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:09:00.228] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:09:00.228] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:09:00.228] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737486540219,
+    "type": "status_response"
+}
+[2025-01-21 20:09:00.228] [DEBUG] Processing message type: status_response
+[2025-01-21 20:09:00.228] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486540220,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:09:00.228] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:00.228] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:00.228] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:09:00.228] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:09:00.228] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:09:00.228] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486540221,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:09:00.228] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:09:00.228] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:09:00.228] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:09:00.228] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:09:00.228] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:09:00.235] [INFO] LoginWindow destroyed
+[2025-01-21 20:09:09.588] [INFO] Processing JSON: {
+    "timestamp": 1737486549588,
+    "type": "ping"
+}
+[2025-01-21 20:09:09.588] [DEBUG] Processing message type: ping
+[2025-01-21 20:09:09.588] [INFO] Received PING (timestamp: 1737486549588)
+[2025-01-21 20:09:09.588] [INFO] Sending message: {"timestamp":1737486549588,"type":"pong"}
+
+[2025-01-21 20:09:09.588] [INFO] Sent PONG (timestamp: 1737486549588)
+[2025-01-21 20:09:15.216] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486555216,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:09:15.216] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:15.216] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:15.216] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:09:15.216] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:09:15.216] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:09:19.580] [INFO] Processing JSON: {
+    "timestamp": 1737486559580,
+    "type": "ping"
+}
+[2025-01-21 20:09:19.580] [DEBUG] Processing message type: ping
+[2025-01-21 20:09:19.580] [INFO] Received PING (timestamp: 1737486559580)
+[2025-01-21 20:09:19.580] [INFO] Sending message: {"timestamp":1737486559580,"type":"pong"}
+
+[2025-01-21 20:09:19.580] [INFO] Sent PONG (timestamp: 1737486559580)
+[2025-01-21 20:09:29.587] [INFO] Processing JSON: {
+    "timestamp": 1737486569587,
+    "type": "ping"
+}
+[2025-01-21 20:09:29.587] [DEBUG] Processing message type: ping
+[2025-01-21 20:09:29.587] [INFO] Received PING (timestamp: 1737486569587)
+[2025-01-21 20:09:29.587] [INFO] Sending message: {"timestamp":1737486569587,"type":"pong"}
+
+[2025-01-21 20:09:29.587] [INFO] Sent PONG (timestamp: 1737486569587)
+[2025-01-21 20:09:30.213] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486570213,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:09:30.213] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:30.213] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:30.213] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:09:30.213] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:09:30.213] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:09:39.586] [INFO] Processing JSON: {
+    "timestamp": 1737486579586,
+    "type": "ping"
+}
+[2025-01-21 20:09:39.586] [DEBUG] Processing message type: ping
+[2025-01-21 20:09:39.586] [INFO] Received PING (timestamp: 1737486579586)
+[2025-01-21 20:09:39.586] [INFO] Sending message: {"timestamp":1737486579586,"type":"pong"}
+
+[2025-01-21 20:09:39.586] [INFO] Sent PONG (timestamp: 1737486579586)
+[2025-01-21 20:09:45.211] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486585211,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:09:45.211] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:45.211] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:09:45.211] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:09:45.211] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:09:45.211] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:09:49.591] [INFO] Processing JSON: {
+    "timestamp": 1737486589591,
+    "type": "ping"
+}
+[2025-01-21 20:09:49.591] [DEBUG] Processing message type: ping
+[2025-01-21 20:09:49.591] [INFO] Received PING (timestamp: 1737486589591)
+[2025-01-21 20:09:49.591] [INFO] Sending message: {"timestamp":1737486589591,"type":"pong"}
+
+[2025-01-21 20:09:49.591] [INFO] Sent PONG (timestamp: 1737486589591)
+[2025-01-21 20:09:59.593] [INFO] Processing JSON: {
+    "timestamp": 1737486599592,
+    "type": "ping"
+}
+[2025-01-21 20:09:59.593] [DEBUG] Processing message type: ping
+[2025-01-21 20:09:59.593] [INFO] Received PING (timestamp: 1737486599592)
+[2025-01-21 20:09:59.593] [INFO] Sending message: {"timestamp":1737486599592,"type":"pong"}
+
+[2025-01-21 20:09:59.593] [INFO] Sent PONG (timestamp: 1737486599592)
+[2025-01-21 20:10:00.211] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486600211,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:10:00.211] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:00.211] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:00.211] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:10:00.211] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:10:00.211] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:10:09.580] [INFO] Processing JSON: {
+    "timestamp": 1737486609580,
+    "type": "ping"
+}
+[2025-01-21 20:10:09.580] [DEBUG] Processing message type: ping
+[2025-01-21 20:10:09.581] [INFO] Received PING (timestamp: 1737486609580)
+[2025-01-21 20:10:09.581] [INFO] Sending message: {"timestamp":1737486609580,"type":"pong"}
+
+[2025-01-21 20:10:09.581] [INFO] Sent PONG (timestamp: 1737486609580)
+[2025-01-21 20:10:15.210] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486615210,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:10:15.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:15.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:15.210] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:10:15.210] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:10:15.210] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:10:19.588] [INFO] Processing JSON: {
+    "timestamp": 1737486619587,
+    "type": "ping"
+}
+[2025-01-21 20:10:19.588] [DEBUG] Processing message type: ping
+[2025-01-21 20:10:19.588] [INFO] Received PING (timestamp: 1737486619587)
+[2025-01-21 20:10:19.588] [INFO] Sending message: {"timestamp":1737486619587,"type":"pong"}
+
+[2025-01-21 20:10:19.588] [INFO] Sent PONG (timestamp: 1737486619587)
+[2025-01-21 20:10:29.588] [INFO] Processing JSON: {
+    "timestamp": 1737486629588,
+    "type": "ping"
+}
+[2025-01-21 20:10:29.588] [DEBUG] Processing message type: ping
+[2025-01-21 20:10:29.588] [INFO] Received PING (timestamp: 1737486629588)
+[2025-01-21 20:10:29.588] [INFO] Sending message: {"timestamp":1737486629588,"type":"pong"}
+
+[2025-01-21 20:10:29.588] [INFO] Sent PONG (timestamp: 1737486629588)
+[2025-01-21 20:10:30.209] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486630209,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:10:30.209] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:30.209] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:30.209] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:10:30.209] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:10:30.209] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:10:39.585] [INFO] Processing JSON: {
+    "timestamp": 1737486639585,
+    "type": "ping"
+}
+[2025-01-21 20:10:39.585] [DEBUG] Processing message type: ping
+[2025-01-21 20:10:39.585] [INFO] Received PING (timestamp: 1737486639585)
+[2025-01-21 20:10:39.585] [INFO] Sending message: {"timestamp":1737486639585,"type":"pong"}
+
+[2025-01-21 20:10:39.585] [INFO] Sent PONG (timestamp: 1737486639585)
+[2025-01-21 20:10:45.211] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486645211,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:10:45.211] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:45.211] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:10:45.211] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:10:45.211] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:10:45.211] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:10:49.591] [INFO] Processing JSON: {
+    "timestamp": 1737486649591,
+    "type": "ping"
+}
+[2025-01-21 20:10:49.591] [DEBUG] Processing message type: ping
+[2025-01-21 20:10:49.591] [INFO] Received PING (timestamp: 1737486649591)
+[2025-01-21 20:10:49.591] [INFO] Sending message: {"timestamp":1737486649591,"type":"pong"}
+
+[2025-01-21 20:10:49.591] [INFO] Sent PONG (timestamp: 1737486649591)
+[2025-01-21 20:10:59.588] [INFO] Processing JSON: {
+    "timestamp": 1737486659587,
+    "type": "ping"
+}
+[2025-01-21 20:10:59.588] [DEBUG] Processing message type: ping
+[2025-01-21 20:10:59.588] [INFO] Received PING (timestamp: 1737486659587)
+[2025-01-21 20:10:59.588] [INFO] Sending message: {"timestamp":1737486659587,"type":"pong"}
+
+[2025-01-21 20:10:59.588] [INFO] Sent PONG (timestamp: 1737486659587)
+[2025-01-21 20:11:00.221] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486660221,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:11:00.221] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:00.221] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:00.221] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:11:00.221] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:11:00.221] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:11:09.587] [INFO] Processing JSON: {
+    "timestamp": 1737486669587,
+    "type": "ping"
+}
+[2025-01-21 20:11:09.587] [DEBUG] Processing message type: ping
+[2025-01-21 20:11:09.587] [INFO] Received PING (timestamp: 1737486669587)
+[2025-01-21 20:11:09.587] [INFO] Sending message: {"timestamp":1737486669587,"type":"pong"}
+
+[2025-01-21 20:11:09.587] [INFO] Sent PONG (timestamp: 1737486669587)
+[2025-01-21 20:11:15.219] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486675219,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:11:15.219] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:15.219] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:15.219] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:11:15.219] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:11:15.219] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:11:19.589] [INFO] Processing JSON: {
+    "timestamp": 1737486679589,
+    "type": "ping"
+}
+[2025-01-21 20:11:19.589] [DEBUG] Processing message type: ping
+[2025-01-21 20:11:19.589] [INFO] Received PING (timestamp: 1737486679589)
+[2025-01-21 20:11:19.589] [INFO] Sending message: {"timestamp":1737486679589,"type":"pong"}
+
+[2025-01-21 20:11:19.589] [INFO] Sent PONG (timestamp: 1737486679589)
+[2025-01-21 20:11:29.595] [INFO] Processing JSON: {
+    "timestamp": 1737486689595,
+    "type": "ping"
+}
+[2025-01-21 20:11:29.595] [DEBUG] Processing message type: ping
+[2025-01-21 20:11:29.595] [INFO] Received PING (timestamp: 1737486689595)
+[2025-01-21 20:11:29.595] [INFO] Sending message: {"timestamp":1737486689595,"type":"pong"}
+
+[2025-01-21 20:11:29.595] [INFO] Sent PONG (timestamp: 1737486689595)
+[2025-01-21 20:11:30.210] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486690210,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:11:30.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:30.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:30.210] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:11:30.210] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:11:30.210] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:11:39.581] [INFO] Processing JSON: {
+    "timestamp": 1737486699581,
+    "type": "ping"
+}
+[2025-01-21 20:11:39.581] [DEBUG] Processing message type: ping
+[2025-01-21 20:11:39.581] [INFO] Received PING (timestamp: 1737486699581)
+[2025-01-21 20:11:39.581] [INFO] Sending message: {"timestamp":1737486699581,"type":"pong"}
+
+[2025-01-21 20:11:39.581] [INFO] Sent PONG (timestamp: 1737486699581)
+[2025-01-21 20:11:45.220] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486705220,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:11:45.220] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:45.220] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:11:45.220] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:11:45.220] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:11:45.220] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:11:49.587] [INFO] Processing JSON: {
+    "timestamp": 1737486709587,
+    "type": "ping"
+}
+[2025-01-21 20:11:49.587] [DEBUG] Processing message type: ping
+[2025-01-21 20:11:49.587] [INFO] Received PING (timestamp: 1737486709587)
+[2025-01-21 20:11:49.587] [INFO] Sending message: {"timestamp":1737486709587,"type":"pong"}
+
+[2025-01-21 20:11:49.587] [INFO] Sent PONG (timestamp: 1737486709587)
+[2025-01-21 20:11:59.592] [INFO] Processing JSON: {
+    "timestamp": 1737486719592,
+    "type": "ping"
+}
+[2025-01-21 20:11:59.592] [DEBUG] Processing message type: ping
+[2025-01-21 20:11:59.592] [INFO] Received PING (timestamp: 1737486719592)
+[2025-01-21 20:11:59.592] [INFO] Sending message: {"timestamp":1737486719592,"type":"pong"}
+
+[2025-01-21 20:11:59.592] [INFO] Sent PONG (timestamp: 1737486719592)
+[2025-01-21 20:12:00.219] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486720219,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:12:00.219] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:00.220] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:00.220] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:12:00.220] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:12:00.220] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:12:09.583] [INFO] Processing JSON: {
+    "timestamp": 1737486729583,
+    "type": "ping"
+}
+[2025-01-21 20:12:09.584] [DEBUG] Processing message type: ping
+[2025-01-21 20:12:09.584] [INFO] Received PING (timestamp: 1737486729583)
+[2025-01-21 20:12:09.584] [INFO] Sending message: {"timestamp":1737486729583,"type":"pong"}
+
+[2025-01-21 20:12:09.584] [INFO] Sent PONG (timestamp: 1737486729583)
+[2025-01-21 20:12:15.224] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486735224,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:12:15.225] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:15.225] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:15.225] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:12:15.225] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:12:15.225] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:12:19.590] [INFO] Processing JSON: {
+    "timestamp": 1737486739589,
+    "type": "ping"
+}
+[2025-01-21 20:12:19.590] [DEBUG] Processing message type: ping
+[2025-01-21 20:12:19.590] [INFO] Received PING (timestamp: 1737486739589)
+[2025-01-21 20:12:19.590] [INFO] Sending message: {"timestamp":1737486739589,"type":"pong"}
+
+[2025-01-21 20:12:19.590] [INFO] Sent PONG (timestamp: 1737486739589)
+[2025-01-21 20:12:29.586] [INFO] Processing JSON: {
+    "timestamp": 1737486749586,
+    "type": "ping"
+}
+[2025-01-21 20:12:29.586] [DEBUG] Processing message type: ping
+[2025-01-21 20:12:29.586] [INFO] Received PING (timestamp: 1737486749586)
+[2025-01-21 20:12:29.586] [INFO] Sending message: {"timestamp":1737486749586,"type":"pong"}
+
+[2025-01-21 20:12:29.586] [INFO] Sent PONG (timestamp: 1737486749586)
+[2025-01-21 20:12:30.210] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486750210,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:12:30.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:30.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:30.211] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:12:30.211] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:12:30.211] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:12:39.584] [INFO] Processing JSON: {
+    "timestamp": 1737486759584,
+    "type": "ping"
+}
+[2025-01-21 20:12:39.584] [DEBUG] Processing message type: ping
+[2025-01-21 20:12:39.585] [INFO] Received PING (timestamp: 1737486759584)
+[2025-01-21 20:12:39.585] [INFO] Sending message: {"timestamp":1737486759584,"type":"pong"}
+
+[2025-01-21 20:12:39.585] [INFO] Sent PONG (timestamp: 1737486759584)
+[2025-01-21 20:12:45.212] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486765212,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:12:45.212] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:45.212] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:12:45.212] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:12:45.212] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:12:45.212] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:12:49.588] [INFO] Processing JSON: {
+    "timestamp": 1737486769588,
+    "type": "ping"
+}
+[2025-01-21 20:12:49.588] [DEBUG] Processing message type: ping
+[2025-01-21 20:12:49.588] [INFO] Received PING (timestamp: 1737486769588)
+[2025-01-21 20:12:49.588] [INFO] Sending message: {"timestamp":1737486769588,"type":"pong"}
+
+[2025-01-21 20:12:49.588] [INFO] Sent PONG (timestamp: 1737486769588)
+[2025-01-21 20:12:59.585] [INFO] Processing JSON: {
+    "timestamp": 1737486779585,
+    "type": "ping"
+}
+[2025-01-21 20:12:59.585] [DEBUG] Processing message type: ping
+[2025-01-21 20:12:59.585] [INFO] Received PING (timestamp: 1737486779585)
+[2025-01-21 20:12:59.585] [INFO] Sending message: {"timestamp":1737486779585,"type":"pong"}
+
+[2025-01-21 20:12:59.585] [INFO] Sent PONG (timestamp: 1737486779585)
+[2025-01-21 20:13:00.220] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486780220,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:13:00.220] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:00.220] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:00.220] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:13:00.220] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:13:00.220] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:13:09.597] [INFO] Processing JSON: {
+    "timestamp": 1737486789597,
+    "type": "ping"
+}
+[2025-01-21 20:13:09.597] [DEBUG] Processing message type: ping
+[2025-01-21 20:13:09.597] [INFO] Received PING (timestamp: 1737486789597)
+[2025-01-21 20:13:09.597] [INFO] Sending message: {"timestamp":1737486789597,"type":"pong"}
+
+[2025-01-21 20:13:09.597] [INFO] Sent PONG (timestamp: 1737486789597)
+[2025-01-21 20:13:15.213] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486795213,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:13:15.213] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:15.213] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:15.213] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:13:15.213] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:13:15.213] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:13:19.591] [INFO] Processing JSON: {
+    "timestamp": 1737486799591,
+    "type": "ping"
+}
+[2025-01-21 20:13:19.591] [DEBUG] Processing message type: ping
+[2025-01-21 20:13:19.591] [INFO] Received PING (timestamp: 1737486799591)
+[2025-01-21 20:13:19.591] [INFO] Sending message: {"timestamp":1737486799591,"type":"pong"}
+
+[2025-01-21 20:13:19.591] [INFO] Sent PONG (timestamp: 1737486799591)
+[2025-01-21 20:13:29.593] [INFO] Processing JSON: {
+    "timestamp": 1737486809592,
+    "type": "ping"
+}
+[2025-01-21 20:13:29.593] [DEBUG] Processing message type: ping
+[2025-01-21 20:13:29.593] [INFO] Received PING (timestamp: 1737486809592)
+[2025-01-21 20:13:29.593] [INFO] Sending message: {"timestamp":1737486809592,"type":"pong"}
+
+[2025-01-21 20:13:29.593] [INFO] Sent PONG (timestamp: 1737486809592)
+[2025-01-21 20:13:30.216] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486810216,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:13:30.216] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:30.216] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:30.216] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:13:30.216] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:13:30.216] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:13:39.184] [INFO] Sending message: {"timestamp":1737486819184,"type":"logout"}
+
+[2025-01-21 20:13:39.184] [INFO] MainWindow destroyed
+[2025-01-21 20:13:39.184] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:13:39.185] [INFO] Application shutting down
+[2025-01-21 20:13:39.187] [WARNING] Disconnected from server
+[2025-01-21 20:13:39.187] [INFO] Status update: Disconnected from server
+[2025-01-21 20:13:39.187] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:13:39.187] [INFO] NetworkManager destroyed
+[2025-01-21 20:13:51.052] [INFO] Application started
+[2025-01-21 20:13:51.052] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:13:51.052] [INFO] NetworkManager initialized
+[2025-01-21 20:13:51.052] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:13:51.053] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:13:51.057] [INFO] LoginWindow initialized
+[2025-01-21 20:13:51.122] [INFO] Connected to server
+[2025-01-21 20:13:51.122] [INFO] Status update: Connected to server
+[2025-01-21 20:13:54.008] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:13:54.008] [INFO] Status update: Logging in...
+[2025-01-21 20:13:54.011] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737486834011,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:13:54.011] [DEBUG] Processing message type: login_response
+[2025-01-21 20:13:54.011] [INFO] Login successful
+[2025-01-21 20:13:54.011] [INFO] Sending message: {"status":"online","timestamp":1737486834011,"type":"status_response"}
+
+[2025-01-21 20:13:54.011] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:13:54.018] [INFO] Sending message: {"status":"online","timestamp":1737486834018,"type":"status_response"}
+
+[2025-01-21 20:13:54.018] [INFO] Sending message: {"timestamp":1737486834018,"type":"get_friends_list"}
+
+[2025-01-21 20:13:54.018] [INFO] MainWindow initialized
+[2025-01-21 20:13:54.026] [DEBUG] Processing message type: login_response
+[2025-01-21 20:13:54.026] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737486834012,
+    "type": "status_response"
+}
+[2025-01-21 20:13:54.026] [DEBUG] Processing message type: status_response
+[2025-01-21 20:13:54.027] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486834012,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:13:54.027] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:54.027] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:13:54.027] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:13:54.027] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:13:54.027] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737486834018,
+    "type": "status_response"
+}
+[2025-01-21 20:13:54.027] [DEBUG] Processing message type: status_response
+[2025-01-21 20:13:54.027] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486834019,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:13:54.027] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:13:54.027] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:13:54.027] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:13:54.027] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:13:54.027] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486834020,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:13:54.027] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:13:54.027] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:13:54.027] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:13:54.027] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:13:54.027] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:13:54.039] [INFO] LoginWindow destroyed
+[2025-01-21 20:14:01.043] [INFO] Processing JSON: {
+    "timestamp": 1737486841042,
+    "type": "ping"
+}
+[2025-01-21 20:14:01.043] [DEBUG] Processing message type: ping
+[2025-01-21 20:14:01.043] [INFO] Received PING (timestamp: 1737486841042)
+[2025-01-21 20:14:01.043] [INFO] Sending message: {"timestamp":1737486841042,"type":"pong"}
+
+[2025-01-21 20:14:01.043] [INFO] Sent PONG (timestamp: 1737486841042)
+[2025-01-21 20:14:09.014] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486849014,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:14:09.014] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:14:09.014] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:14:09.014] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:14:09.014] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:14:11.052] [INFO] Processing JSON: {
+    "timestamp": 1737486851052,
+    "type": "ping"
+}
+[2025-01-21 20:14:11.052] [DEBUG] Processing message type: ping
+[2025-01-21 20:14:11.052] [INFO] Received PING (timestamp: 1737486851052)
+[2025-01-21 20:14:11.052] [INFO] Sending message: {"timestamp":1737486851052,"type":"pong"}
+
+[2025-01-21 20:14:11.052] [INFO] Sent PONG (timestamp: 1737486851052)
+[2025-01-21 20:14:21.053] [INFO] Processing JSON: {
+    "timestamp": 1737486861053,
+    "type": "ping"
+}
+[2025-01-21 20:14:21.053] [DEBUG] Processing message type: ping
+[2025-01-21 20:14:21.053] [INFO] Received PING (timestamp: 1737486861053)
+[2025-01-21 20:14:21.053] [INFO] Sending message: {"timestamp":1737486861053,"type":"pong"}
+
+[2025-01-21 20:14:21.053] [INFO] Sent PONG (timestamp: 1737486861053)
+[2025-01-21 20:14:24.018] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486864017,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:14:24.018] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:14:24.018] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:14:24.018] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:14:24.018] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:14:31.046] [INFO] Processing JSON: {
+    "timestamp": 1737486871046,
+    "type": "ping"
+}
+[2025-01-21 20:14:31.046] [DEBUG] Processing message type: ping
+[2025-01-21 20:14:31.046] [INFO] Received PING (timestamp: 1737486871046)
+[2025-01-21 20:14:31.046] [INFO] Sending message: {"timestamp":1737486871046,"type":"pong"}
+
+[2025-01-21 20:14:31.047] [INFO] Sent PONG (timestamp: 1737486871046)
+[2025-01-21 20:14:39.015] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486879015,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:14:39.015] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:14:39.015] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:14:39.015] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:14:39.015] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:14:41.047] [INFO] Processing JSON: {
+    "timestamp": 1737486881046,
+    "type": "ping"
+}
+[2025-01-21 20:14:41.047] [DEBUG] Processing message type: ping
+[2025-01-21 20:14:41.047] [INFO] Received PING (timestamp: 1737486881046)
+[2025-01-21 20:14:41.047] [INFO] Sending message: {"timestamp":1737486881046,"type":"pong"}
+
+[2025-01-21 20:14:41.047] [INFO] Sent PONG (timestamp: 1737486881046)
+[2025-01-21 20:14:45.207] [INFO] Sending message: {"timestamp":1737486885207,"type":"logout"}
+
+[2025-01-21 20:14:45.208] [INFO] MainWindow destroyed
+[2025-01-21 20:14:45.208] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:14:45.208] [INFO] Application shutting down
+[2025-01-21 20:14:45.209] [WARNING] Disconnected from server
+[2025-01-21 20:14:45.209] [INFO] Status update: Disconnected from server
+[2025-01-21 20:14:45.209] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:14:45.209] [INFO] NetworkManager destroyed
+[2025-01-21 20:14:54.966] [INFO] Application started
+[2025-01-21 20:14:54.966] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:14:54.966] [INFO] NetworkManager initialized
+[2025-01-21 20:14:54.966] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:14:54.966] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:14:54.970] [INFO] LoginWindow initialized
+[2025-01-21 20:14:55.034] [INFO] Connected to server
+[2025-01-21 20:14:55.034] [INFO] Status update: Connected to server
+[2025-01-21 20:14:57.642] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:14:57.642] [INFO] Status update: Logging in...
+[2025-01-21 20:14:57.645] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737486897645,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:14:57.645] [DEBUG] Processing message type: login_response
+[2025-01-21 20:14:57.645] [INFO] Login successful
+[2025-01-21 20:14:57.645] [INFO] Sending message: {"status":"online","timestamp":1737486897645,"type":"status_response"}
+
+[2025-01-21 20:14:57.645] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:14:57.651] [INFO] Sending message: {"status":"online","timestamp":1737486897651,"type":"status_response"}
+
+[2025-01-21 20:14:57.651] [INFO] Sending message: {"timestamp":1737486897651,"type":"get_friends_list"}
+
+[2025-01-21 20:14:57.651] [INFO] MainWindow initialized
+[2025-01-21 20:14:57.660] [DEBUG] Processing message type: login_response
+[2025-01-21 20:14:57.661] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737486897645,
+    "type": "status_response"
+}
+[2025-01-21 20:14:57.661] [DEBUG] Processing message type: status_response
+[2025-01-21 20:14:57.661] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486897646,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:14:57.661] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:14:57.661] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:14:57.661] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:14:57.661] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:14:57.661] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737486897652,
+    "type": "status_response"
+}
+[2025-01-21 20:14:57.661] [DEBUG] Processing message type: status_response
+[2025-01-21 20:14:57.661] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486897652,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:14:57.661] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:14:57.661] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:14:57.661] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:14:57.661] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:14:57.661] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486897653,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:14:57.661] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:14:57.661] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:14:57.661] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:14:57.661] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:14:57.661] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:14:57.673] [INFO] LoginWindow destroyed
+[2025-01-21 20:15:04.972] [INFO] Processing JSON: {
+    "timestamp": 1737486904972,
+    "type": "ping"
+}
+[2025-01-21 20:15:04.972] [DEBUG] Processing message type: ping
+[2025-01-21 20:15:04.972] [INFO] Received PING (timestamp: 1737486904972)
+[2025-01-21 20:15:04.972] [INFO] Sending message: {"timestamp":1737486904972,"type":"pong"}
+
+[2025-01-21 20:15:04.972] [INFO] Sent PONG (timestamp: 1737486904972)
+[2025-01-21 20:15:12.647] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486912647,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:15:12.648] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:15:12.648] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:15:12.648] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:15:12.648] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:15:14.974] [INFO] Processing JSON: {
+    "timestamp": 1737486914974,
+    "type": "ping"
+}
+[2025-01-21 20:15:14.974] [DEBUG] Processing message type: ping
+[2025-01-21 20:15:14.974] [INFO] Received PING (timestamp: 1737486914974)
+[2025-01-21 20:15:14.974] [INFO] Sending message: {"timestamp":1737486914974,"type":"pong"}
+
+[2025-01-21 20:15:14.975] [INFO] Sent PONG (timestamp: 1737486914974)
+[2025-01-21 20:15:24.970] [INFO] Processing JSON: {
+    "timestamp": 1737486924970,
+    "type": "ping"
+}
+[2025-01-21 20:15:24.970] [DEBUG] Processing message type: ping
+[2025-01-21 20:15:24.970] [INFO] Received PING (timestamp: 1737486924970)
+[2025-01-21 20:15:24.970] [INFO] Sending message: {"timestamp":1737486924970,"type":"pong"}
+
+[2025-01-21 20:15:24.970] [INFO] Sent PONG (timestamp: 1737486924970)
+[2025-01-21 20:15:27.646] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486927646,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:15:27.646] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:15:27.646] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:15:27.646] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:15:27.646] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:15:34.967] [INFO] Processing JSON: {
+    "timestamp": 1737486934967,
+    "type": "ping"
+}
+[2025-01-21 20:15:34.967] [DEBUG] Processing message type: ping
+[2025-01-21 20:15:34.967] [INFO] Received PING (timestamp: 1737486934967)
+[2025-01-21 20:15:34.967] [INFO] Sending message: {"timestamp":1737486934967,"type":"pong"}
+
+[2025-01-21 20:15:34.967] [INFO] Sent PONG (timestamp: 1737486934967)
+[2025-01-21 20:15:42.654] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486942654,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:15:42.654] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:15:42.654] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:15:42.654] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:15:42.654] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:15:44.980] [INFO] Processing JSON: {
+    "timestamp": 1737486944980,
+    "type": "ping"
+}
+[2025-01-21 20:15:44.980] [DEBUG] Processing message type: ping
+[2025-01-21 20:15:44.980] [INFO] Received PING (timestamp: 1737486944980)
+[2025-01-21 20:15:44.980] [INFO] Sending message: {"timestamp":1737486944980,"type":"pong"}
+
+[2025-01-21 20:15:44.980] [INFO] Sent PONG (timestamp: 1737486944980)
+[2025-01-21 20:15:54.972] [INFO] Processing JSON: {
+    "timestamp": 1737486954972,
+    "type": "ping"
+}
+[2025-01-21 20:15:54.972] [DEBUG] Processing message type: ping
+[2025-01-21 20:15:54.972] [INFO] Received PING (timestamp: 1737486954972)
+[2025-01-21 20:15:54.972] [INFO] Sending message: {"timestamp":1737486954972,"type":"pong"}
+
+[2025-01-21 20:15:54.972] [INFO] Sent PONG (timestamp: 1737486954972)
+[2025-01-21 20:15:57.643] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486957643,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:15:57.643] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:15:57.643] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:15:57.643] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:15:57.643] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:16:04.976] [INFO] Processing JSON: {
+    "timestamp": 1737486964976,
+    "type": "ping"
+}
+[2025-01-21 20:16:04.976] [DEBUG] Processing message type: ping
+[2025-01-21 20:16:04.976] [INFO] Received PING (timestamp: 1737486964976)
+[2025-01-21 20:16:04.976] [INFO] Sending message: {"timestamp":1737486964976,"type":"pong"}
+
+[2025-01-21 20:16:04.976] [INFO] Sent PONG (timestamp: 1737486964976)
+[2025-01-21 20:16:12.643] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486972643,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:16:12.643] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:16:12.643] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:16:12.643] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:16:12.643] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:16:14.978] [INFO] Processing JSON: {
+    "timestamp": 1737486974978,
+    "type": "ping"
+}
+[2025-01-21 20:16:14.978] [DEBUG] Processing message type: ping
+[2025-01-21 20:16:14.978] [INFO] Received PING (timestamp: 1737486974978)
+[2025-01-21 20:16:14.978] [INFO] Sending message: {"timestamp":1737486974978,"type":"pong"}
+
+[2025-01-21 20:16:14.978] [INFO] Sent PONG (timestamp: 1737486974978)
+[2025-01-21 20:16:24.972] [INFO] Processing JSON: {
+    "timestamp": 1737486984971,
+    "type": "ping"
+}
+[2025-01-21 20:16:24.972] [DEBUG] Processing message type: ping
+[2025-01-21 20:16:24.972] [INFO] Received PING (timestamp: 1737486984971)
+[2025-01-21 20:16:24.972] [INFO] Sending message: {"timestamp":1737486984971,"type":"pong"}
+
+[2025-01-21 20:16:24.972] [INFO] Sent PONG (timestamp: 1737486984971)
+[2025-01-21 20:16:27.654] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737486987654,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:16:27.654] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:16:27.654] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:16:27.654] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:16:27.654] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:16:34.983] [INFO] Processing JSON: {
+    "timestamp": 1737486994983,
+    "type": "ping"
+}
+[2025-01-21 20:16:34.983] [DEBUG] Processing message type: ping
+[2025-01-21 20:16:34.983] [INFO] Received PING (timestamp: 1737486994983)
+[2025-01-21 20:16:34.983] [INFO] Sending message: {"timestamp":1737486994983,"type":"pong"}
+
+[2025-01-21 20:16:34.983] [INFO] Sent PONG (timestamp: 1737486994983)
+[2025-01-21 20:16:42.651] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487002651,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:16:42.651] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:16:42.651] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:16:42.651] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:16:42.651] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:16:44.969] [INFO] Processing JSON: {
+    "timestamp": 1737487004969,
+    "type": "ping"
+}
+[2025-01-21 20:16:44.969] [DEBUG] Processing message type: ping
+[2025-01-21 20:16:44.969] [INFO] Received PING (timestamp: 1737487004969)
+[2025-01-21 20:16:44.969] [INFO] Sending message: {"timestamp":1737487004969,"type":"pong"}
+
+[2025-01-21 20:16:44.969] [INFO] Sent PONG (timestamp: 1737487004969)
+[2025-01-21 20:16:54.971] [INFO] Processing JSON: {
+    "timestamp": 1737487014971,
+    "type": "ping"
+}
+[2025-01-21 20:16:54.971] [DEBUG] Processing message type: ping
+[2025-01-21 20:16:54.971] [INFO] Received PING (timestamp: 1737487014971)
+[2025-01-21 20:16:54.971] [INFO] Sending message: {"timestamp":1737487014971,"type":"pong"}
+
+[2025-01-21 20:16:54.971] [INFO] Sent PONG (timestamp: 1737487014971)
+[2025-01-21 20:16:57.656] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487017655,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:16:57.656] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:16:57.656] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:16:57.656] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:16:57.656] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:17:04.977] [INFO] Processing JSON: {
+    "timestamp": 1737487024977,
+    "type": "ping"
+}
+[2025-01-21 20:17:04.977] [DEBUG] Processing message type: ping
+[2025-01-21 20:17:04.977] [INFO] Received PING (timestamp: 1737487024977)
+[2025-01-21 20:17:04.977] [INFO] Sending message: {"timestamp":1737487024977,"type":"pong"}
+
+[2025-01-21 20:17:04.977] [INFO] Sent PONG (timestamp: 1737487024977)
+[2025-01-21 20:17:12.649] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487032649,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:17:12.649] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:17:12.649] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:17:12.649] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:17:12.649] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:17:14.973] [INFO] Processing JSON: {
+    "timestamp": 1737487034973,
+    "type": "ping"
+}
+[2025-01-21 20:17:14.973] [DEBUG] Processing message type: ping
+[2025-01-21 20:17:14.973] [INFO] Received PING (timestamp: 1737487034973)
+[2025-01-21 20:17:14.973] [INFO] Sending message: {"timestamp":1737487034973,"type":"pong"}
+
+[2025-01-21 20:17:14.973] [INFO] Sent PONG (timestamp: 1737487034973)
+[2025-01-21 20:17:19.177] [INFO] Sending message: {"timestamp":1737487039177,"type":"logout"}
+
+[2025-01-21 20:17:19.177] [INFO] MainWindow destroyed
+[2025-01-21 20:17:19.177] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:17:19.178] [INFO] Application shutting down
+[2025-01-21 20:17:19.180] [WARNING] Disconnected from server
+[2025-01-21 20:17:19.180] [INFO] Status update: Disconnected from server
+[2025-01-21 20:17:19.180] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:17:19.180] [INFO] NetworkManager destroyed
+[2025-01-21 20:17:21.512] [INFO] Application started
+[2025-01-21 20:17:21.513] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:17:21.513] [INFO] NetworkManager initialized
+[2025-01-21 20:17:21.513] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:17:21.513] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:17:21.517] [INFO] LoginWindow initialized
+[2025-01-21 20:17:21.579] [INFO] Connected to server
+[2025-01-21 20:17:21.579] [INFO] Status update: Connected to server
+[2025-01-21 20:17:29.836] [INFO] Application shutting down
+[2025-01-21 20:17:29.840] [WARNING] Disconnected from server
+[2025-01-21 20:17:29.840] [INFO] Status update: Disconnected from server
+[2025-01-21 20:17:29.840] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:17:29.840] [INFO] NetworkManager destroyed
+[2025-01-21 20:17:38.731] [INFO] Application started
+[2025-01-21 20:17:38.731] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:17:38.731] [INFO] NetworkManager initialized
+[2025-01-21 20:17:38.731] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:17:38.731] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:17:38.735] [INFO] LoginWindow initialized
+[2025-01-21 20:17:38.799] [INFO] Connected to server
+[2025-01-21 20:17:38.799] [INFO] Status update: Connected to server
+[2025-01-21 20:17:42.254] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:17:42.254] [INFO] Status update: Logging in...
+[2025-01-21 20:17:42.256] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737487062256,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:17:42.256] [DEBUG] Processing message type: login_response
+[2025-01-21 20:17:42.256] [INFO] Login successful
+[2025-01-21 20:17:42.256] [INFO] Sending message: {"status":"online","timestamp":1737487062256,"type":"status_response"}
+
+[2025-01-21 20:17:42.256] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:17:42.263] [INFO] Sending message: {"status":"online","timestamp":1737487062263,"type":"status_response"}
+
+[2025-01-21 20:17:42.263] [INFO] Sending message: {"timestamp":1737487062263,"type":"get_friends_list"}
+
+[2025-01-21 20:17:42.263] [INFO] MainWindow initialized
+[2025-01-21 20:17:42.272] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487062257,
+    "type": "status_response"
+}
+[2025-01-21 20:17:42.272] [DEBUG] Processing message type: status_response
+[2025-01-21 20:17:42.272] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487062258,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:17:42.272] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:17:42.272] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:17:42.272] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:17:42.272] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:17:42.272] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487062263,
+    "type": "status_response"
+}
+[2025-01-21 20:17:42.272] [DEBUG] Processing message type: status_response
+[2025-01-21 20:17:42.273] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487062264,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:17:42.273] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:17:42.273] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:17:42.273] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:17:42.273] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:17:42.273] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487062265,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:17:42.273] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:17:42.273] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:17:42.273] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:17:42.273] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:17:42.281] [INFO] LoginWindow destroyed
+[2025-01-21 20:17:48.723] [INFO] Processing JSON: {
+    "timestamp": 1737487068723,
+    "type": "ping"
+}
+[2025-01-21 20:17:48.723] [DEBUG] Processing message type: ping
+[2025-01-21 20:17:48.723] [INFO] Received PING (timestamp: 1737487068723)
+[2025-01-21 20:17:48.723] [INFO] Sending message: {"timestamp":1737487068723,"type":"pong"}
+
+[2025-01-21 20:17:48.723] [INFO] Sent PONG (timestamp: 1737487068723)
+[2025-01-21 20:17:53.810] [INFO] Sending message: {"timestamp":1737487073810,"type":"logout"}
+
+[2025-01-21 20:17:53.810] [INFO] MainWindow destroyed
+[2025-01-21 20:17:53.810] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:17:53.810] [INFO] Application shutting down
+[2025-01-21 20:17:53.812] [WARNING] Disconnected from server
+[2025-01-21 20:17:53.812] [INFO] Status update: Disconnected from server
+[2025-01-21 20:17:53.812] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:17:53.812] [INFO] NetworkManager destroyed
+[2025-01-21 20:18:01.478] [INFO] Application started
+[2025-01-21 20:18:01.478] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:18:01.478] [INFO] NetworkManager initialized
+[2025-01-21 20:18:01.478] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:18:01.478] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:18:01.483] [INFO] LoginWindow initialized
+[2025-01-21 20:18:01.547] [INFO] Connected to server
+[2025-01-21 20:18:01.547] [INFO] Status update: Connected to server
+[2025-01-21 20:18:04.635] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:18:04.635] [INFO] Status update: Logging in...
+[2025-01-21 20:18:04.637] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737487084637,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:18:04.637] [DEBUG] Processing message type: login_response
+[2025-01-21 20:18:04.637] [INFO] Login successful
+[2025-01-21 20:18:04.638] [INFO] Sending message: {"status":"online","timestamp":1737487084638,"type":"status_response"}
+
+[2025-01-21 20:18:04.638] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:18:04.644] [INFO] Sending message: {"status":"online","timestamp":1737487084644,"type":"status_response"}
+
+[2025-01-21 20:18:04.644] [INFO] Sending message: {"timestamp":1737487084644,"type":"get_friends_list"}
+
+[2025-01-21 20:18:04.644] [INFO] MainWindow initialized
+[2025-01-21 20:18:04.654] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487084638,
+    "type": "status_response"
+}
+[2025-01-21 20:18:04.654] [DEBUG] Processing message type: status_response
+[2025-01-21 20:18:04.654] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487084639,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:04.654] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:04.654] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:04.654] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:04.654] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:04.654] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487084644,
+    "type": "status_response"
+}
+[2025-01-21 20:18:04.654] [DEBUG] Processing message type: status_response
+[2025-01-21 20:18:04.654] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487084645,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:04.654] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:04.654] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:04.654] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:04.654] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:04.654] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487084646,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:18:04.654] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:18:04.654] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:04.654] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:04.654] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:04.665] [INFO] LoginWindow destroyed
+[2025-01-21 20:18:11.479] [INFO] Processing JSON: {
+    "timestamp": 1737487091479,
+    "type": "ping"
+}
+[2025-01-21 20:18:11.480] [DEBUG] Processing message type: ping
+[2025-01-21 20:18:11.480] [INFO] Received PING (timestamp: 1737487091479)
+[2025-01-21 20:18:11.480] [INFO] Sending message: {"timestamp":1737487091479,"type":"pong"}
+
+[2025-01-21 20:18:11.480] [INFO] Sent PONG (timestamp: 1737487091479)
+[2025-01-21 20:18:19.640] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487099640,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:19.640] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:19.640] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:19.640] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:19.640] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:21.487] [INFO] Processing JSON: {
+    "timestamp": 1737487101487,
+    "type": "ping"
+}
+[2025-01-21 20:18:21.487] [DEBUG] Processing message type: ping
+[2025-01-21 20:18:21.487] [INFO] Received PING (timestamp: 1737487101487)
+[2025-01-21 20:18:21.487] [INFO] Sending message: {"timestamp":1737487101487,"type":"pong"}
+
+[2025-01-21 20:18:21.487] [INFO] Sent PONG (timestamp: 1737487101487)
+[2025-01-21 20:18:31.488] [INFO] Processing JSON: {
+    "timestamp": 1737487111488,
+    "type": "ping"
+}
+[2025-01-21 20:18:31.488] [DEBUG] Processing message type: ping
+[2025-01-21 20:18:31.488] [INFO] Received PING (timestamp: 1737487111488)
+[2025-01-21 20:18:31.488] [INFO] Sending message: {"timestamp":1737487111488,"type":"pong"}
+
+[2025-01-21 20:18:31.488] [INFO] Sent PONG (timestamp: 1737487111488)
+[2025-01-21 20:18:34.643] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487114642,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:34.643] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:34.643] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:34.643] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:34.643] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:41.483] [INFO] Processing JSON: {
+    "timestamp": 1737487121483,
+    "type": "ping"
+}
+[2025-01-21 20:18:41.483] [DEBUG] Processing message type: ping
+[2025-01-21 20:18:41.483] [INFO] Received PING (timestamp: 1737487121483)
+[2025-01-21 20:18:41.483] [INFO] Sending message: {"timestamp":1737487121483,"type":"pong"}
+
+[2025-01-21 20:18:41.483] [INFO] Sent PONG (timestamp: 1737487121483)
+[2025-01-21 20:18:49.635] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487129635,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:49.635] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:49.635] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:49.635] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:49.635] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:51.485] [INFO] Processing JSON: {
+    "timestamp": 1737487131484,
+    "type": "ping"
+}
+[2025-01-21 20:18:51.485] [DEBUG] Processing message type: ping
+[2025-01-21 20:18:51.485] [INFO] Received PING (timestamp: 1737487131484)
+[2025-01-21 20:18:51.485] [INFO] Sending message: {"timestamp":1737487131484,"type":"pong"}
+
+[2025-01-21 20:18:51.485] [INFO] Sent PONG (timestamp: 1737487131484)
+[2025-01-21 20:18:52.336] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-21 20:18:52.336] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-21 20:18:52.337] [ERROR] Network error: The remote host closed the connection
+[2025-01-21 20:18:52.565] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:18:52.565] [WARNING] Disconnected from server
+[2025-01-21 20:18:52.565] [INFO] Status update: Disconnected from server
+[2025-01-21 20:18:52.565] [WARNING] Disconnected from server
+[2025-01-21 20:18:52.565] [INFO] MainWindow destroyed
+[2025-01-21 20:18:52.565] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:18:52.565] [INFO] Application shutting down
+[2025-01-21 20:18:52.566] [INFO] NetworkManager destroyed
+[2025-01-21 20:18:57.184] [INFO] Application started
+[2025-01-21 20:18:57.184] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:18:57.184] [INFO] NetworkManager initialized
+[2025-01-21 20:18:57.184] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:18:57.184] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:18:57.188] [INFO] LoginWindow initialized
+[2025-01-21 20:18:57.262] [INFO] Connected to server
+[2025-01-21 20:18:57.262] [INFO] Status update: Connected to server
+[2025-01-21 20:18:59.821] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:18:59.821] [INFO] Status update: Logging in...
+[2025-01-21 20:18:59.824] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737487139824,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:18:59.824] [DEBUG] Processing message type: login_response
+[2025-01-21 20:18:59.824] [INFO] Login successful
+[2025-01-21 20:18:59.824] [INFO] Sending message: {"status":"online","timestamp":1737487139824,"type":"status_response"}
+
+[2025-01-21 20:18:59.824] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:18:59.830] [INFO] Sending message: {"status":"online","timestamp":1737487139830,"type":"status_response"}
+
+[2025-01-21 20:18:59.830] [INFO] Sending message: {"timestamp":1737487139830,"type":"get_friends_list"}
+
+[2025-01-21 20:18:59.830] [INFO] MainWindow initialized
+[2025-01-21 20:18:59.840] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487139824,
+    "type": "status_response"
+}
+[2025-01-21 20:18:59.840] [DEBUG] Processing message type: status_response
+[2025-01-21 20:18:59.840] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487139825,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:59.840] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:59.840] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:59.840] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:59.840] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:59.840] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487139831,
+    "type": "status_response"
+}
+[2025-01-21 20:18:59.840] [DEBUG] Processing message type: status_response
+[2025-01-21 20:18:59.840] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487139831,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:18:59.840] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:18:59.840] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:59.840] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:59.840] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:59.840] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487139832,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:18:59.840] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:18:59.840] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:18:59.840] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:18:59.840] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:18:59.848] [INFO] LoginWindow destroyed
+[2025-01-21 20:19:01.592] [INFO] Sending message: {"timestamp":1737487141592,"type":"logout"}
+
+[2025-01-21 20:19:01.592] [INFO] MainWindow destroyed
+[2025-01-21 20:19:01.593] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:19:01.593] [INFO] Application shutting down
+[2025-01-21 20:19:01.594] [WARNING] Disconnected from server
+[2025-01-21 20:19:01.594] [INFO] Status update: Disconnected from server
+[2025-01-21 20:19:01.594] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:19:01.595] [INFO] NetworkManager destroyed
+[2025-01-21 20:22:53.962] [INFO] Application started
+[2025-01-21 20:22:53.962] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:22:53.962] [INFO] NetworkManager initialized
+[2025-01-21 20:22:53.962] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:22:53.962] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:22:53.966] [INFO] LoginWindow initialized
+[2025-01-21 20:22:54.033] [INFO] Connected to server
+[2025-01-21 20:22:54.033] [INFO] Status update: Connected to server
+[2025-01-21 20:22:57.252] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:22:57.252] [INFO] Status update: Logging in...
+[2025-01-21 20:22:57.255] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737487377255,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:22:57.255] [DEBUG] Processing message type: login_response
+[2025-01-21 20:22:57.255] [INFO] Login successful
+[2025-01-21 20:22:57.255] [INFO] Sending message: {"status":"online","timestamp":1737487377255,"type":"status_response"}
+
+[2025-01-21 20:22:57.255] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:22:57.260] [INFO] Sending message: {"timestamp":1737487377260,"type":"get_friends_list"}
+
+[2025-01-21 20:22:57.261] [INFO] MainWindow initialized
+[2025-01-21 20:22:57.269] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487377255,
+    "type": "status_response"
+}
+[2025-01-21 20:22:57.269] [DEBUG] Processing message type: status_response
+[2025-01-21 20:22:57.269] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487377255,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:22:57.269] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:22:57.269] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:22:57.269] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:22:57.269] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:22:57.269] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487377262,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:22:57.269] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:22:57.269] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:22:57.269] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:22:57.269] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:22:57.283] [INFO] LoginWindow destroyed
+[2025-01-21 20:23:03.965] [INFO] Processing JSON: {
+    "timestamp": 1737487383965,
+    "type": "ping"
+}
+[2025-01-21 20:23:03.965] [DEBUG] Processing message type: ping
+[2025-01-21 20:23:03.965] [INFO] Received PING (timestamp: 1737487383965)
+[2025-01-21 20:23:03.965] [INFO] Sending message: {"timestamp":1737487383965,"type":"pong"}
+
+[2025-01-21 20:23:03.965] [INFO] Sent PONG (timestamp: 1737487383965)
+[2025-01-21 20:23:05.511] [INFO] Sending message: {"timestamp":1737487385511,"type":"logout"}
+
+[2025-01-21 20:23:05.511] [INFO] MainWindow destroyed
+[2025-01-21 20:23:05.511] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:23:05.511] [INFO] Application shutting down
+[2025-01-21 20:23:05.513] [WARNING] Disconnected from server
+[2025-01-21 20:23:05.513] [INFO] Status update: Disconnected from server
+[2025-01-21 20:23:05.513] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:23:05.513] [INFO] NetworkManager destroyed
+[2025-01-21 20:25:51.702] [INFO] Application started
+[2025-01-21 20:25:51.702] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:25:51.702] [INFO] NetworkManager initialized
+[2025-01-21 20:25:51.702] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:25:51.702] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:25:51.706] [INFO] LoginWindow initialized
+[2025-01-21 20:25:51.773] [INFO] Connected to server
+[2025-01-21 20:25:51.773] [INFO] Status update: Connected to server
+[2025-01-21 20:25:54.328] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:25:54.328] [INFO] Status update: Logging in...
+[2025-01-21 20:25:54.331] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737487554331,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:25:54.331] [DEBUG] Processing message type: login_response
+[2025-01-21 20:25:54.331] [INFO] Login successful
+[2025-01-21 20:25:54.331] [INFO] Sending message: {"status":"online","timestamp":1737487554331,"type":"status_response"}
+
+[2025-01-21 20:25:54.331] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:25:54.337] [INFO] MainWindow initialized
+[2025-01-21 20:25:54.346] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487554331,
+    "type": "status_response"
+}
+[2025-01-21 20:25:54.346] [DEBUG] Processing message type: status_response
+[2025-01-21 20:25:54.346] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487554332,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:25:54.346] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:25:54.346] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:25:54.346] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:25:54.346] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:25:54.354] [INFO] LoginWindow destroyed
+[2025-01-21 20:25:58.578] [INFO] Sending message: {"timestamp":1737487558578,"type":"logout"}
+
+[2025-01-21 20:25:58.578] [INFO] MainWindow destroyed
+[2025-01-21 20:25:58.578] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:25:58.578] [INFO] Application shutting down
+[2025-01-21 20:25:58.580] [WARNING] Disconnected from server
+[2025-01-21 20:25:58.580] [INFO] Status update: Disconnected from server
+[2025-01-21 20:25:58.580] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:25:58.580] [INFO] NetworkManager destroyed
+[2025-01-21 20:26:49.970] [INFO] Application started
+[2025-01-21 20:26:49.970] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-21 20:26:49.970] [INFO] NetworkManager initialized
+[2025-01-21 20:26:49.970] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-21 20:26:49.970] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-21 20:26:49.975] [INFO] LoginWindow initialized
+[2025-01-21 20:26:50.039] [INFO] Connected to server
+[2025-01-21 20:26:50.039] [INFO] Status update: Connected to server
+[2025-01-21 20:26:52.853] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-21 20:26:52.853] [INFO] Status update: Logging in...
+[2025-01-21 20:26:52.855] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737487612855,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-21 20:26:52.855] [DEBUG] Processing message type: login_response
+[2025-01-21 20:26:52.855] [INFO] Login successful
+[2025-01-21 20:26:52.855] [INFO] Sending message: {"status":"online","timestamp":1737487612855,"type":"status_response"}
+
+[2025-01-21 20:26:52.855] [INFO] Status update: Login successful - Connected
+[2025-01-21 20:26:52.861] [INFO] MainWindow initialized
+[2025-01-21 20:26:52.871] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487612855,
+    "type": "status_response"
+}
+[2025-01-21 20:26:52.871] [DEBUG] Processing message type: status_response
+[2025-01-21 20:26:52.871] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487612856,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:26:52.871] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:26:52.871] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:26:52.871] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:26:52.871] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:26:52.879] [INFO] LoginWindow destroyed
+[2025-01-21 20:26:57.969] [INFO] Sending message: {"timestamp":1737487617969,"type":"get_friends_list"}
+
+[2025-01-21 20:26:57.971] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487617970,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:26:57.971] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:26:57.971] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:26:57.971] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:26:57.971] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:26:59.813] [INFO] Sending message: {"timestamp":1737487619813,"type":"get_friends_list"}
+
+[2025-01-21 20:26:59.815] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487619814,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:26:59.815] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:26:59.815] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:26:59.815] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:26:59.815] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:26:59.975] [INFO] Processing JSON: {
+    "timestamp": 1737487619974,
+    "type": "ping"
+}
+[2025-01-21 20:26:59.975] [DEBUG] Processing message type: ping
+[2025-01-21 20:26:59.975] [INFO] Received PING (timestamp: 1737487619974)
+[2025-01-21 20:26:59.975] [INFO] Sending message: {"timestamp":1737487619974,"type":"pong"}
+
+[2025-01-21 20:26:59.975] [INFO] Sent PONG (timestamp: 1737487619974)
+[2025-01-21 20:27:01.262] [INFO] Sending message: {"timestamp":1737487621262,"type":"get_friends_list"}
+
+[2025-01-21 20:27:01.263] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487621263,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:27:01.263] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:27:01.263] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:27:01.263] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:27:01.263] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:27:03.294] [INFO] Sending message: {"timestamp":1737487623294,"type":"get_friends_list"}
+
+[2025-01-21 20:27:03.295] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487623295,
+    "type": "friends_list_response"
+}
+[2025-01-21 20:27:03.296] [DEBUG] Processing message type: friends_list_response
+[2025-01-21 20:27:03.296] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:27:03.296] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:27:03.296] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:27:06.033] [INFO] Sending message: {"status":"away","timestamp":1737487626033,"type":"status_response"}
+
+[2025-01-21 20:27:06.035] [INFO] Processing JSON: {
+    "status": "away",
+    "timestamp": 1737487626035,
+    "type": "status_response"
+}
+[2025-01-21 20:27:06.035] [DEBUG] Processing message type: status_response
+[2025-01-21 20:27:06.037] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487626036,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:27:06.037] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:27:06.037] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:27:06.037] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:27:06.037] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:27:07.860] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487627860,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:27:07.860] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:27:07.860] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:27:07.860] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:27:07.860] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:27:08.290] [INFO] Sending message: {"status":"busy","timestamp":1737487628290,"type":"status_response"}
+
+[2025-01-21 20:27:08.292] [INFO] Processing JSON: {
+    "status": "busy",
+    "timestamp": 1737487628291,
+    "type": "status_response"
+}
+[2025-01-21 20:27:08.292] [DEBUG] Processing message type: status_response
+[2025-01-21 20:27:08.292] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487628292,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:27:08.292] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:27:08.292] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:27:08.292] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:27:08.292] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:27:09.978] [INFO] Processing JSON: {
+    "timestamp": 1737487629978,
+    "type": "ping"
+}
+[2025-01-21 20:27:09.978] [DEBUG] Processing message type: ping
+[2025-01-21 20:27:09.978] [INFO] Received PING (timestamp: 1737487629978)
+[2025-01-21 20:27:09.978] [INFO] Sending message: {"timestamp":1737487629978,"type":"pong"}
+
+[2025-01-21 20:27:09.978] [INFO] Sent PONG (timestamp: 1737487629978)
+[2025-01-21 20:27:10.337] [INFO] Sending message: {"status":"online","timestamp":1737487630337,"type":"status_response"}
+
+[2025-01-21 20:27:10.339] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737487630339,
+    "type": "status_response"
+}
+[2025-01-21 20:27:10.339] [DEBUG] Processing message type: status_response
+[2025-01-21 20:27:10.340] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737487630340,
+    "type": "friends_status_update"
+}
+[2025-01-21 20:27:10.340] [DEBUG] Processing message type: friends_status_update
+[2025-01-21 20:27:10.340] [INFO] Updating friends list with 2 friends
+[2025-01-21 20:27:10.340] [DEBUG] Adding friend: test2 (ID: 2) with status: online
+[2025-01-21 20:27:10.340] [DEBUG] Adding friend: test3 (ID: 3) with status: offline
+[2025-01-21 20:27:11.767] [INFO] Sending message: {"timestamp":1737487631767,"type":"logout"}
+
+[2025-01-21 20:27:11.767] [INFO] MainWindow destroyed
+[2025-01-21 20:27:11.767] [INFO] MainWindow destroyed, closing application
+[2025-01-21 20:27:11.769] [INFO] Application shutting down
+[2025-01-21 20:27:11.774] [WARNING] Disconnected from server
+[2025-01-21 20:27:11.774] [INFO] Status update: Disconnected from server
+[2025-01-21 20:27:11.774] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-21 20:27:11.774] [INFO] NetworkManager destroyed

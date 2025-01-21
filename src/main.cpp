@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 
         // Połączenie sygnału zamknięcia MainWindow z zakończeniem aplikacji
         QObject::connect(mainWindow, &MainWindow::destroyed, []() {
-            LOG_INFO("MainWindow destroyed, closing application");
             QApplication::quit();
         });
 
