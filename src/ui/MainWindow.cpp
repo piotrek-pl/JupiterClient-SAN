@@ -265,3 +265,17 @@ void MainWindow::openChatWindow(QListWidgetItem* item)
     chatWindows[friendId]->show();
     chatWindows[friendId]->activateWindow();
 }
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    // Zamknij wszystkie otwarte okna (np. okna czatu)
+    for (auto chatWindow : chatWindows) {
+        if (chatWindow) {
+            chatWindow->close();
+        }
+    }
+
+    // Możesz dodać inne czynności czyszczące tutaj (zapis ustawień, wylogowanie itp.)
+    // a następnie wywołać oryginalną funkcję zamykającą QMainWindow:
+    QMainWindow::closeEvent(event);
+}

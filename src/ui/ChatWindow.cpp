@@ -77,8 +77,8 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
 
     if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE ||
         type == Protocol::MessageType::CHAT_HISTORY_RESPONSE ||
-        type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
-
+        type == Protocol::MessageType::MORE_HISTORY_RESPONSE)
+    {
         QJsonArray messages = json["messages"].toArray();
         int oldScrollPos = ui->chatTextEdit->verticalScrollBar()->value();
         int oldMax = ui->chatTextEdit->verticalScrollBar()->maximum();
@@ -86,7 +86,8 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
         // Tekst do wstawienia
         QString newMessages;
 
-        for (const QJsonValue& msgVal : messages) {
+        for (const QJsonValue& msgVal : messages)
+        {
             QJsonObject msg = msgVal.toObject();
             QString sender = msg["sender"].toString();
             QString content = msg["content"].toString();
@@ -119,10 +120,12 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
 
         // Wstaw tekst w odpowiednie miejsce
         QTextCursor cursor(ui->chatTextEdit->document());
+
         if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
             // Wstaw na początku
             cursor.movePosition(QTextCursor::Start);
             cursor.insertHtml(newMessages);
+
             // Jeśli są już jakieś wiadomości, dodaj pojedynczy znak nowego wiersza
             if (!ui->chatTextEdit->toPlainText().isEmpty()) {
                 cursor.movePosition(QTextCursor::Start);
@@ -131,10 +134,8 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
         } else {
             // Wstaw na końcu
             cursor.movePosition(QTextCursor::End);
-            // Jeśli są już jakieś wiadomości, dodaj pojedynczy znak nowego wiersza
-            if (!ui->chatTextEdit->toPlainText().isEmpty()) {
-                cursor.insertText("\n");
-            }
+            // Tutaj, zamiast sprawdzania czy pole jest puste, zawsze wstaw nowy wiersz
+            cursor.insertText("\n");
             cursor.insertHtml(newMessages);
         }
 
@@ -152,7 +153,8 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
                 ui->chatTextEdit->verticalScrollBar()->maximum());
         }
     }
-    else if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
+    else if (type == Protocol::MessageType::MESSAGE_RESPONSE)
+    {
         QString sender = json["sender"].toString();
         QString content = json["content"].toString();
         QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(json["timestamp"].toInteger());

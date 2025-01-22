@@ -55,6 +55,7 @@ private:
     void addMessageToChat(const QString& sender, const QString& content,
                           const QDateTime& timestamp, bool isOwn);
     void openChatWindow(QListWidgetItem* item);
+    void closeEvent(QCloseEvent *event);
 
     Ui::MainWindow *ui;
     NetworkManager& networkManager;
