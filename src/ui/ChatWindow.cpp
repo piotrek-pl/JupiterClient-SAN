@@ -42,9 +42,9 @@ void ChatWindow::initializeUI()
 void ChatWindow::loadInitialHistory()
 {
     QJsonObject request;
-    request["type"] = Protocol::MessageType::GET_CHAT_HISTORY;
+    request["type"] = Protocol::MessageType::GET_LATEST_MESSAGES;  // Nowy typ wiadomości
     request["friend_id"] = friendId;
-    request["offset"] = 0;
+    request["limit"] = Protocol::ChatHistory::MESSAGE_BATCH_SIZE;  // Domyślnie 20
 
     networkManager.sendMessage(request);
     isLoadingHistory = true;
@@ -75,7 +75,8 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
 
-    if (type == Protocol::MessageType::CHAT_HISTORY_RESPONSE ||
+    if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE ||  // Dodaj nowy typ
+        type == Protocol::MessageType::CHAT_HISTORY_RESPONSE ||
         type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
 
         QJsonArray messages = json["messages"].toArray();
@@ -89,7 +90,7 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
             QDateTime timestamp = QDateTime::fromString(msg["timestamp"].toString(), Qt::ISODate);
             bool isOwn = (sender != friendName);
 
-            addMessageToChat(sender, content, timestamp, isOwn, false);
+            addMessageToChat(sender, content, timestamp, isOwn, true);  // Zmiana na true
         }
 
         currentOffset += messages.size();
@@ -97,7 +98,7 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
         isLoadingHistory = false;
 
         if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
-            // Zachowaj pozycję przewijania
+            // Zachowaj pozycję przewijania dla starszych wiadomości
             int newMax = ui->chatTextEdit->verticalScrollBar()->maximum();
             ui->chatTextEdit->verticalScrollBar()->setValue(oldScrollPos + (newMax - oldMax));
         } else {
@@ -136,19 +137,18 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
 
     if (isOwn) {
         messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
-        .arg(sender).arg(timeStr).arg(content);
+        .arg(sender)
+            .arg(timeStr)
+            .arg(content);
     } else {
         messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
-        .arg(sender).arg(timeStr).arg(content);
+        .arg(sender)
+            .arg(timeStr)
+            .arg(content);
     }
 
     QTextCursor cursor(ui->chatTextEdit->document());
-    if (!atEnd) {
-        cursor.movePosition(QTextCursor::Start);
-    } else {
-        cursor.movePosition(QTextCursor::End);
-    }
-
+    cursor.movePosition(QTextCursor::End);
     cursor.insertHtml(messageHtml + "<br>");
 
     if (atEnd) {
