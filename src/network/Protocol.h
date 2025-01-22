@@ -2,7 +2,7 @@
  * @file Protocol.h
  * @brief Network protocol definition
  * @author piotrek-pl
- * @date 2025-01-20 13:43:49
+ * @date 2025-01-20 15:14:09
  */
 
 #ifndef PROTOCOL_H
@@ -12,6 +12,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QDateTime>
+#include <QStringList>
 
 namespace Protocol {
 
@@ -48,6 +49,10 @@ const QString PENDING_MESSAGES = "pending_messages";
 const QString ERROR = "error";
 const QString PING = "ping";
 const QString PONG = "pong";
+const QString GET_CHAT_HISTORY = "get_chat_history";
+const QString CHAT_HISTORY_RESPONSE = "chat_history_response";
+const QString GET_MORE_HISTORY = "get_more_history";
+const QString MORE_HISTORY_RESPONSE = "more_history_response";
 }
 
 // Status użytkownika
@@ -64,6 +69,42 @@ const QString INITIAL = "initial";         // Stan początkowy po połączeniu
 const QString AUTHENTICATING = "authenticating"; // W trakcie procesu logowania
 const QString AUTHENTICATED = "authenticated";   // Zalogowany
 const QString DISCONNECTING = "disconnecting";  // W trakcie rozłączania
+}
+
+// Dozwolone wiadomości dla każdego stanu
+namespace AllowedMessages {
+const QStringList INITIAL = {
+    MessageType::PING,
+    MessageType::PONG,
+    MessageType::LOGIN,
+    MessageType::REGISTER
+};
+
+const QStringList AUTHENTICATING = {
+    MessageType::PING,
+    MessageType::PONG,
+    MessageType::LOGIN,
+    MessageType::LOGIN_RESPONSE
+};
+
+const QStringList AUTHENTICATED = {
+    MessageType::PING,
+    MessageType::PONG,
+    MessageType::LOGOUT,
+    MessageType::GET_STATUS,
+    MessageType::GET_FRIENDS_LIST,
+    MessageType::GET_MESSAGES,
+    MessageType::SEND_MESSAGE,
+    MessageType::MESSAGE_ACK,
+    MessageType::GET_CHAT_HISTORY,
+    MessageType::GET_MORE_HISTORY
+};
+
+const QStringList DISCONNECTING = {
+    MessageType::PING,
+    MessageType::PONG,
+    MessageType::LOGOUT_RESPONSE
+};
 }
 
 // Struktury wiadomości
@@ -90,6 +131,34 @@ QJsonObject createGetFriendsList();
 QJsonObject createFriendsStatusUpdate(const QJsonArray& friends);
 
 } // namespace MessageStructure
+
+namespace ChatHistory {
+const int MESSAGE_BATCH_SIZE = 20;  // ilość wiadomości w jednej paczce
+}
+
+// Walidacja wiadomości
+namespace MessageValidation {
+inline bool isMessageAllowedInState(const QString& messageType, const QString& state) {
+    if (messageType == MessageType::PING || messageType == MessageType::PONG) {
+        return true;  // Zawsze dozwolone
+    }
+
+    if (state == SessionState::INITIAL) {
+        return AllowedMessages::INITIAL.contains(messageType);
+    }
+    else if (state == SessionState::AUTHENTICATING) {
+        return AllowedMessages::AUTHENTICATING.contains(messageType);
+    }
+    else if (state == SessionState::AUTHENTICATED) {
+        return AllowedMessages::AUTHENTICATED.contains(messageType);
+    }
+    else if (state == SessionState::DISCONNECTING) {
+        return AllowedMessages::DISCONNECTING.contains(messageType);
+    }
+
+    return false;
+}
+} // namespace MessageValidation
 
 } // namespace Protocol
 

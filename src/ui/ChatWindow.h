@@ -21,14 +21,20 @@ public:
 private slots:
     void onSendMessageClicked();
     void onMessageReceived(const QJsonObject& message);
+    void onScrollValueChanged(int value);
+    void loadMoreHistory();
 
 private:
     void initializeUI();
     void addMessageToChat(const QString& sender, const QString& content,
-                          const QDateTime& timestamp, bool isOwn);
+                          const QDateTime& timestamp, bool isOwn, bool atEnd = true);
+    void loadInitialHistory();
 
     Ui::ChatWindow *ui;
     NetworkManager& networkManager;
     QString friendName;
     int friendId;
+    int currentOffset;
+    bool hasMoreMessages;
+    bool isLoadingHistory;
 };

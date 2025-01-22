@@ -330,6 +330,7 @@ D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QString
+ mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h
@@ -751,6 +752,7 @@ D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.h
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QString
+ mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h
@@ -1190,6 +1192,7 @@ D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QString
+ mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h
@@ -1975,6 +1978,7 @@ D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QString
+ mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h

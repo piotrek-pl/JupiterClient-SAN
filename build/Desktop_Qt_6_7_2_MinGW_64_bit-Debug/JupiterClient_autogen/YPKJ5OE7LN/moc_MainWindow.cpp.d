@@ -9,6 +9,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QString \
+  C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QTimer \
   C:/Qt/6.7.2/mingw_64/include/QtCore/q20functional.h \
