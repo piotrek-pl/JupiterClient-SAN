@@ -7,28 +7,27 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>500</height>
    </rect>
-  </property>
-  <property name="windowTitle">
-   <string>ChatWindow</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTextEdit" name="chatTextEdit"/>
    </item>
    <item>
-    <widget class="QLineEdit" name="messageLineEdit"/>
-   </item>
-   <item>
-    <widget class="QPushButton" name="sendButton">
-     <property name="text">
-      <string>Send</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLineEdit" name="messageLineEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="sendButton">
+       <property name="text">
+        <string>Send</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
 </ui>

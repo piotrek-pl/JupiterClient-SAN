@@ -41,7 +41,6 @@ MainWindow::~MainWindow()
 void MainWindow::initializeUI()
 {
     // Przyciski
-    connect(ui->sendButton, &QPushButton::clicked, this, &MainWindow::onSendMessageClicked);
     connect(ui->refreshButton, &QPushButton::clicked, this, &MainWindow::onRefreshFriendsListClicked);
 
     // Status combo box
@@ -51,17 +50,15 @@ void MainWindow::initializeUI()
     connect(ui->statusComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::onStatusChanged);
 
-    // Chat
-    ui->chatTextEdit->setReadOnly(true);
-
-    // Message input
-    ui->messageLineEdit->setPlaceholderText("Type your message here...");
-    connect(ui->messageLineEdit, &QLineEdit::returnPressed, this, &MainWindow::onSendMessageClicked);
 
     // Menu connections
     connect(ui->actionSettings, &QAction::triggered, this, &MainWindow::onMenuSettingsTriggered);
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::onMenuExitTriggered);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onMenuAboutTriggered);
+
+    // Podwójne kliknięcie na liście znajomych
+    connect(ui->friendsList, &QListWidget::itemDoubleClicked,
+            this, &MainWindow::openChatWindow);
 
     updateConnectionStatus("Initializing...");
 }
@@ -91,46 +88,37 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
 
     if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
         QString sender = json["sender"].toString();
-        QString content = json["content"].toString();
-        QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(json["timestamp"].toInteger());
+        QString recipient = json["recipient"].toString();
+        int senderId = json["senderId"].toInteger();
+        int recipientId = json["recipientId"].toInteger();
 
-        bool isOwn = (sender == currentUsername);
-        addMessageToChat(sender, content, timestamp, isOwn);
+        // Określ ID okna czatu
+        int chatWindowId = (sender == currentUsername) ? recipientId : senderId;
+
+        // Jeśli istnieje okno czatu dla tego użytkownika, przekaż wiadomość
+        if (chatWindows.contains(chatWindowId)) {
+            chatWindows[chatWindowId]->processMessage(json);
+        } else {
+            // Jeśli okno nie istnieje, a my jesteśmy odbiorcą
+            if (recipient == currentUsername) {
+                QString chatPartnerName = sender;
+                ChatWindow* chatWindow = new ChatWindow(chatPartnerName, senderId);
+                chatWindows[senderId] = chatWindow;
+
+                connect(chatWindow, &ChatWindow::destroyed, [this, senderId]() {
+                    chatWindows.remove(senderId);
+                });
+
+                chatWindow->processMessage(json);
+                chatWindow->show();
+                chatWindow->activateWindow();
+            }
+        }
     }
     else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
              type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
         updateFriendsList(json["friends"].toArray());
     }
-}
-
-void MainWindow::onSendMessageClicked()
-{
-    if (!networkManager.isConnected() || !networkManager.isAuthenticated()) {
-        updateConnectionStatus("Cannot send message - not connected");
-        return;
-    }
-
-    QString message = ui->messageLineEdit->text().trimmed();
-    if (message.isEmpty()) {
-        return;
-    }
-
-    QListWidgetItem* currentItem = ui->friendsList->currentItem();
-    if (!currentItem) {
-        updateConnectionStatus("Please select a friend to send message to");
-        return;
-    }
-
-    int selectedFriendId = currentItem->data(Qt::UserRole).toInt();
-    if (selectedFriendId == 0) {
-        updateConnectionStatus("Please select a valid friend to send message to");
-        return;
-    }
-
-    QJsonObject messageRequest = Protocol::MessageStructure::createMessage(selectedFriendId, message);
-    networkManager.sendMessage(messageRequest);
-
-    ui->messageLineEdit->clear();
 }
 
 void MainWindow::onStatusChanged(int index)
@@ -201,31 +189,6 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
     }
 }
 
-void MainWindow::addMessageToChat(const QString& sender, const QString& content,
-                                  const QDateTime& timestamp, bool isOwn)
-{
-    QString timeStr = timestamp.toString("HH:mm:ss");
-    QString messageHtml;
-
-    if (isOwn) {
-        messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
-        .arg(sender)
-            .arg(timeStr)
-            .arg(content);
-    } else {
-        messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
-        .arg(sender)
-            .arg(timeStr)
-            .arg(content);
-    }
-
-    ui->chatTextEdit->append(messageHtml);
-
-    // Przewiń do najnowszej wiadomości
-    QScrollBar *scrollBar = ui->chatTextEdit->verticalScrollBar();
-    scrollBar->setValue(scrollBar->maximum());
-}
-
 void MainWindow::onDisconnected()
 {
     LOG_WARNING("Disconnected from server");
@@ -278,4 +241,27 @@ void MainWindow::onMenuAboutTriggered()
 void MainWindow::updateConnectionStatus(const QString& status)
 {
     ui->statusBar->showMessage(status);
+}
+
+void MainWindow::openChatWindow(QListWidgetItem* item)
+{
+    if (!item) return;
+
+    int friendId = item->data(Qt::UserRole).toInt();
+    QString friendName = item->text().split(" (").first(); // Usuń status z nazwy
+
+    // Sprawdź czy okno już istnieje
+    if (!chatWindows.contains(friendId)) {
+        ChatWindow* chatWindow = new ChatWindow(friendName, friendId);
+        chatWindows[friendId] = chatWindow;
+
+        // Usuń okno z mapy gdy zostanie zamknięte
+        connect(chatWindow, &ChatWindow::destroyed, [this, friendId]() {
+            chatWindows.remove(friendId);
+        });
+    }
+
+    // Pokaż i aktywuj okno
+    chatWindows[friendId]->show();
+    chatWindows[friendId]->activateWindow();
 }

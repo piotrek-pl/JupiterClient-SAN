@@ -15,14 +15,12 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -35,7 +33,7 @@ public:
     QAction *actionExit;
     QAction *actionAbout;
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout;
     QWidget *leftPanel;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *statusLayout;
@@ -44,11 +42,6 @@ public:
     QLabel *friendsLabel;
     QListWidget *friendsList;
     QPushButton *refreshButton;
-    QVBoxLayout *verticalLayout;
-    QTextEdit *chatTextEdit;
-    QHBoxLayout *messageLayout;
-    QLineEdit *messageLineEdit;
-    QPushButton *sendButton;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuHelp;
@@ -58,8 +51,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
-        MainWindow->setMinimumSize(QSize(800, 600));
+        MainWindow->resize(400, 600);
+        MainWindow->setMinimumSize(QSize(400, 600));
         actionSettings = new QAction(MainWindow);
         actionSettings->setObjectName("actionSettings");
         actionExit = new QAction(MainWindow);
@@ -68,12 +61,10 @@ public:
         actionAbout->setObjectName("actionAbout");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_2 = new QHBoxLayout(centralwidget);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        verticalLayout = new QVBoxLayout(centralwidget);
+        verticalLayout->setObjectName("verticalLayout");
         leftPanel = new QWidget(centralwidget);
         leftPanel->setObjectName("leftPanel");
-        leftPanel->setMinimumSize(QSize(200, 0));
-        leftPanel->setMaximumSize(QSize(250, 16777215));
         verticalLayout_2 = new QVBoxLayout(leftPanel);
         verticalLayout_2->setObjectName("verticalLayout_2");
         statusLayout = new QHBoxLayout();
@@ -107,38 +98,12 @@ public:
         verticalLayout_2->addWidget(refreshButton);
 
 
-        horizontalLayout_2->addWidget(leftPanel);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName("verticalLayout");
-        chatTextEdit = new QTextEdit(centralwidget);
-        chatTextEdit->setObjectName("chatTextEdit");
-        chatTextEdit->setReadOnly(true);
-
-        verticalLayout->addWidget(chatTextEdit);
-
-        messageLayout = new QHBoxLayout();
-        messageLayout->setObjectName("messageLayout");
-        messageLineEdit = new QLineEdit(centralwidget);
-        messageLineEdit->setObjectName("messageLineEdit");
-
-        messageLayout->addWidget(messageLineEdit);
-
-        sendButton = new QPushButton(centralwidget);
-        sendButton->setObjectName("sendButton");
-
-        messageLayout->addWidget(sendButton);
-
-
-        verticalLayout->addLayout(messageLayout);
-
-
-        horizontalLayout_2->addLayout(verticalLayout);
+        verticalLayout->addWidget(leftPanel);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 21));
+        menubar->setGeometry(QRect(0, 0, 400, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuHelp = new QMenu(menubar);
@@ -169,7 +134,6 @@ public:
         statusLabel->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         friendsLabel->setText(QCoreApplication::translate("MainWindow", "Friends:", nullptr));
         refreshButton->setText(QCoreApplication::translate("MainWindow", "Refresh List", nullptr));
-        sendButton->setText(QCoreApplication::translate("MainWindow", "Send", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi

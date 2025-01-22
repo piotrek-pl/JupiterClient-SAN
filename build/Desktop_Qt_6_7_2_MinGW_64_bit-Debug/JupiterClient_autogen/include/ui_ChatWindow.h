@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextEdit>
@@ -24,6 +25,7 @@ class Ui_ChatWindow
 public:
     QVBoxLayout *verticalLayout;
     QTextEdit *chatTextEdit;
+    QHBoxLayout *horizontalLayout;
     QLineEdit *messageLineEdit;
     QPushButton *sendButton;
 
@@ -31,7 +33,7 @@ public:
     {
         if (ChatWindow->objectName().isEmpty())
             ChatWindow->setObjectName("ChatWindow");
-        ChatWindow->resize(400, 300);
+        ChatWindow->resize(400, 500);
         verticalLayout = new QVBoxLayout(ChatWindow);
         verticalLayout->setObjectName("verticalLayout");
         chatTextEdit = new QTextEdit(ChatWindow);
@@ -39,15 +41,20 @@ public:
 
         verticalLayout->addWidget(chatTextEdit);
 
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
         messageLineEdit = new QLineEdit(ChatWindow);
         messageLineEdit->setObjectName("messageLineEdit");
 
-        verticalLayout->addWidget(messageLineEdit);
+        horizontalLayout->addWidget(messageLineEdit);
 
         sendButton = new QPushButton(ChatWindow);
         sendButton->setObjectName("sendButton");
 
-        verticalLayout->addWidget(sendButton);
+        horizontalLayout->addWidget(sendButton);
+
+
+        verticalLayout->addLayout(horizontalLayout);
 
 
         retranslateUi(ChatWindow);
@@ -57,8 +64,8 @@ public:
 
     void retranslateUi(QWidget *ChatWindow)
     {
-        ChatWindow->setWindowTitle(QCoreApplication::translate("ChatWindow", "ChatWindow", nullptr));
         sendButton->setText(QCoreApplication::translate("ChatWindow", "Send", nullptr));
+        (void)ChatWindow;
     } // retranslateUi
 
 };

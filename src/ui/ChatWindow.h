@@ -1,7 +1,9 @@
 #pragma once
 
 #include <QWidget>
-#include <QScopedPointer>
+#include <QDateTime>
+#include <QJsonObject>
+#include "network/NetworkManager.h"
 
 namespace Ui {
 class ChatWindow;
@@ -11,9 +13,22 @@ class ChatWindow : public QWidget {
     Q_OBJECT
 
 public:
-    explicit ChatWindow(QWidget *parent = nullptr);
+    explicit ChatWindow(const QString& friendName, int friendId, QWidget *parent = nullptr);
     ~ChatWindow();
 
+    void processMessage(const QJsonObject& message);
+
+private slots:
+    void onSendMessageClicked();
+    void onMessageReceived(const QJsonObject& message);
+
 private:
-    QScopedPointer<Ui::ChatWindow> ui;
+    void initializeUI();
+    void addMessageToChat(const QString& sender, const QString& content,
+                          const QDateTime& timestamp, bool isOwn);
+
+    Ui::ChatWindow *ui;
+    NetworkManager& networkManager;
+    QString friendName;
+    int friendId;
 };

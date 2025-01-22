@@ -11,9 +11,11 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QJsonArray>
+#include <QMap>
+#include <qlistwidget.h>
 #include "network/NetworkManager.h"
 #include "config/ConfigManager.h"
-#include "utils/Logger.h"
+#include "ChatWindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,7 +35,6 @@ public slots:
 
 private slots:
     // UI event handlers
-    void onSendMessageClicked();
     void onStatusChanged(int index);
     void onRefreshFriendsListClicked();
     void onMenuSettingsTriggered();
@@ -53,12 +54,15 @@ private:
     void updateFriendsList(const QJsonArray& friends);
     void addMessageToChat(const QString& sender, const QString& content,
                           const QDateTime& timestamp, bool isOwn);
+    void openChatWindow(QListWidgetItem* item);
 
     Ui::MainWindow *ui;
     NetworkManager& networkManager;
     QString currentUsername;
     QString currentStatus;
     ConfigManager::ConnectionConfig connectionConfig;
+
+    QMap<int, ChatWindow*> chatWindows;
 
     // Constants for UI configuration
     static const QString DEFAULT_WINDOW_TITLE;
