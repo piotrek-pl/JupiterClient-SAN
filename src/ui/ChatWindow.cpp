@@ -75,13 +75,16 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
 
-    if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE ||  // Dodaj nowy typ
+    if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE ||
         type == Protocol::MessageType::CHAT_HISTORY_RESPONSE ||
         type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
 
         QJsonArray messages = json["messages"].toArray();
         int oldScrollPos = ui->chatTextEdit->verticalScrollBar()->value();
         int oldMax = ui->chatTextEdit->verticalScrollBar()->maximum();
+
+        // Tekst do wstawienia
+        QString newMessages;
 
         for (const QJsonValue& msgVal : messages) {
             QJsonObject msg = msgVal.toObject();
@@ -90,7 +93,49 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
             QDateTime timestamp = QDateTime::fromString(msg["timestamp"].toString(), Qt::ISODate);
             bool isOwn = (sender != friendName);
 
-            addMessageToChat(sender, content, timestamp, isOwn, true);  // Zmiana na true
+            QString timeStr = timestamp.toString("HH:mm:ss");
+            QString messageHtml;
+
+            if (isOwn) {
+                messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
+                .arg(sender)
+                    .arg(timeStr)
+                    .arg(content);
+            } else {
+                messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
+                .arg(sender)
+                    .arg(timeStr)
+                    .arg(content);
+            }
+
+            if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
+                // Dla starszych wiadomości dodaj na początek
+                newMessages = messageHtml + newMessages;
+            } else {
+                // Dla najnowszych wiadomości dodaj na koniec
+                newMessages += messageHtml;
+            }
+        }
+
+        // Wstaw tekst w odpowiednie miejsce
+        QTextCursor cursor(ui->chatTextEdit->document());
+        if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
+            // Wstaw na początku
+            cursor.movePosition(QTextCursor::Start);
+            cursor.insertHtml(newMessages);
+            // Jeśli są już jakieś wiadomości, dodaj pojedynczy znak nowego wiersza
+            if (!ui->chatTextEdit->toPlainText().isEmpty()) {
+                cursor.movePosition(QTextCursor::Start);
+                cursor.insertText("\n");
+            }
+        } else {
+            // Wstaw na końcu
+            cursor.movePosition(QTextCursor::End);
+            // Jeśli są już jakieś wiadomości, dodaj pojedynczy znak nowego wiersza
+            if (!ui->chatTextEdit->toPlainText().isEmpty()) {
+                cursor.insertText("\n");
+            }
+            cursor.insertHtml(newMessages);
         }
 
         currentOffset += messages.size();
@@ -149,7 +194,7 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
 
     QTextCursor cursor(ui->chatTextEdit->document());
     cursor.movePosition(QTextCursor::End);
-    cursor.insertHtml(messageHtml + "<br>");
+    cursor.insertHtml(messageHtml);
 
     if (atEnd) {
         ui->chatTextEdit->verticalScrollBar()->setValue(
