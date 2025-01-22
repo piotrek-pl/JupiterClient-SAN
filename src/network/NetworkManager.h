@@ -34,6 +34,7 @@ public:
     void login(const QString& username, const QString& password);
     void registerUser(const QString& username, const QString& password, const QString& email);
     void logout();
+    QString getUsername() const { return currentUsername; }
 
 signals:
     void connected();

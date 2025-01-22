@@ -172,7 +172,21 @@ void ChatWindow::onSendMessageClicked()
     if (message.isEmpty()) return;
 
     QJsonObject messageRequest = Protocol::MessageStructure::createMessage(friendId, message);
+
+    // Zapisz czas wysłania
+    QDateTime currentTime = QDateTime::currentDateTime();
+
+    // Użyj tej samej nazwy użytkownika co w systemie
+    QString sender = networkManager.getUsername();
+    bool isOwn = (sender != friendName);
+
+    // Wyświetl wiadomość lokalnie
+    addMessageToChat(sender, message, currentTime, isOwn, true);
+
+    // Wyślij wiadomość
     networkManager.sendMessage(messageRequest);
+
+    // Wyczyść pole tekstowe
     ui->messageLineEdit->clear();
 }
 
@@ -183,12 +197,12 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
     QString messageHtml;
 
     if (isOwn) {
-        messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
+        messageHtml = QString("\n<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
         .arg(sender)
             .arg(timeStr)
             .arg(content);
     } else {
-        messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
+        messageHtml = QString("\n<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
         .arg(sender)
             .arg(timeStr)
             .arg(content);
@@ -196,6 +210,9 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
 
     QTextCursor cursor(ui->chatTextEdit->document());
     cursor.movePosition(QTextCursor::End);
+
+    // Dodaj tylko początkową nową linię
+    cursor.insertText("\n");
     cursor.insertHtml(messageHtml);
 
     if (atEnd) {
