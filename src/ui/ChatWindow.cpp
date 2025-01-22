@@ -74,6 +74,7 @@ void ChatWindow::onScrollValueChanged(int value)
 void ChatWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
+    LOG_INFO(QString("ChatWindow::onMessageReceived - Received message type: %1").arg(type));
 
     if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE ||
         type == Protocol::MessageType::CHAT_HISTORY_RESPONSE ||
@@ -162,6 +163,22 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
         if (sender == friendName || json["recipient"].toString() == friendName) {
             bool isOwn = (sender != friendName);
             addMessageToChat(sender, content, timestamp, isOwn, true);
+        }
+    }
+    else if (type == Protocol::MessageType::NEW_MESSAGES)
+    {
+        QString content = json["content"].toString();
+        int fromId = json["from"].toInt();
+        QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(static_cast<qint64>(json["timestamp"].toDouble()));
+
+        LOG_INFO(QString("Processing new message from user %1: %2").arg(fromId).arg(content));
+
+        if (fromId == friendId) {
+            LOG_INFO("Message is from friend, adding to chat");
+            // Użyj friendName jako sender, ponieważ wiemy, że wiadomość jest od przyjaciela
+            addMessageToChat(friendName, content, timestamp, false, true);
+        } else {
+            LOG_INFO(QString("Message from %1 doesn't match friend ID %2").arg(fromId).arg(friendId));
         }
     }
 }

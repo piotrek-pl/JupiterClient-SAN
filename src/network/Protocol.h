@@ -55,6 +55,7 @@ const QString GET_MORE_HISTORY = "get_more_history";
 const QString MORE_HISTORY_RESPONSE = "more_history_response";
 const QString GET_LATEST_MESSAGES = "get_latest_messages";
 const QString LATEST_MESSAGES_RESPONSE = "latest_messages_response";
+const QString NEW_MESSAGES = "new_messages";
 }
 
 // Status użytkownika
@@ -99,7 +100,8 @@ const QStringList AUTHENTICATED = {
     MessageType::SEND_MESSAGE,
     MessageType::MESSAGE_ACK,
     MessageType::GET_CHAT_HISTORY,
-    MessageType::GET_MORE_HISTORY
+    MessageType::GET_MORE_HISTORY,
+    MessageType::NEW_MESSAGES
 };
 
 const QStringList DISCONNECTING = {
@@ -131,6 +133,8 @@ QJsonObject createError(const QString& message);
 // Lista znajomych
 QJsonObject createGetFriendsList();
 QJsonObject createFriendsStatusUpdate(const QJsonArray& friends);
+
+QJsonObject createNewMessage(const QString& content, int from, qint64 timestamp);
 
 } // namespace MessageStructure
 
