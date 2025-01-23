@@ -190,6 +190,32 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
              type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
         updateFriendsList(json["friends"].toArray());
     }
+    else if (type == Protocol::MessageType::UNREAD_FROM) {
+        QJsonArray unreadFrom = json["users"].toArray();
+
+        LOG_INFO(QString("Received unread messages info from %1 users").arg(unreadFrom.size()));
+
+        for (const QJsonValue &userValue : unreadFrom) {
+            QJsonObject userObj = userValue.toObject();
+            int userId = userObj["id"].toInt();
+
+            // Oznacz że są nieprzeczytane wiadomości od tego użytkownika
+            unreadMessagesMap[userId] = true;
+
+            // Zaktualizuj ikonę na liście znajomych
+            for(int i = 0; i < ui->friendsList->count(); ++i) {
+                QListWidgetItem* item = ui->friendsList->item(i);
+                if(item->data(Qt::UserRole).toInt() == userId) {
+                    QString status = item->data(Qt::UserRole + 1).toString();
+                    LOG_DEBUG(QString("Updating icon for user ID %1 with status %2 and unread messages")
+                                  .arg(userId)
+                                  .arg(status));
+                    item->setIcon(getStatusIcon(status, true));
+                    break;
+                }
+            }
+        }
+    }
     else {
         LOG_WARNING(QString("Received unknown message type: %1").arg(type));
     }
