@@ -290,10 +290,6 @@ void NetworkManager::processIncomingMessage(const QJsonObject& json) {
             QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
             sendMessage(getFriendsRequest);
 
-            // Dodaj zapytanie o nieprzeczytane wiadomości
-            QJsonObject getLatestMessages = Protocol::MessageStructure::createGetLatestMessages();
-            sendMessage(getLatestMessages);
-
             emitConnectionStatus("Login successful - Connected");
             emit loginSuccessful();
         } else {
