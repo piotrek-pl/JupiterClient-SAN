@@ -111,10 +111,6 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
         } else {
             // Jeśli okno nie istnieje, a my jesteśmy odbiorcą
             if (recipient == currentUsername) {
-                // Oznacz jako nieprzeczytane
-                unreadMessagesMap[senderId] = true;
-                updateFriendStatus(senderId, getFriendStatus(senderId));
-
                 QString chatPartnerName = sender;
                 ChatWindow* chatWindow = new ChatWindow(chatPartnerName, senderId);
                 chatWindows[senderId] = chatWindow;
@@ -129,9 +125,50 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             }
         }
     }
+    else if (type == Protocol::MessageType::NEW_MESSAGES) {
+        int fromId = json["from"].toInt();
+        QString content = json["content"].toString();
+        qint64 timestamp = json["timestamp"].toInteger();
+
+        LOG_DEBUG(QString("Processing new message from user ID: %1").arg(fromId));
+
+        // Sprawdź, czy okno czatu jest otwarte i widoczne
+        bool shouldShowNotification = !chatWindows.contains(fromId) ||
+                                      (chatWindows.contains(fromId) && !chatWindows[fromId]->isVisible());
+
+        if (shouldShowNotification) {
+            // Oznacz wiadomość jako nieprzeczytaną
+            unreadMessagesMap[fromId] = true;
+
+            // Znajdź item na liście znajomych i zaktualizuj jego ikonę
+            for(int i = 0; i < ui->friendsList->count(); ++i) {
+                QListWidgetItem* item = ui->friendsList->item(i);
+                if(item->data(Qt::UserRole).toInt() == fromId) {
+                    QString status = item->data(Qt::UserRole + 1).toString();
+                    LOG_DEBUG(QString("Updating icon for user ID %1 with status %2 and unread messages")
+                                  .arg(fromId)
+                                  .arg(status));
+                    item->setIcon(getStatusIcon(status, true));
+                    break;
+                }
+            }
+
+            // Jeśli okno istnieje ale jest niewidoczne, dodaj wiadomość do historii
+            if (chatWindows.contains(fromId)) {
+                chatWindows[fromId]->processMessage(json);
+            }
+        } else {
+            // Jeśli okno jest otwarte i widoczne, przekaż wiadomość do okna czatu
+            LOG_DEBUG(QString("Forwarding message to open chat window for user ID: %1").arg(fromId));
+            chatWindows[fromId]->processMessage(json);
+        }
+    }
     else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
              type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
         updateFriendsList(json["friends"].toArray());
+    }
+    else {
+        LOG_WARNING(QString("Received unknown message type: %1").arg(type));
     }
 }
 
@@ -254,29 +291,58 @@ void MainWindow::openChatWindow(QListWidgetItem* item)
     int friendId = item->data(Qt::UserRole).toInt();
     QString friendName = item->text();
 
-    if (!chatWindows.contains(friendId)) {
-        ChatWindow* chatWindow = new ChatWindow(friendName, friendId);
-        chatWindows[friendId] = chatWindow;
+    // Jeśli okno już istnieje
+    if (chatWindows.contains(friendId)) {
+        chatWindows[friendId]->show();
+        chatWindows[friendId]->activateWindow();
 
-        // Oznacz wiadomości jako przeczytane
+        // Dodajemy tę część - resetujemy stan nieprzeczytanych wiadomości
         if (unreadMessagesMap[friendId]) {
             unreadMessagesMap[friendId] = false;
-            // Aktualizuj ikonę na liście
             QString status = getFriendStatus(friendId);
-            updateFriendStatus(friendId, status);
-
-            // Wyślij informację do serwera o przeczytaniu wiadomości
+            // Aktualizuj ikonę - usuń kopertę
+            for(int i = 0; i < ui->friendsList->count(); ++i) {
+                QListWidgetItem* listItem = ui->friendsList->item(i);
+                if(listItem->data(Qt::UserRole).toInt() == friendId) {
+                    listItem->setIcon(getStatusIcon(status, false));
+                    break;
+                }
+            }
+            // Wyślij potwierdzenie przeczytania do serwera
             QJsonObject readMessage = Protocol::MessageStructure::createMessageRead(friendId);
             networkManager.sendMessage(readMessage);
         }
-
-        connect(chatWindow, &ChatWindow::destroyed, [this, friendId]() {
-            chatWindows.remove(friendId);
-        });
+        return;
     }
 
-    chatWindows[friendId]->show();
-    chatWindows[friendId]->activateWindow();
+    // Tworzenie nowego okna
+    ChatWindow* chatWindow = new ChatWindow(friendName, friendId);
+    chatWindows[friendId] = chatWindow;
+
+    // Jeśli były nieprzeczytane wiadomości, oznacz je jako przeczytane
+    if (unreadMessagesMap[friendId]) {
+        unreadMessagesMap[friendId] = false;
+        QString status = getFriendStatus(friendId);
+        for(int i = 0; i < ui->friendsList->count(); ++i) {
+            QListWidgetItem* listItem = ui->friendsList->item(i);
+            if(listItem->data(Qt::UserRole).toInt() == friendId) {
+                listItem->setIcon(getStatusIcon(status, false));
+                break;
+            }
+        }
+
+        QJsonObject readMessage = Protocol::MessageStructure::createMessageRead(friendId);
+        networkManager.sendMessage(readMessage);
+    }
+
+    // Połącz sygnał destroyed z nowym slotem
+    connect(chatWindow, &QObject::destroyed, this, [this, friendId]() {
+        chatWindows.remove(friendId);
+        onChatWindowClosed(friendId);
+    });
+
+    chatWindow->show();
+    chatWindow->activateWindow();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -307,7 +373,7 @@ QIcon MainWindow::getStatusIcon(const QString& status, bool hasUnreadMessages) c
         iconPath += "offline";
 
     if (hasUnreadMessages)
-        iconPath += "_msg";
+        iconPath += "_msg";  // Dodaje suffix "_msg" dla ikon z kopertą
 
     iconPath += ".svg";
     return QIcon(iconPath);
@@ -339,4 +405,14 @@ QString MainWindow::getFriendStatus(int friendId) const
         }
     }
     return Protocol::UserStatus::OFFLINE;
+}
+
+void MainWindow::onChatWindowClosed(int friendId)
+{
+    // Po zamknięciu okna czatu, przygotuj się na nowe wiadomości
+    LOG_DEBUG(QString("Chat window closed for friend ID: %1").arg(friendId));
+    chatWindows.remove(friendId);
+
+    // Resetujemy stan nieprzeczytanych wiadomości
+    unreadMessagesMap[friendId] = false;
 }

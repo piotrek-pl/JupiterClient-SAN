@@ -46,6 +46,7 @@ private slots:
     void onMessageReceived(const QJsonObject& message);
     void onNetworkError(const QString& error);
     void onDisconnected();
+    void onChatWindowClosed(int friendId);
 
 private:
     void initializeUI();
