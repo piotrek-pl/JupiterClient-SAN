@@ -12,6 +12,7 @@ ChatWindow::ChatWindow(const QString& friendName, int friendId, QWidget *parent)
     , currentOffset(0)
     , hasMoreMessages(true)
     , isLoadingHistory(false)
+    , messagesMarkedAsRead(false)  // Inicjalizacja nowej flagi
 {
     ui->setupUi(this);
     setWindowTitle("Chat with " + friendName);
@@ -153,6 +154,14 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
             ui->chatTextEdit->verticalScrollBar()->setValue(
                 ui->chatTextEdit->verticalScrollBar()->maximum());
         }
+
+        // Jeśli to początkowa historia i okno jest widoczne, oznacz wiadomości jako przeczytane
+        if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE && isVisible() && !messagesMarkedAsRead) {
+            QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
+            networkManager.sendMessage(readNotification);
+            messagesMarkedAsRead = true;
+            emit messagesRead(friendId);
+        }
     }
     else if (type == Protocol::MessageType::MESSAGE_RESPONSE)
     {
@@ -177,6 +186,19 @@ void ChatWindow::onMessageReceived(const QJsonObject& json)
             LOG_INFO("Message is from friend, adding to chat");
             // Użyj friendName jako sender, ponieważ wiemy, że wiadomość jest od przyjaciela
             addMessageToChat(friendName, content, timestamp, false, true);
+
+            // Jeśli okno jest widoczne, wyślij powiadomienie o przeczytaniu
+            if (isVisible()) {
+                if (!messagesMarkedAsRead) {
+                    QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
+                    networkManager.sendMessage(readNotification);
+                    messagesMarkedAsRead = true;
+                    emit messagesRead(friendId);
+                }
+            } else {
+                // Jeśli okno nie jest widoczne, oznacz wiadomości jako nieprzeczytane
+                messagesMarkedAsRead = false;
+            }
         } else {
             LOG_INFO(QString("Message from %1 doesn't match friend ID %2").arg(fromId).arg(friendId));
         }
@@ -241,4 +263,21 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
 void ChatWindow::processMessage(const QJsonObject& message)
 {
     onMessageReceived(message);
+}
+
+void ChatWindow::showEvent(QShowEvent* event)
+{
+    QWidget::showEvent(event);
+
+    if (!messagesMarkedAsRead) {
+        // Tworzenie i wysyłanie powiadomienia o przeczytaniu
+        QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
+        networkManager.sendMessage(readNotification);
+
+        LOG_INFO(QString("Sent read notification for messages from friend ID: %1").arg(friendId));
+        messagesMarkedAsRead = true;
+
+        // Emituj sygnał, że wiadomości zostały przeczytane (można dodać do klasy)
+        emit messagesRead(friendId);
+    }
 }

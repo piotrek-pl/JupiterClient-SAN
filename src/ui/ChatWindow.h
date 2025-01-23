@@ -24,6 +24,9 @@ private slots:
     void onScrollValueChanged(int value);
     void loadMoreHistory();
 
+signals:
+    void messagesRead(int friendId);
+
 private:
     void initializeUI();
     void addMessageToChat(const QString& sender, const QString& content,
@@ -37,4 +40,8 @@ private:
     int currentOffset;
     bool hasMoreMessages;
     bool isLoadingHistory;
+    bool messagesMarkedAsRead;
+
+protected:
+    void showEvent(QShowEvent* event) override;
 };
