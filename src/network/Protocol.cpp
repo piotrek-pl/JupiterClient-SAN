@@ -116,9 +116,10 @@ QJsonObject createFriendsStatusUpdate(const QJsonArray& friends) {
     };
 }
 
-QJsonObject createGetLatestMessages() {
+QJsonObject createMessageReadResponse() {
     return QJsonObject{
-        {"type", MessageType::GET_LATEST_MESSAGES},
+        {"type", MessageType::MESSAGE_READ_RESPONSE},
+        {"status", "success"},
         {"timestamp", QDateTime::currentMSecsSinceEpoch()}
     };
 }

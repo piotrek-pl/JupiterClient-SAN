@@ -52,3 +52,15 @@
 26	150	7593505340291180	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
 150	2306	7593505341541220	CMakeFiles/JupiterClient.dir/src/ui/MainWindow.cpp.obj	5ea84f264f482d1c
 2306	2838	7593505363092042	JupiterClient.exe	fe415865acc717bc
+23	861	7593515861846134	JupiterClient_autogen/timestamp	4a896badfb7f2a5d
+23	861	7593515861846134	JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
+23	861	7593515861846134	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/timestamp	4a896badfb7f2a5d
+23	861	7593515861846134	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
+871	2528	7593515862446180	CMakeFiles/JupiterClient.dir/src/network/Protocol.cpp.obj	653a45d4eb900a27
+873	2990	7593515862466169	CMakeFiles/JupiterClient.dir/src/network/NetworkManager.cpp.obj	47e127567e239d3c
+869	3180	7593515862426167	CMakeFiles/JupiterClient.dir/src/ui/ChatWindow.cpp.obj	80143d2ff387bb09
+863	3192	7593515862366549	CMakeFiles/JupiterClient.dir/src/main.cpp.obj	de5fcb6fc6a49e7e
+865	3294	7593515862386167	CMakeFiles/JupiterClient.dir/src/ui/LoginWindow.cpp.obj	e474b212e0d2864c
+861	3387	7593515862346157	CMakeFiles/JupiterClient.dir/JupiterClient_autogen/mocs_compilation.cpp.obj	a6a88e606fff8a50
+867	3688	7593515862406159	CMakeFiles/JupiterClient.dir/src/ui/MainWindow.cpp.obj	5ea84f264f482d1c
+3688	4204	7593515890617484	JupiterClient.exe	fe415865acc717bc
