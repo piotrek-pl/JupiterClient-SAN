@@ -15094,3 +15094,1563 @@ tamp": 1737635642022,
 
 [2025-01-23 13:34:43.114] [INFO] MainWindow destroyed
 [2025-01-23 13:34:43.115] [INFO] Application shutting down
+[2025-01-23 14:17:43.968] [INFO] Application started
+[2025-01-23 14:17:43.968] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-23 14:17:43.968] [INFO] NetworkManager initialized
+[2025-01-23 14:17:43.968] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-23 14:17:43.968] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-23 14:17:43.972] [INFO] LoginWindow initialized
+[2025-01-23 14:17:44.039] [INFO] Connected to server
+[2025-01-23 14:17:44.039] [INFO] Status update: Connected to server
+[2025-01-23 14:17:47.326] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-23 14:17:47.326] [INFO] Status update: Logging in...
+[2025-01-23 14:17:47.330] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737638267330,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-23 14:17:47.330] [DEBUG] Processing message type: login_response
+[2025-01-23 14:17:47.330] [INFO] Login successful
+[2025-01-23 14:17:47.330] [INFO] Sending message: {"status":"online","timestamp":1737638267330,"type":"status_response"}
+
+[2025-01-23 14:17:47.330] [INFO] Sending message: {"timestamp":1737638267330,"type":"get_friends_list"}
+
+[2025-01-23 14:17:47.330] [INFO] Sending message: {"timestamp":1737638267330,"type":"get_latest_messages"}
+
+[2025-01-23 14:17:47.330] [INFO] Status update: Login successful - Connected
+[2025-01-23 14:17:47.336] [INFO] MainWindow initialized
+[2025-01-23 14:17:47.346] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737638267330,
+    "type": "status_response"
+}
+[2025-01-23 14:17:47.346] [DEBUG] Processing message type: status_response
+[2025-01-23 14:17:47.346] [WARNING] Received unknown message type: status_response
+[2025-01-23 14:17:47.346] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737638267331,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:17:47.346] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:17:47.346] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:17:47.347] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737638267332,
+    "type": "friends_list_response"
+}
+[2025-01-23 14:17:47.347] [DEBUG] Processing message type: friends_list_response
+[2025-01-23 14:17:47.347] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:17:47.347] [INFO] Processing JSON: {
+    "has_more": false,
+    "messages": [
+    ],
+    "offset": 0,
+    "type": "latest_messages_response"
+}
+[2025-01-23 14:17:47.347] [DEBUG] Processing message type: latest_messages_response
+[2025-01-23 14:17:47.359] [INFO] LoginWindow destroyed
+[2025-01-23 14:17:53.981] [INFO] Processing JSON: {
+    "timestamp": 1737638273981,
+    "type": "ping"
+}
+[2025-01-23 14:17:53.981] [DEBUG] Processing message type: ping
+[2025-01-23 14:17:53.981] [INFO] Received PING (timestamp: 1737638273981)
+[2025-01-23 14:17:53.981] [INFO] Sending message: {"timestamp":1737638273981,"type":"pong"}
+
+[2025-01-23 14:17:53.981] [INFO] Sent PONG (timestamp: 1737638273981)
+[2025-01-23 14:18:00.927] [INFO] Sending message: {"timestamp":1737638280927,"type":"logout"}
+
+[2025-01-23 14:18:00.927] [INFO] MainWindow destroyed
+[2025-01-23 14:18:00.927] [INFO] Application shutting down
+[2025-01-23 14:29:46.100] [INFO] Application started
+[2025-01-23 14:29:46.100] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-23 14:29:46.100] [INFO] NetworkManager initialized
+[2025-01-23 14:29:46.100] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-23 14:29:46.100] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-23 14:29:46.104] [INFO] LoginWindow initialized
+[2025-01-23 14:29:46.167] [INFO] Connected to server
+[2025-01-23 14:29:46.167] [INFO] Status update: Connected to server
+[2025-01-23 14:29:49.060] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-23 14:29:49.061] [INFO] Status update: Logging in...
+[2025-01-23 14:29:49.063] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737638989063,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-23 14:29:49.064] [DEBUG] Processing message type: login_response
+[2025-01-23 14:29:49.064] [INFO] Login successful
+[2025-01-23 14:29:49.064] [INFO] Sending message: {"status":"online","timestamp":1737638989064,"type":"status_response"}
+
+[2025-01-23 14:29:49.064] [INFO] Sending message: {"timestamp":1737638989064,"type":"get_friends_list"}
+
+[2025-01-23 14:29:49.064] [INFO] Sending message: {"timestamp":1737638989064,"type":"get_latest_messages"}
+
+[2025-01-23 14:29:49.064] [INFO] Status update: Login successful - Connected
+[2025-01-23 14:29:49.070] [INFO] MainWindow initialized
+[2025-01-23 14:29:49.079] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737638989064,
+    "type": "status_response"
+}
+[2025-01-23 14:29:49.079] [DEBUG] Processing message type: status_response
+[2025-01-23 14:29:49.079] [WARNING] Received unknown message type: status_response
+[2025-01-23 14:29:49.079] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737638989065,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:29:49.079] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:29:49.079] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:29:49.080] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737638989066,
+    "type": "friends_list_response"
+}
+[2025-01-23 14:29:49.080] [DEBUG] Processing message type: friends_list_response
+[2025-01-23 14:29:49.080] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:29:49.080] [INFO] Processing JSON: {
+    "has_more": false,
+    "messages": [
+    ],
+    "offset": 0,
+    "type": "latest_messages_response"
+}
+[2025-01-23 14:29:49.080] [DEBUG] Processing message type: latest_messages_response
+[2025-01-23 14:29:49.091] [INFO] LoginWindow destroyed
+[2025-01-23 14:29:56.103] [INFO] Processing JSON: {
+    "timestamp": 1737638996103,
+    "type": "ping"
+}
+[2025-01-23 14:29:56.103] [DEBUG] Processing message type: ping
+[2025-01-23 14:29:56.103] [INFO] Received PING (timestamp: 1737638996103)
+[2025-01-23 14:29:56.103] [INFO] Sending message: {"timestamp":1737638996103,"type":"pong"}
+
+[2025-01-23 14:29:56.103] [INFO] Sent PONG (timestamp: 1737638996103)
+[2025-01-23 14:30:04.060] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639004060,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:30:04.060] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:30:04.060] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:30:06.107] [INFO] Processing JSON: {
+    "timestamp": 1737639006107,
+    "type": "ping"
+}
+[2025-01-23 14:30:06.108] [DEBUG] Processing message type: ping
+[2025-01-23 14:30:06.108] [INFO] Received PING (timestamp: 1737639006107)
+[2025-01-23 14:30:06.108] [INFO] Sending message: {"timestamp":1737639006107,"type":"pong"}
+
+[2025-01-23 14:30:06.108] [INFO] Sent PONG (timestamp: 1737639006107)
+[2025-01-23 14:30:16.108] [INFO] Processing JSON: {
+    "timestamp": 1737639016108,
+    "type": "ping"
+}
+[2025-01-23 14:30:16.108] [DEBUG] Processing message type: ping
+[2025-01-23 14:30:16.108] [INFO] Received PING (timestamp: 1737639016108)
+[2025-01-23 14:30:16.108] [INFO] Sending message: {"timestamp":1737639016108,"type":"pong"}
+
+[2025-01-23 14:30:16.108] [INFO] Sent PONG (timestamp: 1737639016108)
+[2025-01-23 14:30:19.055] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639019055,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:30:19.055] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:30:19.055] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:30:26.113] [INFO] Processing JSON: {
+    "timestamp": 1737639026113,
+    "type": "ping"
+}
+[2025-01-23 14:30:26.113] [DEBUG] Processing message type: ping
+[2025-01-23 14:30:26.113] [INFO] Received PING (timestamp: 1737639026113)
+[2025-01-23 14:30:26.113] [INFO] Sending message: {"timestamp":1737639026113,"type":"pong"}
+
+[2025-01-23 14:30:26.113] [INFO] Sent PONG (timestamp: 1737639026113)
+[2025-01-23 14:30:34.055] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639034054,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:30:34.055] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:30:34.055] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:30:36.113] [INFO] Processing JSON: {
+    "timestamp": 1737639036113,
+    "type": "ping"
+}
+[2025-01-23 14:30:36.113] [DEBUG] Processing message type: ping
+[2025-01-23 14:30:36.113] [INFO] Received PING (timestamp: 1737639036113)
+[2025-01-23 14:30:36.113] [INFO] Sending message: {"timestamp":1737639036113,"type":"pong"}
+
+[2025-01-23 14:30:36.113] [INFO] Sent PONG (timestamp: 1737639036113)
+[2025-01-23 14:30:46.109] [INFO] Processing JSON: {
+    "timestamp": 1737639046109,
+    "type": "ping"
+}
+[2025-01-23 14:30:46.109] [DEBUG] Processing message type: ping
+[2025-01-23 14:30:46.109] [INFO] Received PING (timestamp: 1737639046109)
+[2025-01-23 14:30:46.109] [INFO] Sending message: {"timestamp":1737639046109,"type":"pong"}
+
+[2025-01-23 14:30:46.109] [INFO] Sent PONG (timestamp: 1737639046109)
+[2025-01-23 14:30:49.063] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639049063,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:30:49.063] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:30:49.063] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:30:56.100] [INFO] Processing JSON: {
+    "timestamp": 1737639056100,
+    "type": "ping"
+}
+[2025-01-23 14:30:56.100] [DEBUG] Processing message type: ping
+[2025-01-23 14:30:56.100] [INFO] Received PING (timestamp: 1737639056100)
+[2025-01-23 14:30:56.100] [INFO] Sending message: {"timestamp":1737639056100,"type":"pong"}
+
+[2025-01-23 14:30:56.100] [INFO] Sent PONG (timestamp: 1737639056100)
+[2025-01-23 14:31:04.060] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639064060,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:31:04.060] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:31:04.060] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:31:06.103] [INFO] Processing JSON: {
+    "timestamp": 1737639066103,
+    "type": "ping"
+}
+[2025-01-23 14:31:06.103] [DEBUG] Processing message type: ping
+[2025-01-23 14:31:06.103] [INFO] Received PING (timestamp: 1737639066103)
+[2025-01-23 14:31:06.103] [INFO] Sending message: {"timestamp":1737639066103,"type":"pong"}
+
+[2025-01-23 14:31:06.103] [INFO] Sent PONG (timestamp: 1737639066103)
+[2025-01-23 14:31:16.101] [INFO] Processing JSON: {
+    "timestamp": 1737639076101,
+    "type": "ping"
+}
+[2025-01-23 14:31:16.101] [DEBUG] Processing message type: ping
+[2025-01-23 14:31:16.101] [INFO] Received PING (timestamp: 1737639076101)
+[2025-01-23 14:31:16.101] [INFO] Sending message: {"timestamp":1737639076101,"type":"pong"}
+
+[2025-01-23 14:31:16.101] [INFO] Sent PONG (timestamp: 1737639076101)
+[2025-01-23 14:31:19.070] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639079070,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:31:19.070] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:31:19.070] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:31:26.106] [INFO] Processing JSON: {
+    "timestamp": 1737639086106,
+    "type": "ping"
+}
+[2025-01-23 14:31:26.106] [DEBUG] Processing message type: ping
+[2025-01-23 14:31:26.106] [INFO] Received PING (timestamp: 1737639086106)
+[2025-01-23 14:31:26.106] [INFO] Sending message: {"timestamp":1737639086106,"type":"pong"}
+
+[2025-01-23 14:31:26.106] [INFO] Sent PONG (timestamp: 1737639086106)
+[2025-01-23 14:31:31.613] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-23 14:31:31.613] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-23 14:31:31.614] [ERROR] Network error: The remote host closed the connection
+[2025-01-23 14:31:31.614] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-23 14:31:31.614] [WARNING] Disconnected from server
+[2025-01-23 14:31:31.614] [INFO] Status update: Disconnected from server
+[2025-01-23 14:31:31.614] [WARNING] Disconnected from server
+[2025-01-23 14:31:34.614] [INFO] MainWindow destroyed
+[2025-01-23 14:31:34.614] [INFO] Application shutting down
+[2025-01-23 14:31:38.124] [INFO] Application started
+[2025-01-23 14:31:38.124] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-23 14:31:38.124] [INFO] NetworkManager initialized
+[2025-01-23 14:31:38.124] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-23 14:31:38.124] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-23 14:31:38.128] [INFO] LoginWindow initialized
+[2025-01-23 14:31:38.201] [INFO] Connected to server
+[2025-01-23 14:31:38.201] [INFO] Status update: Connected to server
+[2025-01-23 14:31:40.941] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-23 14:31:40.941] [INFO] Status update: Logging in...
+[2025-01-23 14:31:40.943] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737639100943,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-23 14:31:40.943] [DEBUG] Processing message type: login_response
+[2025-01-23 14:31:40.943] [INFO] Login successful
+[2025-01-23 14:31:40.943] [INFO] Sending message: {"status":"online","timestamp":1737639100943,"type":"status_response"}
+
+[2025-01-23 14:31:40.943] [INFO] Sending message: {"timestamp":1737639100943,"type":"get_friends_list"}
+
+[2025-01-23 14:31:40.943] [INFO] Sending message: {"timestamp":1737639100943,"type":"get_latest_messages"}
+
+[2025-01-23 14:31:40.943] [INFO] Status update: Login successful - Connected
+[2025-01-23 14:31:40.949] [INFO] MainWindow initialized
+[2025-01-23 14:31:40.958] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737639100944,
+    "type": "status_response"
+}
+[2025-01-23 14:31:40.958] [DEBUG] Processing message type: status_response
+[2025-01-23 14:31:40.958] [WARNING] Received unknown message type: status_response
+[2025-01-23 14:31:40.958] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639100944,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:31:40.958] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:31:40.959] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:31:40.959] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639100945,
+    "type": "friends_list_response"
+}
+[2025-01-23 14:31:40.959] [DEBUG] Processing message type: friends_list_response
+[2025-01-23 14:31:40.959] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:31:40.960] [INFO] Processing JSON: {
+    "has_more": false,
+    "messages": [
+    ],
+    "offset": 0,
+    "type": "latest_messages_response"
+}
+[2025-01-23 14:31:40.960] [DEBUG] Processing message type: latest_messages_response
+[2025-01-23 14:31:40.968] [INFO] LoginWindow destroyed
+[2025-01-23 14:31:48.119] [INFO] Processing JSON: {
+    "timestamp": 1737639108119,
+    "type": "ping"
+}
+[2025-01-23 14:31:48.119] [DEBUG] Processing message type: ping
+[2025-01-23 14:31:48.119] [INFO] Received PING (timestamp: 1737639108119)
+[2025-01-23 14:31:48.119] [INFO] Sending message: {"timestamp":1737639108119,"type":"pong"}
+
+[2025-01-23 14:31:48.119] [INFO] Sent PONG (timestamp: 1737639108119)
+[2025-01-23 14:31:55.935] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639115935,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:31:55.935] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:31:55.935] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:31:58.120] [INFO] Processing JSON: {
+    "timestamp": 1737639118120,
+    "type": "ping"
+}
+[2025-01-23 14:31:58.120] [DEBUG] Processing message type: ping
+[2025-01-23 14:31:58.120] [INFO] Received PING (timestamp: 1737639118120)
+[2025-01-23 14:31:58.120] [INFO] Sending message: {"timestamp":1737639118120,"type":"pong"}
+
+[2025-01-23 14:31:58.120] [INFO] Sent PONG (timestamp: 1737639118120)
+[2025-01-23 14:32:08.127] [INFO] Processing JSON: {
+    "timestamp": 1737639128126,
+    "type": "ping"
+}
+[2025-01-23 14:32:08.127] [DEBUG] Processing message type: ping
+[2025-01-23 14:32:08.127] [INFO] Received PING (timestamp: 1737639128126)
+[2025-01-23 14:32:08.127] [INFO] Sending message: {"timestamp":1737639128126,"type":"pong"}
+
+[2025-01-23 14:32:08.127] [INFO] Sent PONG (timestamp: 1737639128126)
+[2025-01-23 14:32:10.941] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639130941,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:32:10.941] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:32:10.941] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:32:13.898] [ERROR] Socket error: 1 (The remote host closed the connection)
+[2025-01-23 14:32:13.898] [INFO] Status update: Server closed connection - reconnecting...
+[2025-01-23 14:32:13.898] [ERROR] Network error: The remote host closed the connection
+[2025-01-23 14:32:13.898] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-23 14:32:13.898] [WARNING] Disconnected from server
+[2025-01-23 14:32:13.898] [INFO] Status update: Disconnected from server
+[2025-01-23 14:32:13.898] [WARNING] Disconnected from server
+[2025-01-23 14:32:18.385] [INFO] MainWindow destroyed
+[2025-01-23 14:32:18.385] [INFO] Application shutting down
+[2025-01-23 14:32:21.993] [INFO] Application started
+[2025-01-23 14:32:21.994] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-23 14:32:21.994] [INFO] NetworkManager initialized
+[2025-01-23 14:32:21.994] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-23 14:32:21.994] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-23 14:32:21.998] [INFO] LoginWindow initialized
+[2025-01-23 14:32:22.062] [INFO] Connected to server
+[2025-01-23 14:32:22.062] [INFO] Status update: Connected to server
+[2025-01-23 14:32:24.659] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-23 14:32:24.659] [INFO] Status update: Logging in...
+[2025-01-23 14:32:24.662] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737639144662,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-23 14:32:24.662] [DEBUG] Processing message type: login_response
+[2025-01-23 14:32:24.662] [INFO] Login successful
+[2025-01-23 14:32:24.662] [INFO] Sending message: {"status":"online","timestamp":1737639144662,"type":"status_response"}
+
+[2025-01-23 14:32:24.663] [INFO] Sending message: {"timestamp":1737639144663,"type":"get_friends_list"}
+
+[2025-01-23 14:32:24.663] [INFO] Sending message: {"timestamp":1737639144663,"type":"get_latest_messages"}
+
+[2025-01-23 14:32:24.663] [INFO] Status update: Login successful - Connected
+[2025-01-23 14:32:24.669] [INFO] MainWindow initialized
+[2025-01-23 14:32:24.679] [INFO] Processing JSON: {
+    "status": "online",
+    "timestamp": 1737639144663,
+    "type": "status_response"
+}
+[2025-01-23 14:32:24.679] [DEBUG] Processing message type: status_response
+[2025-01-23 14:32:24.679] [WARNING] Received unknown message type: status_response
+[2025-01-23 14:32:24.679] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639144664,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:32:24.679] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:32:24.679] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:32:24.680] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639144665,
+    "type": "friends_list_response"
+}
+[2025-01-23 14:32:24.680] [DEBUG] Processing message type: friends_list_response
+[2025-01-23 14:32:24.680] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:32:24.688] [INFO] Processing JSON: {
+    "has_more": false,
+    "messages": [
+        {
+            "content": "Wiadomość nr 1 od test2 do test1",
+            "id": "51",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 2 od test2 do test1",
+            "id": "52",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 3 od test2 do test1",
+            "id": "53",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 4 od test2 do test1",
+            "id": "54",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 5 od test2 do test1",
+            "id": "55",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 6 od test2 do test1",
+            "id": "56",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 7 od test2 do test1",
+            "id": "57",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 8 od test2 do test1",
+            "id": "58",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 9 od test2 do test1",
+            "id": "59",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 10 od test2 do test1",
+            "id": "60",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 11 od test2 do test1",
+            "id": "61",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 12 od test2 do test1",
+            "id": "62",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 13 od test2 do test1",
+            "id": "63",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 14 od test2 do test1",
+            "id": "64",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 15 od test2 do test1",
+            "id": "65",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 16 od test2 do test1",
+            "id": "66",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 17 od test2 do test1",
+            "id": "67",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 18 od test2 do test1",
+            "id": "68",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 19 od test2 do test1",
+            "id": "69",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 20 od test2 do test1",
+            "id": "70",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 21 od test2 do test1",
+            "id": "71",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 22 od test2 do test1",
+            "id": "72",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 23 od test2 do test1",
+            "id": "73",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 24 od test2 do test1",
+            "id": "74",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 25 od test2 do test1",
+            "id": "75",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 26 od test2 do test1",
+            "id": "76",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 27 od test2 do test1",
+            "id": "77",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 28 od test2 do test1",
+            "id": "78",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 29 od test2 do test1",
+            "id": "79",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 30 od test2 do test1",
+            "id": "80",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 31 od test2 do test1",
+            "id": "81",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 32 od test2 do test1",
+            "id": "82",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 33 od test2 do test1",
+            "id": "83",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 34 od test2 do test1",
+            "id": "84",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 35 od test2 do test1",
+            "id": "85",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 36 od test2 do test1",
+            "id": "86",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 37 od test2 do test1",
+            "id": "87",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 38 od test2 do test1",
+            "id": "88",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 39 od test2 do test1",
+            "id": "89",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 40 od test2 do test1",
+            "id": "90",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 41 od test2 do test1",
+            "id": "91",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 42 od test2 do test1",
+            "id": "92",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 43 od test2 do test1",
+            "id": "93",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 44 od test2 do test1",
+            "id": "94",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 45 od test2 do test1",
+            "id": "95",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 46 od test2 do test1",
+            "id": "96",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 47 od test2 do test1",
+            "id": "97",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 48 od test2 do test1",
+            "id": "98",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 49 od test2 do test1",
+            "id": "99",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 50 od test2 do test1",
+            "id": "100",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test2",
+            "sender_id": "2",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 1 od test3 do test1",
+            "id": "51",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 2 od test3 do test1",
+            "id": "52",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 3 od test3 do test1",
+            "id": "53",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 4 od test3 do test1",
+            "id": "54",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 5 od test3 do test1",
+            "id": "55",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 6 od test3 do test1",
+            "id": "56",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 7 od test3 do test1",
+            "id": "57",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 8 od test3 do test1",
+            "id": "58",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 9 od test3 do test1",
+            "id": "59",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 10 od test3 do test1",
+            "id": "60",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 11 od test3 do test1",
+            "id": "61",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 12 od test3 do test1",
+            "id": "62",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 13 od test3 do test1",
+            "id": "63",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 14 od test3 do test1",
+            "id": "64",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 15 od test3 do test1",
+            "id": "65",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 16 od test3 do test1",
+            "id": "66",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 17 od test3 do test1",
+            "id": "67",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 18 od test3 do test1",
+            "id": "68",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 19 od test3 do test1",
+            "id": "69",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 20 od test3 do test1",
+            "id": "70",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 21 od test3 do test1",
+            "id": "71",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 22 od test3 do test1",
+            "id": "72",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 23 od test3 do test1",
+            "id": "73",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 24 od test3 do test1",
+            "id": "74",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 25 od test3 do test1",
+            "id": "75",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 26 od test3 do test1",
+            "id": "76",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 27 od test3 do test1",
+            "id": "77",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 28 od test3 do test1",
+            "id": "78",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 29 od test3 do test1",
+            "id": "79",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 30 od test3 do test1",
+            "id": "80",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 31 od test3 do test1",
+            "id": "81",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 32 od test3 do test1",
+            "id": "82",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 33 od test3 do test1",
+            "id": "83",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 34 od test3 do test1",
+            "id": "84",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 35 od test3 do test1",
+            "id": "85",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 36 od test3 do test1",
+            "id": "86",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 37 od test3 do test1",
+            "id": "87",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 38 od test3 do test1",
+            "id": "88",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 39 od test3 do test1",
+            "id": "89",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 40 od test3 do test1",
+            "id": "90",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 41 od test3 do test1",
+            "id": "91",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 42 od test3 do test1",
+            "id": "92",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 43 od test3 do test1",
+            "id": "93",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 44 od test3 do test1",
+            "id": "94",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 45 od test3 do test1",
+            "id": "95",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 46 od test3 do test1",
+            "id": "96",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 47 od test3 do test1",
+            "id": "97",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 48 od test3 do test1",
+            "id": "98",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 49 od test3 do test1",
+            "id": "99",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        },
+        {
+            "content": "Wiadomość nr 50 od test3 do test1",
+            "id": "100",
+            "isRead": false,
+            "receiver_id": "1",
+            "sender": "test3",
+            "sender_id": "3",
+            "timestamp": "2025-01-23T14:32:20"
+        }
+    ],
+    "offset": 0,
+    "type": "latest_messages_response"
+}
+[2025-01-23 14:32:24.689] [DEBUG] Processing message type: latest_messages_response
+[2025-01-23 14:32:24.690] [INFO] LoginWindow destroyed
+[2025-01-23 14:32:31.996] [INFO] Processing JSON: {
+    "timestamp": 1737639151996,
+    "type": "ping"
+}
+[2025-01-23 14:32:31.996] [DEBUG] Processing message type: ping
+[2025-01-23 14:32:31.996] [INFO] Received PING (timestamp: 1737639151996)
+[2025-01-23 14:32:31.996] [INFO] Sending message: {"timestamp":1737639151996,"type":"pong"}
+
+[2025-01-23 14:32:31.996] [INFO] Sent PONG (timestamp: 1737639151996)
+[2025-01-23 14:32:39.684] [INFO] Processing JSON: {"messages":[{"content":"Wiadomość nr 1 od test2 do test1","id":"51","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 2 od test2 do test1","id":"52","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 3 od test2 do test1","id":"53","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 4 od test2 do test1","id":"54","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 5 od test2 do test1","id":"55","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 6 od test2 do test1","id":"56","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 7 od test2 do test1","id":"57","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 8 od test2 do test1","id":"58","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 9 od test2 do test1","id":"59","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 10 od test2 do test1","id":"60","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 11 od test2 do test1","id":"61","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 12 od test2 do test1","id":"62","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 13 od test2 do test1","id":"63","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 14 od test2 do test1","id":"64","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 15 od test2 do test1","id":"65","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 16 od test2 do test1","id":"66","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 17 od test2 do test1","id":"67","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 18 od test2 do test1","id":"68","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 19 od test2 do test1","id":"69","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 20 od test2 do test1","id":"70","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 21 od test2 do test1","id":"71","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 22 od test2 do test1","id":"72","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 23 od test2 do test1","id":"73","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 24 od test2 do test1","id":"74","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 25 od test2 do test1","id":"75","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 26 od test2 do test1","id":"76","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 27 od test2 do test1","id":"77","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 28 od test2 do test1","id":"78","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 29 od test2 do test1","id":"79","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 30 od test2 do test1","id":"80","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 31 od test2 do test1","id":"81","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 32 od test2 do test1","id":"82","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 33 od test2 do test1","id":"83","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 34 od test2 do test1","id":"84","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 35 od test2 do test1","id":"85","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 36 od test2 do test1","id":"86","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 37 od test2 do test1","id":"87","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 38 od test2 do test1","id":"88","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 39 od test2 do test1","id":"89","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 40 od test2 do test1","id":"90","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 41 od test2 do test1","id":"91","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 42 od test2 do test1","id":"92","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 43 od test2 do test1","id":"93","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 44 od test2 do test1","id":"94","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 45 od test2 do test1","id":"95","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 46 od test2 do test1","id":"96","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 47 od test2 do test1","id":"97","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 48 od test2 do test1","id":"98","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 49 od test2 do test1","id":"99","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 50 od test2 do test1","id":"100","isRead":false,"receiver_id":"1","sender":"test2","sender_id":"2","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 1 od test3 do test1","id":"51","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 2 od test3 do test1","id":"52","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 3 od test3 do test1","id":"53","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 4 od test3 do test1","id":"54","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 5 od test3 do test1","id":"55","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 6 od test3 do test1","id":"56","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 7 od test3 do test1","id":"57","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 8 od test3 do test1","id":"58","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 9 od test3 do test1","id":"59","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 10 od test3 do test1","id":"60","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 11 od test3 do test1","id":"61","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 12 od test3 do test1","id":"62","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 13 od test3 do test1","id":"63","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 14 od test3 do test1","id":"64","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 15 od test3 do test1","id":"65","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 16 od test3 do test1","id":"66","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 17 od test3 do test1","id":"67","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 18 od test3 do test1","id":"68","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 19 od test3 do test1","id":"69","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 20 od test3 do test1","id":"70","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 21 od test3 do test1","id":"71","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 22 od test3 do test1","id":"72","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 23 od test3 do test1","id":"73","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 24 od test3 do test1","id":"74","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 25 od test3 do test1","id":"75","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 26 od test3 do test1","id":"76","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 27 od test3 do test1","id":"77","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 28 od test3 do test1","id":"78","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 29 od test3 do test1","id":"79","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 30 od test3 do test1","id":"80","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 31 od test3 do test1","id":"81","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 32 od test3 do test1","id":"82","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 33 od test3 do test1","id":"83","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 34 od test3 do test1","id":"84","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 35 od test3 do test1","id":"85","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 36 od test3 do test1","id":"86","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 37 od test3 do test1","id":"87","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 38 od test3 do test1","id":"88","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 39 od test3 do test1","id":"89","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 40 od test3 do test1","id":"90","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 41 od test3 do test1","id":"91","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 42 od test3 do test1","id":"92","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 43 od test3 do test1","id":"93","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 44 od test3 do test1","id":"94","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 45 od test3 do test1","id":"95","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 46 od test3 do test1","id":"96","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 47 od test3 do test1","id":"97","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 48 od test3 do test1","id":"98","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 49 od test3 do test1","id":"99","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"},{"content":"Wiadomość nr 50 od test3 do test1","id":"100","isRead":false,"receiver_id":"1","sender":"test3","sender_id":"3","timestamp":"2025-01-23T14:32:20"}],"type":"new_messages"}
+[2025-01-23 14:32:39.685] [DEBUG] Processing message type: new_messages
+[2025-01-23 14:32:39.685] [DEBUG] Processing new message from user ID: 0
+[2025-01-23 14:32:39.685] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737639159685,
+    "type": "friends_status_update"
+}
+[2025-01-23 14:32:39.685] [DEBUG] Processing message type: friends_status_update
+[2025-01-23 14:32:39.685] [INFO] Updating friends list with 2 friends
+[2025-01-23 14:32:42.005] [INFO] Processing JSON: {
+    "timestamp": 1737639162004,
+    "type": "ping"
+}
+[2025-01-23 14:32:42.005] [DEBUG] Processing message type: ping
+[2025-01-23 14:32:42.005] [INFO] Received PING (timestamp: 1737639162004)
+[2025-01-23 14:32:42.005] [INFO] Sending message: {"timestamp":1737639162004,"type":"pong"}
+
+[2025-01-23 14:32:42.005] [INFO] Sent PONG (timestamp: 1737639162004)
+[2025-01-23 14:32:52.005] [INFO] Processing JSON: {
+    "timestamp": 1737639172004,
+    "type": "ping"
+}
+[2025-01-23 14:32:52.005] [DEBUG] Processing message type: ping
+[2025-01-23 14:32:52.005] [INFO] Received PING (timestamp: 1737639172004)
+[2025-01-23 14:32:52.005] [INFO] Sending message: {"timestamp":1737639172004,"type":"pong"}
+
+[2025-01-23 14:32:52.005] [INFO] Sent PONG (timestamp: 1737639172004)
+[2025-01-23 14:32:52.965] [INFO] Sending message: {"timestamp":1737639172965,"type":"logout"}
+
+[2025-01-23 14:32:52.966] [INFO] MainWindow destroyed
+[2025-01-23 14:32:52.966] [INFO] Application shutting down

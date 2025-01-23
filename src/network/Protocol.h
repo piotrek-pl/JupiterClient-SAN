@@ -137,6 +137,7 @@ QJsonObject createGetFriendsList();
 QJsonObject createFriendsStatusUpdate(const QJsonArray& friends);
 
 QJsonObject createNewMessage(const QString& content, int from, qint64 timestamp);
+QJsonObject createGetLatestMessages();
 
 } // namespace MessageStructure
 

@@ -116,5 +116,12 @@ QJsonObject createFriendsStatusUpdate(const QJsonArray& friends) {
     };
 }
 
+QJsonObject createGetLatestMessages() {
+    return QJsonObject{
+        {"type", MessageType::GET_LATEST_MESSAGES},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
 } // namespace MessageStructure
 } // namespace Protocol

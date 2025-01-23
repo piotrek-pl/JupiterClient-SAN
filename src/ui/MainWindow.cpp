@@ -97,6 +97,29 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             }
         }
     }
+    else if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE) {
+        QJsonArray messages = json["messages"].toArray();
+        for (const QJsonValue &messageValue : messages) {
+            QJsonObject messageObj = messageValue.toObject();
+            int fromId = messageObj["from"].toInt();
+
+            // Oznacz wiadomości jako nieprzeczytane
+            unreadMessagesMap[fromId] = true;
+
+            // Zaktualizuj ikonę na liście znajomych
+            for(int i = 0; i < ui->friendsList->count(); ++i) {
+                QListWidgetItem* item = ui->friendsList->item(i);
+                if(item->data(Qt::UserRole).toInt() == fromId) {
+                    QString status = item->data(Qt::UserRole + 1).toString();
+                    LOG_DEBUG(QString("Updating icon for user ID %1 with status %2 and unread messages")
+                                  .arg(fromId)
+                                  .arg(status));
+                    item->setIcon(getStatusIcon(status, true));
+                    break;
+                }
+            }
+        }
+    }
     else if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
         QString sender = json["sender"].toString();
         QString recipient = json["recipient"].toString();
