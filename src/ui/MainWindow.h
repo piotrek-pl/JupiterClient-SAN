@@ -57,6 +57,11 @@ private:
     void openChatWindow(QListWidgetItem* item);
     void closeEvent(QCloseEvent *event);
 
+    QIcon getStatusIcon(const QString& status, bool hasUnreadMessages) const;
+    bool checkUnreadMessages(int friendId) const;
+    void updateFriendStatus(int friendId, const QString& status);
+    QString getFriendStatus(int friendId) const;
+
     Ui::MainWindow *ui;
     NetworkManager& networkManager;
     QString currentUsername;
@@ -64,6 +69,7 @@ private:
     ConfigManager::ConnectionConfig connectionConfig;
 
     QMap<int, ChatWindow*> chatWindows;
+    QMap<int, bool> unreadMessagesMap;  // Mapa przechowująca informacje o nieprzeczytanych wiadomościach
 
     // Constants for UI configuration
     static const QString DEFAULT_WINDOW_TITLE;
