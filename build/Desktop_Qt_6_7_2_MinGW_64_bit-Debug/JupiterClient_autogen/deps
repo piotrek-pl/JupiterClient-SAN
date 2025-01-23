@@ -366,6 +366,14 @@ JupiterClient_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake \
@@ -661,6 +669,7 @@ JupiterClient_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/moc_predefs.h \
+	D:/programowanie/Qt/SAN/JupiterClient/resources.qrc \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf \
