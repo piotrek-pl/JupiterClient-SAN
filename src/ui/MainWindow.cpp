@@ -89,7 +89,19 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
 
-    if (type == Protocol::MessageType::LOGIN_RESPONSE) {
+    // Najpierw obsługa nieprzeczytanych wiadomości
+    if (type == Protocol::MessageType::UNREAD_FROM) {
+        QJsonArray unreadFrom = json["users"].toArray();
+        LOG_INFO(QString("Received unread messages info from %1 users").arg(unreadFrom.size()));
+
+        for (const QJsonValue &userValue : unreadFrom) {
+            QJsonObject userObj = userValue.toObject();
+            int userId = userObj["id"].toString().toInt();
+            unreadMessagesMap[userId] = true;
+        }
+    }
+    // Obsługa odpowiedzi logowania
+    else if (type == Protocol::MessageType::LOGIN_RESPONSE) {
         if (json["status"].toString() == "success") {
             currentUsername = json["username"].toString();
             if (json.contains("friends")) {
@@ -97,16 +109,15 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             }
         }
     }
+    // Obsługa najnowszych wiadomości
     else if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE) {
         QJsonArray messages = json["messages"].toArray();
         for (const QJsonValue &messageValue : messages) {
             QJsonObject messageObj = messageValue.toObject();
             int fromId = messageObj["from"].toInt();
 
-            // Oznacz wiadomości jako nieprzeczytane
             unreadMessagesMap[fromId] = true;
 
-            // Zaktualizuj ikonę na liście znajomych
             for(int i = 0; i < ui->friendsList->count(); ++i) {
                 QListWidgetItem* item = ui->friendsList->item(i);
                 if(item->data(Qt::UserRole).toInt() == fromId) {
@@ -120,19 +131,18 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             }
         }
     }
+    // Obsługa odpowiedzi na wiadomość
     else if (type == Protocol::MessageType::MESSAGE_RESPONSE) {
         QString sender = json["sender"].toString();
         QString recipient = json["recipient"].toString();
         int senderId = json["senderId"].toInt();
         int recipientId = json["recipientId"].toInt();
 
-        // Określ ID okna czatu
         int chatWindowId = (sender == currentUsername) ? recipientId : senderId;
 
         if (chatWindows.contains(chatWindowId)) {
             chatWindows[chatWindowId]->processMessage(json);
         } else {
-            // Jeśli okno nie istnieje, a my jesteśmy odbiorcą
             if (recipient == currentUsername) {
                 QString chatPartnerName = sender;
                 ChatWindow* chatWindow = new ChatWindow(chatPartnerName, senderId);
@@ -148,6 +158,7 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             }
         }
     }
+    // Obsługa nowych wiadomości
     else if (type == Protocol::MessageType::NEW_MESSAGES) {
         int fromId = json["from"].toInt();
         QString content = json["content"].toString();
@@ -155,15 +166,12 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
 
         LOG_DEBUG(QString("Processing new message from user ID: %1").arg(fromId));
 
-        // Sprawdź, czy okno czatu jest otwarte i widoczne
         bool shouldShowNotification = !chatWindows.contains(fromId) ||
                                       (chatWindows.contains(fromId) && !chatWindows[fromId]->isVisible());
 
         if (shouldShowNotification) {
-            // Oznacz wiadomość jako nieprzeczytaną
             unreadMessagesMap[fromId] = true;
 
-            // Znajdź item na liście znajomych i zaktualizuj jego ikonę
             for(int i = 0; i < ui->friendsList->count(); ++i) {
                 QListWidgetItem* item = ui->friendsList->item(i);
                 if(item->data(Qt::UserRole).toInt() == fromId) {
@@ -176,45 +184,18 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
                 }
             }
 
-            // Jeśli okno istnieje ale jest niewidoczne, dodaj wiadomość do historii
             if (chatWindows.contains(fromId)) {
                 chatWindows[fromId]->processMessage(json);
             }
         } else {
-            // Jeśli okno jest otwarte i widoczne, przekaż wiadomość do okna czatu
             LOG_DEBUG(QString("Forwarding message to open chat window for user ID: %1").arg(fromId));
             chatWindows[fromId]->processMessage(json);
         }
     }
+    // Obsługa listy znajomych i aktualizacji statusów - na końcu, aby zachować stan nieprzeczytanych wiadomości
     else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
              type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
         updateFriendsList(json["friends"].toArray());
-    }
-    else if (type == Protocol::MessageType::UNREAD_FROM) {
-        QJsonArray unreadFrom = json["users"].toArray();
-
-        LOG_INFO(QString("Received unread messages info from %1 users").arg(unreadFrom.size()));
-
-        for (const QJsonValue &userValue : unreadFrom) {
-            QJsonObject userObj = userValue.toObject();
-            int userId = userObj["id"].toInt();
-
-            // Oznacz że są nieprzeczytane wiadomości od tego użytkownika
-            unreadMessagesMap[userId] = true;
-
-            // Zaktualizuj ikonę na liście znajomych
-            for(int i = 0; i < ui->friendsList->count(); ++i) {
-                QListWidgetItem* item = ui->friendsList->item(i);
-                if(item->data(Qt::UserRole).toInt() == userId) {
-                    QString status = item->data(Qt::UserRole + 1).toString();
-                    LOG_DEBUG(QString("Updating icon for user ID %1 with status %2 and unread messages")
-                                  .arg(userId)
-                                  .arg(status));
-                    item->setIcon(getStatusIcon(status, true));
-                    break;
-                }
-            }
-        }
     }
     else {
         LOG_WARNING(QString("Received unknown message type: %1").arg(type));
@@ -257,17 +238,14 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
         QString friendName = friendObj["username"].toString();
         QString friendStatus = friendObj["status"].toString();
         int friendId = friendObj["id"].toInt();
-        bool hasUnreadMessages = friendObj.contains("unreadMessages") ?
-                                     friendObj["unreadMessages"].toBool() :
-                                     unreadMessagesMap.value(friendId, false);
 
-        // Zapisz stan nieprzeczytanych wiadomości
-        unreadMessagesMap[friendId] = hasUnreadMessages;
+        // Użyj istniejącego stanu nieprzeczytanych wiadomości z mapy
+        bool hasUnreadMessages = unreadMessagesMap.value(friendId, false);
 
         QListWidgetItem* item = new QListWidgetItem();
         item->setText(friendName);
         item->setData(Qt::UserRole, friendId);
-        item->setData(Qt::UserRole + 1, friendStatus);  // Zapisz status
+        item->setData(Qt::UserRole + 1, friendStatus);
         item->setIcon(getStatusIcon(friendStatus, hasUnreadMessages));
         item->setForeground(Qt::black);
 
