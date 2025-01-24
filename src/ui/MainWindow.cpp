@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
     , networkManager(NetworkManager::getInstance())
     , searchDialog(nullptr)  // Dodana inicjalizacja
+    , invitationsDialog(nullptr)
 {
     ui->setupUi(this);
     setWindowTitle("Jupiter Client");
@@ -25,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     initializeUI();
     setupNetworkConnections();
+    setupInvitationsMenu();
 
     LOG_INFO("MainWindow initialized");
 }
@@ -107,6 +109,12 @@ void MainWindow::setupNetworkConnections()
  * @author piotrek-pl
  * @date 2025-01-24 10:34:46
  */
+/**
+ * @brief MainWindow::onMessageReceived Handles received messages from the server
+ * @param json The received message in JSON format
+ * @author piotrek-pl
+ * @date 2025-01-24 11:04:56
+ */
 void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
@@ -138,12 +146,22 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             networkManager.sendMessage(response);
             LOG_INFO(QString("Rejected friend request from user %1").arg(username));
         }
+
+        // Odśwież okno zaproszeń jeśli jest otwarte
+        if (invitationsDialog && invitationsDialog->isVisible()) {
+            invitationsDialog->refreshInvitations();
+        }
     }
     else if (type == Protocol::MessageType::ADD_FRIEND_RESPONSE) {
         if (json["status"].toString() == "success") {
             QMessageBox::information(this, "Success",
                                      "Friend request sent successfully!");
             LOG_INFO("Friend request sent successfully");
+
+            // Odśwież okno zaproszeń jeśli jest otwarte
+            if (invitationsDialog && invitationsDialog->isVisible()) {
+                invitationsDialog->refreshInvitations();
+            }
         } else {
             QString errorMessage = json["message"].toString();
             QMessageBox::warning(this, "Error",
@@ -158,6 +176,12 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             // Odśwież listę znajomych
             QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
             networkManager.sendMessage(getFriendsRequest);
+
+            // Odśwież okno zaproszeń jeśli jest otwarte
+            if (invitationsDialog && invitationsDialog->isVisible()) {
+                invitationsDialog->refreshInvitations();
+            }
+
             LOG_INFO("Friend request accepted successfully");
         } else {
             QString errorMessage = json["message"].toString();
@@ -169,6 +193,11 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
     else if (type == Protocol::MessageType::FRIEND_REQUEST_REJECT_RESPONSE) {
         if (json["status"].toString() == "success") {
             LOG_INFO("Friend request rejected successfully");
+
+            // Odśwież okno zaproszeń jeśli jest otwarte
+            if (invitationsDialog && invitationsDialog->isVisible()) {
+                invitationsDialog->refreshInvitations();
+            }
         } else {
             QString errorMessage = json["message"].toString();
             LOG_WARNING(QString("Failed to reject friend request: %1").arg(errorMessage));
@@ -192,6 +221,11 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             currentUsername = json["username"].toString();
             if (json.contains("friends")) {
                 updateFriendsList(json["friends"].toArray());
+            }
+
+            // Odśwież okno zaproszeń jeśli jest otwarte
+            if (invitationsDialog && invitationsDialog->isVisible()) {
+                invitationsDialog->refreshInvitations();
             }
         }
     }
@@ -283,6 +317,11 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
         if (json["status"].toString() == "success") {
             LOG_INFO("Friend removed successfully");
             QMessageBox::information(this, "Success", "Friend removed successfully");
+
+            // Odśwież okno zaproszeń jeśli jest otwarte
+            if (invitationsDialog && invitationsDialog->isVisible()) {
+                invitationsDialog->refreshInvitations();
+            }
         } else {
             LOG_WARNING("Failed to remove friend");
             QMessageBox::warning(this, "Error", "Failed to remove friend");
@@ -303,6 +342,11 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
         // Wyświetlamy informację użytkownikowi
         QMessageBox::information(this, "Friend Removed",
                                  "You have been removed from a friend's contact list.");
+
+        // Odśwież okno zaproszeń jeśli jest otwarte
+        if (invitationsDialog && invitationsDialog->isVisible()) {
+            invitationsDialog->refreshInvitations();
+        }
     }
     // Obsługa listy znajomych i aktualizacji statusów - na końcu, aby zachować stan nieprzeczytanych wiadomości
     else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
@@ -626,4 +670,24 @@ void MainWindow::showFriendsContextMenu(const QPoint& pos)
             networkManager.sendMessage(request);
         }
     }
+}
+
+void MainWindow::setupInvitationsMenu()
+{
+    QMenu* invitationsMenu = menuBar()->addMenu("Invitations");
+    QAction* showInvitationsAction = invitationsMenu->addAction("Show Invitations");
+    connect(showInvitationsAction, &QAction::triggered,
+            this, &MainWindow::onInvitationsActionTriggered);
+}
+
+void MainWindow::onInvitationsActionTriggered()
+{
+    if (!invitationsDialog) {
+        invitationsDialog = new InvitationsDialog(networkManager, this);
+        // Podłączamy sygnały z NetworkManager do okna zaproszeń
+        connect(&networkManager, &NetworkManager::messageReceived,
+                invitationsDialog, &InvitationsDialog::onMessageReceived);
+    }
+    invitationsDialog->show();
+    invitationsDialog->refreshInvitations();
 }

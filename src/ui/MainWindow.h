@@ -16,6 +16,7 @@
 #include "network/NetworkManager.h"
 #include "config/ConfigManager.h"
 #include "ChatWindow.h"
+#include "InvitationsDialog.h"
 
 class SearchDialog;  // Forward declaration
 
@@ -52,6 +53,7 @@ private slots:
     void onChatWindowClosed(int friendId);
 
     void showFriendsContextMenu(const QPoint& pos);
+    void onInvitationsActionTriggered();
 
 
 private:
@@ -63,6 +65,7 @@ private:
                           const QDateTime& timestamp, bool isOwn);
     void openChatWindow(QListWidgetItem* item);
     void closeEvent(QCloseEvent *event);
+    void setupInvitationsMenu();
 
     QIcon getStatusIcon(const QString& status, bool hasUnreadMessages) const;
     bool checkUnreadMessages(int friendId) const;
@@ -78,6 +81,7 @@ private:
     QMap<int, ChatWindow*> chatWindows;
     QMap<int, bool> unreadMessagesMap;  // Mapa przechowująca informacje o nieprzeczytanych wiadomościach
     SearchDialog* searchDialog;  // Nowe pole
+    InvitationsDialog* invitationsDialog;
 
     // Constants for UI configuration
     static const QString DEFAULT_WINDOW_TITLE;

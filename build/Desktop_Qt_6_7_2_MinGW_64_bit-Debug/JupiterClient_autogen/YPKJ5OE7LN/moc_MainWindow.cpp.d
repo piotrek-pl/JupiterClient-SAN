@@ -5,6 +5,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtCore/QFile \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonArray \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonObject \
+  C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QMap \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings \
@@ -181,6 +182,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+  C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
@@ -188,6 +190,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractslider.h \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Qt/6.7.2/mingw_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlistview.h \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qlistwidget.h \
@@ -436,4 +439,5 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h \
+  D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h
