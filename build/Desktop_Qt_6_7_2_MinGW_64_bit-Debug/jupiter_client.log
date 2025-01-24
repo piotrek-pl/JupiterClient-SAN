@@ -18138,3 +18138,1571 @@ ername": "test1"
 [2025-01-24 15:49:43.762] [INFO] Scheduling reconnection attempt 1/5
 [2025-01-24 15:49:46.587] [INFO] MainWindow destroyed
 [2025-01-24 15:49:46.587] [INFO] Application shutting down
+[2025-01-24 16:28:58.723] [INFO] Application started
+[2025-01-24 16:28:58.724] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-24 16:28:58.724] [INFO] NetworkManager initialized
+[2025-01-24 16:28:58.724] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-24 16:28:58.724] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-24 16:28:58.729] [INFO] LoginWindow initialized
+[2025-01-24 16:28:58.795] [INFO] Connected to server
+[2025-01-24 16:28:58.795] [INFO] Status update: Connected to server
+[2025-01-24 16:29:02.024] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-24 16:29:02.024] [INFO] Status update: Logging in...
+[2025-01-24 16:29:02.027] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737732542027,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-24 16:29:02.027] [DEBUG] Processing message type: login_response
+[2025-01-24 16:29:02.027] [INFO] Login successful
+[2025-01-24 16:29:02.027] [INFO] Sending message: {"status":"online","timestamp":1737732542027,"type":"status_response"}
+
+[2025-01-24 16:29:02.027] [INFO] Sending message: {"timestamp":1737732542027,"type":"get_friends_list"}
+
+[2025-01-24 16:29:02.027] [INFO] Status update: Login successful - Connected
+[2025-01-24 16:29:02.034] [INFO] MainWindow initialized
+[2025-01-24 16:29:02.043] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-24 16:29:02.043] [DEBUG] Processing message type: unread_from
+[2025-01-24 16:29:02.043] [INFO] Received unread messages info from 2 users
+[2025-01-24 16:29:02.043] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732542029,
+    "type": "friends_list_response"
+}
+[2025-01-24 16:29:02.043] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 16:29:02.043] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:02.044] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732542030,
+    "type": "friends_status_update"
+}
+[2025-01-24 16:29:02.044] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 16:29:02.044] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:02.044] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732542031,
+    "type": "friends_list_response"
+}
+[2025-01-24 16:29:02.044] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 16:29:02.044] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:02.052] [INFO] LoginWindow destroyed
+[2025-01-24 16:29:03.959] [INFO] Sending message: {"friend_id":2,"limit":20,"type":"get_latest_messages"}
+
+[2025-01-24 16:29:03.959] [INFO] Sending message: {"friendId":2,"timestamp":1737732543959,"type":"message_read"}
+
+[2025-01-24 16:29:03.961] [INFO] Sending message: {"friendId":2,"timestamp":1737732543961,"type":"message_read"}
+
+[2025-01-24 16:29:03.961] [INFO] Sent read notification for messages from friend ID: 2
+[2025-01-24 16:29:03.968] [INFO] Processing JSON: {
+    "has_more": true,
+    "messages": [
+        {
+            "content": "Wiadomość nr 31 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 32 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 33 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 34 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 35 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 36 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 37 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 38 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 39 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 40 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 41 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 42 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 43 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 44 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 45 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 46 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 47 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 48 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 49 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 50 od test2 do test1",
+            "isRead": false,
+            "sender": "test2",
+            "timestamp": "2025-01-24T16:28:57"
+        }
+    ],
+    "offset": 20,
+    "type": "latest_messages_response"
+}
+[2025-01-24 16:29:03.968] [DEBUG] Processing message type: latest_messages_response
+[2025-01-24 16:29:03.968] [INFO] ChatWindow::onMessageReceived - Received message type: latest_messages_response
+[2025-01-24 16:29:03.975] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737732543963,
+    "type": "message_read_response"
+}
+[2025-01-24 16:29:03.975] [DEBUG] Processing message type: message_read_response
+[2025-01-24 16:29:03.975] [WARNING] Received unknown message type: message_read_response
+[2025-01-24 16:29:03.975] [INFO] ChatWindow::onMessageReceived - Received message type: message_read_response
+[2025-01-24 16:29:03.975] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737732543964,
+    "type": "message_read_response"
+}
+[2025-01-24 16:29:03.975] [DEBUG] Processing message type: message_read_response
+[2025-01-24 16:29:03.975] [WARNING] Received unknown message type: message_read_response
+[2025-01-24 16:29:03.975] [INFO] ChatWindow::onMessageReceived - Received message type: message_read_response
+[2025-01-24 16:29:06.028] [INFO] Sending message: {"friend_id":3,"limit":20,"type":"get_latest_messages"}
+
+[2025-01-24 16:29:06.028] [INFO] Sending message: {"friendId":3,"timestamp":1737732546028,"type":"message_read"}
+
+[2025-01-24 16:29:06.030] [INFO] Sending message: {"friendId":3,"timestamp":1737732546030,"type":"message_read"}
+
+[2025-01-24 16:29:06.030] [INFO] Sent read notification for messages from friend ID: 3
+[2025-01-24 16:29:06.037] [INFO] Processing JSON: {
+    "has_more": true,
+    "messages": [
+        {
+            "content": "Wiadomość nr 31 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 32 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 33 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 34 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 35 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 36 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 37 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 38 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 39 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 40 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 41 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 42 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 43 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 44 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 45 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 46 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 47 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 48 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 49 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 50 od test3 do test1",
+            "isRead": false,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        }
+    ],
+    "offset": 20,
+    "type": "latest_messages_response"
+}
+[2025-01-24 16:29:06.037] [DEBUG] Processing message type: latest_messages_response
+[2025-01-24 16:29:06.037] [INFO] ChatWindow::onMessageReceived - Received message type: latest_messages_response
+[2025-01-24 16:29:06.040] [INFO] ChatWindow::onMessageReceived - Received message type: latest_messages_response
+[2025-01-24 16:29:06.044] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737732546032,
+    "type": "message_read_response"
+}
+[2025-01-24 16:29:06.044] [DEBUG] Processing message type: message_read_response
+[2025-01-24 16:29:06.044] [WARNING] Received unknown message type: message_read_response
+[2025-01-24 16:29:06.044] [INFO] ChatWindow::onMessageReceived - Received message type: message_read_response
+[2025-01-24 16:29:06.044] [INFO] ChatWindow::onMessageReceived - Received message type: message_read_response
+[2025-01-24 16:29:06.044] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737732546033,
+    "type": "message_read_response"
+}
+[2025-01-24 16:29:06.044] [DEBUG] Processing message type: message_read_response
+[2025-01-24 16:29:06.045] [WARNING] Received unknown message type: message_read_response
+[2025-01-24 16:29:06.045] [INFO] ChatWindow::onMessageReceived - Received message type: message_read_response
+[2025-01-24 16:29:06.045] [INFO] ChatWindow::onMessageReceived - Received message type: message_read_response
+[2025-01-24 16:29:06.847] [INFO] Sending message: {"friend_id":3,"offset":20,"type":"get_more_history"}
+
+[2025-01-24 16:29:06.849] [INFO] Processing JSON: {
+    "has_more": true,
+    "messages": [
+        {
+            "content": "Wiadomość nr 30 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 29 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 28 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 27 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 26 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 25 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 24 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 23 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 22 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 21 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 20 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 19 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 18 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 17 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 16 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 15 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 14 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 13 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 12 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 11 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        }
+    ],
+    "offset": 20,
+    "type": "more_history_response"
+}
+[2025-01-24 16:29:06.849] [DEBUG] Processing message type: more_history_response
+[2025-01-24 16:29:06.849] [WARNING] Received unknown message type: more_history_response
+[2025-01-24 16:29:06.849] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:06.851] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:07.807] [INFO] Sending message: {"friend_id":3,"offset":40,"type":"get_more_history"}
+
+[2025-01-24 16:29:07.809] [INFO] Processing JSON: {
+    "has_more": true,
+    "messages": [
+        {
+            "content": "Wiadomość nr 10 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 9 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 8 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 7 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 6 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 5 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 4 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 3 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 2 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 1 od test3 do test1",
+            "isRead": true,
+            "sender": "test3",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 50 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 49 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 48 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 47 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 46 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 45 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 44 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 43 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 42 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 41 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        }
+    ],
+    "offset": 40,
+    "type": "more_history_response"
+}
+[2025-01-24 16:29:07.809] [DEBUG] Processing message type: more_history_response
+[2025-01-24 16:29:07.809] [WARNING] Received unknown message type: more_history_response
+[2025-01-24 16:29:07.809] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:07.811] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:08.730] [INFO] Processing JSON: {
+    "timestamp": 1737732548729,
+    "type": "ping"
+}
+[2025-01-24 16:29:08.730] [DEBUG] Processing message type: ping
+[2025-01-24 16:29:08.730] [INFO] Received PING (timestamp: 1737732548729)
+[2025-01-24 16:29:08.730] [INFO] Sending message: {"timestamp":1737732548729,"type":"pong"}
+
+[2025-01-24 16:29:08.730] [INFO] Sent PONG (timestamp: 1737732548729)
+[2025-01-24 16:29:08.849] [INFO] Sending message: {"friend_id":3,"offset":60,"type":"get_more_history"}
+
+[2025-01-24 16:29:08.851] [INFO] Processing JSON: {
+    "has_more": true,
+    "messages": [
+        {
+            "content": "Wiadomość nr 40 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 39 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 38 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 37 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 36 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 35 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 34 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 33 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 32 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 31 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 30 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 29 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 28 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 27 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 26 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 25 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 24 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 23 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 22 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 21 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        }
+    ],
+    "offset": 60,
+    "type": "more_history_response"
+}
+[2025-01-24 16:29:08.851] [DEBUG] Processing message type: more_history_response
+[2025-01-24 16:29:08.851] [WARNING] Received unknown message type: more_history_response
+[2025-01-24 16:29:08.851] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:08.853] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:09.515] [INFO] Sending message: {"friend_id":3,"offset":80,"type":"get_more_history"}
+
+[2025-01-24 16:29:09.518] [INFO] Processing JSON: {
+    "has_more": false,
+    "messages": [
+        {
+            "content": "Wiadomość nr 20 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 19 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 18 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 17 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 16 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 15 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 14 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 13 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 12 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 11 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 10 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 9 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 8 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 7 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 6 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 5 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 4 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 3 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 2 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        },
+        {
+            "content": "Wiadomość nr 1 od test1 do test3",
+            "isRead": false,
+            "sender": "test1",
+            "timestamp": "2025-01-24T16:28:57"
+        }
+    ],
+    "offset": 80,
+    "type": "more_history_response"
+}
+[2025-01-24 16:29:09.518] [DEBUG] Processing message type: more_history_response
+[2025-01-24 16:29:09.518] [WARNING] Received unknown message type: more_history_response
+[2025-01-24 16:29:09.518] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:09.520] [INFO] ChatWindow::onMessageReceived - Received message type: more_history_response
+[2025-01-24 16:29:17.024] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732557024,
+    "type": "friends_status_update"
+}
+[2025-01-24 16:29:17.024] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 16:29:17.024] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:17.025] [INFO] ChatWindow::onMessageReceived - Received message type: friends_status_update
+[2025-01-24 16:29:17.025] [INFO] ChatWindow::onMessageReceived - Received message type: friends_status_update
+[2025-01-24 16:29:18.726] [INFO] Processing JSON: {
+    "timestamp": 1737732558726,
+    "type": "ping"
+}
+[2025-01-24 16:29:18.726] [DEBUG] Processing message type: ping
+[2025-01-24 16:29:18.726] [INFO] Received PING (timestamp: 1737732558726)
+[2025-01-24 16:29:18.726] [INFO] Sending message: {"timestamp":1737732558726,"type":"pong"}
+
+[2025-01-24 16:29:18.726] [INFO] Sent PONG (timestamp: 1737732558726)
+[2025-01-24 16:29:21.931] [DEBUG] Search dialog UI setup completed
+[2025-01-24 16:29:21.931] [INFO] Search dialog initialized
+[2025-01-24 16:29:23.713] [INFO] Sending message: {"timestamp":1737732563713,"type":"logout"}
+
+[2025-01-24 16:29:23.713] [INFO] MainWindow destroyed
+[2025-01-24 16:29:23.715] [INFO] Application shutting down
+[2025-01-24 16:29:31.900] [INFO] Application started
+[2025-01-24 16:29:31.901] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-24 16:29:31.901] [INFO] NetworkManager initialized
+[2025-01-24 16:29:31.901] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-24 16:29:31.901] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-24 16:29:31.905] [INFO] LoginWindow initialized
+[2025-01-24 16:29:31.969] [INFO] Connected to server
+[2025-01-24 16:29:31.969] [INFO] Status update: Connected to server
+[2025-01-24 16:29:35.190] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-24 16:29:35.191] [INFO] Status update: Logging in...
+[2025-01-24 16:29:35.194] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737732575194,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-24 16:29:35.194] [DEBUG] Processing message type: login_response
+[2025-01-24 16:29:35.194] [INFO] Login successful
+[2025-01-24 16:29:35.194] [INFO] Sending message: {"status":"online","timestamp":1737732575194,"type":"status_response"}
+
+[2025-01-24 16:29:35.194] [INFO] Sending message: {"timestamp":1737732575194,"type":"get_friends_list"}
+
+[2025-01-24 16:29:35.194] [INFO] Status update: Login successful - Connected
+[2025-01-24 16:29:35.200] [INFO] MainWindow initialized
+[2025-01-24 16:29:35.209] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-24 16:29:35.209] [DEBUG] Processing message type: unread_from
+[2025-01-24 16:29:35.209] [INFO] Received unread messages info from 2 users
+[2025-01-24 16:29:35.209] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732575196,
+    "type": "friends_list_response"
+}
+[2025-01-24 16:29:35.209] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 16:29:35.209] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:35.210] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732575197,
+    "type": "friends_status_update"
+}
+[2025-01-24 16:29:35.210] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 16:29:35.210] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:35.210] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732575198,
+    "type": "friends_list_response"
+}
+[2025-01-24 16:29:35.210] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 16:29:35.210] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:35.219] [INFO] LoginWindow destroyed
+[2025-01-24 16:29:37.344] [DEBUG] Search dialog UI setup completed
+[2025-01-24 16:29:37.345] [INFO] Search dialog initialized
+[2025-01-24 16:29:38.273] [DEBUG] Search timer started for query: tes
+[2025-01-24 16:29:38.343] [DEBUG] Search timer started for query: test
+[2025-01-24 16:29:38.839] [INFO] Sending message: {"query":"test","timestamp":1737732578839,"type":"search_users"}
+
+[2025-01-24 16:29:38.839] [DEBUG] Sending search request for query: test
+[2025-01-24 16:29:38.840] [INFO] Processing JSON: {
+    "timestamp": 1737732578840,
+    "type": "search_users_response",
+    "users": [
+        {
+            "id": "2",
+            "username": "test2"
+        },
+        {
+            "id": "3",
+            "username": "test3"
+        },
+        {
+            "id": "4",
+            "username": "test4"
+        },
+        {
+            "id": "5",
+            "username": "test5"
+        },
+        {
+            "id": "6",
+            "username": "test6"
+        }
+    ]
+}
+[2025-01-24 16:29:38.840] [DEBUG] Processing message type: search_users_response
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 16:29:38.840] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 16:29:38.840] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 16:29:38.840] [INFO] Received search results: 5 users found
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 16:29:38.840] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 16:29:38.840] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:38.840] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:38.840] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 16:29:38.840] [INFO] Received search results: 5 users found
+[2025-01-24 16:29:39.886] [DEBUG] Showing context menu for user test4 (ID: 4)
+[2025-01-24 16:29:39.886] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 16:29:39.886] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 16:29:39.886] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 16:29:39.886] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 16:29:39.886] [DEBUG] isFriend check result: 0
+[2025-01-24 16:29:39.886] [DEBUG] User test4 is not a friend, showing add friend menu
+[2025-01-24 16:29:41.903] [INFO] Processing JSON: {
+    "timestamp": 1737732581903,
+    "type": "ping"
+}
+[2025-01-24 16:29:41.903] [DEBUG] Processing message type: ping
+[2025-01-24 16:29:41.903] [INFO] Received PING (timestamp: 1737732581903)
+[2025-01-24 16:29:41.903] [INFO] Sending message: {"timestamp":1737732581903,"type":"pong"}
+
+[2025-01-24 16:29:41.903] [INFO] Sent PONG (timestamp: 1737732581903)
+[2025-01-24 16:29:41.935] [INFO] Sending friend request to user test4 (ID: 4)
+[2025-01-24 16:29:41.935] [INFO] Sending message: {"timestamp":1737732581935,"type":"add_friend_request","user_id":4}
+
+[2025-01-24 16:29:41.939] [INFO] Processing JSON: {
+    "message": "Friend request sent successfully",
+    "status": "success",
+    "timestamp": 1737732581939,
+    "type": "add_friend_response"
+}
+[2025-01-24 16:29:41.939] [DEBUG] Processing message type: add_friend_response
+[2025-01-24 16:29:42.648] [INFO] Friend request sent successfully
+[2025-01-24 16:29:43.368] [INFO] Friend request sent successfully
+[2025-01-24 16:29:46.644] [INFO] Sending message: {"timestamp":1737732586644,"type":"get_received_invitations"}
+
+[2025-01-24 16:29:46.644] [INFO] Sending message: {"timestamp":1737732586644,"type":"get_sent_invitations"}
+
+[2025-01-24 16:29:46.648] [INFO] Sending message: {"timestamp":1737732586648,"type":"get_received_invitations"}
+
+[2025-01-24 16:29:46.648] [INFO] Sending message: {"timestamp":1737732586648,"type":"get_sent_invitations"}
+
+[2025-01-24 16:29:46.649] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737732586649,
+    "type": "received_invitations_response"
+}
+[2025-01-24 16:29:46.649] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 16:29:46.649] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 16:29:46.650] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737732581000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737732586650,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 16:29:46.650] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 16:29:46.650] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 16:29:46.651] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737732586650,
+    "type": "received_invitations_response"
+}
+[2025-01-24 16:29:46.651] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 16:29:46.651] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 16:29:46.651] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737732581000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737732586651,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 16:29:46.651] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 16:29:46.651] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 16:29:49.748] [INFO] Sending message: {"request_id":1,"timestamp":1737732589748,"type":"cancel_friend_request"}
+
+[2025-01-24 16:29:49.749] [INFO] Processing JSON: {
+    "message": "Unknown message type",
+    "timestamp": 1737732589749,
+    "type": "error"
+}
+[2025-01-24 16:29:49.749] [DEBUG] Processing message type: error
+[2025-01-24 16:29:49.749] [ERROR] Server error: Unknown message type
+[2025-01-24 16:29:49.749] [INFO] Status update: Server error: Unknown message type
+[2025-01-24 16:29:49.749] [ERROR] Network error: Unknown message type
+[2025-01-24 16:29:49.749] [WARNING] Received unknown message type: error
+[2025-01-24 16:29:50.183] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737732590183,
+    "type": "friends_status_update"
+}
+[2025-01-24 16:29:50.183] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 16:29:50.183] [INFO] Updating friends list with 2 friends
+[2025-01-24 16:29:51.899] [INFO] Processing JSON: {
+    "timestamp": 1737732591899,
+    "type": "ping"
+}
+[2025-01-24 16:29:51.899] [DEBUG] Processing message type: ping
+[2025-01-24 16:29:51.899] [INFO] Received PING (timestamp: 1737732591899)
+[2025-01-24 16:29:51.899] [INFO] Sending message: {"timestamp":1737732591899,"type":"pong"}
+
+[2025-01-24 16:29:51.899] [INFO] Sent PONG (timestamp: 1737732591899)
+[2025-01-24 16:29:52.715] [INFO] Sending message: {"timestamp":1737732592715,"type":"logout"}
+
+[2025-01-24 16:29:52.716] [INFO] MainWindow destroyed
+[2025-01-24 16:29:52.716] [INFO] Application shutting down
+[2025-01-24 19:06:44.446] [INFO] Application started
+[2025-01-24 19:06:44.446] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-24 19:06:44.447] [INFO] NetworkManager initialized
+[2025-01-24 19:06:44.447] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-24 19:06:44.447] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-24 19:06:44.451] [INFO] LoginWindow initialized
+[2025-01-24 19:06:44.514] [INFO] Connected to server
+[2025-01-24 19:06:44.514] [INFO] Status update: Connected to server
+[2025-01-24 19:06:50.239] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-24 19:06:50.239] [INFO] Status update: Logging in...
+[2025-01-24 19:06:50.241] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737742010241,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-24 19:06:50.241] [DEBUG] Processing message type: login_response
+[2025-01-24 19:06:50.241] [INFO] Login successful
+[2025-01-24 19:06:50.241] [INFO] Sending message: {"status":"online","timestamp":1737742010241,"type":"status_response"}
+
+[2025-01-24 19:06:50.241] [INFO] Sending message: {"timestamp":1737742010241,"type":"get_friends_list"}
+
+[2025-01-24 19:06:50.241] [INFO] Status update: Login successful - Connected
+[2025-01-24 19:06:50.248] [INFO] MainWindow initialized
+[2025-01-24 19:06:50.257] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-24 19:06:50.257] [DEBUG] Processing message type: unread_from
+[2025-01-24 19:06:50.257] [INFO] Received unread messages info from 2 users
+[2025-01-24 19:06:50.257] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742010243,
+    "type": "friends_list_response"
+}
+[2025-01-24 19:06:50.257] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 19:06:50.257] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:06:50.258] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742010244,
+    "type": "friends_status_update"
+}
+[2025-01-24 19:06:50.258] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 19:06:50.258] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:06:50.258] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742010245,
+    "type": "friends_list_response"
+}
+[2025-01-24 19:06:50.258] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 19:06:50.258] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:06:50.267] [INFO] LoginWindow destroyed
+[2025-01-24 19:06:53.713] [DEBUG] Search dialog UI setup completed
+[2025-01-24 19:06:53.713] [INFO] Search dialog initialized
+[2025-01-24 19:06:54.455] [INFO] Processing JSON: {
+    "timestamp": 1737742014454,
+    "type": "ping"
+}
+[2025-01-24 19:06:54.455] [DEBUG] Processing message type: ping
+[2025-01-24 19:06:54.455] [INFO] Received PING (timestamp: 1737742014454)
+[2025-01-24 19:06:54.455] [INFO] Sending message: {"timestamp":1737742014454,"type":"pong"}
+
+[2025-01-24 19:06:54.455] [INFO] Sent PONG (timestamp: 1737742014454)
+[2025-01-24 19:06:54.598] [DEBUG] Search timer started for query: tes
+[2025-01-24 19:06:54.666] [DEBUG] Search timer started for query: test
+[2025-01-24 19:06:55.173] [INFO] Sending message: {"query":"test","timestamp":1737742015173,"type":"search_users"}
+
+[2025-01-24 19:06:55.173] [DEBUG] Sending search request for query: test
+[2025-01-24 19:06:55.174] [INFO] Processing JSON: {
+    "timestamp": 1737742015174,
+    "type": "search_users_response",
+    "users": [
+        {
+            "id": "2",
+            "username": "test2"
+        },
+        {
+            "id": "3",
+            "username": "test3"
+        },
+        {
+            "id": "4",
+            "username": "test4"
+        },
+        {
+            "id": "5",
+            "username": "test5"
+        },
+        {
+            "id": "6",
+            "username": "test6"
+        }
+    ]
+}
+[2025-01-24 19:06:55.174] [DEBUG] Processing message type: search_users_response
+[2025-01-24 19:06:55.174] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 19:06:55.174] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.174] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 19:06:55.174] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 19:06:55.174] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 19:06:55.174] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.174] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.174] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 19:06:55.174] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 19:06:55.174] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:06:55.174] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 19:06:55.175] [INFO] Received search results: 5 users found
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 19:06:55.175] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 19:06:55.175] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:55.175] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:55.175] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 19:06:55.175] [INFO] Received search results: 5 users found
+[2025-01-24 19:06:56.029] [DEBUG] Showing context menu for user test4 (ID: 4)
+[2025-01-24 19:06:56.029] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:06:56.029] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:06:56.030] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:06:56.030] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:06:56.030] [DEBUG] isFriend check result: 0
+[2025-01-24 19:06:56.030] [DEBUG] User test4 is not a friend, showing add friend menu
+[2025-01-24 19:06:57.224] [INFO] Sending friend request to user test4 (ID: 4)
+[2025-01-24 19:06:57.224] [INFO] Sending message: {"timestamp":1737742017224,"type":"add_friend_request","user_id":4}
+
+[2025-01-24 19:06:57.228] [INFO] Processing JSON: {
+    "message": "Friend request sent successfully",
+    "status": "success",
+    "timestamp": 1737742017228,
+    "type": "add_friend_response"
+}
+[2025-01-24 19:06:57.228] [DEBUG] Processing message type: add_friend_response
+[2025-01-24 19:06:57.228] [WARNING] Received unknown message type: add_friend_response
+[2025-01-24 19:06:58.146] [INFO] Friend request sent successfully
+[2025-01-24 19:07:03.747] [INFO] Sending message: {"timestamp":1737742023747,"type":"get_received_invitations"}
+
+[2025-01-24 19:07:03.747] [INFO] Sending message: {"timestamp":1737742023747,"type":"get_sent_invitations"}
+
+[2025-01-24 19:07:03.751] [INFO] Sending message: {"timestamp":1737742023751,"type":"get_received_invitations"}
+
+[2025-01-24 19:07:03.751] [INFO] Sending message: {"timestamp":1737742023751,"type":"get_sent_invitations"}
+
+[2025-01-24 19:07:03.752] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737742023752,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:07:03.752] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:07:03.752] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:07:03.753] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737742017000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737742023752,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:07:03.753] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:07:03.753] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:07:03.753] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737742023753,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:07:03.753] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:07:03.753] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:07:03.753] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737742017000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737742023753,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:07:03.753] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:07:03.753] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:07:04.443] [INFO] Processing JSON: {
+    "timestamp": 1737742024443,
+    "type": "ping"
+}
+[2025-01-24 19:07:04.443] [DEBUG] Processing message type: ping
+[2025-01-24 19:07:04.443] [INFO] Received PING (timestamp: 1737742024443)
+[2025-01-24 19:07:04.443] [INFO] Sending message: {"timestamp":1737742024443,"type":"pong"}
+
+[2025-01-24 19:07:04.443] [INFO] Sent PONG (timestamp: 1737742024443)
+[2025-01-24 19:07:05.249] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742025249,
+    "type": "friends_status_update"
+}
+[2025-01-24 19:07:05.249] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 19:07:05.249] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:07:06.350] [INFO] Sending message: {"request_id":1,"timestamp":1737742026350,"type":"cancel_friend_request"}
+
+[2025-01-24 19:07:06.350] [INFO] Processing JSON: {
+    "message": "Unknown message type",
+    "timestamp": 1737742026350,
+    "type": "error"
+}
+[2025-01-24 19:07:06.350] [DEBUG] Processing message type: error
+[2025-01-24 19:07:06.350] [ERROR] Server error: Unknown message type
+[2025-01-24 19:07:06.350] [INFO] Status update: Server error: Unknown message type
+[2025-01-24 19:07:06.351] [ERROR] Network error: Unknown message type
+[2025-01-24 19:07:06.351] [WARNING] Received unknown message type: error
+[2025-01-24 19:07:08.859] [INFO] Sending message: {"timestamp":1737742028859,"type":"logout"}
+
+[2025-01-24 19:07:08.859] [INFO] MainWindow destroyed
+[2025-01-24 19:07:08.860] [INFO] Application shutting down

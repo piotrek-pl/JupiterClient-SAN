@@ -163,6 +163,7 @@ void SearchDialog::handleServerResponse(const QJsonObject& response)
             QMessageBox::information(this, "Success",
                                      "Friend request sent successfully!");
             LOG_INFO("Friend request sent successfully");
+            emit friendRequestSent();  // emitujemy sygnał po udanym wysłaniu zaproszenia
         } else {
             QMessageBox::warning(this, "Error",
                                  "Failed to send friend request. " + message);

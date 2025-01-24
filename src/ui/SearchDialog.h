@@ -28,6 +28,9 @@ private slots:
     void showContextMenu(const QPoint& pos);
     void handleServerResponse(const QJsonObject& response);  // Dodana deklaracja
 
+signals:
+    void friendRequestSent();
+
 private:
     void setupUI();
 

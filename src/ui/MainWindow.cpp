@@ -171,23 +171,6 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
             invitationsDialog->refreshInvitations();
         }
     }
-    else if (type == Protocol::MessageType::ADD_FRIEND_RESPONSE) {
-        if (json["status"].toString() == "success") {
-            QMessageBox::information(this, "Success",
-                                     "Friend request sent successfully!");
-            LOG_INFO("Friend request sent successfully");
-
-            // Odśwież okno zaproszeń jeśli jest otwarte
-            if (invitationsDialog && invitationsDialog->isVisible()) {
-                invitationsDialog->refreshInvitations();
-            }
-        } else {
-            QString errorMessage = json["message"].toString();
-            QMessageBox::warning(this, "Error",
-                                 "Failed to send friend request: " + errorMessage);
-            LOG_WARNING(QString("Failed to send friend request: %1").arg(errorMessage));
-        }
-    }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_ACCEPT_RESPONSE) {
         if (json["status"].toString() == "success") {
             QMessageBox::information(this, "Success",
@@ -651,6 +634,12 @@ void MainWindow::onMenuSearchTriggered()
 {
     if (!searchDialog) {
         searchDialog = new SearchDialog(networkManager, this);
+        // dodajemy połączenie sygnału z akcją odświeżenia
+        connect(searchDialog, &SearchDialog::friendRequestSent, [this]() {
+            if (invitationsDialog && invitationsDialog->isVisible()) {
+                invitationsDialog->refreshInvitations();
+            }
+        });
     }
     searchDialog->show();
     searchDialog->raise();
