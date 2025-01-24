@@ -386,6 +386,12 @@
 			null
 		],
 		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_SearchDialog.cpp",
+			null
+		],
+		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h",
 			"MU",
 			"VSCBVMNR7M/moc_Logger.cpp",
@@ -506,6 +512,11 @@
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.cpp",
 			"MU",
 			null
 		],

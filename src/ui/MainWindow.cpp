@@ -7,6 +7,7 @@
 
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include "SearchDialog.h"
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QMessageBox>
@@ -16,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , networkManager(NetworkManager::getInstance())
+    , searchDialog(nullptr)  // Dodana inicjalizacja
 {
     ui->setupUi(this);
     setWindowTitle("Jupiter Client");
@@ -34,6 +36,10 @@ MainWindow::~MainWindow()
         networkManager.sendMessage(logoutRequest);
     }
 
+    if (searchDialog) {  // Dodane usuwanie searchDialog
+        delete searchDialog;
+    }
+
     delete ui;
     LOG_INFO("MainWindow destroyed");
 }
@@ -50,8 +56,8 @@ void MainWindow::initializeUI()
     connect(ui->statusComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::onStatusChanged);
 
-
     // Menu connections
+    connect(ui->actionSearch, &QAction::triggered, this, &MainWindow::onMenuSearchTriggered);
     connect(ui->actionSettings, &QAction::triggered, this, &MainWindow::onMenuSettingsTriggered);
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::onMenuExitTriggered);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onMenuAboutTriggered);
@@ -88,6 +94,14 @@ void MainWindow::setupNetworkConnections()
 void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
+
+    // Obsługa odpowiedzi wyszukiwania
+    if (type == Protocol::MessageType::SEARCH_USERS_RESPONSE) {
+        if (searchDialog) {
+            searchDialog->onSearchResponse(json);
+        }
+        return;
+    }
 
     // Najpierw obsługa nieprzeczytanych wiadomości
     if (type == Protocol::MessageType::UNREAD_FROM) {
@@ -470,4 +484,14 @@ void MainWindow::onChatWindowClosed(int friendId)
 
     // Resetujemy stan nieprzeczytanych wiadomości
     unreadMessagesMap[friendId] = false;
+}
+
+void MainWindow::onMenuSearchTriggered()
+{
+    if (!searchDialog) {
+        searchDialog = new SearchDialog(networkManager, this);
+    }
+    searchDialog->show();
+    searchDialog->raise();
+    searchDialog->activateWindow();
 }

@@ -17,6 +17,8 @@
 #include "config/ConfigManager.h"
 #include "ChatWindow.h"
 
+class SearchDialog;  // Forward declaration
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -40,6 +42,7 @@ private slots:
     void onMenuSettingsTriggered();
     void onMenuExitTriggered();
     void onMenuAboutTriggered();
+    void onMenuSearchTriggered();  // Nowy slot
 
     // Network event handlers
     void onConnectionStatusChanged(const QString& status);
@@ -71,6 +74,7 @@ private:
 
     QMap<int, ChatWindow*> chatWindows;
     QMap<int, bool> unreadMessagesMap;  // Mapa przechowująca informacje o nieprzeczytanych wiadomościach
+    SearchDialog* searchDialog;  // Nowe pole
 
     // Constants for UI configuration
     static const QString DEFAULT_WINDOW_TITLE;
@@ -78,7 +82,7 @@ private:
     static const QString SETTINGS_DIALOG_MESSAGE;
 };
 
-// Static const definitions (można umieścić w cpp)
+// Static const definitions
 inline const QString MainWindow::DEFAULT_WINDOW_TITLE = "Jupiter Client";
 inline const QString MainWindow::MESSAGE_INPUT_PLACEHOLDER = "Type your message here...";
 inline const QString MainWindow::SETTINGS_DIALOG_MESSAGE = "Settings functionality will be implemented in future versions.";

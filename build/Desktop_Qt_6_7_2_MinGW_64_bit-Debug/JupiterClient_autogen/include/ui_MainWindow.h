@@ -29,6 +29,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionSearch;
     QAction *actionSettings;
     QAction *actionExit;
     QAction *actionAbout;
@@ -53,6 +54,8 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(400, 600);
         MainWindow->setMinimumSize(QSize(400, 600));
+        actionSearch = new QAction(MainWindow);
+        actionSearch->setObjectName("actionSearch");
         actionSettings = new QAction(MainWindow);
         actionSettings->setObjectName("actionSettings");
         actionExit = new QAction(MainWindow);
@@ -115,6 +118,7 @@ public:
 
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuHelp->menuAction());
+        menuFile->addAction(actionSearch);
         menuFile->addAction(actionSettings);
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
@@ -128,6 +132,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Jupiter Client", nullptr));
+        actionSearch->setText(QCoreApplication::translate("MainWindow", "Search Users", nullptr));
         actionSettings->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));

@@ -45,6 +45,7 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "onMenuSettingsTriggered",
     "onMenuExitTriggered",
     "onMenuAboutTriggered",
+    "onMenuSearchTriggered",
     "onConnectionStatusChanged",
     "status",
     "onMessageReceived",
@@ -66,7 +67,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,17 +75,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   80,    2, 0x0a,    1 /* Public */,
-       4,    1,   83,    2, 0x08,    3 /* Private */,
-       6,    0,   86,    2, 0x08,    5 /* Private */,
-       7,    0,   87,    2, 0x08,    6 /* Private */,
-       8,    0,   88,    2, 0x08,    7 /* Private */,
-       9,    0,   89,    2, 0x08,    8 /* Private */,
-      10,    1,   90,    2, 0x08,    9 /* Private */,
-      12,    1,   93,    2, 0x08,   11 /* Private */,
-      14,    1,   96,    2, 0x08,   13 /* Private */,
-      16,    0,   99,    2, 0x08,   15 /* Private */,
-      17,    1,  100,    2, 0x08,   16 /* Private */,
+       1,    1,   86,    2, 0x0a,    1 /* Public */,
+       4,    1,   89,    2, 0x08,    3 /* Private */,
+       6,    0,   92,    2, 0x08,    5 /* Private */,
+       7,    0,   93,    2, 0x08,    6 /* Private */,
+       8,    0,   94,    2, 0x08,    7 /* Private */,
+       9,    0,   95,    2, 0x08,    8 /* Private */,
+      10,    0,   96,    2, 0x08,    9 /* Private */,
+      11,    1,   97,    2, 0x08,   10 /* Private */,
+      13,    1,  100,    2, 0x08,   12 /* Private */,
+      15,    1,  103,    2, 0x08,   14 /* Private */,
+      17,    0,  106,    2, 0x08,   16 /* Private */,
+      18,    1,  107,    2, 0x08,   17 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -93,11 +95,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   11,
-    QMetaType::Void, QMetaType::QJsonObject,   13,
-    QMetaType::Void, QMetaType::QString,   15,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   18,
+    QMetaType::Void, QMetaType::QString,   12,
+    QMetaType::Void, QMetaType::QJsonObject,   14,
+    QMetaType::Void, QMetaType::QString,   16,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   19,
 
        0        // eod
 };
@@ -124,6 +127,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'onMenuExitTriggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onMenuAboutTriggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onMenuSearchTriggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onConnectionStatusChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -155,11 +160,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->onMenuSettingsTriggered(); break;
         case 4: _t->onMenuExitTriggered(); break;
         case 5: _t->onMenuAboutTriggered(); break;
-        case 6: _t->onConnectionStatusChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 7: _t->onMessageReceived((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1]))); break;
-        case 8: _t->onNetworkError((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 9: _t->onDisconnected(); break;
-        case 10: _t->onChatWindowClosed((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 6: _t->onMenuSearchTriggered(); break;
+        case 7: _t->onConnectionStatusChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 8: _t->onMessageReceived((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1]))); break;
+        case 9: _t->onNetworkError((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 10: _t->onDisconnected(); break;
+        case 11: _t->onChatWindowClosed((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -184,13 +190,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

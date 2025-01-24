@@ -17,6 +17,7 @@ set(PROJECT_SOURCES
     src/ui/LoginWindow.cpp
     src/ui/MainWindow.cpp
     src/ui/ChatWindow.cpp
+    src/ui/SearchDialog.cpp
     src/network/Client.cpp
     src/network/Protocol.cpp
     src/models/User.cpp
@@ -25,6 +26,7 @@ set(PROJECT_SOURCES
     src/ui/LoginWindow.h
     src/ui/MainWindow.h
     src/ui/ChatWindow.h
+    src/ui/SearchDialog.h
     src/network/Client.h
     src/network/Protocol.h
     src/models/User.h

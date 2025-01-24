@@ -4,4 +4,5 @@
 #include "YPKJ5OE7LN/moc_ChatWindow.cpp"
 #include "YPKJ5OE7LN/moc_LoginWindow.cpp"
 #include "YPKJ5OE7LN/moc_MainWindow.cpp"
+#include "YPKJ5OE7LN/moc_SearchDialog.cpp"
 #include "VSCBVMNR7M/moc_Logger.cpp"

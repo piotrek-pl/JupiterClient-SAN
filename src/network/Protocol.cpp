@@ -124,5 +124,14 @@ QJsonObject createMessageReadResponse() {
     };
 }
 
+QJsonObject createSearchUsersRequest(const QString& query) {
+    return QJsonObject{
+        {"type", MessageType::SEARCH_USERS},
+        {"query", query},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
+
 } // namespace MessageStructure
 } // namespace Protocol
