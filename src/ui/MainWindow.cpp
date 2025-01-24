@@ -233,13 +233,19 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
     LOG_INFO(QString("Updating friends list with %1 friends").arg(friends.size()));
     ui->friendsList->clear();
 
+    // Utworzenie list dla każdego statusu
+    QList<QListWidgetItem*> onlineFriends;
+    QList<QListWidgetItem*> awayFriends;
+    QList<QListWidgetItem*> busyFriends;
+    QList<QListWidgetItem*> offlineFriends;
+
+    // Przydzielenie znajomych do odpowiednich list według statusu
     for (const QJsonValue &friendValue : friends) {
         QJsonObject friendObj = friendValue.toObject();
         QString friendName = friendObj["username"].toString();
         QString friendStatus = friendObj["status"].toString();
         int friendId = friendObj["id"].toInt();
 
-        // Użyj istniejącego stanu nieprzeczytanych wiadomości z mapy
         bool hasUnreadMessages = unreadMessagesMap.value(friendId, false);
 
         QListWidgetItem* item = new QListWidgetItem();
@@ -249,8 +255,30 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
         item->setIcon(getStatusIcon(friendStatus, hasUnreadMessages));
         item->setForeground(Qt::black);
 
-        ui->friendsList->addItem(item);
+        // Przydzielenie do odpowiedniej listy
+        if (friendStatus == Protocol::UserStatus::ONLINE)
+            onlineFriends.append(item);
+        else if (friendStatus == Protocol::UserStatus::AWAY)
+            awayFriends.append(item);
+        else if (friendStatus == Protocol::UserStatus::BUSY)
+            busyFriends.append(item);
+        else
+            offlineFriends.append(item);
     }
+
+    // Dodanie znajomych do listy w określonej kolejności
+    // Najpierw online
+    for (auto item : onlineFriends)
+        ui->friendsList->addItem(item);
+    // Następnie away
+    for (auto item : awayFriends)
+        ui->friendsList->addItem(item);
+    // Następnie busy
+    for (auto item : busyFriends)
+        ui->friendsList->addItem(item);
+    // Na końcu offline
+    for (auto item : offlineFriends)
+        ui->friendsList->addItem(item);
 
     if (networkManager.isConnected() && networkManager.isAuthenticated()) {
         updateConnectionStatus(QString("Connected - Friends list updated (%1)").arg(friends.size()));
