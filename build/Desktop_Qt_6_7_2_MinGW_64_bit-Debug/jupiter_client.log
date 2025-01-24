@@ -19706,3 +19706,621 @@ ername": "test1"
 
 [2025-01-24 19:07:08.859] [INFO] MainWindow destroyed
 [2025-01-24 19:07:08.860] [INFO] Application shutting down
+[2025-01-24 19:09:39.376] [INFO] Application started
+[2025-01-24 19:09:39.377] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-24 19:09:39.377] [INFO] NetworkManager initialized
+[2025-01-24 19:09:39.377] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-24 19:09:39.377] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-24 19:09:39.381] [INFO] LoginWindow initialized
+[2025-01-24 19:09:39.445] [INFO] Connected to server
+[2025-01-24 19:09:39.446] [INFO] Status update: Connected to server
+[2025-01-24 19:09:43.333] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-24 19:09:43.333] [INFO] Status update: Logging in...
+[2025-01-24 19:09:43.336] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737742183336,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-24 19:09:43.336] [DEBUG] Processing message type: login_response
+[2025-01-24 19:09:43.336] [INFO] Login successful
+[2025-01-24 19:09:43.336] [INFO] Sending message: {"status":"online","timestamp":1737742183336,"type":"status_response"}
+
+[2025-01-24 19:09:43.336] [INFO] Sending message: {"timestamp":1737742183336,"type":"get_friends_list"}
+
+[2025-01-24 19:09:43.336] [INFO] Status update: Login successful - Connected
+[2025-01-24 19:09:43.343] [INFO] MainWindow initialized
+[2025-01-24 19:09:43.352] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-24 19:09:43.353] [DEBUG] Processing message type: unread_from
+[2025-01-24 19:09:43.353] [INFO] Received unread messages info from 2 users
+[2025-01-24 19:09:43.353] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742183338,
+    "type": "friends_list_response"
+}
+[2025-01-24 19:09:43.353] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 19:09:43.353] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:09:43.353] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742183339,
+    "type": "friends_status_update"
+}
+[2025-01-24 19:09:43.354] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 19:09:43.354] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:09:43.354] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742183340,
+    "type": "friends_list_response"
+}
+[2025-01-24 19:09:43.354] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 19:09:43.354] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:09:43.362] [INFO] LoginWindow destroyed
+[2025-01-24 19:09:45.388] [DEBUG] Search dialog UI setup completed
+[2025-01-24 19:09:45.388] [INFO] Search dialog initialized
+[2025-01-24 19:09:46.753] [DEBUG] Search timer started for query: tes
+[2025-01-24 19:09:46.820] [DEBUG] Search timer started for query: test
+[2025-01-24 19:09:47.314] [INFO] Sending message: {"query":"test","timestamp":1737742187314,"type":"search_users"}
+
+[2025-01-24 19:09:47.314] [DEBUG] Sending search request for query: test
+[2025-01-24 19:09:47.315] [INFO] Processing JSON: {
+    "timestamp": 1737742187315,
+    "type": "search_users_response",
+    "users": [
+        {
+            "id": "2",
+            "username": "test2"
+        },
+        {
+            "id": "3",
+            "username": "test3"
+        },
+        {
+            "id": "4",
+            "username": "test4"
+        },
+        {
+            "id": "5",
+            "username": "test5"
+        },
+        {
+            "id": "6",
+            "username": "test6"
+        }
+    ]
+}
+[2025-01-24 19:09:47.315] [DEBUG] Processing message type: search_users_response
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 19:09:47.315] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.315] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 19:09:47.315] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.315] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.315] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.315] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 19:09:47.315] [INFO] Received search results: 5 users found
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 19:09:47.315] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.315] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 19:09:47.315] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.315] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 19:09:47.315] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.316] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.316] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 19:09:47.316] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 19:09:47.316] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:47.316] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:47.316] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 19:09:47.316] [INFO] Received search results: 5 users found
+[2025-01-24 19:09:48.290] [DEBUG] Showing context menu for user test4 (ID: 4)
+[2025-01-24 19:09:48.290] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:09:48.290] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:09:48.290] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:09:48.290] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:09:48.290] [DEBUG] isFriend check result: 0
+[2025-01-24 19:09:48.290] [DEBUG] User test4 is not a friend, showing add friend menu
+[2025-01-24 19:09:49.372] [INFO] Processing JSON: {
+    "timestamp": 1737742189372,
+    "type": "ping"
+}
+[2025-01-24 19:09:49.372] [DEBUG] Processing message type: ping
+[2025-01-24 19:09:49.372] [INFO] Received PING (timestamp: 1737742189372)
+[2025-01-24 19:09:49.372] [INFO] Sending message: {"timestamp":1737742189372,"type":"pong"}
+
+[2025-01-24 19:09:49.372] [INFO] Sent PONG (timestamp: 1737742189372)
+[2025-01-24 19:09:49.711] [INFO] Sending friend request to user test4 (ID: 4)
+[2025-01-24 19:09:49.711] [INFO] Sending message: {"timestamp":1737742189711,"type":"add_friend_request","user_id":4}
+
+[2025-01-24 19:09:49.715] [INFO] Processing JSON: {
+    "message": "Friend request sent successfully",
+    "status": "success",
+    "timestamp": 1737742189715,
+    "type": "add_friend_response"
+}
+[2025-01-24 19:09:49.715] [DEBUG] Processing message type: add_friend_response
+[2025-01-24 19:09:49.715] [WARNING] Received unknown message type: add_friend_response
+[2025-01-24 19:09:50.694] [INFO] Friend request sent successfully
+[2025-01-24 19:09:53.768] [INFO] Sending message: {"timestamp":1737742193768,"type":"get_received_invitations"}
+
+[2025-01-24 19:09:53.768] [INFO] Sending message: {"timestamp":1737742193768,"type":"get_sent_invitations"}
+
+[2025-01-24 19:09:53.772] [INFO] Sending message: {"timestamp":1737742193772,"type":"get_received_invitations"}
+
+[2025-01-24 19:09:53.772] [INFO] Sending message: {"timestamp":1737742193772,"type":"get_sent_invitations"}
+
+[2025-01-24 19:09:53.773] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737742193770,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:09:53.773] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:09:53.773] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:09:53.773] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737742189000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737742193770,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:09:53.773] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:09:53.773] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:09:53.773] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737742193772,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:09:53.773] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:09:53.773] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:09:53.773] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737742189000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737742193773,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:09:53.773] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:09:53.773] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:09:57.464] [INFO] Sending message: {"request_id":1,"timestamp":1737742197464,"type":"cancel_friend_request"}
+
+[2025-01-24 19:09:57.464] [INFO] Processing JSON: {
+    "message": "Unknown message type",
+    "timestamp": 1737742197464,
+    "type": "error"
+}
+[2025-01-24 19:09:57.465] [DEBUG] Processing message type: error
+[2025-01-24 19:09:57.465] [ERROR] Server error: Unknown message type
+[2025-01-24 19:09:57.465] [INFO] Status update: Server error: Unknown message type
+[2025-01-24 19:09:57.465] [ERROR] Network error: Unknown message type
+[2025-01-24 19:09:57.465] [WARNING] Received unknown message type: error
+[2025-01-24 19:09:58.327] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737742198327,
+    "type": "friends_status_update"
+}
+[2025-01-24 19:09:58.327] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 19:09:58.327] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:09:59.375] [INFO] Processing JSON: {
+    "timestamp": 1737742199375,
+    "type": "ping"
+}
+[2025-01-24 19:09:59.375] [DEBUG] Processing message type: ping
+[2025-01-24 19:09:59.375] [INFO] Received PING (timestamp: 1737742199375)
+[2025-01-24 19:09:59.375] [INFO] Sending message: {"timestamp":1737742199375,"type":"pong"}
+
+[2025-01-24 19:09:59.375] [INFO] Sent PONG (timestamp: 1737742199375)
+[2025-01-24 19:10:01.758] [INFO] Sending message: {"timestamp":1737742201758,"type":"logout"}
+
+[2025-01-24 19:10:01.759] [INFO] MainWindow destroyed
+[2025-01-24 19:10:01.759] [INFO] Application shutting down
+[2025-01-24 19:25:02.392] [INFO] Application started
+[2025-01-24 19:25:02.392] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-24 19:25:02.392] [INFO] NetworkManager initialized
+[2025-01-24 19:25:02.392] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-24 19:25:02.392] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-24 19:25:02.396] [INFO] LoginWindow initialized
+[2025-01-24 19:25:02.462] [INFO] Connected to server
+[2025-01-24 19:25:02.462] [INFO] Status update: Connected to server
+[2025-01-24 19:25:05.528] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-24 19:25:05.529] [INFO] Status update: Logging in...
+[2025-01-24 19:25:05.532] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737743105531,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-24 19:25:05.532] [DEBUG] Processing message type: login_response
+[2025-01-24 19:25:05.532] [INFO] Login successful
+[2025-01-24 19:25:05.532] [INFO] Sending message: {"status":"online","timestamp":1737743105532,"type":"status_response"}
+
+[2025-01-24 19:25:05.532] [INFO] Sending message: {"timestamp":1737743105532,"type":"get_friends_list"}
+
+[2025-01-24 19:25:05.532] [INFO] Status update: Login successful - Connected
+[2025-01-24 19:25:05.538] [INFO] MainWindow initialized
+[2025-01-24 19:25:05.547] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-24 19:25:05.547] [DEBUG] Processing message type: unread_from
+[2025-01-24 19:25:05.547] [INFO] Received unread messages info from 2 users
+[2025-01-24 19:25:05.547] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737743105534,
+    "type": "friends_list_response"
+}
+[2025-01-24 19:25:05.547] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 19:25:05.547] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:25:05.548] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737743105535,
+    "type": "friends_status_update"
+}
+[2025-01-24 19:25:05.548] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 19:25:05.548] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:25:05.548] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737743105536,
+    "type": "friends_list_response"
+}
+[2025-01-24 19:25:05.548] [DEBUG] Processing message type: friends_list_response
+[2025-01-24 19:25:05.548] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:25:05.559] [INFO] LoginWindow destroyed
+[2025-01-24 19:25:07.892] [DEBUG] Search dialog UI setup completed
+[2025-01-24 19:25:07.892] [INFO] Search dialog initialized
+[2025-01-24 19:25:09.413] [DEBUG] Search timer started for query: tes
+[2025-01-24 19:25:09.525] [DEBUG] Search timer started for query: test
+[2025-01-24 19:25:10.021] [INFO] Sending message: {"query":"test","timestamp":1737743110020,"type":"search_users"}
+
+[2025-01-24 19:25:10.021] [DEBUG] Sending search request for query: test
+[2025-01-24 19:25:10.022] [INFO] Processing JSON: {
+    "timestamp": 1737743110022,
+    "type": "search_users_response",
+    "users": [
+        {
+            "id": "2",
+            "username": "test2"
+        },
+        {
+            "id": "3",
+            "username": "test3"
+        },
+        {
+            "id": "4",
+            "username": "test4"
+        },
+        {
+            "id": "5",
+            "username": "test5"
+        },
+        {
+            "id": "6",
+            "username": "test6"
+        }
+    ]
+}
+[2025-01-24 19:25:10.022] [DEBUG] Processing message type: search_users_response
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 19:25:10.022] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 19:25:10.022] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 19:25:10.022] [INFO] Received search results: 5 users found
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 2 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Found user ID 2 in friends list
+[2025-01-24 19:25:10.022] [DEBUG] User test2 (ID: 2) is marked as friend
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 3 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] Found user ID 3 in friends list
+[2025-01-24 19:25:10.022] [DEBUG] User test3 (ID: 3) is marked as friend
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 5 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] User ID 5 not found in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Checking if user ID 6 is in friends list
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.022] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.022] [DEBUG] User ID 6 not found in friends list
+[2025-01-24 19:25:10.022] [INFO] Received search results: 5 users found
+[2025-01-24 19:25:10.884] [DEBUG] Showing context menu for user test4 (ID: 4)
+[2025-01-24 19:25:10.884] [DEBUG] Checking if user ID 4 is in friends list
+[2025-01-24 19:25:10.884] [DEBUG] Comparing with friend ID: 2
+[2025-01-24 19:25:10.884] [DEBUG] Comparing with friend ID: 3
+[2025-01-24 19:25:10.884] [DEBUG] User ID 4 not found in friends list
+[2025-01-24 19:25:10.884] [DEBUG] isFriend check result: 0
+[2025-01-24 19:25:10.884] [DEBUG] User test4 is not a friend, showing add friend menu
+[2025-01-24 19:25:12.304] [INFO] Sending friend request to user test4 (ID: 4)
+[2025-01-24 19:25:12.304] [INFO] Sending message: {"timestamp":1737743112304,"type":"add_friend_request","user_id":4}
+
+[2025-01-24 19:25:12.309] [INFO] Processing JSON: {
+    "message": "Friend request sent successfully",
+    "status": "success",
+    "timestamp": 1737743112309,
+    "type": "add_friend_response"
+}
+[2025-01-24 19:25:12.309] [DEBUG] Processing message type: add_friend_response
+[2025-01-24 19:25:12.309] [WARNING] Received unknown message type: add_friend_response
+[2025-01-24 19:25:13.548] [INFO] Friend request sent successfully
+[2025-01-24 19:25:16.489] [INFO] Sending message: {"timestamp":1737743116489,"type":"get_received_invitations"}
+
+[2025-01-24 19:25:16.489] [INFO] Sending message: {"timestamp":1737743116489,"type":"get_sent_invitations"}
+
+[2025-01-24 19:25:16.494] [INFO] Sending message: {"timestamp":1737743116494,"type":"get_received_invitations"}
+
+[2025-01-24 19:25:16.494] [INFO] Sending message: {"timestamp":1737743116494,"type":"get_sent_invitations"}
+
+[2025-01-24 19:25:16.495] [INFO] Processing JSON: {
+    "timestamp": 1737743112399,
+    "type": "ping"
+}
+[2025-01-24 19:25:16.495] [DEBUG] Processing message type: ping
+[2025-01-24 19:25:16.495] [INFO] Received PING (timestamp: 1737743112399)
+[2025-01-24 19:25:16.495] [INFO] Sending message: {"timestamp":1737743112399,"type":"pong"}
+
+[2025-01-24 19:25:16.495] [INFO] Sent PONG (timestamp: 1737743112399)
+[2025-01-24 19:25:16.495] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737743116491,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:25:16.495] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:25:16.495] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:25:16.495] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737743112000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737743116492,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:25:16.495] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:25:16.495] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:25:16.495] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737743116494,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:25:16.495] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:25:16.495] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:25:16.495] [INFO] Processing JSON: {
+    "invitations": [
+        {
+            "request_id": 1,
+            "status": "pending",
+            "timestamp": 1737743112000,
+            "user_id": "4",
+            "username": "test4"
+        }
+    ],
+    "timestamp": 1737743116495,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:25:16.496] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:25:16.496] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:25:18.910] [INFO] Sending message: {"request_id":1,"timestamp":1737743118910,"type":"cancel_friend_request"}
+
+[2025-01-24 19:25:18.913] [INFO] Processing JSON: {
+    "message": "Friend request cancelled successfully",
+    "status": "success",
+    "timestamp": 1737743118912,
+    "type": "cancel_friend_request_response"
+}
+[2025-01-24 19:25:18.913] [DEBUG] Processing message type: cancel_friend_request_response
+[2025-01-24 19:25:18.913] [WARNING] Received unknown message type: cancel_friend_request_response
+[2025-01-24 19:25:18.913] [INFO] Sending message: {"timestamp":1737743118913,"type":"get_received_invitations"}
+
+[2025-01-24 19:25:18.913] [INFO] Sending message: {"timestamp":1737743118913,"type":"get_sent_invitations"}
+
+[2025-01-24 19:25:20.524] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737743118913,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:25:20.524] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:25:20.524] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:25:20.524] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737743118913,
+    "type": "received_invitations_response"
+}
+[2025-01-24 19:25:20.525] [DEBUG] Processing message type: received_invitations_response
+[2025-01-24 19:25:20.525] [WARNING] Received unknown message type: received_invitations_response
+[2025-01-24 19:25:20.525] [INFO] Processing JSON: {
+    "invitations": [
+    ],
+    "timestamp": 1737743118913,
+    "type": "sent_invitations_response"
+}
+[2025-01-24 19:25:20.525] [DEBUG] Processing message type: sent_invitations_response
+[2025-01-24 19:25:20.525] [WARNING] Received unknown message type: sent_invitations_response
+[2025-01-24 19:25:20.525] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737743120524,
+    "type": "friends_status_update"
+}
+[2025-01-24 19:25:20.525] [DEBUG] Processing message type: friends_status_update
+[2025-01-24 19:25:20.525] [INFO] Updating friends list with 2 friends
+[2025-01-24 19:25:22.396] [INFO] Processing JSON: {
+    "timestamp": 1737743122396,
+    "type": "ping"
+}
+[2025-01-24 19:25:22.396] [DEBUG] Processing message type: ping
+[2025-01-24 19:25:22.396] [INFO] Received PING (timestamp: 1737743122396)
+[2025-01-24 19:25:22.396] [INFO] Sending message: {"timestamp":1737743122396,"type":"pong"}
+
+[2025-01-24 19:25:22.396] [INFO] Sent PONG (timestamp: 1737743122396)
+[2025-01-24 19:25:23.888] [INFO] Sending message: {"timestamp":1737743123888,"type":"logout"}
+
+[2025-01-24 19:25:23.889] [INFO] MainWindow destroyed
+[2025-01-24 19:25:23.889] [INFO] Application shutting down
