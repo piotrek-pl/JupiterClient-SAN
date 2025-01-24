@@ -53,6 +53,7 @@ private slots:
 
     void showFriendsContextMenu(const QPoint& pos);
 
+
 private:
     void initializeUI();
     void setupNetworkConnections();

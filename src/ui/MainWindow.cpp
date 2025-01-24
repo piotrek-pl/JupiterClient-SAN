@@ -95,6 +95,12 @@ void MainWindow::setupNetworkConnections()
     }
 }
 
+/**
+ * @brief MainWindow::onMessageReceived Handles received messages from the server
+ * @param json The received message in JSON format
+ * @author piotrek-pl
+ * @date 2025-01-24 09:30:42
+ */
 void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
@@ -214,12 +220,27 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
     else if (type == Protocol::MessageType::REMOVE_FRIEND_RESPONSE) {
         if (json["status"].toString() == "success") {
             LOG_INFO("Friend removed successfully");
-            // Lista znajomych zostanie automatycznie zaktualizowana przez serwer
             QMessageBox::information(this, "Success", "Friend removed successfully");
         } else {
             LOG_WARNING("Failed to remove friend");
             QMessageBox::warning(this, "Error", "Failed to remove friend");
         }
+    }
+    // Obsługa powiadomienia o usunięciu ze znajomych
+    else if (type == Protocol::MessageType::FRIEND_REMOVED) {
+        int friendId = json["friend_id"].toInt();
+
+        // Zamykamy okno czatu, jeśli jest otwarte
+        if (chatWindows.contains(friendId)) {
+            ChatWindow* chatWindow = chatWindows[friendId];
+            if (chatWindow) {
+                chatWindow->close(); // To wywoła też usunięcie z mapy przez połączenie destroyed
+            }
+        }
+
+        // Wyświetlamy informację użytkownikowi
+        QMessageBox::information(this, "Friend Removed",
+                                 "You have been removed from a friend's contact list.");
     }
     // Obsługa listy znajomych i aktualizacji statusów - na końcu, aby zachować stan nieprzeczytanych wiadomości
     else if (type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
@@ -530,6 +551,15 @@ void MainWindow::showFriendsContextMenu(const QPoint& pos)
                                                                   QMessageBox::Yes | QMessageBox::No);
 
         if (reply == QMessageBox::Yes) {
+            // Zamykamy okno czatu, jeśli jest otwarte
+            if (chatWindows.contains(friendId)) {
+                ChatWindow* chatWindow = chatWindows[friendId];
+                if (chatWindow) {
+                    chatWindow->close();
+                }
+            }
+
+            // Wysyłamy żądanie usunięcia znajomego
             QJsonObject request = Protocol::MessageStructure::createRemoveFriendRequest(friendId);
             networkManager.sendMessage(request);
         }
