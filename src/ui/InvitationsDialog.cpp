@@ -63,20 +63,41 @@ void InvitationsDialog::onMessageReceived(const QJsonObject& message)
     }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_ACCEPT_RESPONSE) {
         if (message["status"].toString() == "success") {
+            if (message.contains("user_id")) {
+                int userId = message["user_id"].toInt();
+                emit invitationStatusChanged(userId);
+            }
             refreshInvitations();
         }
+        QString resultMessage = message["message"].toString();
+        QMessageBox::information(this, "Accept Request", resultMessage);
     }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_REJECT_RESPONSE) {
         if (message["status"].toString() == "success") {
+            if (message.contains("user_id")) {
+                int userId = message["user_id"].toInt();
+                emit invitationStatusChanged(userId);
+            }
             refreshInvitations();
         }
+        QString resultMessage = message["message"].toString();
+        QMessageBox::information(this, "Reject Request", resultMessage);
     }
     else if (type == Protocol::MessageType::CANCEL_FRIEND_REQUEST_RESPONSE) {
         if (message["status"].toString() == "success") {
+            if (message.contains("user_id")) {
+                int userId = message["user_id"].toInt();
+                emit invitationStatusChanged(userId);
+            }
             refreshInvitations();
         }
         QString resultMessage = message["message"].toString();
         QMessageBox::information(this, "Cancel Request", resultMessage);
+    }
+    else if (type == Protocol::MessageType::INVITATION_STATUS_CHANGED) {
+        int userId = message["user_id"].toInt();
+        emit invitationStatusChanged(userId);
+        refreshInvitations();
     }
 }
 
@@ -109,25 +130,30 @@ void InvitationsDialog::updateSentInvitations(const QJsonArray& invitations)
 {
     ui->sentList->clear();
     sentInvitations.clear();
+    QSet<int> pendingUserIds;
 
     for (const QJsonValue &value : invitations) {
         QJsonObject inv = value.toObject();
         Invitation invitation;
         invitation.requestId = inv["request_id"].toInt();
+        invitation.userId = inv["user_id"].toInt();
         invitation.username = inv["username"].toString();
         invitation.timestamp = inv["timestamp"].toInteger();
 
         sentInvitations.append(invitation);
+        pendingUserIds.insert(invitation.userId);
 
         QString timeStr = QDateTime::fromMSecsSinceEpoch(invitation.timestamp)
                               .toString("yyyy-MM-dd HH:mm:ss");
         QString displayText = QString("%1 (%2)").arg(invitation.username, timeStr);
         QListWidgetItem* item = new QListWidgetItem(displayText);
         item->setData(Qt::UserRole, invitation.requestId);
+        item->setData(Qt::UserRole + 1, invitation.userId);
         ui->sentList->addItem(item);
     }
 
     updateInvitationsCount();
+    emit pendingInvitationsChanged(pendingUserIds);
 }
 
 void InvitationsDialog::onTabChanged(int index)

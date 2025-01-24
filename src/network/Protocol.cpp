@@ -299,5 +299,27 @@ QJsonObject createInvitationsList(const QJsonArray& invitations, bool sent) {
     return response;
 }
 
+QJsonObject createInvitationAlreadyExistsResponse(int userId, const QString& username) {
+    return QJsonObject{
+        {"type", MessageType::INVITATION_ALREADY_EXISTS},
+        {"user_id", userId},
+        {"username", username},
+        {"status", "error"},
+        {"error_code", "INVITATION_ALREADY_EXISTS"},
+        {"message", "Invitation already sent to this user"},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
+QJsonObject createInvitationStatusChangedNotification(int requestId, int userId, const QString& status) {
+    return QJsonObject{
+        {"type", MessageType::INVITATION_STATUS_CHANGED},
+        {"request_id", requestId},
+        {"user_id", userId},
+        {"status", status},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
 } // namespace MessageStructure
 } // namespace Protocol

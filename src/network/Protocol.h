@@ -2,7 +2,7 @@
  * @file Protocol.h
  * @brief Network protocol definition
  * @author piotrek-pl
- * @date 2025-01-24 14:34:23
+ * @date 2025-01-24 22:55:36
  */
 
 #ifndef PROTOCOL_H
@@ -88,6 +88,8 @@ const QString INVITATION_REJECTED = "invitation_rejected";
 const QString INVITATION_CANCELLED = "invitation_cancelled";
 const QString GET_INVITATIONS = "get_invitations";
 const QString INVITATIONS_LIST = "invitations_list";
+const QString INVITATION_ALREADY_EXISTS = "invitation_already_exists";
+const QString INVITATION_STATUS_CHANGED = "invitation_status_changed";
 }
 
 // Status użytkownika
@@ -157,7 +159,9 @@ const QStringList AUTHENTICATED = {
     MessageType::INVITATION_REJECTED,
     MessageType::INVITATION_CANCELLED,
     MessageType::GET_INVITATIONS,
-    MessageType::INVITATIONS_LIST
+    MessageType::INVITATIONS_LIST,
+    MessageType::INVITATION_ALREADY_EXISTS,
+    MessageType::INVITATION_STATUS_CHANGED
 };
 
 const QStringList DISCONNECTING = {
@@ -218,11 +222,13 @@ QJsonObject createCancelFriendRequest(int requestId);
 QJsonObject createCancelFriendRequestResponse(bool success, const QString& message = "");
 
 // Invitation System
-static QJsonObject createInvitationResponse(bool success, const QString& message = "");
-static QJsonObject createInvitationsList(const QJsonArray& invitations, bool sent = true);
+QJsonObject createInvitationResponse(bool success, const QString& message = "");
+QJsonObject createInvitationsList(const QJsonArray& invitations, bool sent = true);
+QJsonObject createInvitationAlreadyExistsResponse(int userId, const QString& username);
+QJsonObject createInvitationStatusChangedNotification(int requestId, int userId, const QString& status);
+}
 
-} // namespace MessageStructure
-
+// Historia czatu
 namespace ChatHistory {
 const int MESSAGE_BATCH_SIZE = 20;  // ilość wiadomości w jednej paczce
 }
@@ -230,26 +236,26 @@ const int MESSAGE_BATCH_SIZE = 20;  // ilość wiadomości w jednej paczce
 // Walidacja wiadomości
 namespace MessageValidation {
 inline bool isMessageAllowedInState(const QString& messageType, const QString& state) {
-    if (messageType == MessageType::PING || messageType == MessageType::PONG) {
+    if (messageType == Protocol::MessageType::PING || messageType == Protocol::MessageType::PONG) {
         return true;  // Zawsze dozwolone
     }
 
-    if (state == SessionState::INITIAL) {
-        return AllowedMessages::INITIAL.contains(messageType);
+    if (state == Protocol::SessionState::INITIAL) {
+        return Protocol::AllowedMessages::INITIAL.contains(messageType);
     }
-    else if (state == SessionState::AUTHENTICATING) {
-        return AllowedMessages::AUTHENTICATING.contains(messageType);
+    else if (state == Protocol::SessionState::AUTHENTICATING) {
+        return Protocol::AllowedMessages::AUTHENTICATING.contains(messageType);
     }
-    else if (state == SessionState::AUTHENTICATED) {
-        return AllowedMessages::AUTHENTICATED.contains(messageType);
+    else if (state == Protocol::SessionState::AUTHENTICATED) {
+        return Protocol::AllowedMessages::AUTHENTICATED.contains(messageType);
     }
-    else if (state == SessionState::DISCONNECTING) {
-        return AllowedMessages::DISCONNECTING.contains(messageType);
+    else if (state == Protocol::SessionState::DISCONNECTING) {
+        return Protocol::AllowedMessages::DISCONNECTING.contains(messageType);
     }
 
     return false;
 }
-} // namespace MessageValidation
+}
 
 // Status zaproszenia
 namespace InvitationStatus {

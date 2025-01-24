@@ -2,7 +2,7 @@
  * @file SearchDialog.cpp
  * @brief Search dialog class implementation
  * @author piotrek-pl
- * @date 2025-01-24 12:46:36
+ * @date 2025-01-24 22:53:39
  */
 
 #include "SearchDialog.h"
@@ -29,7 +29,6 @@ SearchDialog::SearchDialog(NetworkManager& networkManager, MainWindow* parent)
     searchTimer->setInterval(500);
     connect(searchTimer, &QTimer::timeout, this, &SearchDialog::performSearch);
 
-    // Dodajemy połączenie do obsługi odpowiedzi na zaproszenie
     connect(&networkManager, &NetworkManager::messageReceived,
             this, &SearchDialog::handleServerResponse);
 
@@ -56,39 +55,35 @@ void SearchDialog::setupUI()
     LOG_DEBUG("Search dialog UI setup completed");
 }
 
-void SearchDialog::onSearchTextChanged(const QString& text)
+void SearchDialog::updatePendingInvitations(const QSet<int>& userIds)
 {
-    if (text.length() >= 3) {
-        searchTimer->start();
-        LOG_DEBUG(QString("Search timer started for query: %1").arg(text));
-    } else {
-        resultsList->clear();
+    LOG_DEBUG(QString("Updating pending invitations list with %1 users").arg(userIds.size()));
+    pendingInvitations = userIds;
+    // Odświeżamy widok, aby zaktualizować stan przycisków
+    if (!lastSearchResponse.isEmpty()) {
+        onSearchResponse(lastSearchResponse);
     }
 }
 
-void SearchDialog::performSearch()
+void SearchDialog::onInvitationStatusChanged(int userId)
 {
-    QString query = searchEdit->text();
-    if (query.length() >= 3) {
-        QJsonObject searchRequest = Protocol::MessageStructure::createSearchUsersRequest(query);
-        networkManager.sendMessage(searchRequest);
-        LOG_DEBUG(QString("Sending search request for query: %1").arg(query));
+    LOG_DEBUG(QString("Invitation status changed for user ID: %1").arg(userId));
+    pendingInvitations.remove(userId);
+    // Odświeżamy widok, aby zaktualizować stan przycisków
+    if (!lastSearchResponse.isEmpty()) {
+        onSearchResponse(lastSearchResponse);
     }
 }
 
 void SearchDialog::onSearchResponse(const QJsonObject& response)
 {
-    if (response["type"].toString() != Protocol::MessageType::SEARCH_USERS_RESPONSE) {
-        return;
-    }
-
+    lastSearchResponse = response;
     resultsList->clear();
     QJsonArray users = response["users"].toArray();
 
     for (const QJsonValue& userVal : users) {
         QJsonObject user = userVal.toObject();
-        // Zmiana tutaj - konwersja string na int
-        int userId = user["id"].toString().toInt();  // Konwertujemy string na int
+        int userId = user["id"].toString().toInt();
         QString username = user["username"].toString();
 
         QListWidgetItem* item = new QListWidgetItem(username);
@@ -98,6 +93,11 @@ void SearchDialog::onSearchResponse(const QJsonObject& response)
             item->setForeground(Qt::gray);
             item->setToolTip("Already in your friends list");
             LOG_DEBUG(QString("User %1 (ID: %2) is marked as friend").arg(username).arg(userId));
+        }
+        else if (pendingInvitations.contains(userId)) {
+            item->setForeground(Qt::blue);
+            item->setToolTip("Invitation pending");
+            LOG_DEBUG(QString("User %1 (ID: %2) has pending invitation").arg(username).arg(userId));
         }
 
         resultsList->addItem(item);
@@ -120,35 +120,29 @@ void SearchDialog::showContextMenu(const QPoint& pos)
     }
 
     LOG_DEBUG(QString("Showing context menu for user %1 (ID: %2)").arg(username).arg(userId));
-    bool isFriend = mainWindow->isFriend(userId);
-    LOG_DEBUG(QString("isFriend check result: %1").arg(isFriend));
 
     QMenu contextMenu(this);
 
-    if (isFriend) {
-        LOG_DEBUG(QString("User %1 is already a friend, showing disabled menu").arg(username));
+    if (mainWindow->isFriend(userId)) {
+        LOG_DEBUG(QString("User %1 is already a friend").arg(username));
         QAction* alreadyFriendAction = contextMenu.addAction("Already Friends");
         alreadyFriendAction->setEnabled(false);
-        contextMenu.exec(resultsList->mapToGlobal(pos));
-        return;
+    }
+    else if (pendingInvitations.contains(userId)) {
+        LOG_DEBUG(QString("User %1 has pending invitation").arg(username));
+        QAction* pendingAction = contextMenu.addAction("Invitation Pending");
+        pendingAction->setEnabled(false);
+        pendingAction->setToolTip("Wait for response or cancel in Invitations dialog");
+    }
+    else {
+        LOG_DEBUG(QString("Adding invite option for user %1").arg(username));
+        QAction* addFriendAction = contextMenu.addAction("Invite");
+        connect(addFriendAction, &QAction::triggered, this, [=]() {
+            this->sendFriendRequest(userId, username);
+        });
     }
 
-    LOG_DEBUG(QString("User %1 is not a friend, showing add friend menu").arg(username));
-    QAction* addFriendAction = contextMenu.addAction("Invite");
-    QAction* selectedAction = contextMenu.exec(resultsList->mapToGlobal(pos));
-
-    if (selectedAction && selectedAction == addFriendAction) {
-        QMessageBox::StandardButton reply = QMessageBox::question(this,
-                                                                  "Add Friend",
-                                                                  QString("Do you want to add %1 to your friends list?").arg(username),
-                                                                  QMessageBox::Yes | QMessageBox::No);
-
-        if (reply == QMessageBox::Yes) {
-            LOG_INFO(QString("Sending friend request to user %1 (ID: %2)").arg(username).arg(userId));
-            QJsonObject request = Protocol::MessageStructure::createAddFriendRequest(userId);
-            networkManager.sendMessage(request);
-        }
-    }
+    contextMenu.exec(resultsList->mapToGlobal(pos));
 }
 
 void SearchDialog::handleServerResponse(const QJsonObject& response)
@@ -163,14 +157,56 @@ void SearchDialog::handleServerResponse(const QJsonObject& response)
             QMessageBox::information(this, "Success",
                                      "Friend request sent successfully!");
             LOG_INFO("Friend request sent successfully");
-            emit friendRequestSent();  // emitujemy sygnał po udanym wysłaniu zaproszenia
+            emit friendRequestSent();
         } else {
             QMessageBox::warning(this, "Error",
                                  "Failed to send friend request. " + message);
             LOG_WARNING(QString("Failed to send friend request: %1").arg(message));
         }
     }
-    else if (type == Protocol::MessageType::SEARCH_USERS_RESPONSE) {
-        onSearchResponse(response);
+    else if (type == Protocol::MessageType::INVITATION_ALREADY_EXISTS) {
+        int userId = response["user_id"].toInt();
+        QString username = response["username"].toString();
+        QString message = response["message"].toString();
+
+        QMessageBox::warning(this, "Warning",
+                             "You have already sent an invitation to this user.");
+        LOG_WARNING(QString("Attempted to send duplicate invitation to user %1 (ID: %2)")
+                        .arg(username).arg(userId));
+
+        // Upewniamy się, że użytkownik jest w liście oczekujących zaproszeń
+        pendingInvitations.insert(userId);
+
+        // Odświeżamy widok
+        if (!lastSearchResponse.isEmpty()) {
+            onSearchResponse(lastSearchResponse);
+        }
     }
+}
+
+void SearchDialog::onSearchTextChanged(const QString& text)
+{
+    if (text.length() >= 3) {
+        searchTimer->start();
+        LOG_DEBUG(QString("Search timer started for query: %1").arg(text));
+    } else {
+        resultsList->clear();
+    }
+}
+
+void SearchDialog::performSearch()
+{
+    QString query = searchEdit->text();
+    if (query.length() >= 3) {
+        QJsonObject searchRequest = Protocol::MessageStructure::createSearchUsersRequest(query);
+        networkManager.sendMessage(searchRequest);
+        LOG_DEBUG(QString("Sending search request for query: %1").arg(query));
+    }
+}
+
+void SearchDialog::sendFriendRequest(int userId, const QString& username)
+{
+    LOG_INFO(QString("Sending friend request to user %1 (ID: %2)").arg(username).arg(userId));
+    QJsonObject request = Protocol::MessageStructure::createAddFriendRequest(userId);
+    networkManager.sendMessage(request);
 }
