@@ -19,7 +19,6 @@ InvitationsDialog::InvitationsDialog(NetworkManager& networkManager, QWidget *pa
     ui->setupUi(this);
     setWindowTitle("Friend Invitations");
     setupConnections();
-    refreshInvitations();
 }
 
 InvitationsDialog::~InvitationsDialog()

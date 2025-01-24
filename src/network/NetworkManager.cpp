@@ -331,6 +331,19 @@ void NetworkManager::processIncomingMessage(const QJsonObject& json) {
         }
     }
 
+    // Dodane rozpoznawanie znanych typów wiadomości
+    else if (type == Protocol::MessageType::UNREAD_FROM ||
+             type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
+             type == Protocol::MessageType::FRIENDS_STATUS_UPDATE ||
+             type == Protocol::MessageType::RECEIVED_INVITATIONS_RESPONSE ||
+             type == Protocol::MessageType::SENT_INVITATIONS_RESPONSE) {
+        // Te typy są obsługiwane przez odpowiednie dialogi
+        LOG_DEBUG(QString("Message type %1 will be handled by appropriate dialog").arg(type));
+    }
+    else if (type != Protocol::MessageType::ERROR) { // Dodajemy ten warunek, bo ERROR jest już obsługiwany wcześniej
+        LOG_WARNING(QString("Received unknown message type: %1").arg(type));
+    }
+
     emit messageReceived(json);
 
     if (type != Protocol::MessageType::ERROR || m_isAuthenticated) {

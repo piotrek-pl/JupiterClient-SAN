@@ -355,9 +355,6 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
              type == Protocol::MessageType::FRIENDS_STATUS_UPDATE) {
         updateFriendsList(json["friends"].toArray());
     }
-    else {
-        LOG_WARNING(QString("Received unknown message type: %1").arg(type));
-    }
 }
 
 void MainWindow::onStatusChanged(int index)
