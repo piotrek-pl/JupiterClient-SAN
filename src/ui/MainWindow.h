@@ -51,6 +51,8 @@ private slots:
     void onDisconnected();
     void onChatWindowClosed(int friendId);
 
+    void showFriendsContextMenu(const QPoint& pos);
+
 private:
     void initializeUI();
     void setupNetworkConnections();

@@ -1,12 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'searchdialog.h'
+** Meta object code from reading C++ file 'SearchDialog.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.7.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../src/ui/searchdialog.h"
+#include "../../../../src/ui/SearchDialog.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
@@ -17,7 +17,7 @@
 
 #include <QtCore/qxptype_traits.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'searchdialog.h' doesn't include <QObject>."
+#error "The header file 'SearchDialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.7.2. It"
 #error "cannot be used with the include files from this version of Qt."

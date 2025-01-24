@@ -70,6 +70,10 @@ void MainWindow::initializeUI()
 
     ui->friendsList->setIconSize(QSize(16, 16));
     ui->friendsList->setSpacing(2);
+
+    ui->friendsList->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(ui->friendsList, &QWidget::customContextMenuRequested,
+            this, &MainWindow::showFriendsContextMenu);
 }
 
 void MainWindow::setupNetworkConnections()
@@ -204,6 +208,17 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
         } else {
             LOG_DEBUG(QString("Forwarding message to open chat window for user ID: %1").arg(fromId));
             chatWindows[fromId]->processMessage(json);
+        }
+    }
+    // Obsługa odpowiedzi na usunięcie znajomego
+    else if (type == Protocol::MessageType::REMOVE_FRIEND_RESPONSE) {
+        if (json["status"].toString() == "success") {
+            LOG_INFO("Friend removed successfully");
+            // Lista znajomych zostanie automatycznie zaktualizowana przez serwer
+            QMessageBox::information(this, "Success", "Friend removed successfully");
+        } else {
+            LOG_WARNING("Failed to remove friend");
+            QMessageBox::warning(this, "Error", "Failed to remove friend");
         }
     }
     // Obsługa listy znajomych i aktualizacji statusów - na końcu, aby zachować stan nieprzeczytanych wiadomości
@@ -494,4 +509,29 @@ void MainWindow::onMenuSearchTriggered()
     searchDialog->show();
     searchDialog->raise();
     searchDialog->activateWindow();
+}
+
+void MainWindow::showFriendsContextMenu(const QPoint& pos)
+{
+    QListWidgetItem* item = ui->friendsList->itemAt(pos);
+    if (!item) return;
+
+    QMenu contextMenu(this);
+    QAction* removeFriendAction = contextMenu.addAction("Remove Friend");
+    QAction* selectedAction = contextMenu.exec(ui->friendsList->mapToGlobal(pos));
+
+    if (selectedAction == removeFriendAction) {
+        int friendId = item->data(Qt::UserRole).toInt();
+        QString friendName = item->text();
+
+        QMessageBox::StandardButton reply = QMessageBox::question(this,
+                                                                  "Remove Friend",
+                                                                  QString("Are you sure you want to remove %1 from your friends list?").arg(friendName),
+                                                                  QMessageBox::Yes | QMessageBox::No);
+
+        if (reply == QMessageBox::Yes) {
+            QJsonObject request = Protocol::MessageStructure::createRemoveFriendRequest(friendId);
+            networkManager.sendMessage(request);
+        }
+    }
 }

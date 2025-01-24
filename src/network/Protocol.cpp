@@ -2,7 +2,7 @@
  * @file Protocol.cpp
  * @brief Network protocol implementation
  * @author piotrek-pl
- * @date 2025-01-20 13:43:49
+ * @date 2025-01-24 09:10:14
  */
 
 #include "Protocol.h"
@@ -132,6 +132,29 @@ QJsonObject createSearchUsersRequest(const QString& query) {
     };
 }
 
+QJsonObject createSearchUsersResponse(const QJsonArray& users) {
+    return QJsonObject{
+        {"type", MessageType::SEARCH_USERS_RESPONSE},
+        {"users", users},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
+QJsonObject createRemoveFriendRequest(int friendId) {
+    return QJsonObject{
+        {"type", MessageType::REMOVE_FRIEND},
+        {"friend_id", friendId},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
+QJsonObject createRemoveFriendResponse(bool success) {
+    return QJsonObject{
+        {"type", MessageType::REMOVE_FRIEND_RESPONSE},
+        {"status", success ? "success" : "error"},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
 
 } // namespace MessageStructure
 } // namespace Protocol

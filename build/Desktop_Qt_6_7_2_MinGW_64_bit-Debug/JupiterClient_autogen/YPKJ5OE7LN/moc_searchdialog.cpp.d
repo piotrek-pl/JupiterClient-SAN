@@ -1,4 +1,4 @@
-D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/YPKJ5OE7LN/moc_searchdialog.cpp: D:/programowanie/Qt/SAN/JupiterClient/src/ui/searchdialog.h \
+D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/YPKJ5OE7LN/moc_SearchDialog.cpp: D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.h \
   D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/moc_predefs.h \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QByteArray \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QDateTime \
