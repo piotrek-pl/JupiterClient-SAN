@@ -1,8 +1,8 @@
 /**
  * @file SearchDialog.h
- * @brief Search dialog class definition
+ * @brief Search dialog class header
  * @author piotrek-pl
- * @date 2025-01-24 10:25:16
+ * @date 2025-01-24 12:46:36
  */
 
 #ifndef SEARCHDIALOG_H
@@ -12,24 +12,21 @@
 #include <QLineEdit>
 #include <QListWidget>
 #include <QTimer>
-#include <QJsonObject>
-#include "network/NetworkManager.h"
 
-class SearchDialog : public QDialog
-{
+class NetworkManager;
+class MainWindow;
+
+class SearchDialog : public QDialog {
     Q_OBJECT
-
 public:
-    explicit SearchDialog(NetworkManager& networkManager, QWidget *parent = nullptr);
-
-public slots:
+    SearchDialog(NetworkManager& networkManager, MainWindow* parent = nullptr);
     void onSearchResponse(const QJsonObject& response);
-    void handleServerResponse(const QJsonObject& response);
 
 private slots:
     void onSearchTextChanged(const QString& text);
     void performSearch();
     void showContextMenu(const QPoint& pos);
+    void handleServerResponse(const QJsonObject& response);  // Dodana deklaracja
 
 private:
     void setupUI();
@@ -38,6 +35,7 @@ private:
     QLineEdit* searchEdit;
     QListWidget* resultsList;
     QTimer* searchTimer;
+    MainWindow* mainWindow;
 };
 
 #endif // SEARCHDIALOG_H

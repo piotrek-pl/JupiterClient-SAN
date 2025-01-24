@@ -31,6 +31,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    bool isFriend(int userId) const;
+
 public slots:
     void setCurrentUsername(const QString& username) {
         currentUsername = username;

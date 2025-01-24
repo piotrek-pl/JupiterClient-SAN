@@ -2,19 +2,21 @@
  * @file SearchDialog.cpp
  * @brief Search dialog class implementation
  * @author piotrek-pl
- * @date 2025-01-24 10:25:16
+ * @date 2025-01-24 12:46:36
  */
 
 #include "SearchDialog.h"
+#include "MainWindow.h"
 #include <QVBoxLayout>
 #include <QMenu>
 #include <QMessageBox>
 #include "network/Protocol.h"
 #include "utils/Logger.h"
 
-SearchDialog::SearchDialog(NetworkManager& networkManager, QWidget *parent)
+SearchDialog::SearchDialog(NetworkManager& networkManager, MainWindow* parent)
     : QDialog(parent)
     , networkManager(networkManager)
+    , mainWindow(parent)
 {
     setWindowTitle("Search Users");
     setMinimumWidth(300);
@@ -85,32 +87,64 @@ void SearchDialog::onSearchResponse(const QJsonObject& response)
 
     for (const QJsonValue& userVal : users) {
         QJsonObject user = userVal.toObject();
-        QListWidgetItem* item = new QListWidgetItem(user["username"].toString());
-        item->setData(Qt::UserRole, user["id"].toInt());
+        // Zmiana tutaj - konwersja string na int
+        int userId = user["id"].toString().toInt();  // Konwertujemy string na int
+        QString username = user["username"].toString();
+
+        QListWidgetItem* item = new QListWidgetItem(username);
+        item->setData(Qt::UserRole, userId);
+
+        if (mainWindow && mainWindow->isFriend(userId)) {
+            item->setForeground(Qt::gray);
+            item->setToolTip("Already in your friends list");
+            LOG_DEBUG(QString("User %1 (ID: %2) is marked as friend").arg(username).arg(userId));
+        }
+
         resultsList->addItem(item);
     }
 
     LOG_INFO(QString("Received search results: %1 users found").arg(users.size()));
 }
 
-void SearchDialog::showContextMenu(const QPoint& pos) {
+void SearchDialog::showContextMenu(const QPoint& pos)
+{
     QListWidgetItem* item = resultsList->itemAt(pos);
     if (!item) return;
 
+    int userId = item->data(Qt::UserRole).toInt();
+    QString username = item->text();
+
+    if (!mainWindow) {
+        LOG_WARNING("MainWindow pointer is null in SearchDialog");
+        return;
+    }
+
+    LOG_DEBUG(QString("Showing context menu for user %1 (ID: %2)").arg(username).arg(userId));
+    bool isFriend = mainWindow->isFriend(userId);
+    LOG_DEBUG(QString("isFriend check result: %1").arg(isFriend));
+
     QMenu contextMenu(this);
-    QAction* addFriendAction = contextMenu.addAction("Add to Friends");
 
+    if (isFriend) {
+        LOG_DEBUG(QString("User %1 is already a friend, showing disabled menu").arg(username));
+        QAction* alreadyFriendAction = contextMenu.addAction("Already Friends");
+        alreadyFriendAction->setEnabled(false);
+        contextMenu.exec(resultsList->mapToGlobal(pos));
+        return;
+    }
+
+    LOG_DEBUG(QString("User %1 is not a friend, showing add friend menu").arg(username));
+    QAction* addFriendAction = contextMenu.addAction("Invite");
     QAction* selectedAction = contextMenu.exec(resultsList->mapToGlobal(pos));
-    if (selectedAction == addFriendAction) {
-        int userId = item->data(Qt::UserRole).toInt();
-        QString username = item->text();
 
+    if (selectedAction && selectedAction == addFriendAction) {
         QMessageBox::StandardButton reply = QMessageBox::question(this,
                                                                   "Add Friend",
                                                                   QString("Do you want to add %1 to your friends list?").arg(username),
                                                                   QMessageBox::Yes | QMessageBox::No);
 
         if (reply == QMessageBox::Yes) {
+            LOG_INFO(QString("Sending friend request to user %1 (ID: %2)").arg(username).arg(userId));
             QJsonObject request = Protocol::MessageStructure::createAddFriendRequest(userId);
             networkManager.sendMessage(request);
         }

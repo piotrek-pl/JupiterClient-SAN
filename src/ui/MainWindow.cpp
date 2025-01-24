@@ -46,6 +46,25 @@ MainWindow::~MainWindow()
     LOG_INFO("MainWindow destroyed");
 }
 
+bool MainWindow::isFriend(int userId) const
+{
+    LOG_DEBUG(QString("Checking if user ID %1 is in friends list").arg(userId));
+
+    for(int i = 0; i < ui->friendsList->count(); ++i) {
+        QListWidgetItem* item = ui->friendsList->item(i);
+        int itemUserId = item->data(Qt::UserRole).toInt();
+        LOG_DEBUG(QString("Comparing with friend ID: %1").arg(itemUserId));
+
+        if(itemUserId == userId) {
+            LOG_DEBUG(QString("Found user ID %1 in friends list").arg(userId));
+            return true;
+        }
+    }
+
+    LOG_DEBUG(QString("User ID %1 not found in friends list").arg(userId));
+    return false;
+}
+
 void MainWindow::initializeUI()
 {
     // Przyciski
