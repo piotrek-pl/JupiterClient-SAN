@@ -101,6 +101,12 @@ void MainWindow::setupNetworkConnections()
  * @author piotrek-pl
  * @date 2025-01-24 09:30:42
  */
+/**
+ * @brief MainWindow::onMessageReceived Handles received messages from the server
+ * @param json The received message in JSON format
+ * @author piotrek-pl
+ * @date 2025-01-24 10:34:46
+ */
 void MainWindow::onMessageReceived(const QJsonObject& json)
 {
     QString type = json["type"].toString();
@@ -113,8 +119,64 @@ void MainWindow::onMessageReceived(const QJsonObject& json)
         return;
     }
 
+    // Obsługa zaproszeń do znajomych
+    if (type == Protocol::MessageType::FRIEND_REQUEST_RECEIVED) {
+        int fromUserId = json["from_user_id"].toInt();
+        QString username = json["username"].toString();
+
+        QMessageBox::StandardButton reply = QMessageBox::question(this,
+                                                                  "Friend Request",
+                                                                  QString("%1 wants to add you to their friends list. Accept?").arg(username),
+                                                                  QMessageBox::Yes | QMessageBox::No);
+
+        if (reply == QMessageBox::Yes) {
+            QJsonObject response = Protocol::MessageStructure::createFriendRequestAccept(fromUserId);
+            networkManager.sendMessage(response);
+            LOG_INFO(QString("Accepted friend request from user %1").arg(username));
+        } else {
+            QJsonObject response = Protocol::MessageStructure::createFriendRequestReject(fromUserId);
+            networkManager.sendMessage(response);
+            LOG_INFO(QString("Rejected friend request from user %1").arg(username));
+        }
+    }
+    else if (type == Protocol::MessageType::ADD_FRIEND_RESPONSE) {
+        if (json["status"].toString() == "success") {
+            QMessageBox::information(this, "Success",
+                                     "Friend request sent successfully!");
+            LOG_INFO("Friend request sent successfully");
+        } else {
+            QString errorMessage = json["message"].toString();
+            QMessageBox::warning(this, "Error",
+                                 "Failed to send friend request: " + errorMessage);
+            LOG_WARNING(QString("Failed to send friend request: %1").arg(errorMessage));
+        }
+    }
+    else if (type == Protocol::MessageType::FRIEND_REQUEST_ACCEPT_RESPONSE) {
+        if (json["status"].toString() == "success") {
+            QMessageBox::information(this, "Success",
+                                     "Friend added successfully!");
+            // Odśwież listę znajomych
+            QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
+            networkManager.sendMessage(getFriendsRequest);
+            LOG_INFO("Friend request accepted successfully");
+        } else {
+            QString errorMessage = json["message"].toString();
+            QMessageBox::warning(this, "Error",
+                                 "Failed to add friend: " + errorMessage);
+            LOG_WARNING(QString("Failed to add friend: %1").arg(errorMessage));
+        }
+    }
+    else if (type == Protocol::MessageType::FRIEND_REQUEST_REJECT_RESPONSE) {
+        if (json["status"].toString() == "success") {
+            LOG_INFO("Friend request rejected successfully");
+        } else {
+            QString errorMessage = json["message"].toString();
+            LOG_WARNING(QString("Failed to reject friend request: %1").arg(errorMessage));
+        }
+    }
+
     // Najpierw obsługa nieprzeczytanych wiadomości
-    if (type == Protocol::MessageType::UNREAD_FROM) {
+    else if (type == Protocol::MessageType::UNREAD_FROM) {
         QJsonArray unreadFrom = json["users"].toArray();
         LOG_INFO(QString("Received unread messages info from %1 users").arg(unreadFrom.size()));
 

@@ -145,6 +145,14 @@ build CMakeFiles/JupiterClient.dir/src/network/NetworkManager.cpp.obj: CXX_COMPI
   OBJECT_DIR = CMakeFiles\JupiterClient.dir
   OBJECT_FILE_DIR = CMakeFiles\JupiterClient.dir\src\network
 
+build CMakeFiles/JupiterClient.dir/src/ui/InvitationsDialog.cpp.obj: CXX_COMPILER__JupiterClient_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.cpp || cmake_object_order_depends_target_JupiterClient
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\JupiterClient.dir\src\ui\InvitationsDialog.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtSvg
+  OBJECT_DIR = CMakeFiles\JupiterClient.dir
+  OBJECT_FILE_DIR = CMakeFiles\JupiterClient.dir\src\ui
+
 build CMakeFiles/JupiterClient.dir/JupiterClient_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CXX_COMPILER__JupiterClient_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/EWIEGA46WW/qrc_resources.cpp || cmake_object_order_depends_target_JupiterClient
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_SVG_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\JupiterClient.dir\JupiterClient_autogen\EWIEGA46WW\qrc_resources.cpp.obj.d
@@ -161,7 +169,7 @@ build CMakeFiles/JupiterClient.dir/JupiterClient_autogen/EWIEGA46WW/qrc_resource
 #############################################
 # Link the executable JupiterClient.exe
 
-build JupiterClient.exe: CXX_EXECUTABLE_LINKER__JupiterClient_Debug CMakeFiles/JupiterClient.dir/JupiterClient_autogen/mocs_compilation.cpp.obj CMakeFiles/JupiterClient.dir/src/main.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/LoginWindow.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/MainWindow.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/ChatWindow.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/SearchDialog.cpp.obj CMakeFiles/JupiterClient.dir/src/network/Client.cpp.obj CMakeFiles/JupiterClient.dir/src/network/Protocol.cpp.obj CMakeFiles/JupiterClient.dir/src/models/User.cpp.obj CMakeFiles/JupiterClient.dir/src/config/ConfigManager.cpp.obj CMakeFiles/JupiterClient.dir/src/utils/Logger.cpp.obj CMakeFiles/JupiterClient.dir/src/network/NetworkManager.cpp.obj CMakeFiles/JupiterClient.dir/JupiterClient_autogen/EWIEGA46WW/qrc_resources.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Svg.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a || JupiterClient_autogen JupiterClient_autogen_timestamp_deps
+build JupiterClient.exe: CXX_EXECUTABLE_LINKER__JupiterClient_Debug CMakeFiles/JupiterClient.dir/JupiterClient_autogen/mocs_compilation.cpp.obj CMakeFiles/JupiterClient.dir/src/main.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/LoginWindow.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/MainWindow.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/ChatWindow.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/SearchDialog.cpp.obj CMakeFiles/JupiterClient.dir/src/network/Client.cpp.obj CMakeFiles/JupiterClient.dir/src/network/Protocol.cpp.obj CMakeFiles/JupiterClient.dir/src/models/User.cpp.obj CMakeFiles/JupiterClient.dir/src/config/ConfigManager.cpp.obj CMakeFiles/JupiterClient.dir/src/utils/Logger.cpp.obj CMakeFiles/JupiterClient.dir/src/network/NetworkManager.cpp.obj CMakeFiles/JupiterClient.dir/src/ui/InvitationsDialog.cpp.obj CMakeFiles/JupiterClient.dir/JupiterClient_autogen/EWIEGA46WW/qrc_resources.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Svg.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a || JupiterClient_autogen JupiterClient_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Network.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Svg.a  -lws2_32  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\JupiterClient.dir
@@ -247,7 +255,7 @@ build JupiterClient_autogen_timestamp_deps: phony
 #############################################
 # Utility command for JupiterClient_autogen
 
-build JupiterClient_autogen: phony CMakeFiles/JupiterClient_autogen JupiterClient_autogen/include/src/ui/ui_LoginWindow.h JupiterClient_autogen/include/src/ui/ui_MainWindow.h JupiterClient_autogen/include/src/ui/ui_ChatWindow.h JupiterClient_autogen/timestamp JupiterClient_autogen/mocs_compilation.cpp JupiterClient_autogen_timestamp_deps
+build JupiterClient_autogen: phony CMakeFiles/JupiterClient_autogen JupiterClient_autogen/include/src/ui/ui_LoginWindow.h JupiterClient_autogen/include/src/ui/ui_MainWindow.h JupiterClient_autogen/include/src/ui/ui_ChatWindow.h JupiterClient_autogen/include/src/ui/ui_InvitationsDialog.h JupiterClient_autogen/timestamp JupiterClient_autogen/mocs_compilation.cpp JupiterClient_autogen_timestamp_deps
 
 
 #############################################
@@ -273,7 +281,7 @@ build JupiterClient_autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdir
 #############################################
 # Phony custom command for CMakeFiles\JupiterClient_autogen
 
-build CMakeFiles/JupiterClient_autogen JupiterClient_autogen/include/src/ui/ui_LoginWindow.h JupiterClient_autogen/include/src/ui/ui_MainWindow.h JupiterClient_autogen/include/src/ui/ui_ChatWindow.h | ${cmake_ninja_workdir}CMakeFiles/JupiterClient_autogen ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_LoginWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_MainWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_ChatWindow.h: phony JupiterClient_autogen/timestamp || JupiterClient_autogen_timestamp_deps
+build CMakeFiles/JupiterClient_autogen JupiterClient_autogen/include/src/ui/ui_LoginWindow.h JupiterClient_autogen/include/src/ui/ui_MainWindow.h JupiterClient_autogen/include/src/ui/ui_ChatWindow.h JupiterClient_autogen/include/src/ui/ui_InvitationsDialog.h | ${cmake_ninja_workdir}CMakeFiles/JupiterClient_autogen ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_LoginWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_MainWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_ChatWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_InvitationsDialog.h: phony JupiterClient_autogen/timestamp || JupiterClient_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

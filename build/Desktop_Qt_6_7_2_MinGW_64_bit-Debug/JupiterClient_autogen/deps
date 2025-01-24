@@ -4,6 +4,7 @@ JupiterClient_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QFile \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonArray \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonObject \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/QList \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QMap \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QObject \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QSettings \
@@ -694,6 +695,8 @@ JupiterClient_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.cpp \
@@ -703,6 +706,7 @@ JupiterClient_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.ui \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.ui \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.ui \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

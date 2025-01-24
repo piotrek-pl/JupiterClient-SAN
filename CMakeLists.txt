@@ -35,6 +35,7 @@ set(PROJECT_SOURCES
     src/ui/LoginWindow.ui
     src/ui/MainWindow.ui
     src/ui/ChatWindow.ui
+    src/ui/InvitationsDialog.ui
     resources.qrc
 )
 
@@ -49,6 +50,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         src/network/NetworkManager.h
         src/network/NetworkManager.cpp
+        src/ui/InvitationsDialog.h src/ui/InvitationsDialog.cpp
     )
 else()
     if(ANDROID)

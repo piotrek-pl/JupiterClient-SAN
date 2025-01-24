@@ -2,6 +2,7 @@
 #include "6DQYUKT47J/moc_ConfigManager.cpp"
 #include "UFQQIFJZKK/moc_NetworkManager.cpp"
 #include "YPKJ5OE7LN/moc_ChatWindow.cpp"
+#include "YPKJ5OE7LN/moc_InvitationsDialog.cpp"
 #include "YPKJ5OE7LN/moc_LoginWindow.cpp"
 #include "YPKJ5OE7LN/moc_MainWindow.cpp"
 #include "YPKJ5OE7LN/moc_SearchDialog.cpp"

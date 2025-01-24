@@ -374,6 +374,12 @@
 			null
 		],
 		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h",
+			"MU",
+			"YPKJ5OE7LN/moc_InvitationsDialog.cpp",
+			null
+		],
+		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h",
 			"MU",
 			"YPKJ5OE7LN/moc_LoginWindow.cpp",
@@ -502,6 +508,11 @@
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.cpp",
 			"MU",
 			null
 		],
