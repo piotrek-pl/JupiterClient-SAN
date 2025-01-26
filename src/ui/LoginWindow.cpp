@@ -332,9 +332,9 @@ void LoginWindow::onNetworkError(const QString& error)
     if (isRegistering) {
         isRegistering = false;
         updateButtonStates(true);
-        validateRegistrationFields(); // Przenieśmy to na początek
-        updateStatus("Registration failed"); // A to na koniec, żeby nie zostało nadpisane
-        LOG_DEBUG("Status updated to: Registration failed"); // Log dla debugowania
+        validateRegistrationFields(); // Przywróć walidację pól
+        updateStatus(error); // Pokaż błąd z serwera w statusLabel
+        LOG_DEBUG("Status updated to: " + error);
     } else {
         updateStatus("Error: " + error);
         if (!error.contains("Authentication") && !error.contains("Invalid credentials")) {
