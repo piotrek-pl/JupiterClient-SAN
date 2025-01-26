@@ -52,6 +52,7 @@ private:
     Ui::LoginWindow *ui;
     NetworkManager& networkManager;
     bool isConnecting;
+    bool isRegistering;
 
 protected:
     void closeEvent(QCloseEvent* event) override;

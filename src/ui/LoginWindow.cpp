@@ -15,6 +15,7 @@ LoginWindow::LoginWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::LoginWindow)
     , networkManager(NetworkManager::getInstance())
+    , isRegistering(false)
 {
     ui->setupUi(this);
     setWindowTitle("Jupiter Client - Login");
@@ -80,9 +81,11 @@ void LoginWindow::validateRegistrationFields()
     }
 
     ui->registerButton->setEnabled(isValid);
-    if (!message.isEmpty()) {
+
+    // Dodajemy warunek sprawdzający czy nie jesteśmy w trakcie błędu rejestracji
+    if (!message.isEmpty() && !isRegistering) {
         updateStatus(message);
-    } else if (isValid) {
+    } else if (isValid && !isRegistering) {
         updateStatus("Ready to register");
     }
 }
@@ -216,6 +219,7 @@ void LoginWindow::switchToRegisterMode()
     ui->loginButton->setVisible(false);
     ui->registerButton->setText("Register");
     ui->registerButton->setEnabled(false);
+    isRegistering = false; // Reset flagi
 
     // Wyczyść wszystkie pola
     ui->usernameLineEdit->clear();
@@ -293,6 +297,11 @@ void LoginWindow::validateAndSubmitRegistration()
         return;
     }
 
+    // Wyłącz przycisk i ustaw flagę
+    isRegistering = true;
+    updateButtonStates(false);
+    updateStatus("Registering...");
+
     networkManager.registerUser(username, password, email);
 }
 
@@ -320,9 +329,17 @@ void LoginWindow::onConnectionStatusChanged(const QString& status)
 
 void LoginWindow::onNetworkError(const QString& error)
 {
-    updateStatus("Error: " + error);
-    if (!error.contains("Authentication") && !error.contains("Invalid credentials")) {
-        updateButtonStates(false);
+    if (isRegistering) {
+        isRegistering = false;
+        updateButtonStates(true);
+        validateRegistrationFields(); // Przenieśmy to na początek
+        updateStatus("Registration failed"); // A to na koniec, żeby nie zostało nadpisane
+        LOG_DEBUG("Status updated to: Registration failed"); // Log dla debugowania
+    } else {
+        updateStatus("Error: " + error);
+        if (!error.contains("Authentication") && !error.contains("Invalid credentials")) {
+            updateButtonStates(false);
+        }
     }
 }
 
@@ -334,6 +351,7 @@ void LoginWindow::onLoginSuccess()
 
 void LoginWindow::onRegistrationSuccess()
 {
+    isRegistering = false;
     switchToLoginMode();
     updateStatus("Registration successful - please login");
 }
@@ -345,18 +363,21 @@ void LoginWindow::updateStatus(const QString& status)
 
 void LoginWindow::updateButtonStates(bool enabled)
 {
-    if (isConnecting) {
+    if (isConnecting || isRegistering) {
         enabled = false;
     }
 
     ui->loginButton->setEnabled(enabled);
     ui->registerButton->setEnabled(enabled);
-    ui->backToLoginButton->setEnabled(enabled);
+    ui->backToLoginButton->setEnabled(true); // Zawsze aktywny, żeby można było wrócić
     ui->usernameLineEdit->setEnabled(enabled);
     ui->passwordLineEdit->setEnabled(enabled);
+
     if (ui->emailLineEdit->isVisible()) {
         ui->emailLineEdit->setEnabled(enabled);
-        validateRegistrationFields();
+        if (enabled) {
+            validateRegistrationFields();
+        }
     } else {
         validateLoginFields();
     }

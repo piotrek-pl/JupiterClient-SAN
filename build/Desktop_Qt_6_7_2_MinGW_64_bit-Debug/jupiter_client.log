@@ -364,3 +364,610 @@
 [2025-01-26 10:20:26.515] [INFO] Connected to server
 [2025-01-26 10:20:26.515] [INFO] Status update: Connected to server
 [2025-01-26 10:20:35.912] [INFO] Application shutting down
+[2025-01-26 19:28:29.034] [INFO] Application started
+[2025-01-26 19:28:29.035] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 19:28:29.035] [INFO] NetworkManager initialized
+[2025-01-26 19:28:29.035] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 19:28:29.035] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 19:28:29.040] [INFO] LoginWindow initialized
+[2025-01-26 19:28:29.118] [INFO] Connected to server
+[2025-01-26 19:28:29.118] [INFO] Status update: Connected to server
+[2025-01-26 19:28:38.040] [INFO] Sending message: {"email":"asdf@fds.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:28:38.040] [INFO] Status update: Registering...
+[2025-01-26 19:28:38.041] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916118041,
+    "type": "error"
+}
+[2025-01-26 19:28:38.041] [DEBUG] Processing message type: error
+[2025-01-26 19:28:38.041] [ERROR] Server error: Registration failed
+[2025-01-26 19:28:38.041] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:28:39.035] [INFO] Processing JSON: {
+    "timestamp": 1737916119034,
+    "type": "ping"
+}
+[2025-01-26 19:28:39.035] [DEBUG] Processing message type: ping
+[2025-01-26 19:28:39.035] [INFO] Received PING (timestamp: 1737916119034)
+[2025-01-26 19:28:39.035] [INFO] Sending message: {"timestamp":1737916119034,"type":"pong"}
+
+[2025-01-26 19:28:39.035] [INFO] Sent PONG (timestamp: 1737916119034)
+[2025-01-26 19:28:49.037] [INFO] Processing JSON: {
+    "timestamp": 1737916129037,
+    "type": "ping"
+}
+[2025-01-26 19:28:49.037] [DEBUG] Processing message type: ping
+[2025-01-26 19:28:49.037] [INFO] Received PING (timestamp: 1737916129037)
+[2025-01-26 19:28:49.037] [INFO] Sending message: {"timestamp":1737916129037,"type":"pong"}
+
+[2025-01-26 19:28:49.037] [INFO] Sent PONG (timestamp: 1737916129037)
+[2025-01-26 19:28:59.043] [INFO] Processing JSON: {
+    "timestamp": 1737916139043,
+    "type": "ping"
+}
+[2025-01-26 19:28:59.043] [DEBUG] Processing message type: ping
+[2025-01-26 19:28:59.043] [INFO] Received PING (timestamp: 1737916139043)
+[2025-01-26 19:28:59.043] [INFO] Sending message: {"timestamp":1737916139043,"type":"pong"}
+
+[2025-01-26 19:28:59.043] [INFO] Sent PONG (timestamp: 1737916139043)
+[2025-01-26 19:29:09.046] [INFO] Processing JSON: {
+    "timestamp": 1737916149046,
+    "type": "ping"
+}
+[2025-01-26 19:29:09.046] [DEBUG] Processing message type: ping
+[2025-01-26 19:29:09.046] [INFO] Received PING (timestamp: 1737916149046)
+[2025-01-26 19:29:09.046] [INFO] Sending message: {"timestamp":1737916149046,"type":"pong"}
+
+[2025-01-26 19:29:09.046] [INFO] Sent PONG (timestamp: 1737916149046)
+[2025-01-26 19:29:19.039] [INFO] Processing JSON: {
+    "timestamp": 1737916159039,
+    "type": "ping"
+}
+[2025-01-26 19:29:19.039] [DEBUG] Processing message type: ping
+[2025-01-26 19:29:19.039] [INFO] Received PING (timestamp: 1737916159039)
+[2025-01-26 19:29:19.039] [INFO] Sending message: {"timestamp":1737916159039,"type":"pong"}
+
+[2025-01-26 19:29:19.040] [INFO] Sent PONG (timestamp: 1737916159039)
+[2025-01-26 19:29:28.216] [INFO] Sending message: {"email":"asdf@fds.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:29:28.217] [INFO] Status update: Registering...
+[2025-01-26 19:29:28.217] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916168217,
+    "type": "error"
+}
+[2025-01-26 19:29:28.217] [DEBUG] Processing message type: error
+[2025-01-26 19:29:28.217] [ERROR] Server error: Registration failed
+[2025-01-26 19:29:28.217] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:29:28.697] [INFO] Sending message: {"email":"asdf@fds.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:29:28.697] [INFO] Status update: Registering...
+[2025-01-26 19:29:28.697] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916168697,
+    "type": "error"
+}
+[2025-01-26 19:29:28.697] [DEBUG] Processing message type: error
+[2025-01-26 19:29:28.697] [ERROR] Server error: Registration failed
+[2025-01-26 19:29:28.697] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:29:28.847] [INFO] Sending message: {"email":"asdf@fds.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:29:28.847] [INFO] Status update: Registering...
+[2025-01-26 19:29:28.847] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916168847,
+    "type": "error"
+}
+[2025-01-26 19:29:28.847] [DEBUG] Processing message type: error
+[2025-01-26 19:29:28.847] [ERROR] Server error: Registration failed
+[2025-01-26 19:29:28.847] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:29:28.980] [INFO] Sending message: {"email":"asdf@fds.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:29:28.981] [INFO] Status update: Registering...
+[2025-01-26 19:29:28.981] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916168981,
+    "type": "error"
+}
+[2025-01-26 19:29:28.981] [DEBUG] Processing message type: error
+[2025-01-26 19:29:28.981] [ERROR] Server error: Registration failed
+[2025-01-26 19:29:28.981] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:29:29.034] [INFO] Processing JSON: {
+    "timestamp": 1737916169034,
+    "type": "ping"
+}
+[2025-01-26 19:29:29.034] [DEBUG] Processing message type: ping
+[2025-01-26 19:29:29.034] [INFO] Received PING (timestamp: 1737916169034)
+[2025-01-26 19:29:29.034] [INFO] Sending message: {"timestamp":1737916169034,"type":"pong"}
+
+[2025-01-26 19:29:29.034] [INFO] Sent PONG (timestamp: 1737916169034)
+[2025-01-26 19:29:29.732] [INFO] Sending message: {"email":"asdf@fds.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:29:29.732] [INFO] Status update: Registering...
+[2025-01-26 19:29:29.732] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916169732,
+    "type": "error"
+}
+[2025-01-26 19:29:29.732] [DEBUG] Processing message type: error
+[2025-01-26 19:29:29.732] [ERROR] Server error: Registration failed
+[2025-01-26 19:29:29.732] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:29:39.042] [INFO] Processing JSON: {
+    "timestamp": 1737916179041,
+    "type": "ping"
+}
+[2025-01-26 19:29:39.042] [DEBUG] Processing message type: ping
+[2025-01-26 19:29:39.042] [INFO] Received PING (timestamp: 1737916179041)
+[2025-01-26 19:29:39.042] [INFO] Sending message: {"timestamp":1737916179041,"type":"pong"}
+
+[2025-01-26 19:29:39.042] [INFO] Sent PONG (timestamp: 1737916179041)
+[2025-01-26 19:29:49.034] [INFO] Processing JSON: {
+    "timestamp": 1737916189033,
+    "type": "ping"
+}
+[2025-01-26 19:29:49.034] [DEBUG] Processing message type: ping
+[2025-01-26 19:29:49.034] [INFO] Received PING (timestamp: 1737916189033)
+[2025-01-26 19:29:49.034] [INFO] Sending message: {"timestamp":1737916189033,"type":"pong"}
+
+[2025-01-26 19:29:49.034] [INFO] Sent PONG (timestamp: 1737916189033)
+[2025-01-26 19:29:59.049] [INFO] Processing JSON: {
+    "timestamp": 1737916199048,
+    "type": "ping"
+}
+[2025-01-26 19:29:59.049] [DEBUG] Processing message type: ping
+[2025-01-26 19:29:59.049] [INFO] Received PING (timestamp: 1737916199048)
+[2025-01-26 19:29:59.049] [INFO] Sending message: {"timestamp":1737916199048,"type":"pong"}
+
+[2025-01-26 19:29:59.049] [INFO] Sent PONG (timestamp: 1737916199048)
+[2025-01-26 19:30:09.040] [INFO] Processing JSON: {
+    "timestamp": 1737916209040,
+    "type": "ping"
+}
+[2025-01-26 19:30:09.040] [DEBUG] Processing message type: ping
+[2025-01-26 19:30:09.040] [INFO] Received PING (timestamp: 1737916209040)
+[2025-01-26 19:30:09.040] [INFO] Sending message: {"timestamp":1737916209040,"type":"pong"}
+
+[2025-01-26 19:30:09.040] [INFO] Sent PONG (timestamp: 1737916209040)
+[2025-01-26 19:30:19.049] [INFO] Processing JSON: {
+    "timestamp": 1737916219049,
+    "type": "ping"
+}
+[2025-01-26 19:30:19.049] [DEBUG] Processing message type: ping
+[2025-01-26 19:30:19.049] [INFO] Received PING (timestamp: 1737916219049)
+[2025-01-26 19:30:19.049] [INFO] Sending message: {"timestamp":1737916219049,"type":"pong"}
+
+[2025-01-26 19:30:19.049] [INFO] Sent PONG (timestamp: 1737916219049)
+[2025-01-26 19:30:29.040] [INFO] Processing JSON: {
+    "timestamp": 1737916229040,
+    "type": "ping"
+}
+[2025-01-26 19:30:29.040] [DEBUG] Processing message type: ping
+[2025-01-26 19:30:29.040] [INFO] Received PING (timestamp: 1737916229040)
+[2025-01-26 19:30:29.040] [INFO] Sending message: {"timestamp":1737916229040,"type":"pong"}
+
+[2025-01-26 19:30:29.040] [INFO] Sent PONG (timestamp: 1737916229040)
+[2025-01-26 19:30:39.049] [INFO] Processing JSON: {
+    "timestamp": 1737916239049,
+    "type": "ping"
+}
+[2025-01-26 19:30:39.049] [DEBUG] Processing message type: ping
+[2025-01-26 19:30:39.049] [INFO] Received PING (timestamp: 1737916239049)
+[2025-01-26 19:30:39.049] [INFO] Sending message: {"timestamp":1737916239049,"type":"pong"}
+
+[2025-01-26 19:30:39.049] [INFO] Sent PONG (timestamp: 1737916239049)
+[2025-01-26 19:30:49.041] [INFO] Processing JSON: {
+    "timestamp": 1737916249041,
+    "type": "ping"
+}
+[2025-01-26 19:30:49.041] [DEBUG] Processing message type: ping
+[2025-01-26 19:30:49.041] [INFO] Received PING (timestamp: 1737916249041)
+[2025-01-26 19:30:49.041] [INFO] Sending message: {"timestamp":1737916249041,"type":"pong"}
+
+[2025-01-26 19:30:49.041] [INFO] Sent PONG (timestamp: 1737916249041)
+[2025-01-26 19:30:59.042] [INFO] Processing JSON: {
+    "timestamp": 1737916259042,
+    "type": "ping"
+}
+[2025-01-26 19:30:59.042] [DEBUG] Processing message type: ping
+[2025-01-26 19:30:59.042] [INFO] Received PING (timestamp: 1737916259042)
+[2025-01-26 19:30:59.042] [INFO] Sending message: {"timestamp":1737916259042,"type":"pong"}
+
+[2025-01-26 19:30:59.042] [INFO] Sent PONG (timestamp: 1737916259042)
+[2025-01-26 19:31:09.049] [INFO] Processing JSON: {
+    "timestamp": 1737916269049,
+    "type": "ping"
+}
+[2025-01-26 19:31:09.049] [DEBUG] Processing message type: ping
+[2025-01-26 19:31:09.049] [INFO] Received PING (timestamp: 1737916269049)
+[2025-01-26 19:31:09.049] [INFO] Sending message: {"timestamp":1737916269049,"type":"pong"}
+
+[2025-01-26 19:31:09.049] [INFO] Sent PONG (timestamp: 1737916269049)
+[2025-01-26 19:31:19.200] [INFO] Processing JSON: {
+    "timestamp": 1737916279051,
+    "type": "ping"
+}
+[2025-01-26 19:31:19.200] [DEBUG] Processing message type: ping
+[2025-01-26 19:31:19.200] [INFO] Received PING (timestamp: 1737916279051)
+[2025-01-26 19:31:19.200] [INFO] Sending message: {"timestamp":1737916279051,"type":"pong"}
+
+[2025-01-26 19:31:19.200] [INFO] Sent PONG (timestamp: 1737916279051)
+[2025-01-26 19:31:19.207] [INFO] Application shutting down
+[2025-01-26 19:33:59.596] [INFO] Application started
+[2025-01-26 19:33:59.596] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 19:33:59.596] [INFO] NetworkManager initialized
+[2025-01-26 19:33:59.596] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 19:33:59.596] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 19:33:59.600] [INFO] LoginWindow initialized
+[2025-01-26 19:33:59.663] [INFO] Connected to server
+[2025-01-26 19:33:59.663] [INFO] Status update: Connected to server
+[2025-01-26 19:34:08.618] [INFO] Sending message: {"email":"ads@asf.ij","password":"asdf","protocol_version":1,"type":"register","username":"asd"}
+
+[2025-01-26 19:34:08.618] [INFO] Status update: Registering...
+[2025-01-26 19:34:08.619] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916448618,
+    "type": "error"
+}
+[2025-01-26 19:34:08.619] [DEBUG] Processing message type: error
+[2025-01-26 19:34:08.619] [ERROR] Server error: Registration failed
+[2025-01-26 19:34:08.619] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:34:09.601] [INFO] Processing JSON: {
+    "timestamp": 1737916449601,
+    "type": "ping"
+}
+[2025-01-26 19:34:09.601] [DEBUG] Processing message type: ping
+[2025-01-26 19:34:09.601] [INFO] Received PING (timestamp: 1737916449601)
+[2025-01-26 19:34:09.601] [INFO] Sending message: {"timestamp":1737916449601,"type":"pong"}
+
+[2025-01-26 19:34:09.601] [INFO] Sent PONG (timestamp: 1737916449601)
+[2025-01-26 19:34:09.908] [INFO] Sending message: {"email":"ads@asf.ij","password":"asdf","protocol_version":1,"type":"register","username":"asd"}
+
+[2025-01-26 19:34:09.908] [INFO] Status update: Registering...
+[2025-01-26 19:34:09.909] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916449909,
+    "type": "error"
+}
+[2025-01-26 19:34:09.910] [DEBUG] Processing message type: error
+[2025-01-26 19:34:09.910] [ERROR] Server error: Registration failed
+[2025-01-26 19:34:09.910] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:34:11.806] [INFO] Sending message: {"email":"ads@asf.ij","password":"asdf","protocol_version":1,"type":"register","username":"asd"}
+
+[2025-01-26 19:34:11.806] [INFO] Status update: Registering...
+[2025-01-26 19:34:11.807] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916451806,
+    "type": "error"
+}
+[2025-01-26 19:34:11.807] [DEBUG] Processing message type: error
+[2025-01-26 19:34:11.807] [ERROR] Server error: Registration failed
+[2025-01-26 19:34:11.807] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:34:14.040] [INFO] Sending message: {"email":"ads@asf.ij","password":"asdf","protocol_version":1,"type":"register","username":"asd"}
+
+[2025-01-26 19:34:14.041] [INFO] Status update: Registering...
+[2025-01-26 19:34:14.042] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916454041,
+    "type": "error"
+}
+[2025-01-26 19:34:14.042] [DEBUG] Processing message type: error
+[2025-01-26 19:34:14.042] [ERROR] Server error: Registration failed
+[2025-01-26 19:34:14.042] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:34:16.651] [INFO] Sending message: {"email":"ads@asf.ij","password":"asdf","protocol_version":1,"type":"register","username":"asd"}
+
+[2025-01-26 19:34:16.651] [INFO] Status update: Registering...
+[2025-01-26 19:34:16.652] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916456651,
+    "type": "error"
+}
+[2025-01-26 19:34:16.652] [DEBUG] Processing message type: error
+[2025-01-26 19:34:16.652] [ERROR] Server error: Registration failed
+[2025-01-26 19:34:16.652] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:34:19.597] [INFO] Processing JSON: {
+    "timestamp": 1737916459597,
+    "type": "ping"
+}
+[2025-01-26 19:34:19.597] [DEBUG] Processing message type: ping
+[2025-01-26 19:34:19.597] [INFO] Received PING (timestamp: 1737916459597)
+[2025-01-26 19:34:19.597] [INFO] Sending message: {"timestamp":1737916459597,"type":"pong"}
+
+[2025-01-26 19:34:19.597] [INFO] Sent PONG (timestamp: 1737916459597)
+[2025-01-26 19:34:26.910] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:34:26.910] [INFO] Status update: Registering...
+[2025-01-26 19:34:26.912] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916466911,
+    "type": "error"
+}
+[2025-01-26 19:34:26.912] [DEBUG] Processing message type: error
+[2025-01-26 19:34:26.912] [ERROR] Server error: Registration failed
+[2025-01-26 19:34:26.912] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:34:27.908] [INFO] Application shutting down
+[2025-01-26 19:36:05.861] [INFO] Application started
+[2025-01-26 19:36:05.862] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 19:36:05.862] [INFO] NetworkManager initialized
+[2025-01-26 19:36:05.862] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 19:36:05.862] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 19:36:05.866] [INFO] LoginWindow initialized
+[2025-01-26 19:36:05.931] [INFO] Connected to server
+[2025-01-26 19:36:05.931] [INFO] Status update: Connected to server
+[2025-01-26 19:36:14.205] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:36:14.205] [INFO] Status update: Registering...
+[2025-01-26 19:36:14.206] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916574206,
+    "type": "error"
+}
+[2025-01-26 19:36:14.206] [DEBUG] Processing message type: error
+[2025-01-26 19:36:14.206] [ERROR] Server error: Registration failed
+[2025-01-26 19:36:14.206] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:36:15.874] [INFO] Processing JSON: {
+    "timestamp": 1737916575874,
+    "type": "ping"
+}
+[2025-01-26 19:36:15.874] [DEBUG] Processing message type: ping
+[2025-01-26 19:36:15.874] [INFO] Received PING (timestamp: 1737916575874)
+[2025-01-26 19:36:15.875] [INFO] Sending message: {"timestamp":1737916575874,"type":"pong"}
+
+[2025-01-26 19:36:15.875] [INFO] Sent PONG (timestamp: 1737916575874)
+[2025-01-26 19:36:25.866] [INFO] Processing JSON: {
+    "timestamp": 1737916585865,
+    "type": "ping"
+}
+[2025-01-26 19:36:25.866] [DEBUG] Processing message type: ping
+[2025-01-26 19:36:25.866] [INFO] Received PING (timestamp: 1737916585865)
+[2025-01-26 19:36:25.866] [INFO] Sending message: {"timestamp":1737916585865,"type":"pong"}
+
+[2025-01-26 19:36:25.866] [INFO] Sent PONG (timestamp: 1737916585865)
+[2025-01-26 19:36:35.873] [INFO] Processing JSON: {
+    "timestamp": 1737916595873,
+    "type": "ping"
+}
+[2025-01-26 19:36:35.873] [DEBUG] Processing message type: ping
+[2025-01-26 19:36:35.874] [INFO] Received PING (timestamp: 1737916595873)
+[2025-01-26 19:36:35.874] [INFO] Sending message: {"timestamp":1737916595873,"type":"pong"}
+
+[2025-01-26 19:36:35.874] [INFO] Sent PONG (timestamp: 1737916595873)
+[2025-01-26 19:36:45.876] [INFO] Processing JSON: {
+    "timestamp": 1737916605876,
+    "type": "ping"
+}
+[2025-01-26 19:36:45.876] [DEBUG] Processing message type: ping
+[2025-01-26 19:36:45.876] [INFO] Received PING (timestamp: 1737916605876)
+[2025-01-26 19:36:45.876] [INFO] Sending message: {"timestamp":1737916605876,"type":"pong"}
+
+[2025-01-26 19:36:45.876] [INFO] Sent PONG (timestamp: 1737916605876)
+[2025-01-26 19:36:53.306] [INFO] Application shutting down
+[2025-01-26 19:37:59.558] [INFO] Application started
+[2025-01-26 19:37:59.558] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 19:37:59.558] [INFO] NetworkManager initialized
+[2025-01-26 19:37:59.558] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 19:37:59.558] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 19:37:59.562] [INFO] LoginWindow initialized
+[2025-01-26 19:37:59.626] [INFO] Connected to server
+[2025-01-26 19:37:59.626] [INFO] Status update: Connected to server
+[2025-01-26 19:38:07.092] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:07.092] [INFO] Status update: Registering...
+[2025-01-26 19:38:07.093] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916687092,
+    "type": "error"
+}
+[2025-01-26 19:38:07.093] [DEBUG] Processing message type: error
+[2025-01-26 19:38:07.093] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:07.093] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:07.872] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:07.872] [INFO] Status update: Registering...
+[2025-01-26 19:38:07.873] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916687873,
+    "type": "error"
+}
+[2025-01-26 19:38:07.873] [DEBUG] Processing message type: error
+[2025-01-26 19:38:07.873] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:07.873] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:08.037] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:08.037] [INFO] Status update: Registering...
+[2025-01-26 19:38:08.038] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916688038,
+    "type": "error"
+}
+[2025-01-26 19:38:08.038] [DEBUG] Processing message type: error
+[2025-01-26 19:38:08.038] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:08.038] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:08.202] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:08.202] [INFO] Status update: Registering...
+[2025-01-26 19:38:08.203] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916688202,
+    "type": "error"
+}
+[2025-01-26 19:38:08.203] [DEBUG] Processing message type: error
+[2025-01-26 19:38:08.203] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:08.203] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:08.375] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:08.375] [INFO] Status update: Registering...
+[2025-01-26 19:38:08.377] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916688376,
+    "type": "error"
+}
+[2025-01-26 19:38:08.377] [DEBUG] Processing message type: error
+[2025-01-26 19:38:08.377] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:08.377] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:08.554] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:08.554] [INFO] Status update: Registering...
+[2025-01-26 19:38:08.555] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916688554,
+    "type": "error"
+}
+[2025-01-26 19:38:08.555] [DEBUG] Processing message type: error
+[2025-01-26 19:38:08.555] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:08.555] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:09.556] [INFO] Processing JSON: {
+    "timestamp": 1737916689556,
+    "type": "ping"
+}
+[2025-01-26 19:38:09.556] [DEBUG] Processing message type: ping
+[2025-01-26 19:38:09.556] [INFO] Received PING (timestamp: 1737916689556)
+[2025-01-26 19:38:09.556] [INFO] Sending message: {"timestamp":1737916689556,"type":"pong"}
+
+[2025-01-26 19:38:09.556] [INFO] Sent PONG (timestamp: 1737916689556)
+[2025-01-26 19:38:11.546] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:11.546] [INFO] Status update: Registering...
+[2025-01-26 19:38:11.547] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916691547,
+    "type": "error"
+}
+[2025-01-26 19:38:11.547] [DEBUG] Processing message type: error
+[2025-01-26 19:38:11.547] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:11.547] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:19.568] [INFO] Processing JSON: {
+    "timestamp": 1737916699568,
+    "type": "ping"
+}
+[2025-01-26 19:38:19.568] [DEBUG] Processing message type: ping
+[2025-01-26 19:38:19.568] [INFO] Received PING (timestamp: 1737916699568)
+[2025-01-26 19:38:19.568] [INFO] Sending message: {"timestamp":1737916699568,"type":"pong"}
+
+[2025-01-26 19:38:19.568] [INFO] Sent PONG (timestamp: 1737916699568)
+[2025-01-26 19:38:27.478] [INFO] Sending message: {"password":"sadf","protocol_version":1,"type":"login","username":"asdf"}
+
+[2025-01-26 19:38:27.478] [INFO] Status update: Logging in...
+[2025-01-26 19:38:27.479] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1737916707479,
+    "type": "error"
+}
+[2025-01-26 19:38:27.479] [DEBUG] Processing message type: error
+[2025-01-26 19:38:27.479] [ERROR] Server error: Authentication failed
+[2025-01-26 19:38:27.479] [INFO] Status update: Server error: Authentication failed
+[2025-01-26 19:38:29.554] [INFO] Processing JSON: {
+    "timestamp": 1737916709553,
+    "type": "ping"
+}
+[2025-01-26 19:38:29.554] [DEBUG] Processing message type: ping
+[2025-01-26 19:38:29.554] [INFO] Received PING (timestamp: 1737916709553)
+[2025-01-26 19:38:29.554] [INFO] Sending message: {"timestamp":1737916709553,"type":"pong"}
+
+[2025-01-26 19:38:29.554] [INFO] Sent PONG (timestamp: 1737916709553)
+[2025-01-26 19:38:35.060] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:35.060] [INFO] Status update: Registering...
+[2025-01-26 19:38:35.061] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916715060,
+    "type": "error"
+}
+[2025-01-26 19:38:35.061] [DEBUG] Processing message type: error
+[2025-01-26 19:38:35.061] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:35.061] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:35.466] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:38:35.466] [INFO] Status update: Registering...
+[2025-01-26 19:38:35.467] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916715467,
+    "type": "error"
+}
+[2025-01-26 19:38:35.467] [DEBUG] Processing message type: error
+[2025-01-26 19:38:35.467] [ERROR] Server error: Registration failed
+[2025-01-26 19:38:35.467] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:38:39.555] [INFO] Processing JSON: {
+    "timestamp": 1737916719555,
+    "type": "ping"
+}
+[2025-01-26 19:38:39.555] [DEBUG] Processing message type: ping
+[2025-01-26 19:38:39.555] [INFO] Received PING (timestamp: 1737916719555)
+[2025-01-26 19:38:39.555] [INFO] Sending message: {"timestamp":1737916719555,"type":"pong"}
+
+[2025-01-26 19:38:39.555] [INFO] Sent PONG (timestamp: 1737916719555)
+[2025-01-26 19:38:49.560] [INFO] Processing JSON: {
+    "timestamp": 1737916729560,
+    "type": "ping"
+}
+[2025-01-26 19:38:49.560] [DEBUG] Processing message type: ping
+[2025-01-26 19:38:49.560] [INFO] Received PING (timestamp: 1737916729560)
+[2025-01-26 19:38:49.560] [INFO] Sending message: {"timestamp":1737916729560,"type":"pong"}
+
+[2025-01-26 19:38:49.560] [INFO] Sent PONG (timestamp: 1737916729560)
+[2025-01-26 19:38:59.556] [INFO] Processing JSON: {
+    "timestamp": 1737916739555,
+    "type": "ping"
+}
+[2025-01-26 19:38:59.556] [DEBUG] Processing message type: ping
+[2025-01-26 19:38:59.556] [INFO] Received PING (timestamp: 1737916739555)
+[2025-01-26 19:38:59.556] [INFO] Sending message: {"timestamp":1737916739555,"type":"pong"}
+
+[2025-01-26 19:38:59.556] [INFO] Sent PONG (timestamp: 1737916739555)
+[2025-01-26 19:39:09.568] [INFO] Processing JSON: {
+    "timestamp": 1737916749568,
+    "type": "ping"
+}
+[2025-01-26 19:39:09.568] [DEBUG] Processing message type: ping
+[2025-01-26 19:39:09.568] [INFO] Received PING (timestamp: 1737916749568)
+[2025-01-26 19:39:09.568] [INFO] Sending message: {"timestamp":1737916749568,"type":"pong"}
+
+[2025-01-26 19:39:09.568] [INFO] Sent PONG (timestamp: 1737916749568)
+[2025-01-26 19:39:19.559] [INFO] Processing JSON: {
+    "timestamp": 1737916759559,
+    "type": "ping"
+}
+[2025-01-26 19:39:19.560] [DEBUG] Processing message type: ping
+[2025-01-26 19:39:19.560] [INFO] Received PING (timestamp: 1737916759559)
+[2025-01-26 19:39:19.560] [INFO] Sending message: {"timestamp":1737916759559,"type":"pong"}
+
+[2025-01-26 19:39:19.560] [INFO] Sent PONG (timestamp: 1737916759559)
+[2025-01-26 19:39:29.559] [INFO] Processing JSON: {
+    "timestamp": 1737916769559,
+    "type": "ping"
+}
+[2025-01-26 19:39:29.559] [DEBUG] Processing message type: ping
+[2025-01-26 19:39:29.559] [INFO] Received PING (timestamp: 1737916769559)
+[2025-01-26 19:39:29.559] [INFO] Sending message: {"timestamp":1737916769559,"type":"pong"}
+
+[2025-01-26 19:39:29.559] [INFO] Sent PONG (timestamp: 1737916769559)
+[2025-01-26 19:39:29.725] [INFO] Application shutting down
+[2025-01-26 19:40:00.554] [INFO] Application started
+[2025-01-26 19:40:00.555] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 19:40:00.555] [INFO] NetworkManager initialized
+[2025-01-26 19:40:00.555] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 19:40:00.555] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 19:40:00.559] [INFO] LoginWindow initialized
+[2025-01-26 19:40:00.625] [INFO] Connected to server
+[2025-01-26 19:40:00.625] [INFO] Status update: Connected to server
+[2025-01-26 19:40:07.688] [INFO] Sending message: {"email":"asdf@asdf.pl","password":"asdf","protocol_version":1,"type":"register","username":"asdf"}
+
+[2025-01-26 19:40:07.688] [INFO] Status update: Registering...
+[2025-01-26 19:40:07.689] [INFO] Processing JSON: {
+    "message": "Registration failed",
+    "timestamp": 1737916807688,
+    "type": "error"
+}
+[2025-01-26 19:40:07.689] [DEBUG] Processing message type: error
+[2025-01-26 19:40:07.689] [ERROR] Server error: Registration failed
+[2025-01-26 19:40:07.689] [INFO] Status update: Server error: Registration failed
+[2025-01-26 19:40:07.689] [DEBUG] Status updated to: Registration failed
+[2025-01-26 19:40:10.574] [INFO] Processing JSON: {
+    "timestamp": 1737916810573,
+    "type": "ping"
+}
+[2025-01-26 19:40:10.574] [DEBUG] Processing message type: ping
+[2025-01-26 19:40:10.574] [INFO] Received PING (timestamp: 1737916810573)
+[2025-01-26 19:40:10.574] [INFO] Sending message: {"timestamp":1737916810573,"type":"pong"}
+
+[2025-01-26 19:40:10.574] [INFO] Sent PONG (timestamp: 1737916810573)
+[2025-01-26 19:40:12.733] [INFO] Application shutting down
