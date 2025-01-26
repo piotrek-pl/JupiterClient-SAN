@@ -31,7 +31,6 @@ class Ui_MainWindow
 {
 public:
     QAction *actionSearch;
-    QAction *actionSettings;
     QAction *actionExit;
     QAction *actionAbout;
     QWidget *centralwidget;
@@ -200,8 +199,6 @@ public:
 "}"));
         actionSearch = new QAction(MainWindow);
         actionSearch->setObjectName("actionSearch");
-        actionSettings = new QAction(MainWindow);
-        actionSettings->setObjectName("actionSettings");
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName("actionExit");
         actionAbout = new QAction(MainWindow);
@@ -291,7 +288,6 @@ public:
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionSearch);
-        menuFile->addAction(actionSettings);
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
         menuHelp->addAction(actionAbout);
@@ -305,7 +301,6 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Jupiter Client", nullptr));
         actionSearch->setText(QCoreApplication::translate("MainWindow", "Search Users", nullptr));
-        actionSettings->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
         actionExit->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
         statusLabel->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));

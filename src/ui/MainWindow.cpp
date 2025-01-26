@@ -79,7 +79,7 @@ void MainWindow::initializeUI()
 
     // Menu connections
     connect(ui->actionSearch, &QAction::triggered, this, &MainWindow::onMenuSearchTriggered);
-    connect(ui->actionSettings, &QAction::triggered, this, &MainWindow::onMenuSettingsTriggered);
+    //connect(ui->actionSettings, &QAction::triggered, this, &MainWindow::onMenuSettingsTriggered);
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::onMenuExitTriggered);
     connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::onMenuAboutTriggered);
 
@@ -449,7 +449,7 @@ void MainWindow::updateFriendsList(const QJsonArray& friends)
         ui->friendsList->addItem(item);
 
     if (networkManager.isConnected() && networkManager.isAuthenticated()) {
-        updateConnectionStatus(QString("Connected - Friends list updated (%1)").arg(friends.size()));
+        //updateConnectionStatus(QString("Connected - Friends list updated (%1)").arg(friends.size()));
     }
 }
 
@@ -494,9 +494,9 @@ void MainWindow::onMenuAboutTriggered()
 {
     QString aboutText = QString(
                             "Jupiter Client v1.0.0\n\n"
-                            "Created by: piotrek-pl\n"
+                            "Created by: Piotr Lewicki\n"
                             "Build date: %1 %2\n\n"
-                            "A modern chat client for secure communication."
+                            "A modern chat client for communication."
                             ).arg(__DATE__).arg(__TIME__);
 
     QMessageBox::about(this, "About Jupiter Client", aboutText);
@@ -692,10 +692,22 @@ void MainWindow::showFriendsContextMenu(const QPoint& pos)
 
 void MainWindow::setupInvitationsMenu()
 {
+    // Najpierw usuń istniejące menu Help (jeśli istnieje)
+    QMenu* helpMenu = menuBar()->findChild<QMenu*>("menuHelp");
+    if (helpMenu) {
+        menuBar()->removeAction(helpMenu->menuAction());
+    }
+
+    // Dodaj menu Invitations
     QMenu* invitationsMenu = menuBar()->addMenu("Invitations");
     QAction* showInvitationsAction = invitationsMenu->addAction("Show Invitations");
     connect(showInvitationsAction, &QAction::triggered,
             this, &MainWindow::onInvitationsActionTriggered);
+
+    // Dodaj z powrotem menu Help
+    if (helpMenu) {
+        menuBar()->addMenu(helpMenu);
+    }
 }
 
 void MainWindow::onInvitationsActionTriggered()

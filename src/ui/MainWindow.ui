@@ -300,7 +300,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      <string>File</string>
     </property>
     <addaction name="actionSearch"/>
-    <addaction name="actionSettings"/>
+    <!-- <addaction name="actionSettings"/> -->
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -319,11 +319,11 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <string>Search Users</string>
    </property>
   </action>
-  <action name="actionSettings">
+  <!-- <action name="actionSettings">
    <property name="text">
     <string>Settings</string>
    </property>
-  </action>
+  </action> -->
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
