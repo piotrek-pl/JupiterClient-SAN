@@ -20674,3 +20674,3871 @@
 
 [2025-01-26 22:26:52.281] [INFO] MainWindow destroyed
 [2025-01-26 22:26:52.281] [INFO] Application shutting down
+[2025-01-26 22:27:19.291] [INFO] Application started
+[2025-01-26 22:27:19.291] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:27:19.291] [INFO] NetworkManager initialized
+[2025-01-26 22:27:19.291] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:27:19.291] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:27:19.296] [INFO] LoginWindow initialized
+[2025-01-26 22:27:19.360] [INFO] Connected to server
+[2025-01-26 22:27:19.361] [INFO] Status update: Connected to server
+[2025-01-26 22:27:22.683] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 22:27:22.683] [INFO] Status update: Logging in...
+[2025-01-26 22:27:22.686] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737926842686,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 22:27:22.686] [DEBUG] Processing message type: login_response
+[2025-01-26 22:27:22.686] [INFO] Login successful
+[2025-01-26 22:27:22.686] [INFO] Sending message: {"status":"online","timestamp":1737926842686,"type":"status_response"}
+
+[2025-01-26 22:27:22.686] [INFO] Sending message: {"timestamp":1737926842686,"type":"get_friends_list"}
+
+[2025-01-26 22:27:22.686] [INFO] Status update: Login successful - Connected
+[2025-01-26 22:27:22.738] [INFO] UI initialized successfully
+[2025-01-26 22:27:22.738] [INFO] MainWindow initialized
+[2025-01-26 22:27:22.900] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 22:27:22.900] [DEBUG] Processing message type: unread_from
+[2025-01-26 22:27:22.900] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 22:27:22.900] [INFO] Received unread messages info from 0 users
+[2025-01-26 22:27:22.900] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737926842688,
+    "type": "friends_list_response"
+}
+[2025-01-26 22:27:22.900] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 22:27:22.900] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 22:27:22.900] [INFO] Updating friends list with 2 friends
+[2025-01-26 22:27:22.900] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737926842689,
+    "type": "friends_status_update"
+}
+[2025-01-26 22:27:22.900] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 22:27:22.900] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 22:27:22.900] [INFO] Updating friends list with 2 friends
+[2025-01-26 22:27:22.901] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737926842690,
+    "type": "friends_list_response"
+}
+[2025-01-26 22:27:22.901] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 22:27:22.901] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 22:27:22.901] [INFO] Updating friends list with 2 friends
+[2025-01-26 22:27:22.915] [INFO] LoginWindow destroyed
+[2025-01-26 22:27:29.284] [INFO] Processing JSON: {
+    "timestamp": 1737926849284,
+    "type": "ping"
+}
+[2025-01-26 22:27:29.284] [DEBUG] Processing message type: ping
+[2025-01-26 22:27:29.284] [INFO] Received PING (timestamp: 1737926849284)
+[2025-01-26 22:27:29.284] [INFO] Sending message: {"timestamp":1737926849284,"type":"pong"}
+
+[2025-01-26 22:27:29.284] [INFO] Sent PONG (timestamp: 1737926849284)
+[2025-01-26 22:27:36.059] [INFO] Sending message: {"timestamp":1737926856059,"type":"logout"}
+
+[2025-01-26 22:27:36.059] [INFO] MainWindow destroyed
+[2025-01-26 22:27:36.059] [INFO] Application shutting down
+[2025-01-26 22:29:33.353] [INFO] Application started
+[2025-01-26 22:29:33.354] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:29:33.354] [INFO] NetworkManager initialized
+[2025-01-26 22:29:33.354] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:29:33.354] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:29:33.359] [INFO] LoginWindow initialized
+[2025-01-26 22:29:33.426] [INFO] Connected to server
+[2025-01-26 22:29:33.426] [INFO] Status update: Connected to server
+[2025-01-26 22:29:39.538] [INFO] Application shutting down
+[2025-01-26 22:29:58.222] [INFO] Application started
+[2025-01-26 22:29:58.223] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:29:58.223] [INFO] NetworkManager initialized
+[2025-01-26 22:29:58.223] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:29:58.223] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:29:58.227] [INFO] LoginWindow initialized
+[2025-01-26 22:29:58.292] [INFO] Connected to server
+[2025-01-26 22:29:58.292] [INFO] Status update: Connected to server
+[2025-01-26 22:30:01.599] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 22:30:01.599] [INFO] Status update: Logging in...
+[2025-01-26 22:30:01.602] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737927001602,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 22:30:01.602] [DEBUG] Processing message type: login_response
+[2025-01-26 22:30:01.602] [INFO] Login successful
+[2025-01-26 22:30:01.602] [INFO] Sending message: {"status":"online","timestamp":1737927001602,"type":"status_response"}
+
+[2025-01-26 22:30:01.602] [INFO] Sending message: {"timestamp":1737927001602,"type":"get_friends_list"}
+
+[2025-01-26 22:30:01.602] [INFO] Status update: Login successful - Connected
+[2025-01-26 22:30:01.656] [INFO] UI initialized successfully
+[2025-01-26 22:30:01.656] [INFO] MainWindow initialized
+[2025-01-26 22:30:01.820] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 22:30:01.820] [DEBUG] Processing message type: unread_from
+[2025-01-26 22:30:01.820] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 22:30:01.820] [INFO] Received unread messages info from 0 users
+[2025-01-26 22:30:01.820] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737927001604,
+    "type": "friends_list_response"
+}
+[2025-01-26 22:30:01.820] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 22:30:01.820] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 22:30:01.820] [INFO] Updating friends list with 2 friends
+[2025-01-26 22:30:01.820] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737927001605,
+    "type": "friends_status_update"
+}
+[2025-01-26 22:30:01.820] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 22:30:01.820] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 22:30:01.820] [INFO] Updating friends list with 2 friends
+[2025-01-26 22:30:01.820] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737927001606,
+    "type": "friends_list_response"
+}
+[2025-01-26 22:30:01.820] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 22:30:01.820] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 22:30:01.820] [INFO] Updating friends list with 2 friends
+[2025-01-26 22:30:01.835] [INFO] LoginWindow destroyed
+[2025-01-26 22:30:02.779] [INFO] Sending message: {"timestamp":1737927002779,"type":"logout"}
+
+[2025-01-26 22:30:02.779] [INFO] MainWindow destroyed
+[2025-01-26 22:30:02.780] [INFO] Application shutting down
+[2025-01-26 22:30:08.816] [INFO] Application started
+[2025-01-26 22:30:08.816] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:30:08.816] [INFO] NetworkManager initialized
+[2025-01-26 22:30:08.816] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:30:08.816] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:30:08.873] [INFO] LoginWindow initialized
+[2025-01-26 22:30:08.943] [INFO] Connected to server
+[2025-01-26 22:30:08.943] [INFO] Status update: Connected to server
+[2025-01-26 22:30:18.814] [INFO] Processing JSON: {
+    "timestamp": 1737927018814,
+    "type": "ping"
+}
+[2025-01-26 22:30:18.814] [DEBUG] Processing message type: ping
+[2025-01-26 22:30:18.814] [INFO] Received PING (timestamp: 1737927018814)
+[2025-01-26 22:30:18.814] [INFO] Sending message: {"timestamp":1737927018814,"type":"pong"}
+
+[2025-01-26 22:30:18.814] [INFO] Sent PONG (timestamp: 1737927018814)
+[2025-01-26 22:30:28.816] [INFO] Processing JSON: {
+    "timestamp": 1737927028816,
+    "type": "ping"
+}
+[2025-01-26 22:30:28.816] [DEBUG] Processing message type: ping
+[2025-01-26 22:30:28.816] [INFO] Received PING (timestamp: 1737927028816)
+[2025-01-26 22:30:28.816] [INFO] Sending message: {"timestamp":1737927028816,"type":"pong"}
+
+[2025-01-26 22:30:28.816] [INFO] Sent PONG (timestamp: 1737927028816)
+[2025-01-26 22:30:38.817] [INFO] Processing JSON: {
+    "timestamp": 1737927038817,
+    "type": "ping"
+}
+[2025-01-26 22:30:38.817] [DEBUG] Processing message type: ping
+[2025-01-26 22:30:38.817] [INFO] Received PING (timestamp: 1737927038817)
+[2025-01-26 22:30:38.817] [INFO] Sending message: {"timestamp":1737927038817,"type":"pong"}
+
+[2025-01-26 22:30:38.817] [INFO] Sent PONG (timestamp: 1737927038817)
+[2025-01-26 22:30:48.807] [INFO] Processing JSON: {
+    "timestamp": 1737927048807,
+    "type": "ping"
+}
+[2025-01-26 22:30:48.807] [DEBUG] Processing message type: ping
+[2025-01-26 22:30:48.807] [INFO] Received PING (timestamp: 1737927048807)
+[2025-01-26 22:30:48.807] [INFO] Sending message: {"timestamp":1737927048807,"type":"pong"}
+
+[2025-01-26 22:30:48.807] [INFO] Sent PONG (timestamp: 1737927048807)
+[2025-01-26 22:30:58.810] [INFO] Processing JSON: {
+    "timestamp": 1737927058810,
+    "type": "ping"
+}
+[2025-01-26 22:30:58.810] [DEBUG] Processing message type: ping
+[2025-01-26 22:30:58.810] [INFO] Received PING (timestamp: 1737927058810)
+[2025-01-26 22:30:58.810] [INFO] Sending message: {"timestamp":1737927058810,"type":"pong"}
+
+[2025-01-26 22:30:58.810] [INFO] Sent PONG (timestamp: 1737927058810)
+[2025-01-26 22:31:08.817] [INFO] Processing JSON: {
+    "timestamp": 1737927068817,
+    "type": "ping"
+}
+[2025-01-26 22:31:08.818] [DEBUG] Processing message type: ping
+[2025-01-26 22:31:08.818] [INFO] Received PING (timestamp: 1737927068817)
+[2025-01-26 22:31:08.818] [INFO] Sending message: {"timestamp":1737927068817,"type":"pong"}
+
+[2025-01-26 22:31:08.818] [INFO] Sent PONG (timestamp: 1737927068817)
+[2025-01-26 22:31:14.153] [INFO] Application shutting down
+[2025-01-26 22:32:49.406] [INFO] Application started
+[2025-01-26 22:32:49.406] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:32:49.406] [INFO] NetworkManager initialized
+[2025-01-26 22:32:49.406] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:32:49.406] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:32:49.460] [INFO] LoginWindow initialized
+[2025-01-26 22:32:49.534] [INFO] Connected to server
+[2025-01-26 22:32:49.534] [INFO] Status update: Connected to server
+[2025-01-26 22:32:59.407] [INFO] Processing JSON: {
+    "timestamp": 1737927179407,
+    "type": "ping"
+}
+[2025-01-26 22:32:59.407] [DEBUG] Processing message type: ping
+[2025-01-26 22:32:59.407] [INFO] Received PING (timestamp: 1737927179407)
+[2025-01-26 22:32:59.407] [INFO] Sending message: {"timestamp":1737927179407,"type":"pong"}
+
+[2025-01-26 22:32:59.407] [INFO] Sent PONG (timestamp: 1737927179407)
+[2025-01-26 22:33:09.416] [INFO] Processing JSON: {
+    "timestamp": 1737927189416,
+    "type": "ping"
+}
+[2025-01-26 22:33:09.417] [DEBUG] Processing message type: ping
+[2025-01-26 22:33:09.417] [INFO] Received PING (timestamp: 1737927189416)
+[2025-01-26 22:33:09.417] [INFO] Sending message: {"timestamp":1737927189416,"type":"pong"}
+
+[2025-01-26 22:33:09.417] [INFO] Sent PONG (timestamp: 1737927189416)
+[2025-01-26 22:33:19.407] [INFO] Processing JSON: {
+    "timestamp": 1737927199407,
+    "type": "ping"
+}
+[2025-01-26 22:33:19.407] [DEBUG] Processing message type: ping
+[2025-01-26 22:33:19.407] [INFO] Received PING (timestamp: 1737927199407)
+[2025-01-26 22:33:19.407] [INFO] Sending message: {"timestamp":1737927199407,"type":"pong"}
+
+[2025-01-26 22:33:19.407] [INFO] Sent PONG (timestamp: 1737927199407)
+[2025-01-26 22:33:29.408] [INFO] Processing JSON: {
+    "timestamp": 1737927209408,
+    "type": "ping"
+}
+[2025-01-26 22:33:29.408] [DEBUG] Processing message type: ping
+[2025-01-26 22:33:29.408] [INFO] Received PING (timestamp: 1737927209408)
+[2025-01-26 22:33:29.408] [INFO] Sending message: {"timestamp":1737927209408,"type":"pong"}
+
+[2025-01-26 22:33:29.408] [INFO] Sent PONG (timestamp: 1737927209408)
+[2025-01-26 22:33:39.407] [INFO] Processing JSON: {
+    "timestamp": 1737927219407,
+    "type": "ping"
+}
+[2025-01-26 22:33:39.407] [DEBUG] Processing message type: ping
+[2025-01-26 22:33:39.407] [INFO] Received PING (timestamp: 1737927219407)
+[2025-01-26 22:33:39.407] [INFO] Sending message: {"timestamp":1737927219407,"type":"pong"}
+
+[2025-01-26 22:33:39.407] [INFO] Sent PONG (timestamp: 1737927219407)
+[2025-01-26 22:33:49.422] [INFO] Processing JSON: {
+    "timestamp": 1737927229421,
+    "type": "ping"
+}
+[2025-01-26 22:33:49.422] [DEBUG] Processing message type: ping
+[2025-01-26 22:33:49.422] [INFO] Received PING (timestamp: 1737927229421)
+[2025-01-26 22:33:49.422] [INFO] Sending message: {"timestamp":1737927229421,"type":"pong"}
+
+[2025-01-26 22:33:49.422] [INFO] Sent PONG (timestamp: 1737927229421)
+[2025-01-26 22:33:53.827] [INFO] Application shutting down
+[2025-01-26 22:35:28.703] [INFO] Application started
+[2025-01-26 22:35:28.704] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:35:28.704] [INFO] NetworkManager initialized
+[2025-01-26 22:35:28.704] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:35:28.704] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:35:28.762] [INFO] LoginWindow initialized
+[2025-01-26 22:35:28.829] [INFO] Connected to server
+[2025-01-26 22:35:28.829] [INFO] Status update: Connected to server
+[2025-01-26 22:35:38.701] [INFO] Processing JSON: {
+    "timestamp": 1737927338700,
+    "type": "ping"
+}
+[2025-01-26 22:35:38.701] [DEBUG] Processing message type: ping
+[2025-01-26 22:35:38.701] [INFO] Received PING (timestamp: 1737927338700)
+[2025-01-26 22:35:38.701] [INFO] Sending message: {"timestamp":1737927338700,"type":"pong"}
+
+[2025-01-26 22:35:38.701] [INFO] Sent PONG (timestamp: 1737927338700)
+[2025-01-26 22:35:48.696] [INFO] Processing JSON: {
+    "timestamp": 1737927348696,
+    "type": "ping"
+}
+[2025-01-26 22:35:48.696] [DEBUG] Processing message type: ping
+[2025-01-26 22:35:48.696] [INFO] Received PING (timestamp: 1737927348696)
+[2025-01-26 22:35:48.696] [INFO] Sending message: {"timestamp":1737927348696,"type":"pong"}
+
+[2025-01-26 22:35:48.696] [INFO] Sent PONG (timestamp: 1737927348696)
+[2025-01-26 22:35:52.424] [INFO] Application shutting down
+[2025-01-26 22:36:03.960] [INFO] Application started
+[2025-01-26 22:36:03.960] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:36:03.960] [INFO] NetworkManager initialized
+[2025-01-26 22:36:03.960] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:36:03.960] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:36:04.014] [INFO] LoginWindow initialized
+[2025-01-26 22:36:04.083] [INFO] Connected to server
+[2025-01-26 22:36:04.083] [INFO] Status update: Connected to server
+[2025-01-26 22:36:13.965] [INFO] Processing JSON: {
+    "timestamp": 1737927373964,
+    "type": "ping"
+}
+[2025-01-26 22:36:13.965] [DEBUG] Processing message type: ping
+[2025-01-26 22:36:13.965] [INFO] Received PING (timestamp: 1737927373964)
+[2025-01-26 22:36:13.965] [INFO] Sending message: {"timestamp":1737927373964,"type":"pong"}
+
+[2025-01-26 22:36:13.965] [INFO] Sent PONG (timestamp: 1737927373964)
+[2025-01-26 22:36:23.963] [INFO] Processing JSON: {
+    "timestamp": 1737927383963,
+    "type": "ping"
+}
+[2025-01-26 22:36:23.963] [DEBUG] Processing message type: ping
+[2025-01-26 22:36:23.963] [INFO] Received PING (timestamp: 1737927383963)
+[2025-01-26 22:36:23.963] [INFO] Sending message: {"timestamp":1737927383963,"type":"pong"}
+
+[2025-01-26 22:36:23.963] [INFO] Sent PONG (timestamp: 1737927383963)
+[2025-01-26 22:36:33.962] [INFO] Processing JSON: {
+    "timestamp": 1737927393961,
+    "type": "ping"
+}
+[2025-01-26 22:36:33.962] [DEBUG] Processing message type: ping
+[2025-01-26 22:36:33.962] [INFO] Received PING (timestamp: 1737927393961)
+[2025-01-26 22:36:33.962] [INFO] Sending message: {"timestamp":1737927393961,"type":"pong"}
+
+[2025-01-26 22:36:33.962] [INFO] Sent PONG (timestamp: 1737927393961)
+[2025-01-26 22:36:43.964] [INFO] Processing JSON: {
+    "timestamp": 1737927403964,
+    "type": "ping"
+}
+[2025-01-26 22:36:43.964] [DEBUG] Processing message type: ping
+[2025-01-26 22:36:43.964] [INFO] Received PING (timestamp: 1737927403964)
+[2025-01-26 22:36:43.964] [INFO] Sending message: {"timestamp":1737927403964,"type":"pong"}
+
+[2025-01-26 22:36:43.964] [INFO] Sent PONG (timestamp: 1737927403964)
+[2025-01-26 22:36:49.171] [INFO] Application shutting down
+[2025-01-26 22:37:10.158] [INFO] Application started
+[2025-01-26 22:37:10.159] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:37:10.159] [INFO] NetworkManager initialized
+[2025-01-26 22:37:10.159] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:37:10.159] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:37:10.216] [INFO] LoginWindow initialized
+[2025-01-26 22:37:10.280] [INFO] Connected to server
+[2025-01-26 22:37:10.280] [INFO] Status update: Connected to server
+[2025-01-26 22:37:14.291] [INFO] Application shutting down
+[2025-01-26 22:37:25.154] [INFO] Application started
+[2025-01-26 22:37:25.155] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:37:25.155] [INFO] NetworkManager initialized
+[2025-01-26 22:37:25.155] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:37:25.155] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:37:25.216] [INFO] LoginWindow initialized
+[2025-01-26 22:37:25.281] [INFO] Connected to server
+[2025-01-26 22:37:25.281] [INFO] Status update: Connected to server
+[2025-01-26 22:37:35.152] [INFO] Processing JSON: {
+    "timestamp": 1737927455152,
+    "type": "ping"
+}
+[2025-01-26 22:37:35.152] [DEBUG] Processing message type: ping
+[2025-01-26 22:37:35.152] [INFO] Received PING (timestamp: 1737927455152)
+[2025-01-26 22:37:35.152] [INFO] Sending message: {"timestamp":1737927455152,"type":"pong"}
+
+[2025-01-26 22:37:35.152] [INFO] Sent PONG (timestamp: 1737927455152)
+[2025-01-26 22:37:45.158] [INFO] Processing JSON: {
+    "timestamp": 1737927465157,
+    "type": "ping"
+}
+[2025-01-26 22:37:45.158] [DEBUG] Processing message type: ping
+[2025-01-26 22:37:45.158] [INFO] Received PING (timestamp: 1737927465157)
+[2025-01-26 22:37:45.158] [INFO] Sending message: {"timestamp":1737927465157,"type":"pong"}
+
+[2025-01-26 22:37:45.158] [INFO] Sent PONG (timestamp: 1737927465157)
+[2025-01-26 22:37:55.150] [INFO] Processing JSON: {
+    "timestamp": 1737927475150,
+    "type": "ping"
+}
+[2025-01-26 22:37:55.150] [DEBUG] Processing message type: ping
+[2025-01-26 22:37:55.150] [INFO] Received PING (timestamp: 1737927475150)
+[2025-01-26 22:37:55.150] [INFO] Sending message: {"timestamp":1737927475150,"type":"pong"}
+
+[2025-01-26 22:37:55.150] [INFO] Sent PONG (timestamp: 1737927475150)
+[2025-01-26 22:38:05.151] [INFO] Processing JSON: {
+    "timestamp": 1737927485151,
+    "type": "ping"
+}
+[2025-01-26 22:38:05.151] [DEBUG] Processing message type: ping
+[2025-01-26 22:38:05.151] [INFO] Received PING (timestamp: 1737927485151)
+[2025-01-26 22:38:05.151] [INFO] Sending message: {"timestamp":1737927485151,"type":"pong"}
+
+[2025-01-26 22:38:05.151] [INFO] Sent PONG (timestamp: 1737927485151)
+[2025-01-26 22:38:15.160] [INFO] Processing JSON: {
+    "timestamp": 1737927495160,
+    "type": "ping"
+}
+[2025-01-26 22:38:15.160] [DEBUG] Processing message type: ping
+[2025-01-26 22:38:15.160] [INFO] Received PING (timestamp: 1737927495160)
+[2025-01-26 22:38:15.160] [INFO] Sending message: {"timestamp":1737927495160,"type":"pong"}
+
+[2025-01-26 22:38:15.160] [INFO] Sent PONG (timestamp: 1737927495160)
+[2025-01-26 22:38:25.155] [INFO] Processing JSON: {
+    "timestamp": 1737927505155,
+    "type": "ping"
+}
+[2025-01-26 22:38:25.155] [DEBUG] Processing message type: ping
+[2025-01-26 22:38:25.155] [INFO] Received PING (timestamp: 1737927505155)
+[2025-01-26 22:38:25.155] [INFO] Sending message: {"timestamp":1737927505155,"type":"pong"}
+
+[2025-01-26 22:38:25.155] [INFO] Sent PONG (timestamp: 1737927505155)
+[2025-01-26 22:38:35.163] [INFO] Processing JSON: {
+    "timestamp": 1737927515163,
+    "type": "ping"
+}
+[2025-01-26 22:38:35.163] [DEBUG] Processing message type: ping
+[2025-01-26 22:38:35.163] [INFO] Received PING (timestamp: 1737927515163)
+[2025-01-26 22:38:35.163] [INFO] Sending message: {"timestamp":1737927515163,"type":"pong"}
+
+[2025-01-26 22:38:35.163] [INFO] Sent PONG (timestamp: 1737927515163)
+[2025-01-26 22:38:45.160] [INFO] Processing JSON: {
+    "timestamp": 1737927525160,
+    "type": "ping"
+}
+[2025-01-26 22:38:45.160] [DEBUG] Processing message type: ping
+[2025-01-26 22:38:45.160] [INFO] Received PING (timestamp: 1737927525160)
+[2025-01-26 22:38:45.160] [INFO] Sending message: {"timestamp":1737927525160,"type":"pong"}
+
+[2025-01-26 22:38:45.160] [INFO] Sent PONG (timestamp: 1737927525160)
+[2025-01-26 22:38:55.168] [INFO] Processing JSON: {
+    "timestamp": 1737927535168,
+    "type": "ping"
+}
+[2025-01-26 22:38:55.168] [DEBUG] Processing message type: ping
+[2025-01-26 22:38:55.168] [INFO] Received PING (timestamp: 1737927535168)
+[2025-01-26 22:38:55.168] [INFO] Sending message: {"timestamp":1737927535168,"type":"pong"}
+
+[2025-01-26 22:38:55.168] [INFO] Sent PONG (timestamp: 1737927535168)
+[2025-01-26 22:39:05.161] [INFO] Processing JSON: {
+    "timestamp": 1737927545160,
+    "type": "ping"
+}
+[2025-01-26 22:39:05.161] [DEBUG] Processing message type: ping
+[2025-01-26 22:39:05.161] [INFO] Received PING (timestamp: 1737927545160)
+[2025-01-26 22:39:05.161] [INFO] Sending message: {"timestamp":1737927545160,"type":"pong"}
+
+[2025-01-26 22:39:05.161] [INFO] Sent PONG (timestamp: 1737927545160)
+[2025-01-26 22:39:15.153] [INFO] Processing JSON: {
+    "timestamp": 1737927555153,
+    "type": "ping"
+}
+[2025-01-26 22:39:15.153] [DEBUG] Processing message type: ping
+[2025-01-26 22:39:15.153] [INFO] Received PING (timestamp: 1737927555153)
+[2025-01-26 22:39:15.153] [INFO] Sending message: {"timestamp":1737927555153,"type":"pong"}
+
+[2025-01-26 22:39:15.153] [INFO] Sent PONG (timestamp: 1737927555153)
+[2025-01-26 22:39:19.688] [INFO] Application shutting down
+[2025-01-26 22:39:20.632] [INFO] Application started
+[2025-01-26 22:39:20.632] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:39:20.632] [INFO] NetworkManager initialized
+[2025-01-26 22:39:20.632] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:39:20.632] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:39:20.686] [INFO] LoginWindow initialized
+[2025-01-26 22:39:20.761] [INFO] Connected to server
+[2025-01-26 22:39:20.761] [INFO] Status update: Connected to server
+[2025-01-26 22:39:26.559] [INFO] Application shutting down
+[2025-01-26 22:39:39.048] [INFO] Application started
+[2025-01-26 22:39:39.048] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:39:39.048] [INFO] NetworkManager initialized
+[2025-01-26 22:39:39.048] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:39:39.048] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:39:39.103] [INFO] LoginWindow initialized
+[2025-01-26 22:39:39.165] [INFO] Connected to server
+[2025-01-26 22:39:39.165] [INFO] Status update: Connected to server
+[2025-01-26 22:39:46.104] [INFO] Application shutting down
+[2025-01-26 22:40:05.283] [INFO] Application started
+[2025-01-26 22:40:05.284] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:40:05.284] [INFO] NetworkManager initialized
+[2025-01-26 22:40:05.284] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:40:05.284] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:40:05.338] [INFO] LoginWindow initialized
+[2025-01-26 22:40:05.409] [INFO] Connected to server
+[2025-01-26 22:40:05.409] [INFO] Status update: Connected to server
+[2025-01-26 22:40:15.292] [INFO] Processing JSON: {
+    "timestamp": 1737927615291,
+    "type": "ping"
+}
+[2025-01-26 22:40:15.292] [DEBUG] Processing message type: ping
+[2025-01-26 22:40:15.292] [INFO] Received PING (timestamp: 1737927615291)
+[2025-01-26 22:40:15.292] [INFO] Sending message: {"timestamp":1737927615291,"type":"pong"}
+
+[2025-01-26 22:40:15.292] [INFO] Sent PONG (timestamp: 1737927615291)
+[2025-01-26 22:40:25.288] [INFO] Processing JSON: {
+    "timestamp": 1737927625288,
+    "type": "ping"
+}
+[2025-01-26 22:40:25.288] [DEBUG] Processing message type: ping
+[2025-01-26 22:40:25.288] [INFO] Received PING (timestamp: 1737927625288)
+[2025-01-26 22:40:25.288] [INFO] Sending message: {"timestamp":1737927625288,"type":"pong"}
+
+[2025-01-26 22:40:25.288] [INFO] Sent PONG (timestamp: 1737927625288)
+[2025-01-26 22:40:35.283] [INFO] Processing JSON: {
+    "timestamp": 1737927635282,
+    "type": "ping"
+}
+[2025-01-26 22:40:35.283] [DEBUG] Processing message type: ping
+[2025-01-26 22:40:35.283] [INFO] Received PING (timestamp: 1737927635282)
+[2025-01-26 22:40:35.283] [INFO] Sending message: {"timestamp":1737927635282,"type":"pong"}
+
+[2025-01-26 22:40:35.283] [INFO] Sent PONG (timestamp: 1737927635282)
+[2025-01-26 22:40:45.294] [INFO] Processing JSON: {
+    "timestamp": 1737927645294,
+    "type": "ping"
+}
+[2025-01-26 22:40:45.294] [DEBUG] Processing message type: ping
+[2025-01-26 22:40:45.294] [INFO] Received PING (timestamp: 1737927645294)
+[2025-01-26 22:40:45.294] [INFO] Sending message: {"timestamp":1737927645294,"type":"pong"}
+
+[2025-01-26 22:40:45.294] [INFO] Sent PONG (timestamp: 1737927645294)
+[2025-01-26 22:40:55.293] [INFO] Processing JSON: {
+    "timestamp": 1737927655292,
+    "type": "ping"
+}
+[2025-01-26 22:40:55.293] [DEBUG] Processing message type: ping
+[2025-01-26 22:40:55.293] [INFO] Received PING (timestamp: 1737927655292)
+[2025-01-26 22:40:55.293] [INFO] Sending message: {"timestamp":1737927655292,"type":"pong"}
+
+[2025-01-26 22:40:55.293] [INFO] Sent PONG (timestamp: 1737927655292)
+[2025-01-26 22:41:05.295] [INFO] Processing JSON: {
+    "timestamp": 1737927665294,
+    "type": "ping"
+}
+[2025-01-26 22:41:05.295] [DEBUG] Processing message type: ping
+[2025-01-26 22:41:05.295] [INFO] Received PING (timestamp: 1737927665294)
+[2025-01-26 22:41:05.295] [INFO] Sending message: {"timestamp":1737927665294,"type":"pong"}
+
+[2025-01-26 22:41:05.295] [INFO] Sent PONG (timestamp: 1737927665294)
+[2025-01-26 22:41:15.288] [INFO] Processing JSON: {
+    "timestamp": 1737927675288,
+    "type": "ping"
+}
+[2025-01-26 22:41:15.288] [DEBUG] Processing message type: ping
+[2025-01-26 22:41:15.288] [INFO] Received PING (timestamp: 1737927675288)
+[2025-01-26 22:41:15.288] [INFO] Sending message: {"timestamp":1737927675288,"type":"pong"}
+
+[2025-01-26 22:41:15.288] [INFO] Sent PONG (timestamp: 1737927675288)
+[2025-01-26 22:41:25.292] [INFO] Processing JSON: {
+    "timestamp": 1737927685292,
+    "type": "ping"
+}
+[2025-01-26 22:41:25.292] [DEBUG] Processing message type: ping
+[2025-01-26 22:41:25.292] [INFO] Received PING (timestamp: 1737927685292)
+[2025-01-26 22:41:25.292] [INFO] Sending message: {"timestamp":1737927685292,"type":"pong"}
+
+[2025-01-26 22:41:25.292] [INFO] Sent PONG (timestamp: 1737927685292)
+[2025-01-26 22:41:35.288] [INFO] Processing JSON: {
+    "timestamp": 1737927695288,
+    "type": "ping"
+}
+[2025-01-26 22:41:35.289] [DEBUG] Processing message type: ping
+[2025-01-26 22:41:35.289] [INFO] Received PING (timestamp: 1737927695288)
+[2025-01-26 22:41:35.289] [INFO] Sending message: {"timestamp":1737927695288,"type":"pong"}
+
+[2025-01-26 22:41:35.289] [INFO] Sent PONG (timestamp: 1737927695288)
+[2025-01-26 22:41:45.287] [INFO] Processing JSON: {
+    "timestamp": 1737927705287,
+    "type": "ping"
+}
+[2025-01-26 22:41:45.287] [DEBUG] Processing message type: ping
+[2025-01-26 22:41:45.287] [INFO] Received PING (timestamp: 1737927705287)
+[2025-01-26 22:41:45.287] [INFO] Sending message: {"timestamp":1737927705287,"type":"pong"}
+
+[2025-01-26 22:41:45.287] [INFO] Sent PONG (timestamp: 1737927705287)
+[2025-01-26 22:41:51.616] [INFO] Application shutting down
+[2025-01-26 22:42:29.764] [INFO] Application started
+[2025-01-26 22:42:29.764] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:42:29.764] [INFO] NetworkManager initialized
+[2025-01-26 22:42:29.764] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:42:29.764] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:42:29.818] [INFO] LoginWindow initialized
+[2025-01-26 22:42:29.883] [INFO] Connected to server
+[2025-01-26 22:42:29.883] [INFO] Status update: Connected to server
+[2025-01-26 22:42:36.077] [INFO] Application shutting down
+[2025-01-26 22:43:11.133] [INFO] Application started
+[2025-01-26 22:43:11.134] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:43:11.134] [INFO] NetworkManager initialized
+[2025-01-26 22:43:11.134] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:43:11.134] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:43:11.189] [INFO] LoginWindow initialized
+[2025-01-26 22:43:11.257] [INFO] Connected to server
+[2025-01-26 22:43:11.258] [INFO] Status update: Connected to server
+[2025-01-26 22:43:17.269] [INFO] Application shutting down
+[2025-01-26 22:43:54.421] [INFO] Application started
+[2025-01-26 22:43:54.421] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:43:54.421] [INFO] NetworkManager initialized
+[2025-01-26 22:43:54.421] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:43:54.421] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:43:54.475] [INFO] LoginWindow initialized
+[2025-01-26 22:43:54.542] [INFO] Connected to server
+[2025-01-26 22:43:54.542] [INFO] Status update: Connected to server
+[2025-01-26 22:44:04.425] [INFO] Processing JSON: {
+    "timestamp": 1737927844424,
+    "type": "ping"
+}
+[2025-01-26 22:44:04.425] [DEBUG] Processing message type: ping
+[2025-01-26 22:44:04.425] [INFO] Received PING (timestamp: 1737927844424)
+[2025-01-26 22:44:04.425] [INFO] Sending message: {"timestamp":1737927844424,"type":"pong"}
+
+[2025-01-26 22:44:04.425] [INFO] Sent PONG (timestamp: 1737927844424)
+[2025-01-26 22:44:07.478] [INFO] Application shutting down
+[2025-01-26 22:44:42.052] [INFO] Application started
+[2025-01-26 22:44:42.053] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:44:42.053] [INFO] NetworkManager initialized
+[2025-01-26 22:44:42.053] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:44:42.053] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:44:42.107] [INFO] LoginWindow initialized
+[2025-01-26 22:44:42.185] [INFO] Connected to server
+[2025-01-26 22:44:42.185] [INFO] Status update: Connected to server
+[2025-01-26 22:44:52.052] [INFO] Processing JSON: {
+    "timestamp": 1737927892052,
+    "type": "ping"
+}
+[2025-01-26 22:44:52.052] [DEBUG] Processing message type: ping
+[2025-01-26 22:44:52.052] [INFO] Received PING (timestamp: 1737927892052)
+[2025-01-26 22:44:52.052] [INFO] Sending message: {"timestamp":1737927892052,"type":"pong"}
+
+[2025-01-26 22:44:52.052] [INFO] Sent PONG (timestamp: 1737927892052)
+[2025-01-26 22:45:02.056] [INFO] Processing JSON: {
+    "timestamp": 1737927902056,
+    "type": "ping"
+}
+[2025-01-26 22:45:02.056] [DEBUG] Processing message type: ping
+[2025-01-26 22:45:02.056] [INFO] Received PING (timestamp: 1737927902056)
+[2025-01-26 22:45:02.056] [INFO] Sending message: {"timestamp":1737927902056,"type":"pong"}
+
+[2025-01-26 22:45:02.056] [INFO] Sent PONG (timestamp: 1737927902056)
+[2025-01-26 22:45:12.053] [INFO] Processing JSON: {
+    "timestamp": 1737927912053,
+    "type": "ping"
+}
+[2025-01-26 22:45:12.053] [DEBUG] Processing message type: ping
+[2025-01-26 22:45:12.053] [INFO] Received PING (timestamp: 1737927912053)
+[2025-01-26 22:45:12.053] [INFO] Sending message: {"timestamp":1737927912053,"type":"pong"}
+
+[2025-01-26 22:45:12.053] [INFO] Sent PONG (timestamp: 1737927912053)
+[2025-01-26 22:45:22.045] [INFO] Processing JSON: {
+    "timestamp": 1737927922045,
+    "type": "ping"
+}
+[2025-01-26 22:45:22.045] [DEBUG] Processing message type: ping
+[2025-01-26 22:45:22.045] [INFO] Received PING (timestamp: 1737927922045)
+[2025-01-26 22:45:22.045] [INFO] Sending message: {"timestamp":1737927922045,"type":"pong"}
+
+[2025-01-26 22:45:22.045] [INFO] Sent PONG (timestamp: 1737927922045)
+[2025-01-26 22:45:32.057] [INFO] Processing JSON: {
+    "timestamp": 1737927932056,
+    "type": "ping"
+}
+[2025-01-26 22:45:32.057] [DEBUG] Processing message type: ping
+[2025-01-26 22:45:32.057] [INFO] Received PING (timestamp: 1737927932056)
+[2025-01-26 22:45:32.057] [INFO] Sending message: {"timestamp":1737927932056,"type":"pong"}
+
+[2025-01-26 22:45:32.057] [INFO] Sent PONG (timestamp: 1737927932056)
+[2025-01-26 22:45:42.044] [INFO] Processing JSON: {
+    "timestamp": 1737927942043,
+    "type": "ping"
+}
+[2025-01-26 22:45:42.044] [DEBUG] Processing message type: ping
+[2025-01-26 22:45:42.044] [INFO] Received PING (timestamp: 1737927942043)
+[2025-01-26 22:45:42.044] [INFO] Sending message: {"timestamp":1737927942043,"type":"pong"}
+
+[2025-01-26 22:45:42.044] [INFO] Sent PONG (timestamp: 1737927942043)
+[2025-01-26 22:45:52.056] [INFO] Processing JSON: {
+    "timestamp": 1737927952056,
+    "type": "ping"
+}
+[2025-01-26 22:45:52.056] [DEBUG] Processing message type: ping
+[2025-01-26 22:45:52.056] [INFO] Received PING (timestamp: 1737927952056)
+[2025-01-26 22:45:52.056] [INFO] Sending message: {"timestamp":1737927952056,"type":"pong"}
+
+[2025-01-26 22:45:52.056] [INFO] Sent PONG (timestamp: 1737927952056)
+[2025-01-26 22:46:02.047] [INFO] Processing JSON: {
+    "timestamp": 1737927962047,
+    "type": "ping"
+}
+[2025-01-26 22:46:02.047] [DEBUG] Processing message type: ping
+[2025-01-26 22:46:02.047] [INFO] Received PING (timestamp: 1737927962047)
+[2025-01-26 22:46:02.047] [INFO] Sending message: {"timestamp":1737927962047,"type":"pong"}
+
+[2025-01-26 22:46:02.047] [INFO] Sent PONG (timestamp: 1737927962047)
+[2025-01-26 22:46:12.051] [INFO] Processing JSON: {
+    "timestamp": 1737927972051,
+    "type": "ping"
+}
+[2025-01-26 22:46:12.051] [DEBUG] Processing message type: ping
+[2025-01-26 22:46:12.051] [INFO] Received PING (timestamp: 1737927972051)
+[2025-01-26 22:46:12.051] [INFO] Sending message: {"timestamp":1737927972051,"type":"pong"}
+
+[2025-01-26 22:46:12.051] [INFO] Sent PONG (timestamp: 1737927972051)
+[2025-01-26 22:46:14.606] [INFO] Application shutting down
+[2025-01-26 22:46:18.592] [INFO] Application started
+[2025-01-26 22:46:18.592] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:46:18.592] [INFO] NetworkManager initialized
+[2025-01-26 22:46:18.592] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:46:18.592] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:46:18.645] [INFO] LoginWindow initialized
+[2025-01-26 22:46:18.710] [INFO] Connected to server
+[2025-01-26 22:46:18.710] [INFO] Status update: Connected to server
+[2025-01-26 22:46:28.594] [INFO] Processing JSON: {
+    "timestamp": 1737927988593,
+    "type": "ping"
+}
+[2025-01-26 22:46:28.594] [DEBUG] Processing message type: ping
+[2025-01-26 22:46:28.594] [INFO] Received PING (timestamp: 1737927988593)
+[2025-01-26 22:46:28.594] [INFO] Sending message: {"timestamp":1737927988593,"type":"pong"}
+
+[2025-01-26 22:46:28.594] [INFO] Sent PONG (timestamp: 1737927988593)
+[2025-01-26 22:46:38.595] [INFO] Processing JSON: {
+    "timestamp": 1737927998595,
+    "type": "ping"
+}
+[2025-01-26 22:46:38.595] [DEBUG] Processing message type: ping
+[2025-01-26 22:46:38.595] [INFO] Received PING (timestamp: 1737927998595)
+[2025-01-26 22:46:38.595] [INFO] Sending message: {"timestamp":1737927998595,"type":"pong"}
+
+[2025-01-26 22:46:38.595] [INFO] Sent PONG (timestamp: 1737927998595)
+[2025-01-26 22:46:39.486] [INFO] Application shutting down
+[2025-01-26 22:49:04.577] [INFO] Application started
+[2025-01-26 22:49:04.577] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:49:04.577] [INFO] NetworkManager initialized
+[2025-01-26 22:49:04.577] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:49:04.577] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:49:04.632] [INFO] LoginWindow initialized
+[2025-01-26 22:49:04.700] [INFO] Connected to server
+[2025-01-26 22:49:04.700] [INFO] Status update: Connected to server
+[2025-01-26 22:49:14.574] [INFO] Processing JSON: {
+    "timestamp": 1737928154573,
+    "type": "ping"
+}
+[2025-01-26 22:49:14.574] [DEBUG] Processing message type: ping
+[2025-01-26 22:49:14.574] [INFO] Received PING (timestamp: 1737928154573)
+[2025-01-26 22:49:14.574] [INFO] Sending message: {"timestamp":1737928154573,"type":"pong"}
+
+[2025-01-26 22:49:14.574] [INFO] Sent PONG (timestamp: 1737928154573)
+[2025-01-26 22:49:21.336] [INFO] Application shutting down
+[2025-01-26 22:49:43.403] [INFO] Application started
+[2025-01-26 22:49:43.403] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:49:43.403] [INFO] NetworkManager initialized
+[2025-01-26 22:49:43.403] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:49:43.403] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:49:43.457] [INFO] LoginWindow initialized
+[2025-01-26 22:49:43.525] [INFO] Connected to server
+[2025-01-26 22:49:43.525] [INFO] Status update: Connected to server
+[2025-01-26 22:49:53.407] [INFO] Processing JSON: {
+    "timestamp": 1737928193407,
+    "type": "ping"
+}
+[2025-01-26 22:49:53.407] [DEBUG] Processing message type: ping
+[2025-01-26 22:49:53.407] [INFO] Received PING (timestamp: 1737928193407)
+[2025-01-26 22:49:53.407] [INFO] Sending message: {"timestamp":1737928193407,"type":"pong"}
+
+[2025-01-26 22:49:53.407] [INFO] Sent PONG (timestamp: 1737928193407)
+[2025-01-26 22:49:56.183] [INFO] Application shutting down
+[2025-01-26 22:51:22.675] [INFO] Application started
+[2025-01-26 22:51:22.675] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:51:22.675] [INFO] NetworkManager initialized
+[2025-01-26 22:51:22.675] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:51:22.675] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:51:22.731] [INFO] LoginWindow initialized
+[2025-01-26 22:51:22.806] [INFO] Connected to server
+[2025-01-26 22:51:22.806] [INFO] Status update: Connected to server
+[2025-01-26 22:51:32.668] [INFO] Processing JSON: {
+    "timestamp": 1737928292668,
+    "type": "ping"
+}
+[2025-01-26 22:51:32.668] [DEBUG] Processing message type: ping
+[2025-01-26 22:51:32.668] [INFO] Received PING (timestamp: 1737928292668)
+[2025-01-26 22:51:32.668] [INFO] Sending message: {"timestamp":1737928292668,"type":"pong"}
+
+[2025-01-26 22:51:32.668] [INFO] Sent PONG (timestamp: 1737928292668)
+[2025-01-26 22:51:42.678] [INFO] Processing JSON: {
+    "timestamp": 1737928302677,
+    "type": "ping"
+}
+[2025-01-26 22:51:42.678] [DEBUG] Processing message type: ping
+[2025-01-26 22:51:42.678] [INFO] Received PING (timestamp: 1737928302677)
+[2025-01-26 22:51:42.678] [INFO] Sending message: {"timestamp":1737928302677,"type":"pong"}
+
+[2025-01-26 22:51:42.678] [INFO] Sent PONG (timestamp: 1737928302677)
+[2025-01-26 22:51:52.672] [INFO] Processing JSON: {
+    "timestamp": 1737928312672,
+    "type": "ping"
+}
+[2025-01-26 22:51:52.672] [DEBUG] Processing message type: ping
+[2025-01-26 22:51:52.672] [INFO] Received PING (timestamp: 1737928312672)
+[2025-01-26 22:51:52.672] [INFO] Sending message: {"timestamp":1737928312672,"type":"pong"}
+
+[2025-01-26 22:51:52.672] [INFO] Sent PONG (timestamp: 1737928312672)
+[2025-01-26 22:52:02.667] [INFO] Processing JSON: {
+    "timestamp": 1737928322667,
+    "type": "ping"
+}
+[2025-01-26 22:52:02.667] [DEBUG] Processing message type: ping
+[2025-01-26 22:52:02.667] [INFO] Received PING (timestamp: 1737928322667)
+[2025-01-26 22:52:02.667] [INFO] Sending message: {"timestamp":1737928322667,"type":"pong"}
+
+[2025-01-26 22:52:02.667] [INFO] Sent PONG (timestamp: 1737928322667)
+[2025-01-26 22:52:09.584] [INFO] Application shutting down
+[2025-01-26 22:52:11.343] [INFO] Application started
+[2025-01-26 22:52:11.344] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:52:11.344] [INFO] NetworkManager initialized
+[2025-01-26 22:52:11.344] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:52:11.344] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:52:11.400] [INFO] LoginWindow initialized
+[2025-01-26 22:52:11.478] [INFO] Connected to server
+[2025-01-26 22:52:11.479] [INFO] Status update: Connected to server
+[2025-01-26 22:52:21.341] [INFO] Processing JSON: {
+    "timestamp": 1737928341341,
+    "type": "ping"
+}
+[2025-01-26 22:52:21.341] [DEBUG] Processing message type: ping
+[2025-01-26 22:52:21.341] [INFO] Received PING (timestamp: 1737928341341)
+[2025-01-26 22:52:21.341] [INFO] Sending message: {"timestamp":1737928341341,"type":"pong"}
+
+[2025-01-26 22:52:21.341] [INFO] Sent PONG (timestamp: 1737928341341)
+[2025-01-26 22:52:31.345] [INFO] Processing JSON: {
+    "timestamp": 1737928351344,
+    "type": "ping"
+}
+[2025-01-26 22:52:31.345] [DEBUG] Processing message type: ping
+[2025-01-26 22:52:31.345] [INFO] Received PING (timestamp: 1737928351344)
+[2025-01-26 22:52:31.345] [INFO] Sending message: {"timestamp":1737928351344,"type":"pong"}
+
+[2025-01-26 22:52:31.345] [INFO] Sent PONG (timestamp: 1737928351344)
+[2025-01-26 22:52:35.309] [INFO] Application shutting down
+[2025-01-26 22:53:55.985] [INFO] Application started
+[2025-01-26 22:53:55.985] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:53:55.985] [INFO] NetworkManager initialized
+[2025-01-26 22:53:55.985] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:53:55.985] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:53:56.052] [INFO] LoginWindow initialized
+[2025-01-26 22:53:56.118] [INFO] Connected to server
+[2025-01-26 22:53:56.118] [INFO] Status update: Connected to server
+[2025-01-26 22:54:00.018] [INFO] Application shutting down
+[2025-01-26 22:54:24.193] [INFO] Application started
+[2025-01-26 22:54:24.194] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:54:24.194] [INFO] NetworkManager initialized
+[2025-01-26 22:54:24.194] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:54:24.194] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:54:24.247] [INFO] LoginWindow initialized
+[2025-01-26 22:54:24.315] [INFO] Connected to server
+[2025-01-26 22:54:24.315] [INFO] Status update: Connected to server
+[2025-01-26 22:54:26.096] [INFO] Application shutting down
+[2025-01-26 22:54:50.602] [INFO] Application started
+[2025-01-26 22:54:50.602] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:54:50.602] [INFO] NetworkManager initialized
+[2025-01-26 22:54:50.602] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:54:50.602] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:54:50.672] [INFO] LoginWindow initialized
+[2025-01-26 22:54:50.742] [INFO] Connected to server
+[2025-01-26 22:54:50.742] [INFO] Status update: Connected to server
+[2025-01-26 22:55:00.601] [INFO] Processing JSON: {
+    "timestamp": 1737928500600,
+    "type": "ping"
+}
+[2025-01-26 22:55:00.601] [DEBUG] Processing message type: ping
+[2025-01-26 22:55:00.601] [INFO] Received PING (timestamp: 1737928500600)
+[2025-01-26 22:55:00.601] [INFO] Sending message: {"timestamp":1737928500600,"type":"pong"}
+
+[2025-01-26 22:55:00.601] [INFO] Sent PONG (timestamp: 1737928500600)
+[2025-01-26 22:55:10.598] [INFO] Processing JSON: {
+    "timestamp": 1737928510598,
+    "type": "ping"
+}
+[2025-01-26 22:55:10.598] [DEBUG] Processing message type: ping
+[2025-01-26 22:55:10.598] [INFO] Received PING (timestamp: 1737928510598)
+[2025-01-26 22:55:10.598] [INFO] Sending message: {"timestamp":1737928510598,"type":"pong"}
+
+[2025-01-26 22:55:10.598] [INFO] Sent PONG (timestamp: 1737928510598)
+[2025-01-26 22:55:13.761] [INFO] Application shutting down
+[2025-01-26 22:56:11.172] [INFO] Application started
+[2025-01-26 22:56:11.173] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:56:11.173] [INFO] NetworkManager initialized
+[2025-01-26 22:56:11.173] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:56:11.173] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:56:11.232] [INFO] LoginWindow initialized
+[2025-01-26 22:56:11.300] [INFO] Connected to server
+[2025-01-26 22:56:11.300] [INFO] Status update: Connected to server
+[2025-01-26 22:56:21.163] [INFO] Processing JSON: {
+    "timestamp": 1737928581163,
+    "type": "ping"
+}
+[2025-01-26 22:56:21.163] [DEBUG] Processing message type: ping
+[2025-01-26 22:56:21.163] [INFO] Received PING (timestamp: 1737928581163)
+[2025-01-26 22:56:21.163] [INFO] Sending message: {"timestamp":1737928581163,"type":"pong"}
+
+[2025-01-26 22:56:21.163] [INFO] Sent PONG (timestamp: 1737928581163)
+[2025-01-26 22:56:31.165] [INFO] Processing JSON: {
+    "timestamp": 1737928591165,
+    "type": "ping"
+}
+[2025-01-26 22:56:31.165] [DEBUG] Processing message type: ping
+[2025-01-26 22:56:31.165] [INFO] Received PING (timestamp: 1737928591165)
+[2025-01-26 22:56:31.165] [INFO] Sending message: {"timestamp":1737928591165,"type":"pong"}
+
+[2025-01-26 22:56:31.165] [INFO] Sent PONG (timestamp: 1737928591165)
+[2025-01-26 22:56:41.166] [INFO] Processing JSON: {
+    "timestamp": 1737928601166,
+    "type": "ping"
+}
+[2025-01-26 22:56:41.166] [DEBUG] Processing message type: ping
+[2025-01-26 22:56:41.166] [INFO] Received PING (timestamp: 1737928601166)
+[2025-01-26 22:56:41.166] [INFO] Sending message: {"timestamp":1737928601166,"type":"pong"}
+
+[2025-01-26 22:56:41.166] [INFO] Sent PONG (timestamp: 1737928601166)
+[2025-01-26 22:56:51.162] [INFO] Processing JSON: {
+    "timestamp": 1737928611162,
+    "type": "ping"
+}
+[2025-01-26 22:56:51.162] [DEBUG] Processing message type: ping
+[2025-01-26 22:56:51.162] [INFO] Received PING (timestamp: 1737928611162)
+[2025-01-26 22:56:51.162] [INFO] Sending message: {"timestamp":1737928611162,"type":"pong"}
+
+[2025-01-26 22:56:51.162] [INFO] Sent PONG (timestamp: 1737928611162)
+[2025-01-26 22:56:58.517] [INFO] Application shutting down
+[2025-01-26 22:57:34.138] [INFO] Application started
+[2025-01-26 22:57:34.138] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 22:57:34.138] [INFO] NetworkManager initialized
+[2025-01-26 22:57:34.138] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 22:57:34.138] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 22:57:34.192] [INFO] LoginWindow initialized
+[2025-01-26 22:57:34.258] [INFO] Connected to server
+[2025-01-26 22:57:34.258] [INFO] Status update: Connected to server
+[2025-01-26 22:57:44.137] [INFO] Processing JSON: {
+    "timestamp": 1737928664136,
+    "type": "ping"
+}
+[2025-01-26 22:57:44.137] [DEBUG] Processing message type: ping
+[2025-01-26 22:57:44.137] [INFO] Received PING (timestamp: 1737928664136)
+[2025-01-26 22:57:44.137] [INFO] Sending message: {"timestamp":1737928664136,"type":"pong"}
+
+[2025-01-26 22:57:44.137] [INFO] Sent PONG (timestamp: 1737928664136)
+[2025-01-26 22:57:54.133] [INFO] Processing JSON: {
+    "timestamp": 1737928674133,
+    "type": "ping"
+}
+[2025-01-26 22:57:54.133] [DEBUG] Processing message type: ping
+[2025-01-26 22:57:54.133] [INFO] Received PING (timestamp: 1737928674133)
+[2025-01-26 22:57:54.133] [INFO] Sending message: {"timestamp":1737928674133,"type":"pong"}
+
+[2025-01-26 22:57:54.133] [INFO] Sent PONG (timestamp: 1737928674133)
+[2025-01-26 22:58:04.141] [INFO] Processing JSON: {
+    "timestamp": 1737928684140,
+    "type": "ping"
+}
+[2025-01-26 22:58:04.141] [DEBUG] Processing message type: ping
+[2025-01-26 22:58:04.141] [INFO] Received PING (timestamp: 1737928684140)
+[2025-01-26 22:58:04.141] [INFO] Sending message: {"timestamp":1737928684140,"type":"pong"}
+
+[2025-01-26 22:58:04.141] [INFO] Sent PONG (timestamp: 1737928684140)
+[2025-01-26 22:58:14.142] [INFO] Processing JSON: {
+    "timestamp": 1737928694142,
+    "type": "ping"
+}
+[2025-01-26 22:58:14.142] [DEBUG] Processing message type: ping
+[2025-01-26 22:58:14.142] [INFO] Received PING (timestamp: 1737928694142)
+[2025-01-26 22:58:14.142] [INFO] Sending message: {"timestamp":1737928694142,"type":"pong"}
+
+[2025-01-26 22:58:14.142] [INFO] Sent PONG (timestamp: 1737928694142)
+[2025-01-26 22:58:24.146] [INFO] Processing JSON: {
+    "timestamp": 1737928704146,
+    "type": "ping"
+}
+[2025-01-26 22:58:24.146] [DEBUG] Processing message type: ping
+[2025-01-26 22:58:24.146] [INFO] Received PING (timestamp: 1737928704146)
+[2025-01-26 22:58:24.146] [INFO] Sending message: {"timestamp":1737928704146,"type":"pong"}
+
+[2025-01-26 22:58:24.146] [INFO] Sent PONG (timestamp: 1737928704146)
+[2025-01-26 22:58:34.134] [INFO] Processing JSON: {
+    "timestamp": 1737928714134,
+    "type": "ping"
+}
+[2025-01-26 22:58:34.134] [DEBUG] Processing message type: ping
+[2025-01-26 22:58:34.134] [INFO] Received PING (timestamp: 1737928714134)
+[2025-01-26 22:58:34.134] [INFO] Sending message: {"timestamp":1737928714134,"type":"pong"}
+
+[2025-01-26 22:58:34.134] [INFO] Sent PONG (timestamp: 1737928714134)
+[2025-01-26 22:58:34.265] [INFO] Application shutting down
+[2025-01-26 23:00:37.578] [INFO] Application started
+[2025-01-26 23:00:37.578] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:00:37.578] [INFO] NetworkManager initialized
+[2025-01-26 23:00:37.578] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:00:37.578] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:00:37.633] [INFO] LoginWindow initialized
+[2025-01-26 23:00:37.703] [INFO] Connected to server
+[2025-01-26 23:00:37.703] [INFO] Status update: Connected to server
+[2025-01-26 23:00:47.581] [INFO] Processing JSON: {
+    "timestamp": 1737928847580,
+    "type": "ping"
+}
+[2025-01-26 23:00:47.581] [DEBUG] Processing message type: ping
+[2025-01-26 23:00:47.581] [INFO] Received PING (timestamp: 1737928847580)
+[2025-01-26 23:00:47.581] [INFO] Sending message: {"timestamp":1737928847580,"type":"pong"}
+
+[2025-01-26 23:00:47.581] [INFO] Sent PONG (timestamp: 1737928847580)
+[2025-01-26 23:00:57.581] [INFO] Processing JSON: {
+    "timestamp": 1737928857580,
+    "type": "ping"
+}
+[2025-01-26 23:00:57.581] [DEBUG] Processing message type: ping
+[2025-01-26 23:00:57.581] [INFO] Received PING (timestamp: 1737928857580)
+[2025-01-26 23:00:57.581] [INFO] Sending message: {"timestamp":1737928857580,"type":"pong"}
+
+[2025-01-26 23:00:57.581] [INFO] Sent PONG (timestamp: 1737928857580)
+[2025-01-26 23:01:04.944] [INFO] Application shutting down
+[2025-01-26 23:01:17.686] [INFO] Application started
+[2025-01-26 23:01:17.686] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:01:17.686] [INFO] NetworkManager initialized
+[2025-01-26 23:01:17.686] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:01:17.686] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:01:17.741] [INFO] LoginWindow initialized
+[2025-01-26 23:01:17.809] [INFO] Connected to server
+[2025-01-26 23:01:17.809] [INFO] Status update: Connected to server
+[2025-01-26 23:01:27.691] [INFO] Processing JSON: {
+    "timestamp": 1737928887690,
+    "type": "ping"
+}
+[2025-01-26 23:01:27.691] [DEBUG] Processing message type: ping
+[2025-01-26 23:01:27.691] [INFO] Received PING (timestamp: 1737928887690)
+[2025-01-26 23:01:27.691] [INFO] Sending message: {"timestamp":1737928887690,"type":"pong"}
+
+[2025-01-26 23:01:27.691] [INFO] Sent PONG (timestamp: 1737928887690)
+[2025-01-26 23:01:37.690] [INFO] Processing JSON: {
+    "timestamp": 1737928897689,
+    "type": "ping"
+}
+[2025-01-26 23:01:37.690] [DEBUG] Processing message type: ping
+[2025-01-26 23:01:37.690] [INFO] Received PING (timestamp: 1737928897689)
+[2025-01-26 23:01:37.690] [INFO] Sending message: {"timestamp":1737928897689,"type":"pong"}
+
+[2025-01-26 23:01:37.690] [INFO] Sent PONG (timestamp: 1737928897689)
+[2025-01-26 23:01:47.701] [INFO] Processing JSON: {
+    "timestamp": 1737928907701,
+    "type": "ping"
+}
+[2025-01-26 23:01:47.701] [DEBUG] Processing message type: ping
+[2025-01-26 23:01:47.701] [INFO] Received PING (timestamp: 1737928907701)
+[2025-01-26 23:01:47.701] [INFO] Sending message: {"timestamp":1737928907701,"type":"pong"}
+
+[2025-01-26 23:01:47.701] [INFO] Sent PONG (timestamp: 1737928907701)
+[2025-01-26 23:01:57.691] [INFO] Processing JSON: {
+    "timestamp": 1737928917690,
+    "type": "ping"
+}
+[2025-01-26 23:01:57.691] [DEBUG] Processing message type: ping
+[2025-01-26 23:01:57.691] [INFO] Received PING (timestamp: 1737928917690)
+[2025-01-26 23:01:57.691] [INFO] Sending message: {"timestamp":1737928917690,"type":"pong"}
+
+[2025-01-26 23:01:57.691] [INFO] Sent PONG (timestamp: 1737928917690)
+[2025-01-26 23:02:07.701] [INFO] Processing JSON: {
+    "timestamp": 1737928927701,
+    "type": "ping"
+}
+[2025-01-26 23:02:07.701] [DEBUG] Processing message type: ping
+[2025-01-26 23:02:07.701] [INFO] Received PING (timestamp: 1737928927701)
+[2025-01-26 23:02:07.701] [INFO] Sending message: {"timestamp":1737928927701,"type":"pong"}
+
+[2025-01-26 23:02:07.702] [INFO] Sent PONG (timestamp: 1737928927701)
+[2025-01-26 23:02:17.704] [INFO] Processing JSON: {
+    "timestamp": 1737928937703,
+    "type": "ping"
+}
+[2025-01-26 23:02:17.704] [DEBUG] Processing message type: ping
+[2025-01-26 23:02:17.704] [INFO] Received PING (timestamp: 1737928937703)
+[2025-01-26 23:02:17.704] [INFO] Sending message: {"timestamp":1737928937703,"type":"pong"}
+
+[2025-01-26 23:02:17.704] [INFO] Sent PONG (timestamp: 1737928937703)
+[2025-01-26 23:02:27.692] [INFO] Processing JSON: {
+    "timestamp": 1737928947692,
+    "type": "ping"
+}
+[2025-01-26 23:02:27.692] [DEBUG] Processing message type: ping
+[2025-01-26 23:02:27.692] [INFO] Received PING (timestamp: 1737928947692)
+[2025-01-26 23:02:27.692] [INFO] Sending message: {"timestamp":1737928947692,"type":"pong"}
+
+[2025-01-26 23:02:27.692] [INFO] Sent PONG (timestamp: 1737928947692)
+[2025-01-26 23:02:37.700] [INFO] Processing JSON: {
+    "timestamp": 1737928957700,
+    "type": "ping"
+}
+[2025-01-26 23:02:37.701] [DEBUG] Processing message type: ping
+[2025-01-26 23:02:37.701] [INFO] Received PING (timestamp: 1737928957700)
+[2025-01-26 23:02:37.701] [INFO] Sending message: {"timestamp":1737928957700,"type":"pong"}
+
+[2025-01-26 23:02:37.701] [INFO] Sent PONG (timestamp: 1737928957700)
+[2025-01-26 23:02:47.704] [INFO] Processing JSON: {
+    "timestamp": 1737928967703,
+    "type": "ping"
+}
+[2025-01-26 23:02:47.704] [DEBUG] Processing message type: ping
+[2025-01-26 23:02:47.704] [INFO] Received PING (timestamp: 1737928967703)
+[2025-01-26 23:02:47.704] [INFO] Sending message: {"timestamp":1737928967703,"type":"pong"}
+
+[2025-01-26 23:02:47.704] [INFO] Sent PONG (timestamp: 1737928967703)
+[2025-01-26 23:02:57.693] [INFO] Processing JSON: {
+    "timestamp": 1737928977693,
+    "type": "ping"
+}
+[2025-01-26 23:02:57.693] [DEBUG] Processing message type: ping
+[2025-01-26 23:02:57.693] [INFO] Received PING (timestamp: 1737928977693)
+[2025-01-26 23:02:57.693] [INFO] Sending message: {"timestamp":1737928977693,"type":"pong"}
+
+[2025-01-26 23:02:57.693] [INFO] Sent PONG (timestamp: 1737928977693)
+[2025-01-26 23:03:03.873] [INFO] Sending message: {"password":"asdf","protocol_version":1,"type":"login","username":"ad"}
+
+[2025-01-26 23:03:03.873] [INFO] Status update: Logging in...
+[2025-01-26 23:03:03.874] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1737928983874,
+    "type": "error"
+}
+[2025-01-26 23:03:03.874] [DEBUG] Processing message type: error
+[2025-01-26 23:03:03.874] [ERROR] Server error: Authentication failed
+[2025-01-26 23:03:03.874] [INFO] Status update: Server error: Authentication failed
+[2025-01-26 23:03:07.695] [INFO] Processing JSON: {
+    "timestamp": 1737928987694,
+    "type": "ping"
+}
+[2025-01-26 23:03:07.695] [DEBUG] Processing message type: ping
+[2025-01-26 23:03:07.695] [INFO] Received PING (timestamp: 1737928987694)
+[2025-01-26 23:03:07.695] [INFO] Sending message: {"timestamp":1737928987694,"type":"pong"}
+
+[2025-01-26 23:03:07.695] [INFO] Sent PONG (timestamp: 1737928987694)
+[2025-01-26 23:03:09.045] [INFO] Application shutting down
+[2025-01-26 23:03:33.583] [INFO] Application started
+[2025-01-26 23:03:33.583] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:03:33.583] [INFO] NetworkManager initialized
+[2025-01-26 23:03:33.583] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:03:33.583] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:03:33.640] [INFO] LoginWindow initialized
+[2025-01-26 23:03:33.706] [INFO] Connected to server
+[2025-01-26 23:03:33.706] [INFO] Status update: Connected to server
+[2025-01-26 23:03:43.595] [INFO] Processing JSON: {
+    "timestamp": 1737929023595,
+    "type": "ping"
+}
+[2025-01-26 23:03:43.595] [DEBUG] Processing message type: ping
+[2025-01-26 23:03:43.595] [INFO] Received PING (timestamp: 1737929023595)
+[2025-01-26 23:03:43.595] [INFO] Sending message: {"timestamp":1737929023595,"type":"pong"}
+
+[2025-01-26 23:03:43.595] [INFO] Sent PONG (timestamp: 1737929023595)
+[2025-01-26 23:03:53.597] [INFO] Processing JSON: {
+    "timestamp": 1737929033596,
+    "type": "ping"
+}
+[2025-01-26 23:03:53.597] [DEBUG] Processing message type: ping
+[2025-01-26 23:03:53.597] [INFO] Received PING (timestamp: 1737929033596)
+[2025-01-26 23:03:53.597] [INFO] Sending message: {"timestamp":1737929033596,"type":"pong"}
+
+[2025-01-26 23:03:53.597] [INFO] Sent PONG (timestamp: 1737929033596)
+[2025-01-26 23:04:03.587] [INFO] Processing JSON: {
+    "timestamp": 1737929043587,
+    "type": "ping"
+}
+[2025-01-26 23:04:03.587] [DEBUG] Processing message type: ping
+[2025-01-26 23:04:03.587] [INFO] Received PING (timestamp: 1737929043587)
+[2025-01-26 23:04:03.587] [INFO] Sending message: {"timestamp":1737929043587,"type":"pong"}
+
+[2025-01-26 23:04:03.587] [INFO] Sent PONG (timestamp: 1737929043587)
+[2025-01-26 23:04:13.592] [INFO] Processing JSON: {
+    "timestamp": 1737929053592,
+    "type": "ping"
+}
+[2025-01-26 23:04:13.593] [DEBUG] Processing message type: ping
+[2025-01-26 23:04:13.593] [INFO] Received PING (timestamp: 1737929053592)
+[2025-01-26 23:04:13.593] [INFO] Sending message: {"timestamp":1737929053592,"type":"pong"}
+
+[2025-01-26 23:04:13.593] [INFO] Sent PONG (timestamp: 1737929053592)
+[2025-01-26 23:04:23.585] [INFO] Processing JSON: {
+    "timestamp": 1737929063585,
+    "type": "ping"
+}
+[2025-01-26 23:04:23.585] [DEBUG] Processing message type: ping
+[2025-01-26 23:04:23.585] [INFO] Received PING (timestamp: 1737929063585)
+[2025-01-26 23:04:23.585] [INFO] Sending message: {"timestamp":1737929063585,"type":"pong"}
+
+[2025-01-26 23:04:23.585] [INFO] Sent PONG (timestamp: 1737929063585)
+[2025-01-26 23:04:33.595] [INFO] Processing JSON: {
+    "timestamp": 1737929073594,
+    "type": "ping"
+}
+[2025-01-26 23:04:33.595] [DEBUG] Processing message type: ping
+[2025-01-26 23:04:33.595] [INFO] Received PING (timestamp: 1737929073594)
+[2025-01-26 23:04:33.595] [INFO] Sending message: {"timestamp":1737929073594,"type":"pong"}
+
+[2025-01-26 23:04:33.595] [INFO] Sent PONG (timestamp: 1737929073594)
+[2025-01-26 23:04:43.591] [INFO] Processing JSON: {
+    "timestamp": 1737929083590,
+    "type": "ping"
+}
+[2025-01-26 23:04:43.591] [DEBUG] Processing message type: ping
+[2025-01-26 23:04:43.591] [INFO] Received PING (timestamp: 1737929083590)
+[2025-01-26 23:04:43.591] [INFO] Sending message: {"timestamp":1737929083590,"type":"pong"}
+
+[2025-01-26 23:04:43.591] [INFO] Sent PONG (timestamp: 1737929083590)
+[2025-01-26 23:04:53.599] [INFO] Processing JSON: {
+    "timestamp": 1737929093599,
+    "type": "ping"
+}
+[2025-01-26 23:04:53.599] [DEBUG] Processing message type: ping
+[2025-01-26 23:04:53.599] [INFO] Received PING (timestamp: 1737929093599)
+[2025-01-26 23:04:53.599] [INFO] Sending message: {"timestamp":1737929093599,"type":"pong"}
+
+[2025-01-26 23:04:53.599] [INFO] Sent PONG (timestamp: 1737929093599)
+[2025-01-26 23:05:03.586] [INFO] Processing JSON: {
+    "timestamp": 1737929103586,
+    "type": "ping"
+}
+[2025-01-26 23:05:03.586] [DEBUG] Processing message type: ping
+[2025-01-26 23:05:03.586] [INFO] Received PING (timestamp: 1737929103586)
+[2025-01-26 23:05:03.586] [INFO] Sending message: {"timestamp":1737929103586,"type":"pong"}
+
+[2025-01-26 23:05:03.586] [INFO] Sent PONG (timestamp: 1737929103586)
+[2025-01-26 23:05:13.587] [INFO] Processing JSON: {
+    "timestamp": 1737929113587,
+    "type": "ping"
+}
+[2025-01-26 23:05:13.587] [DEBUG] Processing message type: ping
+[2025-01-26 23:05:13.587] [INFO] Received PING (timestamp: 1737929113587)
+[2025-01-26 23:05:13.587] [INFO] Sending message: {"timestamp":1737929113587,"type":"pong"}
+
+[2025-01-26 23:05:13.587] [INFO] Sent PONG (timestamp: 1737929113587)
+[2025-01-26 23:05:23.599] [INFO] Processing JSON: {
+    "timestamp": 1737929123599,
+    "type": "ping"
+}
+[2025-01-26 23:05:23.599] [DEBUG] Processing message type: ping
+[2025-01-26 23:05:23.599] [INFO] Received PING (timestamp: 1737929123599)
+[2025-01-26 23:05:23.599] [INFO] Sending message: {"timestamp":1737929123599,"type":"pong"}
+
+[2025-01-26 23:05:23.599] [INFO] Sent PONG (timestamp: 1737929123599)
+[2025-01-26 23:05:31.594] [INFO] Application shutting down
+[2025-01-26 23:05:45.207] [INFO] Application started
+[2025-01-26 23:05:45.208] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:05:45.208] [INFO] NetworkManager initialized
+[2025-01-26 23:05:45.208] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:05:45.208] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:05:45.262] [INFO] LoginWindow initialized
+[2025-01-26 23:05:45.340] [INFO] Connected to server
+[2025-01-26 23:05:45.340] [INFO] Status update: Connected to server
+[2025-01-26 23:05:53.238] [INFO] Application shutting down
+[2025-01-26 23:06:02.554] [INFO] Application started
+[2025-01-26 23:06:02.555] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:06:02.555] [INFO] NetworkManager initialized
+[2025-01-26 23:06:02.555] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:06:02.555] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:06:02.609] [INFO] LoginWindow initialized
+[2025-01-26 23:06:02.685] [INFO] Connected to server
+[2025-01-26 23:06:02.685] [INFO] Status update: Connected to server
+[2025-01-26 23:06:12.570] [INFO] Processing JSON: {
+    "timestamp": 1737929172570,
+    "type": "ping"
+}
+[2025-01-26 23:06:12.570] [DEBUG] Processing message type: ping
+[2025-01-26 23:06:12.570] [INFO] Received PING (timestamp: 1737929172570)
+[2025-01-26 23:06:12.570] [INFO] Sending message: {"timestamp":1737929172570,"type":"pong"}
+
+[2025-01-26 23:06:12.570] [INFO] Sent PONG (timestamp: 1737929172570)
+[2025-01-26 23:06:22.561] [INFO] Processing JSON: {
+    "timestamp": 1737929182561,
+    "type": "ping"
+}
+[2025-01-26 23:06:22.562] [DEBUG] Processing message type: ping
+[2025-01-26 23:06:22.562] [INFO] Received PING (timestamp: 1737929182561)
+[2025-01-26 23:06:22.562] [INFO] Sending message: {"timestamp":1737929182561,"type":"pong"}
+
+[2025-01-26 23:06:22.562] [INFO] Sent PONG (timestamp: 1737929182561)
+[2025-01-26 23:06:32.567] [INFO] Processing JSON: {
+    "timestamp": 1737929192567,
+    "type": "ping"
+}
+[2025-01-26 23:06:32.567] [DEBUG] Processing message type: ping
+[2025-01-26 23:06:32.567] [INFO] Received PING (timestamp: 1737929192567)
+[2025-01-26 23:06:32.567] [INFO] Sending message: {"timestamp":1737929192567,"type":"pong"}
+
+[2025-01-26 23:06:32.567] [INFO] Sent PONG (timestamp: 1737929192567)
+[2025-01-26 23:06:42.566] [INFO] Processing JSON: {
+    "timestamp": 1737929202566,
+    "type": "ping"
+}
+[2025-01-26 23:06:42.566] [DEBUG] Processing message type: ping
+[2025-01-26 23:06:42.566] [INFO] Received PING (timestamp: 1737929202566)
+[2025-01-26 23:06:42.566] [INFO] Sending message: {"timestamp":1737929202566,"type":"pong"}
+
+[2025-01-26 23:06:42.566] [INFO] Sent PONG (timestamp: 1737929202566)
+[2025-01-26 23:06:52.565] [INFO] Processing JSON: {
+    "timestamp": 1737929212564,
+    "type": "ping"
+}
+[2025-01-26 23:06:52.565] [DEBUG] Processing message type: ping
+[2025-01-26 23:06:52.565] [INFO] Received PING (timestamp: 1737929212564)
+[2025-01-26 23:06:52.565] [INFO] Sending message: {"timestamp":1737929212564,"type":"pong"}
+
+[2025-01-26 23:06:52.565] [INFO] Sent PONG (timestamp: 1737929212564)
+[2025-01-26 23:07:02.572] [INFO] Processing JSON: {
+    "timestamp": 1737929222572,
+    "type": "ping"
+}
+[2025-01-26 23:07:02.572] [DEBUG] Processing message type: ping
+[2025-01-26 23:07:02.572] [INFO] Received PING (timestamp: 1737929222572)
+[2025-01-26 23:07:02.572] [INFO] Sending message: {"timestamp":1737929222572,"type":"pong"}
+
+[2025-01-26 23:07:02.572] [INFO] Sent PONG (timestamp: 1737929222572)
+[2025-01-26 23:07:12.564] [INFO] Processing JSON: {
+    "timestamp": 1737929232564,
+    "type": "ping"
+}
+[2025-01-26 23:07:12.564] [DEBUG] Processing message type: ping
+[2025-01-26 23:07:12.564] [INFO] Received PING (timestamp: 1737929232564)
+[2025-01-26 23:07:12.564] [INFO] Sending message: {"timestamp":1737929232564,"type":"pong"}
+
+[2025-01-26 23:07:12.564] [INFO] Sent PONG (timestamp: 1737929232564)
+[2025-01-26 23:07:22.563] [INFO] Processing JSON: {
+    "timestamp": 1737929242562,
+    "type": "ping"
+}
+[2025-01-26 23:07:22.563] [DEBUG] Processing message type: ping
+[2025-01-26 23:07:22.563] [INFO] Received PING (timestamp: 1737929242562)
+[2025-01-26 23:07:22.563] [INFO] Sending message: {"timestamp":1737929242562,"type":"pong"}
+
+[2025-01-26 23:07:22.563] [INFO] Sent PONG (timestamp: 1737929242562)
+[2025-01-26 23:07:32.573] [INFO] Processing JSON: {
+    "timestamp": 1737929252573,
+    "type": "ping"
+}
+[2025-01-26 23:07:32.573] [DEBUG] Processing message type: ping
+[2025-01-26 23:07:32.573] [INFO] Received PING (timestamp: 1737929252573)
+[2025-01-26 23:07:32.573] [INFO] Sending message: {"timestamp":1737929252573,"type":"pong"}
+
+[2025-01-26 23:07:32.573] [INFO] Sent PONG (timestamp: 1737929252573)
+[2025-01-26 23:07:42.573] [INFO] Processing JSON: {
+    "timestamp": 1737929262573,
+    "type": "ping"
+}
+[2025-01-26 23:07:42.573] [DEBUG] Processing message type: ping
+[2025-01-26 23:07:42.573] [INFO] Received PING (timestamp: 1737929262573)
+[2025-01-26 23:07:42.573] [INFO] Sending message: {"timestamp":1737929262573,"type":"pong"}
+
+[2025-01-26 23:07:42.573] [INFO] Sent PONG (timestamp: 1737929262573)
+[2025-01-26 23:07:52.565] [INFO] Processing JSON: {
+    "timestamp": 1737929272565,
+    "type": "ping"
+}
+[2025-01-26 23:07:52.565] [DEBUG] Processing message type: ping
+[2025-01-26 23:07:52.565] [INFO] Received PING (timestamp: 1737929272565)
+[2025-01-26 23:07:52.565] [INFO] Sending message: {"timestamp":1737929272565,"type":"pong"}
+
+[2025-01-26 23:07:52.565] [INFO] Sent PONG (timestamp: 1737929272565)
+[2025-01-26 23:08:02.566] [INFO] Processing JSON: {
+    "timestamp": 1737929282566,
+    "type": "ping"
+}
+[2025-01-26 23:08:02.566] [DEBUG] Processing message type: ping
+[2025-01-26 23:08:02.566] [INFO] Received PING (timestamp: 1737929282566)
+[2025-01-26 23:08:02.566] [INFO] Sending message: {"timestamp":1737929282566,"type":"pong"}
+
+[2025-01-26 23:08:02.566] [INFO] Sent PONG (timestamp: 1737929282566)
+[2025-01-26 23:08:12.566] [INFO] Processing JSON: {
+    "timestamp": 1737929292566,
+    "type": "ping"
+}
+[2025-01-26 23:08:12.566] [DEBUG] Processing message type: ping
+[2025-01-26 23:08:12.566] [INFO] Received PING (timestamp: 1737929292566)
+[2025-01-26 23:08:12.566] [INFO] Sending message: {"timestamp":1737929292566,"type":"pong"}
+
+[2025-01-26 23:08:12.566] [INFO] Sent PONG (timestamp: 1737929292566)
+[2025-01-26 23:08:22.574] [INFO] Processing JSON: {
+    "timestamp": 1737929302574,
+    "type": "ping"
+}
+[2025-01-26 23:08:22.574] [DEBUG] Processing message type: ping
+[2025-01-26 23:08:22.574] [INFO] Received PING (timestamp: 1737929302574)
+[2025-01-26 23:08:22.574] [INFO] Sending message: {"timestamp":1737929302574,"type":"pong"}
+
+[2025-01-26 23:08:22.574] [INFO] Sent PONG (timestamp: 1737929302574)
+[2025-01-26 23:08:32.575] [INFO] Processing JSON: {
+    "timestamp": 1737929312575,
+    "type": "ping"
+}
+[2025-01-26 23:08:32.575] [DEBUG] Processing message type: ping
+[2025-01-26 23:08:32.575] [INFO] Received PING (timestamp: 1737929312575)
+[2025-01-26 23:08:32.575] [INFO] Sending message: {"timestamp":1737929312575,"type":"pong"}
+
+[2025-01-26 23:08:32.575] [INFO] Sent PONG (timestamp: 1737929312575)
+[2025-01-26 23:08:42.573] [INFO] Processing JSON: {
+    "timestamp": 1737929322573,
+    "type": "ping"
+}
+[2025-01-26 23:08:42.573] [DEBUG] Processing message type: ping
+[2025-01-26 23:08:42.573] [INFO] Received PING (timestamp: 1737929322573)
+[2025-01-26 23:08:42.573] [INFO] Sending message: {"timestamp":1737929322573,"type":"pong"}
+
+[2025-01-26 23:08:42.573] [INFO] Sent PONG (timestamp: 1737929322573)
+[2025-01-26 23:08:52.572] [INFO] Processing JSON: {
+    "timestamp": 1737929332572,
+    "type": "ping"
+}
+[2025-01-26 23:08:52.572] [DEBUG] Processing message type: ping
+[2025-01-26 23:08:52.572] [INFO] Received PING (timestamp: 1737929332572)
+[2025-01-26 23:08:52.572] [INFO] Sending message: {"timestamp":1737929332572,"type":"pong"}
+
+[2025-01-26 23:08:52.572] [INFO] Sent PONG (timestamp: 1737929332572)
+[2025-01-26 23:09:02.567] [INFO] Processing JSON: {
+    "timestamp": 1737929342567,
+    "type": "ping"
+}
+[2025-01-26 23:09:02.567] [DEBUG] Processing message type: ping
+[2025-01-26 23:09:02.567] [INFO] Received PING (timestamp: 1737929342567)
+[2025-01-26 23:09:02.567] [INFO] Sending message: {"timestamp":1737929342567,"type":"pong"}
+
+[2025-01-26 23:09:02.567] [INFO] Sent PONG (timestamp: 1737929342567)
+[2025-01-26 23:09:12.581] [INFO] Processing JSON: {
+    "timestamp": 1737929352580,
+    "type": "ping"
+}
+[2025-01-26 23:09:12.581] [DEBUG] Processing message type: ping
+[2025-01-26 23:09:12.581] [INFO] Received PING (timestamp: 1737929352580)
+[2025-01-26 23:09:12.581] [INFO] Sending message: {"timestamp":1737929352580,"type":"pong"}
+
+[2025-01-26 23:09:12.581] [INFO] Sent PONG (timestamp: 1737929352580)
+[2025-01-26 23:09:22.583] [INFO] Processing JSON: {
+    "timestamp": 1737929362583,
+    "type": "ping"
+}
+[2025-01-26 23:09:22.583] [DEBUG] Processing message type: ping
+[2025-01-26 23:09:22.583] [INFO] Received PING (timestamp: 1737929362583)
+[2025-01-26 23:09:22.583] [INFO] Sending message: {"timestamp":1737929362583,"type":"pong"}
+
+[2025-01-26 23:09:22.583] [INFO] Sent PONG (timestamp: 1737929362583)
+[2025-01-26 23:09:32.583] [INFO] Processing JSON: {
+    "timestamp": 1737929372582,
+    "type": "ping"
+}
+[2025-01-26 23:09:32.583] [DEBUG] Processing message type: ping
+[2025-01-26 23:09:32.583] [INFO] Received PING (timestamp: 1737929372582)
+[2025-01-26 23:09:32.583] [INFO] Sending message: {"timestamp":1737929372582,"type":"pong"}
+
+[2025-01-26 23:09:32.583] [INFO] Sent PONG (timestamp: 1737929372582)
+[2025-01-26 23:09:42.594] [INFO] Processing JSON: {
+    "timestamp": 1737929382594,
+    "type": "ping"
+}
+[2025-01-26 23:09:42.594] [DEBUG] Processing message type: ping
+[2025-01-26 23:09:42.594] [INFO] Received PING (timestamp: 1737929382594)
+[2025-01-26 23:09:42.594] [INFO] Sending message: {"timestamp":1737929382594,"type":"pong"}
+
+[2025-01-26 23:09:42.594] [INFO] Sent PONG (timestamp: 1737929382594)
+[2025-01-26 23:09:52.594] [INFO] Processing JSON: {
+    "timestamp": 1737929392594,
+    "type": "ping"
+}
+[2025-01-26 23:09:52.594] [DEBUG] Processing message type: ping
+[2025-01-26 23:09:52.594] [INFO] Received PING (timestamp: 1737929392594)
+[2025-01-26 23:09:52.594] [INFO] Sending message: {"timestamp":1737929392594,"type":"pong"}
+
+[2025-01-26 23:09:52.594] [INFO] Sent PONG (timestamp: 1737929392594)
+[2025-01-26 23:10:02.590] [INFO] Processing JSON: {
+    "timestamp": 1737929402590,
+    "type": "ping"
+}
+[2025-01-26 23:10:02.590] [DEBUG] Processing message type: ping
+[2025-01-26 23:10:02.590] [INFO] Received PING (timestamp: 1737929402590)
+[2025-01-26 23:10:02.590] [INFO] Sending message: {"timestamp":1737929402590,"type":"pong"}
+
+[2025-01-26 23:10:02.590] [INFO] Sent PONG (timestamp: 1737929402590)
+[2025-01-26 23:10:03.705] [INFO] Application shutting down
+[2025-01-26 23:10:06.086] [INFO] Application started
+[2025-01-26 23:10:06.087] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:10:06.087] [INFO] NetworkManager initialized
+[2025-01-26 23:10:06.087] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:10:06.087] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:10:06.147] [INFO] LoginWindow initialized
+[2025-01-26 23:10:06.213] [INFO] Connected to server
+[2025-01-26 23:10:06.213] [INFO] Status update: Connected to server
+[2025-01-26 23:10:11.553] [INFO] Application shutting down
+[2025-01-26 23:10:27.218] [INFO] Application started
+[2025-01-26 23:10:27.218] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:10:27.218] [INFO] NetworkManager initialized
+[2025-01-26 23:10:27.218] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:10:27.218] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:10:27.273] [INFO] LoginWindow initialized
+[2025-01-26 23:10:27.337] [INFO] Connected to server
+[2025-01-26 23:10:27.337] [INFO] Status update: Connected to server
+[2025-01-26 23:10:37.218] [INFO] Processing JSON: {
+    "timestamp": 1737929437218,
+    "type": "ping"
+}
+[2025-01-26 23:10:37.218] [DEBUG] Processing message type: ping
+[2025-01-26 23:10:37.218] [INFO] Received PING (timestamp: 1737929437218)
+[2025-01-26 23:10:37.218] [INFO] Sending message: {"timestamp":1737929437218,"type":"pong"}
+
+[2025-01-26 23:10:37.218] [INFO] Sent PONG (timestamp: 1737929437218)
+[2025-01-26 23:10:42.039] [INFO] Application shutting down
+[2025-01-26 23:10:47.936] [INFO] Application started
+[2025-01-26 23:10:47.936] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:10:47.936] [INFO] NetworkManager initialized
+[2025-01-26 23:10:47.936] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:10:47.936] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:10:47.990] [INFO] LoginWindow initialized
+[2025-01-26 23:10:48.059] [INFO] Connected to server
+[2025-01-26 23:10:48.059] [INFO] Status update: Connected to server
+[2025-01-26 23:10:57.937] [INFO] Processing JSON: {
+    "timestamp": 1737929457936,
+    "type": "ping"
+}
+[2025-01-26 23:10:57.937] [DEBUG] Processing message type: ping
+[2025-01-26 23:10:57.937] [INFO] Received PING (timestamp: 1737929457936)
+[2025-01-26 23:10:57.937] [INFO] Sending message: {"timestamp":1737929457936,"type":"pong"}
+
+[2025-01-26 23:10:57.937] [INFO] Sent PONG (timestamp: 1737929457936)
+[2025-01-26 23:11:07.932] [INFO] Processing JSON: {
+    "timestamp": 1737929467931,
+    "type": "ping"
+}
+[2025-01-26 23:11:07.932] [DEBUG] Processing message type: ping
+[2025-01-26 23:11:07.932] [INFO] Received PING (timestamp: 1737929467931)
+[2025-01-26 23:11:07.932] [INFO] Sending message: {"timestamp":1737929467931,"type":"pong"}
+
+[2025-01-26 23:11:07.932] [INFO] Sent PONG (timestamp: 1737929467931)
+[2025-01-26 23:11:17.936] [INFO] Processing JSON: {
+    "timestamp": 1737929477936,
+    "type": "ping"
+}
+[2025-01-26 23:11:17.936] [DEBUG] Processing message type: ping
+[2025-01-26 23:11:17.936] [INFO] Received PING (timestamp: 1737929477936)
+[2025-01-26 23:11:17.936] [INFO] Sending message: {"timestamp":1737929477936,"type":"pong"}
+
+[2025-01-26 23:11:17.936] [INFO] Sent PONG (timestamp: 1737929477936)
+[2025-01-26 23:11:27.945] [INFO] Processing JSON: {
+    "timestamp": 1737929487945,
+    "type": "ping"
+}
+[2025-01-26 23:11:27.945] [DEBUG] Processing message type: ping
+[2025-01-26 23:11:27.945] [INFO] Received PING (timestamp: 1737929487945)
+[2025-01-26 23:11:27.945] [INFO] Sending message: {"timestamp":1737929487945,"type":"pong"}
+
+[2025-01-26 23:11:27.945] [INFO] Sent PONG (timestamp: 1737929487945)
+[2025-01-26 23:11:37.942] [INFO] Processing JSON: {
+    "timestamp": 1737929497942,
+    "type": "ping"
+}
+[2025-01-26 23:11:37.942] [DEBUG] Processing message type: ping
+[2025-01-26 23:11:37.942] [INFO] Received PING (timestamp: 1737929497942)
+[2025-01-26 23:11:37.942] [INFO] Sending message: {"timestamp":1737929497942,"type":"pong"}
+
+[2025-01-26 23:11:37.942] [INFO] Sent PONG (timestamp: 1737929497942)
+[2025-01-26 23:11:47.933] [INFO] Processing JSON: {
+    "timestamp": 1737929507933,
+    "type": "ping"
+}
+[2025-01-26 23:11:47.933] [DEBUG] Processing message type: ping
+[2025-01-26 23:11:47.933] [INFO] Received PING (timestamp: 1737929507933)
+[2025-01-26 23:11:47.933] [INFO] Sending message: {"timestamp":1737929507933,"type":"pong"}
+
+[2025-01-26 23:11:47.933] [INFO] Sent PONG (timestamp: 1737929507933)
+[2025-01-26 23:11:57.945] [INFO] Processing JSON: {
+    "timestamp": 1737929517945,
+    "type": "ping"
+}
+[2025-01-26 23:11:57.946] [DEBUG] Processing message type: ping
+[2025-01-26 23:11:57.946] [INFO] Received PING (timestamp: 1737929517945)
+[2025-01-26 23:11:57.946] [INFO] Sending message: {"timestamp":1737929517945,"type":"pong"}
+
+[2025-01-26 23:11:57.946] [INFO] Sent PONG (timestamp: 1737929517945)
+[2025-01-26 23:12:07.939] [INFO] Processing JSON: {
+    "timestamp": 1737929527939,
+    "type": "ping"
+}
+[2025-01-26 23:12:07.939] [DEBUG] Processing message type: ping
+[2025-01-26 23:12:07.939] [INFO] Received PING (timestamp: 1737929527939)
+[2025-01-26 23:12:07.939] [INFO] Sending message: {"timestamp":1737929527939,"type":"pong"}
+
+[2025-01-26 23:12:07.939] [INFO] Sent PONG (timestamp: 1737929527939)
+[2025-01-26 23:12:17.934] [INFO] Processing JSON: {
+    "timestamp": 1737929537934,
+    "type": "ping"
+}
+[2025-01-26 23:12:17.934] [DEBUG] Processing message type: ping
+[2025-01-26 23:12:17.934] [INFO] Received PING (timestamp: 1737929537934)
+[2025-01-26 23:12:17.934] [INFO] Sending message: {"timestamp":1737929537934,"type":"pong"}
+
+[2025-01-26 23:12:17.934] [INFO] Sent PONG (timestamp: 1737929537934)
+[2025-01-26 23:12:27.938] [INFO] Processing JSON: {
+    "timestamp": 1737929547938,
+    "type": "ping"
+}
+[2025-01-26 23:12:27.938] [DEBUG] Processing message type: ping
+[2025-01-26 23:12:27.938] [INFO] Received PING (timestamp: 1737929547938)
+[2025-01-26 23:12:27.938] [INFO] Sending message: {"timestamp":1737929547938,"type":"pong"}
+
+[2025-01-26 23:12:27.938] [INFO] Sent PONG (timestamp: 1737929547938)
+[2025-01-26 23:12:37.934] [INFO] Processing JSON: {
+    "timestamp": 1737929557934,
+    "type": "ping"
+}
+[2025-01-26 23:12:37.934] [DEBUG] Processing message type: ping
+[2025-01-26 23:12:37.934] [INFO] Received PING (timestamp: 1737929557934)
+[2025-01-26 23:12:37.934] [INFO] Sending message: {"timestamp":1737929557934,"type":"pong"}
+
+[2025-01-26 23:12:37.934] [INFO] Sent PONG (timestamp: 1737929557934)
+[2025-01-26 23:12:47.946] [INFO] Processing JSON: {
+    "timestamp": 1737929567945,
+    "type": "ping"
+}
+[2025-01-26 23:12:47.946] [DEBUG] Processing message type: ping
+[2025-01-26 23:12:47.946] [INFO] Received PING (timestamp: 1737929567945)
+[2025-01-26 23:12:47.946] [INFO] Sending message: {"timestamp":1737929567945,"type":"pong"}
+
+[2025-01-26 23:12:47.946] [INFO] Sent PONG (timestamp: 1737929567945)
+[2025-01-26 23:12:57.946] [INFO] Processing JSON: {
+    "timestamp": 1737929577946,
+    "type": "ping"
+}
+[2025-01-26 23:12:57.946] [DEBUG] Processing message type: ping
+[2025-01-26 23:12:57.946] [INFO] Received PING (timestamp: 1737929577946)
+[2025-01-26 23:12:57.946] [INFO] Sending message: {"timestamp":1737929577946,"type":"pong"}
+
+[2025-01-26 23:12:57.946] [INFO] Sent PONG (timestamp: 1737929577946)
+[2025-01-26 23:13:07.948] [INFO] Processing JSON: {
+    "timestamp": 1737929587948,
+    "type": "ping"
+}
+[2025-01-26 23:13:07.948] [DEBUG] Processing message type: ping
+[2025-01-26 23:13:07.948] [INFO] Received PING (timestamp: 1737929587948)
+[2025-01-26 23:13:07.948] [INFO] Sending message: {"timestamp":1737929587948,"type":"pong"}
+
+[2025-01-26 23:13:07.948] [INFO] Sent PONG (timestamp: 1737929587948)
+[2025-01-26 23:13:17.945] [INFO] Processing JSON: {
+    "timestamp": 1737929597945,
+    "type": "ping"
+}
+[2025-01-26 23:13:17.945] [DEBUG] Processing message type: ping
+[2025-01-26 23:13:17.945] [INFO] Received PING (timestamp: 1737929597945)
+[2025-01-26 23:13:17.945] [INFO] Sending message: {"timestamp":1737929597945,"type":"pong"}
+
+[2025-01-26 23:13:17.945] [INFO] Sent PONG (timestamp: 1737929597945)
+[2025-01-26 23:13:27.945] [INFO] Processing JSON: {
+    "timestamp": 1737929607945,
+    "type": "ping"
+}
+[2025-01-26 23:13:27.945] [DEBUG] Processing message type: ping
+[2025-01-26 23:13:27.945] [INFO] Received PING (timestamp: 1737929607945)
+[2025-01-26 23:13:27.945] [INFO] Sending message: {"timestamp":1737929607945,"type":"pong"}
+
+[2025-01-26 23:13:27.945] [INFO] Sent PONG (timestamp: 1737929607945)
+[2025-01-26 23:13:37.946] [INFO] Processing JSON: {
+    "timestamp": 1737929617946,
+    "type": "ping"
+}
+[2025-01-26 23:13:37.946] [DEBUG] Processing message type: ping
+[2025-01-26 23:13:37.946] [INFO] Received PING (timestamp: 1737929617946)
+[2025-01-26 23:13:37.946] [INFO] Sending message: {"timestamp":1737929617946,"type":"pong"}
+
+[2025-01-26 23:13:37.946] [INFO] Sent PONG (timestamp: 1737929617946)
+[2025-01-26 23:13:47.941] [INFO] Processing JSON: {
+    "timestamp": 1737929627941,
+    "type": "ping"
+}
+[2025-01-26 23:13:47.941] [DEBUG] Processing message type: ping
+[2025-01-26 23:13:47.941] [INFO] Received PING (timestamp: 1737929627941)
+[2025-01-26 23:13:47.941] [INFO] Sending message: {"timestamp":1737929627941,"type":"pong"}
+
+[2025-01-26 23:13:47.941] [INFO] Sent PONG (timestamp: 1737929627941)
+[2025-01-26 23:13:57.943] [INFO] Processing JSON: {
+    "timestamp": 1737929637943,
+    "type": "ping"
+}
+[2025-01-26 23:13:57.943] [DEBUG] Processing message type: ping
+[2025-01-26 23:13:57.943] [INFO] Received PING (timestamp: 1737929637943)
+[2025-01-26 23:13:57.943] [INFO] Sending message: {"timestamp":1737929637943,"type":"pong"}
+
+[2025-01-26 23:13:57.943] [INFO] Sent PONG (timestamp: 1737929637943)
+[2025-01-26 23:14:07.949] [INFO] Processing JSON: {
+    "timestamp": 1737929647949,
+    "type": "ping"
+}
+[2025-01-26 23:14:07.949] [DEBUG] Processing message type: ping
+[2025-01-26 23:14:07.949] [INFO] Received PING (timestamp: 1737929647949)
+[2025-01-26 23:14:07.949] [INFO] Sending message: {"timestamp":1737929647949,"type":"pong"}
+
+[2025-01-26 23:14:07.949] [INFO] Sent PONG (timestamp: 1737929647949)
+[2025-01-26 23:14:17.948] [INFO] Processing JSON: {
+    "timestamp": 1737929657948,
+    "type": "ping"
+}
+[2025-01-26 23:14:17.948] [DEBUG] Processing message type: ping
+[2025-01-26 23:14:17.948] [INFO] Received PING (timestamp: 1737929657948)
+[2025-01-26 23:14:17.948] [INFO] Sending message: {"timestamp":1737929657948,"type":"pong"}
+
+[2025-01-26 23:14:17.948] [INFO] Sent PONG (timestamp: 1737929657948)
+[2025-01-26 23:14:27.949] [INFO] Processing JSON: {
+    "timestamp": 1737929667949,
+    "type": "ping"
+}
+[2025-01-26 23:14:27.949] [DEBUG] Processing message type: ping
+[2025-01-26 23:14:27.949] [INFO] Received PING (timestamp: 1737929667949)
+[2025-01-26 23:14:27.949] [INFO] Sending message: {"timestamp":1737929667949,"type":"pong"}
+
+[2025-01-26 23:14:27.949] [INFO] Sent PONG (timestamp: 1737929667949)
+[2025-01-26 23:14:37.939] [INFO] Processing JSON: {
+    "timestamp": 1737929677939,
+    "type": "ping"
+}
+[2025-01-26 23:14:37.939] [DEBUG] Processing message type: ping
+[2025-01-26 23:14:37.939] [INFO] Received PING (timestamp: 1737929677939)
+[2025-01-26 23:14:37.939] [INFO] Sending message: {"timestamp":1737929677939,"type":"pong"}
+
+[2025-01-26 23:14:37.939] [INFO] Sent PONG (timestamp: 1737929677939)
+[2025-01-26 23:14:47.942] [INFO] Processing JSON: {
+    "timestamp": 1737929687942,
+    "type": "ping"
+}
+[2025-01-26 23:14:47.942] [DEBUG] Processing message type: ping
+[2025-01-26 23:14:47.942] [INFO] Received PING (timestamp: 1737929687942)
+[2025-01-26 23:14:47.942] [INFO] Sending message: {"timestamp":1737929687942,"type":"pong"}
+
+[2025-01-26 23:14:47.942] [INFO] Sent PONG (timestamp: 1737929687942)
+[2025-01-26 23:14:57.942] [INFO] Processing JSON: {
+    "timestamp": 1737929697942,
+    "type": "ping"
+}
+[2025-01-26 23:14:57.942] [DEBUG] Processing message type: ping
+[2025-01-26 23:14:57.942] [INFO] Received PING (timestamp: 1737929697942)
+[2025-01-26 23:14:57.942] [INFO] Sending message: {"timestamp":1737929697942,"type":"pong"}
+
+[2025-01-26 23:14:57.942] [INFO] Sent PONG (timestamp: 1737929697942)
+[2025-01-26 23:15:07.944] [INFO] Processing JSON: {
+    "timestamp": 1737929707944,
+    "type": "ping"
+}
+[2025-01-26 23:15:07.944] [DEBUG] Processing message type: ping
+[2025-01-26 23:15:07.944] [INFO] Received PING (timestamp: 1737929707944)
+[2025-01-26 23:15:07.944] [INFO] Sending message: {"timestamp":1737929707944,"type":"pong"}
+
+[2025-01-26 23:15:07.944] [INFO] Sent PONG (timestamp: 1737929707944)
+[2025-01-26 23:15:17.955] [INFO] Processing JSON: {
+    "timestamp": 1737929717954,
+    "type": "ping"
+}
+[2025-01-26 23:15:17.955] [DEBUG] Processing message type: ping
+[2025-01-26 23:15:17.955] [INFO] Received PING (timestamp: 1737929717954)
+[2025-01-26 23:15:17.955] [INFO] Sending message: {"timestamp":1737929717954,"type":"pong"}
+
+[2025-01-26 23:15:17.955] [INFO] Sent PONG (timestamp: 1737929717954)
+[2025-01-26 23:15:27.953] [INFO] Processing JSON: {
+    "timestamp": 1737929727953,
+    "type": "ping"
+}
+[2025-01-26 23:15:27.953] [DEBUG] Processing message type: ping
+[2025-01-26 23:15:27.953] [INFO] Received PING (timestamp: 1737929727953)
+[2025-01-26 23:15:27.953] [INFO] Sending message: {"timestamp":1737929727953,"type":"pong"}
+
+[2025-01-26 23:15:27.953] [INFO] Sent PONG (timestamp: 1737929727953)
+[2025-01-26 23:15:37.941] [INFO] Processing JSON: {
+    "timestamp": 1737929737941,
+    "type": "ping"
+}
+[2025-01-26 23:15:37.941] [DEBUG] Processing message type: ping
+[2025-01-26 23:15:37.941] [INFO] Received PING (timestamp: 1737929737941)
+[2025-01-26 23:15:37.941] [INFO] Sending message: {"timestamp":1737929737941,"type":"pong"}
+
+[2025-01-26 23:15:37.941] [INFO] Sent PONG (timestamp: 1737929737941)
+[2025-01-26 23:15:47.953] [INFO] Processing JSON: {
+    "timestamp": 1737929747953,
+    "type": "ping"
+}
+[2025-01-26 23:15:47.953] [DEBUG] Processing message type: ping
+[2025-01-26 23:15:47.953] [INFO] Received PING (timestamp: 1737929747953)
+[2025-01-26 23:15:47.953] [INFO] Sending message: {"timestamp":1737929747953,"type":"pong"}
+
+[2025-01-26 23:15:47.953] [INFO] Sent PONG (timestamp: 1737929747953)
+[2025-01-26 23:15:57.955] [INFO] Processing JSON: {
+    "timestamp": 1737929757955,
+    "type": "ping"
+}
+[2025-01-26 23:15:57.955] [DEBUG] Processing message type: ping
+[2025-01-26 23:15:57.955] [INFO] Received PING (timestamp: 1737929757955)
+[2025-01-26 23:15:57.955] [INFO] Sending message: {"timestamp":1737929757955,"type":"pong"}
+
+[2025-01-26 23:15:57.955] [INFO] Sent PONG (timestamp: 1737929757955)
+[2025-01-26 23:15:59.350] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 23:15:59.350] [INFO] Status update: Logging in...
+[2025-01-26 23:15:59.353] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737929759353,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 23:15:59.354] [DEBUG] Processing message type: login_response
+[2025-01-26 23:15:59.354] [INFO] Login successful
+[2025-01-26 23:15:59.354] [INFO] Sending message: {"status":"online","timestamp":1737929759354,"type":"status_response"}
+
+[2025-01-26 23:15:59.354] [INFO] Sending message: {"timestamp":1737929759354,"type":"get_friends_list"}
+
+[2025-01-26 23:15:59.354] [INFO] Status update: Login successful - Connected
+[2025-01-26 23:15:59.400] [INFO] UI initialized successfully
+[2025-01-26 23:15:59.400] [INFO] MainWindow initialized
+[2025-01-26 23:15:59.600] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 23:15:59.600] [DEBUG] Processing message type: unread_from
+[2025-01-26 23:15:59.600] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 23:15:59.600] [INFO] Received unread messages info from 0 users
+[2025-01-26 23:15:59.600] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737929759356,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:15:59.600] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:15:59.600] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:15:59.600] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:15:59.601] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737929759357,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:15:59.601] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:15:59.601] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:15:59.601] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:15:59.601] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737929759358,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:15:59.601] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:15:59.601] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:15:59.601] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:15:59.620] [INFO] LoginWindow destroyed
+[2025-01-26 23:16:05.992] [INFO] Sending message: {"timestamp":1737929765992,"type":"logout"}
+
+[2025-01-26 23:16:05.992] [INFO] MainWindow destroyed
+[2025-01-26 23:16:05.993] [INFO] Application shutting down
+[2025-01-26 23:17:21.698] [INFO] Application started
+[2025-01-26 23:17:21.698] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:17:21.698] [INFO] NetworkManager initialized
+[2025-01-26 23:17:21.698] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:17:21.698] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:17:21.762] [INFO] LoginWindow initialized
+[2025-01-26 23:17:21.833] [INFO] Connected to server
+[2025-01-26 23:17:21.833] [INFO] Status update: Connected to server
+[2025-01-26 23:17:31.703] [INFO] Processing JSON: {
+    "timestamp": 1737929851703,
+    "type": "ping"
+}
+[2025-01-26 23:17:31.703] [DEBUG] Processing message type: ping
+[2025-01-26 23:17:31.703] [INFO] Received PING (timestamp: 1737929851703)
+[2025-01-26 23:17:31.703] [INFO] Sending message: {"timestamp":1737929851703,"type":"pong"}
+
+[2025-01-26 23:17:31.703] [INFO] Sent PONG (timestamp: 1737929851703)
+[2025-01-26 23:17:37.245] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 23:17:37.245] [INFO] Status update: Logging in...
+[2025-01-26 23:17:37.247] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737929857247,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 23:17:37.247] [DEBUG] Processing message type: login_response
+[2025-01-26 23:17:37.247] [INFO] Login successful
+[2025-01-26 23:17:37.247] [INFO] Sending message: {"status":"online","timestamp":1737929857247,"type":"status_response"}
+
+[2025-01-26 23:17:37.247] [INFO] Sending message: {"timestamp":1737929857247,"type":"get_friends_list"}
+
+[2025-01-26 23:17:37.247] [INFO] Status update: Login successful - Connected
+[2025-01-26 23:17:37.261] [INFO] UI initialized successfully
+[2025-01-26 23:17:37.261] [INFO] MainWindow initialized
+[2025-01-26 23:17:37.458] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 23:17:37.458] [DEBUG] Processing message type: unread_from
+[2025-01-26 23:17:37.458] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 23:17:37.458] [INFO] Received unread messages info from 0 users
+[2025-01-26 23:17:37.458] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737929857249,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:17:37.458] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:17:37.458] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:17:37.458] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:17:37.458] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737929857250,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:17:37.458] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:17:37.458] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:17:37.458] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:17:37.459] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737929857251,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:17:37.459] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:17:37.459] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:17:37.459] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:17:37.475] [INFO] LoginWindow destroyed
+[2025-01-26 23:17:41.699] [INFO] Processing JSON: {
+    "timestamp": 1737929861699,
+    "type": "ping"
+}
+[2025-01-26 23:17:41.699] [DEBUG] Processing message type: ping
+[2025-01-26 23:17:41.699] [INFO] Received PING (timestamp: 1737929861699)
+[2025-01-26 23:17:41.699] [INFO] Sending message: {"timestamp":1737929861699,"type":"pong"}
+
+[2025-01-26 23:17:41.699] [INFO] Sent PONG (timestamp: 1737929861699)
+[2025-01-26 23:17:49.234] [INFO] Sending message: {"timestamp":1737929869234,"type":"logout"}
+
+[2025-01-26 23:17:49.234] [INFO] MainWindow destroyed
+[2025-01-26 23:17:49.235] [INFO] Application shutting down
+[2025-01-26 23:17:50.400] [INFO] Application started
+[2025-01-26 23:17:50.400] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:17:50.400] [INFO] NetworkManager initialized
+[2025-01-26 23:17:50.400] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:17:50.400] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:17:50.456] [INFO] LoginWindow initialized
+[2025-01-26 23:17:50.532] [INFO] Connected to server
+[2025-01-26 23:17:50.532] [INFO] Status update: Connected to server
+[2025-01-26 23:18:00.401] [INFO] Processing JSON: {
+    "timestamp": 1737929880401,
+    "type": "ping"
+}
+[2025-01-26 23:18:00.401] [DEBUG] Processing message type: ping
+[2025-01-26 23:18:00.401] [INFO] Received PING (timestamp: 1737929880401)
+[2025-01-26 23:18:00.401] [INFO] Sending message: {"timestamp":1737929880401,"type":"pong"}
+
+[2025-01-26 23:18:00.401] [INFO] Sent PONG (timestamp: 1737929880401)
+[2025-01-26 23:18:10.411] [INFO] Processing JSON: {
+    "timestamp": 1737929890411,
+    "type": "ping"
+}
+[2025-01-26 23:18:10.411] [DEBUG] Processing message type: ping
+[2025-01-26 23:18:10.411] [INFO] Received PING (timestamp: 1737929890411)
+[2025-01-26 23:18:10.411] [INFO] Sending message: {"timestamp":1737929890411,"type":"pong"}
+
+[2025-01-26 23:18:10.411] [INFO] Sent PONG (timestamp: 1737929890411)
+[2025-01-26 23:18:20.410] [INFO] Processing JSON: {
+    "timestamp": 1737929900410,
+    "type": "ping"
+}
+[2025-01-26 23:18:20.410] [DEBUG] Processing message type: ping
+[2025-01-26 23:18:20.410] [INFO] Received PING (timestamp: 1737929900410)
+[2025-01-26 23:18:20.410] [INFO] Sending message: {"timestamp":1737929900410,"type":"pong"}
+
+[2025-01-26 23:18:20.410] [INFO] Sent PONG (timestamp: 1737929900410)
+[2025-01-26 23:18:30.408] [INFO] Processing JSON: {
+    "timestamp": 1737929910408,
+    "type": "ping"
+}
+[2025-01-26 23:18:30.408] [DEBUG] Processing message type: ping
+[2025-01-26 23:18:30.408] [INFO] Received PING (timestamp: 1737929910408)
+[2025-01-26 23:18:30.408] [INFO] Sending message: {"timestamp":1737929910408,"type":"pong"}
+
+[2025-01-26 23:18:30.408] [INFO] Sent PONG (timestamp: 1737929910408)
+[2025-01-26 23:18:40.414] [INFO] Processing JSON: {
+    "timestamp": 1737929920414,
+    "type": "ping"
+}
+[2025-01-26 23:18:40.415] [DEBUG] Processing message type: ping
+[2025-01-26 23:18:40.415] [INFO] Received PING (timestamp: 1737929920414)
+[2025-01-26 23:18:40.415] [INFO] Sending message: {"timestamp":1737929920414,"type":"pong"}
+
+[2025-01-26 23:18:40.415] [INFO] Sent PONG (timestamp: 1737929920414)
+[2025-01-26 23:18:50.414] [INFO] Processing JSON: {
+    "timestamp": 1737929930414,
+    "type": "ping"
+}
+[2025-01-26 23:18:50.414] [DEBUG] Processing message type: ping
+[2025-01-26 23:18:50.414] [INFO] Received PING (timestamp: 1737929930414)
+[2025-01-26 23:18:50.414] [INFO] Sending message: {"timestamp":1737929930414,"type":"pong"}
+
+[2025-01-26 23:18:50.414] [INFO] Sent PONG (timestamp: 1737929930414)
+[2025-01-26 23:19:00.415] [INFO] Processing JSON: {
+    "timestamp": 1737929940415,
+    "type": "ping"
+}
+[2025-01-26 23:19:00.415] [DEBUG] Processing message type: ping
+[2025-01-26 23:19:00.415] [INFO] Received PING (timestamp: 1737929940415)
+[2025-01-26 23:19:00.415] [INFO] Sending message: {"timestamp":1737929940415,"type":"pong"}
+
+[2025-01-26 23:19:00.415] [INFO] Sent PONG (timestamp: 1737929940415)
+[2025-01-26 23:19:10.404] [INFO] Processing JSON: {
+    "timestamp": 1737929950404,
+    "type": "ping"
+}
+[2025-01-26 23:19:10.404] [DEBUG] Processing message type: ping
+[2025-01-26 23:19:10.404] [INFO] Received PING (timestamp: 1737929950404)
+[2025-01-26 23:19:10.404] [INFO] Sending message: {"timestamp":1737929950404,"type":"pong"}
+
+[2025-01-26 23:19:10.404] [INFO] Sent PONG (timestamp: 1737929950404)
+[2025-01-26 23:19:20.413] [INFO] Processing JSON: {
+    "timestamp": 1737929960413,
+    "type": "ping"
+}
+[2025-01-26 23:19:20.413] [DEBUG] Processing message type: ping
+[2025-01-26 23:19:20.413] [INFO] Received PING (timestamp: 1737929960413)
+[2025-01-26 23:19:20.413] [INFO] Sending message: {"timestamp":1737929960413,"type":"pong"}
+
+[2025-01-26 23:19:20.413] [INFO] Sent PONG (timestamp: 1737929960413)
+[2025-01-26 23:19:30.416] [INFO] Processing JSON: {
+    "timestamp": 1737929970416,
+    "type": "ping"
+}
+[2025-01-26 23:19:30.416] [DEBUG] Processing message type: ping
+[2025-01-26 23:19:30.416] [INFO] Received PING (timestamp: 1737929970416)
+[2025-01-26 23:19:30.416] [INFO] Sending message: {"timestamp":1737929970416,"type":"pong"}
+
+[2025-01-26 23:19:30.416] [INFO] Sent PONG (timestamp: 1737929970416)
+[2025-01-26 23:19:40.414] [INFO] Processing JSON: {
+    "timestamp": 1737929980414,
+    "type": "ping"
+}
+[2025-01-26 23:19:40.414] [DEBUG] Processing message type: ping
+[2025-01-26 23:19:40.414] [INFO] Received PING (timestamp: 1737929980414)
+[2025-01-26 23:19:40.414] [INFO] Sending message: {"timestamp":1737929980414,"type":"pong"}
+
+[2025-01-26 23:19:40.414] [INFO] Sent PONG (timestamp: 1737929980414)
+[2025-01-26 23:19:50.417] [INFO] Processing JSON: {
+    "timestamp": 1737929990416,
+    "type": "ping"
+}
+[2025-01-26 23:19:50.417] [DEBUG] Processing message type: ping
+[2025-01-26 23:19:50.417] [INFO] Received PING (timestamp: 1737929990416)
+[2025-01-26 23:19:50.417] [INFO] Sending message: {"timestamp":1737929990416,"type":"pong"}
+
+[2025-01-26 23:19:50.417] [INFO] Sent PONG (timestamp: 1737929990416)
+[2025-01-26 23:20:00.413] [INFO] Processing JSON: {
+    "timestamp": 1737930000413,
+    "type": "ping"
+}
+[2025-01-26 23:20:00.413] [DEBUG] Processing message type: ping
+[2025-01-26 23:20:00.413] [INFO] Received PING (timestamp: 1737930000413)
+[2025-01-26 23:20:00.413] [INFO] Sending message: {"timestamp":1737930000413,"type":"pong"}
+
+[2025-01-26 23:20:00.413] [INFO] Sent PONG (timestamp: 1737930000413)
+[2025-01-26 23:20:10.414] [INFO] Processing JSON: {
+    "timestamp": 1737930010413,
+    "type": "ping"
+}
+[2025-01-26 23:20:10.414] [DEBUG] Processing message type: ping
+[2025-01-26 23:20:10.414] [INFO] Received PING (timestamp: 1737930010413)
+[2025-01-26 23:20:10.414] [INFO] Sending message: {"timestamp":1737930010413,"type":"pong"}
+
+[2025-01-26 23:20:10.414] [INFO] Sent PONG (timestamp: 1737930010413)
+[2025-01-26 23:20:20.416] [INFO] Processing JSON: {
+    "timestamp": 1737930020415,
+    "type": "ping"
+}
+[2025-01-26 23:20:20.416] [DEBUG] Processing message type: ping
+[2025-01-26 23:20:20.416] [INFO] Received PING (timestamp: 1737930020415)
+[2025-01-26 23:20:20.416] [INFO] Sending message: {"timestamp":1737930020415,"type":"pong"}
+
+[2025-01-26 23:20:20.416] [INFO] Sent PONG (timestamp: 1737930020415)
+[2025-01-26 23:20:30.412] [INFO] Processing JSON: {
+    "timestamp": 1737930030411,
+    "type": "ping"
+}
+[2025-01-26 23:20:30.412] [DEBUG] Processing message type: ping
+[2025-01-26 23:20:30.412] [INFO] Received PING (timestamp: 1737930030411)
+[2025-01-26 23:20:30.412] [INFO] Sending message: {"timestamp":1737930030411,"type":"pong"}
+
+[2025-01-26 23:20:30.412] [INFO] Sent PONG (timestamp: 1737930030411)
+[2025-01-26 23:20:40.414] [INFO] Processing JSON: {
+    "timestamp": 1737930040414,
+    "type": "ping"
+}
+[2025-01-26 23:20:40.415] [DEBUG] Processing message type: ping
+[2025-01-26 23:20:40.415] [INFO] Received PING (timestamp: 1737930040414)
+[2025-01-26 23:20:40.415] [INFO] Sending message: {"timestamp":1737930040414,"type":"pong"}
+
+[2025-01-26 23:20:40.415] [INFO] Sent PONG (timestamp: 1737930040414)
+[2025-01-26 23:20:50.418] [INFO] Processing JSON: {
+    "timestamp": 1737930050418,
+    "type": "ping"
+}
+[2025-01-26 23:20:50.419] [DEBUG] Processing message type: ping
+[2025-01-26 23:20:50.419] [INFO] Received PING (timestamp: 1737930050418)
+[2025-01-26 23:20:50.419] [INFO] Sending message: {"timestamp":1737930050418,"type":"pong"}
+
+[2025-01-26 23:20:50.419] [INFO] Sent PONG (timestamp: 1737930050418)
+[2025-01-26 23:21:00.411] [INFO] Processing JSON: {
+    "timestamp": 1737930060411,
+    "type": "ping"
+}
+[2025-01-26 23:21:00.411] [DEBUG] Processing message type: ping
+[2025-01-26 23:21:00.411] [INFO] Received PING (timestamp: 1737930060411)
+[2025-01-26 23:21:00.411] [INFO] Sending message: {"timestamp":1737930060411,"type":"pong"}
+
+[2025-01-26 23:21:00.411] [INFO] Sent PONG (timestamp: 1737930060411)
+[2025-01-26 23:21:10.418] [INFO] Processing JSON: {
+    "timestamp": 1737930070417,
+    "type": "ping"
+}
+[2025-01-26 23:21:10.418] [DEBUG] Processing message type: ping
+[2025-01-26 23:21:10.418] [INFO] Received PING (timestamp: 1737930070417)
+[2025-01-26 23:21:10.418] [INFO] Sending message: {"timestamp":1737930070417,"type":"pong"}
+
+[2025-01-26 23:21:10.418] [INFO] Sent PONG (timestamp: 1737930070417)
+[2025-01-26 23:21:20.416] [INFO] Processing JSON: {
+    "timestamp": 1737930080416,
+    "type": "ping"
+}
+[2025-01-26 23:21:20.416] [DEBUG] Processing message type: ping
+[2025-01-26 23:21:20.416] [INFO] Received PING (timestamp: 1737930080416)
+[2025-01-26 23:21:20.416] [INFO] Sending message: {"timestamp":1737930080416,"type":"pong"}
+
+[2025-01-26 23:21:20.416] [INFO] Sent PONG (timestamp: 1737930080416)
+[2025-01-26 23:21:30.413] [INFO] Processing JSON: {
+    "timestamp": 1737930090413,
+    "type": "ping"
+}
+[2025-01-26 23:21:30.413] [DEBUG] Processing message type: ping
+[2025-01-26 23:21:30.413] [INFO] Received PING (timestamp: 1737930090413)
+[2025-01-26 23:21:30.414] [INFO] Sending message: {"timestamp":1737930090413,"type":"pong"}
+
+[2025-01-26 23:21:30.414] [INFO] Sent PONG (timestamp: 1737930090413)
+[2025-01-26 23:21:40.413] [INFO] Processing JSON: {
+    "timestamp": 1737930100413,
+    "type": "ping"
+}
+[2025-01-26 23:21:40.413] [DEBUG] Processing message type: ping
+[2025-01-26 23:21:40.413] [INFO] Received PING (timestamp: 1737930100413)
+[2025-01-26 23:21:40.413] [INFO] Sending message: {"timestamp":1737930100413,"type":"pong"}
+
+[2025-01-26 23:21:40.413] [INFO] Sent PONG (timestamp: 1737930100413)
+[2025-01-26 23:21:50.414] [INFO] Processing JSON: {
+    "timestamp": 1737930110413,
+    "type": "ping"
+}
+[2025-01-26 23:21:50.414] [DEBUG] Processing message type: ping
+[2025-01-26 23:21:50.414] [INFO] Received PING (timestamp: 1737930110413)
+[2025-01-26 23:21:50.414] [INFO] Sending message: {"timestamp":1737930110413,"type":"pong"}
+
+[2025-01-26 23:21:50.414] [INFO] Sent PONG (timestamp: 1737930110413)
+[2025-01-26 23:22:00.420] [INFO] Processing JSON: {
+    "timestamp": 1737930120419,
+    "type": "ping"
+}
+[2025-01-26 23:22:00.420] [DEBUG] Processing message type: ping
+[2025-01-26 23:22:00.420] [INFO] Received PING (timestamp: 1737930120419)
+[2025-01-26 23:22:00.420] [INFO] Sending message: {"timestamp":1737930120419,"type":"pong"}
+
+[2025-01-26 23:22:00.420] [INFO] Sent PONG (timestamp: 1737930120419)
+[2025-01-26 23:22:10.419] [INFO] Processing JSON: {
+    "timestamp": 1737930130419,
+    "type": "ping"
+}
+[2025-01-26 23:22:10.419] [DEBUG] Processing message type: ping
+[2025-01-26 23:22:10.419] [INFO] Received PING (timestamp: 1737930130419)
+[2025-01-26 23:22:10.419] [INFO] Sending message: {"timestamp":1737930130419,"type":"pong"}
+
+[2025-01-26 23:22:10.419] [INFO] Sent PONG (timestamp: 1737930130419)
+[2025-01-26 23:22:20.416] [INFO] Processing JSON: {
+    "timestamp": 1737930140416,
+    "type": "ping"
+}
+[2025-01-26 23:22:20.416] [DEBUG] Processing message type: ping
+[2025-01-26 23:22:20.416] [INFO] Received PING (timestamp: 1737930140416)
+[2025-01-26 23:22:20.416] [INFO] Sending message: {"timestamp":1737930140416,"type":"pong"}
+
+[2025-01-26 23:22:20.416] [INFO] Sent PONG (timestamp: 1737930140416)
+[2025-01-26 23:22:30.424] [INFO] Processing JSON: {
+    "timestamp": 1737930150424,
+    "type": "ping"
+}
+[2025-01-26 23:22:30.424] [DEBUG] Processing message type: ping
+[2025-01-26 23:22:30.424] [INFO] Received PING (timestamp: 1737930150424)
+[2025-01-26 23:22:30.424] [INFO] Sending message: {"timestamp":1737930150424,"type":"pong"}
+
+[2025-01-26 23:22:30.424] [INFO] Sent PONG (timestamp: 1737930150424)
+[2025-01-26 23:22:40.413] [INFO] Processing JSON: {
+    "timestamp": 1737930160413,
+    "type": "ping"
+}
+[2025-01-26 23:22:40.413] [DEBUG] Processing message type: ping
+[2025-01-26 23:22:40.413] [INFO] Received PING (timestamp: 1737930160413)
+[2025-01-26 23:22:40.413] [INFO] Sending message: {"timestamp":1737930160413,"type":"pong"}
+
+[2025-01-26 23:22:40.413] [INFO] Sent PONG (timestamp: 1737930160413)
+[2025-01-26 23:22:50.422] [INFO] Processing JSON: {
+    "timestamp": 1737930170422,
+    "type": "ping"
+}
+[2025-01-26 23:22:50.422] [DEBUG] Processing message type: ping
+[2025-01-26 23:22:50.422] [INFO] Received PING (timestamp: 1737930170422)
+[2025-01-26 23:22:50.422] [INFO] Sending message: {"timestamp":1737930170422,"type":"pong"}
+
+[2025-01-26 23:22:50.422] [INFO] Sent PONG (timestamp: 1737930170422)
+[2025-01-26 23:23:00.426] [INFO] Processing JSON: {
+    "timestamp": 1737930180425,
+    "type": "ping"
+}
+[2025-01-26 23:23:00.426] [DEBUG] Processing message type: ping
+[2025-01-26 23:23:00.426] [INFO] Received PING (timestamp: 1737930180425)
+[2025-01-26 23:23:00.426] [INFO] Sending message: {"timestamp":1737930180425,"type":"pong"}
+
+[2025-01-26 23:23:00.426] [INFO] Sent PONG (timestamp: 1737930180425)
+[2025-01-26 23:23:10.415] [INFO] Processing JSON: {
+    "timestamp": 1737930190415,
+    "type": "ping"
+}
+[2025-01-26 23:23:10.415] [DEBUG] Processing message type: ping
+[2025-01-26 23:23:10.415] [INFO] Received PING (timestamp: 1737930190415)
+[2025-01-26 23:23:10.415] [INFO] Sending message: {"timestamp":1737930190415,"type":"pong"}
+
+[2025-01-26 23:23:10.415] [INFO] Sent PONG (timestamp: 1737930190415)
+[2025-01-26 23:23:20.415] [INFO] Processing JSON: {
+    "timestamp": 1737930200415,
+    "type": "ping"
+}
+[2025-01-26 23:23:20.415] [DEBUG] Processing message type: ping
+[2025-01-26 23:23:20.415] [INFO] Received PING (timestamp: 1737930200415)
+[2025-01-26 23:23:20.415] [INFO] Sending message: {"timestamp":1737930200415,"type":"pong"}
+
+[2025-01-26 23:23:20.415] [INFO] Sent PONG (timestamp: 1737930200415)
+[2025-01-26 23:23:30.426] [INFO] Processing JSON: {
+    "timestamp": 1737930210426,
+    "type": "ping"
+}
+[2025-01-26 23:23:30.426] [DEBUG] Processing message type: ping
+[2025-01-26 23:23:30.426] [INFO] Received PING (timestamp: 1737930210426)
+[2025-01-26 23:23:30.426] [INFO] Sending message: {"timestamp":1737930210426,"type":"pong"}
+
+[2025-01-26 23:23:30.426] [INFO] Sent PONG (timestamp: 1737930210426)
+[2025-01-26 23:23:40.419] [INFO] Processing JSON: {
+    "timestamp": 1737930220419,
+    "type": "ping"
+}
+[2025-01-26 23:23:40.419] [DEBUG] Processing message type: ping
+[2025-01-26 23:23:40.420] [INFO] Received PING (timestamp: 1737930220419)
+[2025-01-26 23:23:40.420] [INFO] Sending message: {"timestamp":1737930220419,"type":"pong"}
+
+[2025-01-26 23:23:40.420] [INFO] Sent PONG (timestamp: 1737930220419)
+[2025-01-26 23:23:50.425] [INFO] Processing JSON: {
+    "timestamp": 1737930230425,
+    "type": "ping"
+}
+[2025-01-26 23:23:50.425] [DEBUG] Processing message type: ping
+[2025-01-26 23:23:50.425] [INFO] Received PING (timestamp: 1737930230425)
+[2025-01-26 23:23:50.425] [INFO] Sending message: {"timestamp":1737930230425,"type":"pong"}
+
+[2025-01-26 23:23:50.425] [INFO] Sent PONG (timestamp: 1737930230425)
+[2025-01-26 23:24:00.426] [INFO] Processing JSON: {
+    "timestamp": 1737930240424,
+    "type": "ping"
+}
+[2025-01-26 23:24:00.426] [DEBUG] Processing message type: ping
+[2025-01-26 23:24:00.426] [INFO] Received PING (timestamp: 1737930240424)
+[2025-01-26 23:24:00.426] [INFO] Sending message: {"timestamp":1737930240424,"type":"pong"}
+
+[2025-01-26 23:24:00.426] [INFO] Sent PONG (timestamp: 1737930240424)
+[2025-01-26 23:24:10.418] [INFO] Processing JSON: {
+    "timestamp": 1737930250418,
+    "type": "ping"
+}
+[2025-01-26 23:24:10.418] [DEBUG] Processing message type: ping
+[2025-01-26 23:24:10.418] [INFO] Received PING (timestamp: 1737930250418)
+[2025-01-26 23:24:10.418] [INFO] Sending message: {"timestamp":1737930250418,"type":"pong"}
+
+[2025-01-26 23:24:10.418] [INFO] Sent PONG (timestamp: 1737930250418)
+[2025-01-26 23:24:20.420] [INFO] Processing JSON: {
+    "timestamp": 1737930260419,
+    "type": "ping"
+}
+[2025-01-26 23:24:20.420] [DEBUG] Processing message type: ping
+[2025-01-26 23:24:20.420] [INFO] Received PING (timestamp: 1737930260419)
+[2025-01-26 23:24:20.420] [INFO] Sending message: {"timestamp":1737930260419,"type":"pong"}
+
+[2025-01-26 23:24:20.420] [INFO] Sent PONG (timestamp: 1737930260419)
+[2025-01-26 23:24:30.427] [INFO] Processing JSON: {
+    "timestamp": 1737930270426,
+    "type": "ping"
+}
+[2025-01-26 23:24:30.427] [DEBUG] Processing message type: ping
+[2025-01-26 23:24:30.427] [INFO] Received PING (timestamp: 1737930270426)
+[2025-01-26 23:24:30.427] [INFO] Sending message: {"timestamp":1737930270426,"type":"pong"}
+
+[2025-01-26 23:24:30.427] [INFO] Sent PONG (timestamp: 1737930270426)
+[2025-01-26 23:24:40.428] [INFO] Processing JSON: {
+    "timestamp": 1737930280427,
+    "type": "ping"
+}
+[2025-01-26 23:24:40.428] [DEBUG] Processing message type: ping
+[2025-01-26 23:24:40.428] [INFO] Received PING (timestamp: 1737930280427)
+[2025-01-26 23:24:40.428] [INFO] Sending message: {"timestamp":1737930280427,"type":"pong"}
+
+[2025-01-26 23:24:40.428] [INFO] Sent PONG (timestamp: 1737930280427)
+[2025-01-26 23:24:50.428] [INFO] Processing JSON: {
+    "timestamp": 1737930290428,
+    "type": "ping"
+}
+[2025-01-26 23:24:50.428] [DEBUG] Processing message type: ping
+[2025-01-26 23:24:50.428] [INFO] Received PING (timestamp: 1737930290428)
+[2025-01-26 23:24:50.428] [INFO] Sending message: {"timestamp":1737930290428,"type":"pong"}
+
+[2025-01-26 23:24:50.428] [INFO] Sent PONG (timestamp: 1737930290428)
+[2025-01-26 23:25:00.433] [INFO] Processing JSON: {
+    "timestamp": 1737930300433,
+    "type": "ping"
+}
+[2025-01-26 23:25:00.433] [DEBUG] Processing message type: ping
+[2025-01-26 23:25:00.433] [INFO] Received PING (timestamp: 1737930300433)
+[2025-01-26 23:25:00.433] [INFO] Sending message: {"timestamp":1737930300433,"type":"pong"}
+
+[2025-01-26 23:25:00.433] [INFO] Sent PONG (timestamp: 1737930300433)
+[2025-01-26 23:25:10.423] [INFO] Processing JSON: {
+    "timestamp": 1737930310422,
+    "type": "ping"
+}
+[2025-01-26 23:25:10.423] [DEBUG] Processing message type: ping
+[2025-01-26 23:25:10.423] [INFO] Received PING (timestamp: 1737930310422)
+[2025-01-26 23:25:10.423] [INFO] Sending message: {"timestamp":1737930310422,"type":"pong"}
+
+[2025-01-26 23:25:10.423] [INFO] Sent PONG (timestamp: 1737930310422)
+[2025-01-26 23:25:20.430] [INFO] Processing JSON: {
+    "timestamp": 1737930320430,
+    "type": "ping"
+}
+[2025-01-26 23:25:20.430] [DEBUG] Processing message type: ping
+[2025-01-26 23:25:20.430] [INFO] Received PING (timestamp: 1737930320430)
+[2025-01-26 23:25:20.430] [INFO] Sending message: {"timestamp":1737930320430,"type":"pong"}
+
+[2025-01-26 23:25:20.430] [INFO] Sent PONG (timestamp: 1737930320430)
+[2025-01-26 23:25:30.420] [INFO] Processing JSON: {
+    "timestamp": 1737930330420,
+    "type": "ping"
+}
+[2025-01-26 23:25:30.420] [DEBUG] Processing message type: ping
+[2025-01-26 23:25:30.420] [INFO] Received PING (timestamp: 1737930330420)
+[2025-01-26 23:25:30.420] [INFO] Sending message: {"timestamp":1737930330420,"type":"pong"}
+
+[2025-01-26 23:25:30.420] [INFO] Sent PONG (timestamp: 1737930330420)
+[2025-01-26 23:25:40.434] [INFO] Processing JSON: {
+    "timestamp": 1737930340434,
+    "type": "ping"
+}
+[2025-01-26 23:25:40.434] [DEBUG] Processing message type: ping
+[2025-01-26 23:25:40.434] [INFO] Received PING (timestamp: 1737930340434)
+[2025-01-26 23:25:40.434] [INFO] Sending message: {"timestamp":1737930340434,"type":"pong"}
+
+[2025-01-26 23:25:40.434] [INFO] Sent PONG (timestamp: 1737930340434)
+[2025-01-26 23:25:50.428] [INFO] Processing JSON: {
+    "timestamp": 1737930350428,
+    "type": "ping"
+}
+[2025-01-26 23:25:50.428] [DEBUG] Processing message type: ping
+[2025-01-26 23:25:50.428] [INFO] Received PING (timestamp: 1737930350428)
+[2025-01-26 23:25:50.428] [INFO] Sending message: {"timestamp":1737930350428,"type":"pong"}
+
+[2025-01-26 23:25:50.428] [INFO] Sent PONG (timestamp: 1737930350428)
+[2025-01-26 23:25:56.522] [INFO] Application shutting down
+[2025-01-26 23:30:40.886] [INFO] Application started
+[2025-01-26 23:30:40.886] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:30:40.886] [INFO] NetworkManager initialized
+[2025-01-26 23:30:40.886] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:30:40.886] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:30:40.941] [INFO] LoginWindow initialized
+[2025-01-26 23:30:41.021] [INFO] Connected to server
+[2025-01-26 23:30:41.021] [INFO] Status update: Connected to server
+[2025-01-26 23:30:50.888] [INFO] Processing JSON: {
+    "timestamp": 1737930650887,
+    "type": "ping"
+}
+[2025-01-26 23:30:50.888] [DEBUG] Processing message type: ping
+[2025-01-26 23:30:50.888] [INFO] Received PING (timestamp: 1737930650887)
+[2025-01-26 23:30:50.888] [INFO] Sending message: {"timestamp":1737930650887,"type":"pong"}
+
+[2025-01-26 23:30:50.888] [INFO] Sent PONG (timestamp: 1737930650887)
+[2025-01-26 23:31:00.897] [INFO] Processing JSON: {
+    "timestamp": 1737930660897,
+    "type": "ping"
+}
+[2025-01-26 23:31:00.897] [DEBUG] Processing message type: ping
+[2025-01-26 23:31:00.897] [INFO] Received PING (timestamp: 1737930660897)
+[2025-01-26 23:31:00.897] [INFO] Sending message: {"timestamp":1737930660897,"type":"pong"}
+
+[2025-01-26 23:31:00.897] [INFO] Sent PONG (timestamp: 1737930660897)
+[2025-01-26 23:31:10.888] [INFO] Processing JSON: {
+    "timestamp": 1737930670888,
+    "type": "ping"
+}
+[2025-01-26 23:31:10.888] [DEBUG] Processing message type: ping
+[2025-01-26 23:31:10.888] [INFO] Received PING (timestamp: 1737930670888)
+[2025-01-26 23:31:10.888] [INFO] Sending message: {"timestamp":1737930670888,"type":"pong"}
+
+[2025-01-26 23:31:10.888] [INFO] Sent PONG (timestamp: 1737930670888)
+[2025-01-26 23:31:20.902] [INFO] Processing JSON: {
+    "timestamp": 1737930680902,
+    "type": "ping"
+}
+[2025-01-26 23:31:20.902] [DEBUG] Processing message type: ping
+[2025-01-26 23:31:20.902] [INFO] Received PING (timestamp: 1737930680902)
+[2025-01-26 23:31:20.902] [INFO] Sending message: {"timestamp":1737930680902,"type":"pong"}
+
+[2025-01-26 23:31:20.902] [INFO] Sent PONG (timestamp: 1737930680902)
+[2025-01-26 23:31:30.890] [INFO] Processing JSON: {
+    "timestamp": 1737930690890,
+    "type": "ping"
+}
+[2025-01-26 23:31:30.890] [DEBUG] Processing message type: ping
+[2025-01-26 23:31:30.890] [INFO] Received PING (timestamp: 1737930690890)
+[2025-01-26 23:31:30.890] [INFO] Sending message: {"timestamp":1737930690890,"type":"pong"}
+
+[2025-01-26 23:31:30.890] [INFO] Sent PONG (timestamp: 1737930690890)
+[2025-01-26 23:31:40.902] [INFO] Processing JSON: {
+    "timestamp": 1737930700902,
+    "type": "ping"
+}
+[2025-01-26 23:31:40.902] [DEBUG] Processing message type: ping
+[2025-01-26 23:31:40.902] [INFO] Received PING (timestamp: 1737930700902)
+[2025-01-26 23:31:40.902] [INFO] Sending message: {"timestamp":1737930700902,"type":"pong"}
+
+[2025-01-26 23:31:40.902] [INFO] Sent PONG (timestamp: 1737930700902)
+[2025-01-26 23:31:50.888] [INFO] Processing JSON: {
+    "timestamp": 1737930710888,
+    "type": "ping"
+}
+[2025-01-26 23:31:50.888] [DEBUG] Processing message type: ping
+[2025-01-26 23:31:50.888] [INFO] Received PING (timestamp: 1737930710888)
+[2025-01-26 23:31:50.888] [INFO] Sending message: {"timestamp":1737930710888,"type":"pong"}
+
+[2025-01-26 23:31:50.888] [INFO] Sent PONG (timestamp: 1737930710888)
+[2025-01-26 23:32:00.891] [INFO] Processing JSON: {
+    "timestamp": 1737930720890,
+    "type": "ping"
+}
+[2025-01-26 23:32:00.891] [DEBUG] Processing message type: ping
+[2025-01-26 23:32:00.891] [INFO] Received PING (timestamp: 1737930720890)
+[2025-01-26 23:32:00.891] [INFO] Sending message: {"timestamp":1737930720890,"type":"pong"}
+
+[2025-01-26 23:32:00.891] [INFO] Sent PONG (timestamp: 1737930720890)
+[2025-01-26 23:32:10.894] [INFO] Processing JSON: {
+    "timestamp": 1737930730894,
+    "type": "ping"
+}
+[2025-01-26 23:32:10.894] [DEBUG] Processing message type: ping
+[2025-01-26 23:32:10.894] [INFO] Received PING (timestamp: 1737930730894)
+[2025-01-26 23:32:10.894] [INFO] Sending message: {"timestamp":1737930730894,"type":"pong"}
+
+[2025-01-26 23:32:10.894] [INFO] Sent PONG (timestamp: 1737930730894)
+[2025-01-26 23:32:20.903] [INFO] Processing JSON: {
+    "timestamp": 1737930740902,
+    "type": "ping"
+}
+[2025-01-26 23:32:20.903] [DEBUG] Processing message type: ping
+[2025-01-26 23:32:20.903] [INFO] Received PING (timestamp: 1737930740902)
+[2025-01-26 23:32:20.903] [INFO] Sending message: {"timestamp":1737930740902,"type":"pong"}
+
+[2025-01-26 23:32:20.903] [INFO] Sent PONG (timestamp: 1737930740902)
+[2025-01-26 23:32:30.890] [INFO] Processing JSON: {
+    "timestamp": 1737930750890,
+    "type": "ping"
+}
+[2025-01-26 23:32:30.890] [DEBUG] Processing message type: ping
+[2025-01-26 23:32:30.890] [INFO] Received PING (timestamp: 1737930750890)
+[2025-01-26 23:32:30.890] [INFO] Sending message: {"timestamp":1737930750890,"type":"pong"}
+
+[2025-01-26 23:32:30.890] [INFO] Sent PONG (timestamp: 1737930750890)
+[2025-01-26 23:32:40.895] [INFO] Processing JSON: {
+    "timestamp": 1737930760895,
+    "type": "ping"
+}
+[2025-01-26 23:32:40.895] [DEBUG] Processing message type: ping
+[2025-01-26 23:32:40.895] [INFO] Received PING (timestamp: 1737930760895)
+[2025-01-26 23:32:40.895] [INFO] Sending message: {"timestamp":1737930760895,"type":"pong"}
+
+[2025-01-26 23:32:40.895] [INFO] Sent PONG (timestamp: 1737930760895)
+[2025-01-26 23:32:50.894] [INFO] Processing JSON: {
+    "timestamp": 1737930770894,
+    "type": "ping"
+}
+[2025-01-26 23:32:50.895] [DEBUG] Processing message type: ping
+[2025-01-26 23:32:50.895] [INFO] Received PING (timestamp: 1737930770894)
+[2025-01-26 23:32:50.895] [INFO] Sending message: {"timestamp":1737930770894,"type":"pong"}
+
+[2025-01-26 23:32:50.895] [INFO] Sent PONG (timestamp: 1737930770894)
+[2025-01-26 23:33:00.892] [INFO] Processing JSON: {
+    "timestamp": 1737930780892,
+    "type": "ping"
+}
+[2025-01-26 23:33:00.892] [DEBUG] Processing message type: ping
+[2025-01-26 23:33:00.892] [INFO] Received PING (timestamp: 1737930780892)
+[2025-01-26 23:33:00.892] [INFO] Sending message: {"timestamp":1737930780892,"type":"pong"}
+
+[2025-01-26 23:33:00.892] [INFO] Sent PONG (timestamp: 1737930780892)
+[2025-01-26 23:33:10.900] [INFO] Processing JSON: {
+    "timestamp": 1737930790900,
+    "type": "ping"
+}
+[2025-01-26 23:33:10.900] [DEBUG] Processing message type: ping
+[2025-01-26 23:33:10.900] [INFO] Received PING (timestamp: 1737930790900)
+[2025-01-26 23:33:10.900] [INFO] Sending message: {"timestamp":1737930790900,"type":"pong"}
+
+[2025-01-26 23:33:10.900] [INFO] Sent PONG (timestamp: 1737930790900)
+[2025-01-26 23:33:20.907] [INFO] Processing JSON: {
+    "timestamp": 1737930800907,
+    "type": "ping"
+}
+[2025-01-26 23:33:20.907] [DEBUG] Processing message type: ping
+[2025-01-26 23:33:20.907] [INFO] Received PING (timestamp: 1737930800907)
+[2025-01-26 23:33:20.907] [INFO] Sending message: {"timestamp":1737930800907,"type":"pong"}
+
+[2025-01-26 23:33:20.907] [INFO] Sent PONG (timestamp: 1737930800907)
+[2025-01-26 23:33:30.894] [INFO] Processing JSON: {
+    "timestamp": 1737930810894,
+    "type": "ping"
+}
+[2025-01-26 23:33:30.894] [DEBUG] Processing message type: ping
+[2025-01-26 23:33:30.894] [INFO] Received PING (timestamp: 1737930810894)
+[2025-01-26 23:33:30.894] [INFO] Sending message: {"timestamp":1737930810894,"type":"pong"}
+
+[2025-01-26 23:33:30.894] [INFO] Sent PONG (timestamp: 1737930810894)
+[2025-01-26 23:33:40.893] [INFO] Processing JSON: {
+    "timestamp": 1737930820893,
+    "type": "ping"
+}
+[2025-01-26 23:33:40.893] [DEBUG] Processing message type: ping
+[2025-01-26 23:33:40.893] [INFO] Received PING (timestamp: 1737930820893)
+[2025-01-26 23:33:40.893] [INFO] Sending message: {"timestamp":1737930820893,"type":"pong"}
+
+[2025-01-26 23:33:40.893] [INFO] Sent PONG (timestamp: 1737930820893)
+[2025-01-26 23:33:50.902] [INFO] Processing JSON: {
+    "timestamp": 1737930830902,
+    "type": "ping"
+}
+[2025-01-26 23:33:50.902] [DEBUG] Processing message type: ping
+[2025-01-26 23:33:50.902] [INFO] Received PING (timestamp: 1737930830902)
+[2025-01-26 23:33:50.902] [INFO] Sending message: {"timestamp":1737930830902,"type":"pong"}
+
+[2025-01-26 23:33:50.902] [INFO] Sent PONG (timestamp: 1737930830902)
+[2025-01-26 23:34:00.904] [INFO] Processing JSON: {
+    "timestamp": 1737930840903,
+    "type": "ping"
+}
+[2025-01-26 23:34:00.904] [DEBUG] Processing message type: ping
+[2025-01-26 23:34:00.904] [INFO] Received PING (timestamp: 1737930840903)
+[2025-01-26 23:34:00.904] [INFO] Sending message: {"timestamp":1737930840903,"type":"pong"}
+
+[2025-01-26 23:34:00.904] [INFO] Sent PONG (timestamp: 1737930840903)
+[2025-01-26 23:34:10.905] [INFO] Processing JSON: {
+    "timestamp": 1737930850904,
+    "type": "ping"
+}
+[2025-01-26 23:34:10.905] [DEBUG] Processing message type: ping
+[2025-01-26 23:34:10.905] [INFO] Received PING (timestamp: 1737930850904)
+[2025-01-26 23:34:10.905] [INFO] Sending message: {"timestamp":1737930850904,"type":"pong"}
+
+[2025-01-26 23:34:10.905] [INFO] Sent PONG (timestamp: 1737930850904)
+[2025-01-26 23:34:20.899] [INFO] Processing JSON: {
+    "timestamp": 1737930860899,
+    "type": "ping"
+}
+[2025-01-26 23:34:20.899] [DEBUG] Processing message type: ping
+[2025-01-26 23:34:20.899] [INFO] Received PING (timestamp: 1737930860899)
+[2025-01-26 23:34:20.899] [INFO] Sending message: {"timestamp":1737930860899,"type":"pong"}
+
+[2025-01-26 23:34:20.899] [INFO] Sent PONG (timestamp: 1737930860899)
+[2025-01-26 23:34:30.897] [INFO] Processing JSON: {
+    "timestamp": 1737930870897,
+    "type": "ping"
+}
+[2025-01-26 23:34:30.897] [DEBUG] Processing message type: ping
+[2025-01-26 23:34:30.897] [INFO] Received PING (timestamp: 1737930870897)
+[2025-01-26 23:34:30.897] [INFO] Sending message: {"timestamp":1737930870897,"type":"pong"}
+
+[2025-01-26 23:34:30.897] [INFO] Sent PONG (timestamp: 1737930870897)
+[2025-01-26 23:34:40.903] [INFO] Processing JSON: {
+    "timestamp": 1737930880903,
+    "type": "ping"
+}
+[2025-01-26 23:34:40.903] [DEBUG] Processing message type: ping
+[2025-01-26 23:34:40.903] [INFO] Received PING (timestamp: 1737930880903)
+[2025-01-26 23:34:40.903] [INFO] Sending message: {"timestamp":1737930880903,"type":"pong"}
+
+[2025-01-26 23:34:40.903] [INFO] Sent PONG (timestamp: 1737930880903)
+[2025-01-26 23:34:50.900] [INFO] Processing JSON: {
+    "timestamp": 1737930890900,
+    "type": "ping"
+}
+[2025-01-26 23:34:50.900] [DEBUG] Processing message type: ping
+[2025-01-26 23:34:50.900] [INFO] Received PING (timestamp: 1737930890900)
+[2025-01-26 23:34:50.900] [INFO] Sending message: {"timestamp":1737930890900,"type":"pong"}
+
+[2025-01-26 23:34:50.900] [INFO] Sent PONG (timestamp: 1737930890900)
+[2025-01-26 23:35:00.910] [INFO] Processing JSON: {
+    "timestamp": 1737930900910,
+    "type": "ping"
+}
+[2025-01-26 23:35:00.910] [DEBUG] Processing message type: ping
+[2025-01-26 23:35:00.910] [INFO] Received PING (timestamp: 1737930900910)
+[2025-01-26 23:35:00.910] [INFO] Sending message: {"timestamp":1737930900910,"type":"pong"}
+
+[2025-01-26 23:35:00.910] [INFO] Sent PONG (timestamp: 1737930900910)
+[2025-01-26 23:35:10.904] [INFO] Processing JSON: {
+    "timestamp": 1737930910904,
+    "type": "ping"
+}
+[2025-01-26 23:35:10.904] [DEBUG] Processing message type: ping
+[2025-01-26 23:35:10.904] [INFO] Received PING (timestamp: 1737930910904)
+[2025-01-26 23:35:10.904] [INFO] Sending message: {"timestamp":1737930910904,"type":"pong"}
+
+[2025-01-26 23:35:10.904] [INFO] Sent PONG (timestamp: 1737930910904)
+[2025-01-26 23:35:20.905] [INFO] Processing JSON: {
+    "timestamp": 1737930920905,
+    "type": "ping"
+}
+[2025-01-26 23:35:20.905] [DEBUG] Processing message type: ping
+[2025-01-26 23:35:20.905] [INFO] Received PING (timestamp: 1737930920905)
+[2025-01-26 23:35:20.905] [INFO] Sending message: {"timestamp":1737930920905,"type":"pong"}
+
+[2025-01-26 23:35:20.905] [INFO] Sent PONG (timestamp: 1737930920905)
+[2025-01-26 23:35:30.898] [INFO] Processing JSON: {
+    "timestamp": 1737930930898,
+    "type": "ping"
+}
+[2025-01-26 23:35:30.898] [DEBUG] Processing message type: ping
+[2025-01-26 23:35:30.898] [INFO] Received PING (timestamp: 1737930930898)
+[2025-01-26 23:35:30.898] [INFO] Sending message: {"timestamp":1737930930898,"type":"pong"}
+
+[2025-01-26 23:35:30.898] [INFO] Sent PONG (timestamp: 1737930930898)
+[2025-01-26 23:35:40.911] [INFO] Processing JSON: {
+    "timestamp": 1737930940911,
+    "type": "ping"
+}
+[2025-01-26 23:35:40.911] [DEBUG] Processing message type: ping
+[2025-01-26 23:35:40.911] [INFO] Received PING (timestamp: 1737930940911)
+[2025-01-26 23:35:40.911] [INFO] Sending message: {"timestamp":1737930940911,"type":"pong"}
+
+[2025-01-26 23:35:40.911] [INFO] Sent PONG (timestamp: 1737930940911)
+[2025-01-26 23:35:50.899] [INFO] Processing JSON: {
+    "timestamp": 1737930950899,
+    "type": "ping"
+}
+[2025-01-26 23:35:50.899] [DEBUG] Processing message type: ping
+[2025-01-26 23:35:50.899] [INFO] Received PING (timestamp: 1737930950899)
+[2025-01-26 23:35:50.899] [INFO] Sending message: {"timestamp":1737930950899,"type":"pong"}
+
+[2025-01-26 23:35:50.899] [INFO] Sent PONG (timestamp: 1737930950899)
+[2025-01-26 23:36:00.898] [INFO] Processing JSON: {
+    "timestamp": 1737930960898,
+    "type": "ping"
+}
+[2025-01-26 23:36:00.899] [DEBUG] Processing message type: ping
+[2025-01-26 23:36:00.899] [INFO] Received PING (timestamp: 1737930960898)
+[2025-01-26 23:36:00.899] [INFO] Sending message: {"timestamp":1737930960898,"type":"pong"}
+
+[2025-01-26 23:36:00.899] [INFO] Sent PONG (timestamp: 1737930960898)
+[2025-01-26 23:36:07.422] [INFO] Application shutting down
+[2025-01-26 23:36:11.662] [INFO] Application started
+[2025-01-26 23:36:11.663] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:36:11.663] [INFO] NetworkManager initialized
+[2025-01-26 23:36:11.663] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:36:11.663] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:36:11.699] [INFO] LoginWindow initialized
+[2025-01-26 23:36:11.766] [INFO] Connected to server
+[2025-01-26 23:36:11.766] [INFO] Status update: Connected to server
+[2025-01-26 23:36:20.282] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 23:36:20.282] [INFO] Status update: Logging in...
+[2025-01-26 23:36:20.285] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737930980284,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 23:36:20.285] [DEBUG] Processing message type: login_response
+[2025-01-26 23:36:20.285] [INFO] Login successful
+[2025-01-26 23:36:20.285] [INFO] Sending message: {"status":"online","timestamp":1737930980285,"type":"status_response"}
+
+[2025-01-26 23:36:20.285] [INFO] Sending message: {"timestamp":1737930980285,"type":"get_friends_list"}
+
+[2025-01-26 23:36:20.285] [INFO] Status update: Login successful - Connected
+[2025-01-26 23:36:20.298] [INFO] UI initialized successfully
+[2025-01-26 23:36:20.299] [INFO] MainWindow initialized
+[2025-01-26 23:36:20.489] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 23:36:20.489] [DEBUG] Processing message type: unread_from
+[2025-01-26 23:36:20.489] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 23:36:20.489] [INFO] Received unread messages info from 0 users
+[2025-01-26 23:36:20.489] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737930980286,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:36:20.489] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:36:20.489] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:36:20.489] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:36:20.490] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737930980288,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:36:20.490] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:36:20.490] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:36:20.490] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:36:20.490] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737930980288,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:36:20.490] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:36:20.490] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:36:20.490] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:36:20.509] [INFO] LoginWindow destroyed
+[2025-01-26 23:36:21.674] [INFO] Processing JSON: {
+    "timestamp": 1737930981674,
+    "type": "ping"
+}
+[2025-01-26 23:36:21.675] [DEBUG] Processing message type: ping
+[2025-01-26 23:36:21.675] [INFO] Received PING (timestamp: 1737930981674)
+[2025-01-26 23:36:21.675] [INFO] Sending message: {"timestamp":1737930981674,"type":"pong"}
+
+[2025-01-26 23:36:21.675] [INFO] Sent PONG (timestamp: 1737930981674)
+[2025-01-26 23:36:31.667] [INFO] Processing JSON: {
+    "timestamp": 1737930991666,
+    "type": "ping"
+}
+[2025-01-26 23:36:31.667] [DEBUG] Processing message type: ping
+[2025-01-26 23:36:31.667] [INFO] Received PING (timestamp: 1737930991666)
+[2025-01-26 23:36:31.667] [INFO] Sending message: {"timestamp":1737930991666,"type":"pong"}
+
+[2025-01-26 23:36:31.667] [INFO] Sent PONG (timestamp: 1737930991666)
+[2025-01-26 23:36:35.282] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737930995282,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:36:35.282] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:36:35.282] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:36:35.282] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:36:41.671] [INFO] Processing JSON: {
+    "timestamp": 1737931001670,
+    "type": "ping"
+}
+[2025-01-26 23:36:41.671] [DEBUG] Processing message type: ping
+[2025-01-26 23:36:41.671] [INFO] Received PING (timestamp: 1737931001670)
+[2025-01-26 23:36:41.671] [INFO] Sending message: {"timestamp":1737931001670,"type":"pong"}
+
+[2025-01-26 23:36:41.671] [INFO] Sent PONG (timestamp: 1737931001670)
+[2025-01-26 23:36:47.332] [INFO] Sending message: {"timestamp":1737931007332,"type":"logout"}
+
+[2025-01-26 23:36:47.333] [INFO] MainWindow destroyed
+[2025-01-26 23:36:47.335] [INFO] Application shutting down
+[2025-01-26 23:36:48.678] [INFO] Application started
+[2025-01-26 23:36:48.678] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:36:48.678] [INFO] NetworkManager initialized
+[2025-01-26 23:36:48.678] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:36:48.678] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:36:48.711] [INFO] LoginWindow initialized
+[2025-01-26 23:36:48.786] [INFO] Connected to server
+[2025-01-26 23:36:48.786] [INFO] Status update: Connected to server
+[2025-01-26 23:36:57.743] [INFO] Application shutting down
+[2025-01-26 23:37:17.330] [INFO] Application started
+[2025-01-26 23:37:17.330] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:37:17.330] [INFO] NetworkManager initialized
+[2025-01-26 23:37:17.330] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:37:17.330] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:37:17.364] [INFO] LoginWindow initialized
+[2025-01-26 23:37:17.432] [INFO] Connected to server
+[2025-01-26 23:37:17.432] [INFO] Status update: Connected to server
+[2025-01-26 23:37:19.164] [INFO] Application shutting down
+[2025-01-26 23:37:54.264] [INFO] Application started
+[2025-01-26 23:37:54.265] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:37:54.265] [INFO] NetworkManager initialized
+[2025-01-26 23:37:54.265] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:37:54.265] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:37:54.298] [INFO] LoginWindow initialized
+[2025-01-26 23:37:54.362] [INFO] Connected to server
+[2025-01-26 23:37:54.362] [INFO] Status update: Connected to server
+[2025-01-26 23:38:03.572] [INFO] Application shutting down
+[2025-01-26 23:38:25.791] [INFO] Application started
+[2025-01-26 23:38:25.792] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:38:25.792] [INFO] NetworkManager initialized
+[2025-01-26 23:38:25.792] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:38:25.792] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:38:25.825] [INFO] LoginWindow initialized
+[2025-01-26 23:38:25.890] [INFO] Connected to server
+[2025-01-26 23:38:25.891] [INFO] Status update: Connected to server
+[2025-01-26 23:38:33.567] [INFO] Application shutting down
+[2025-01-26 23:39:10.422] [INFO] Application started
+[2025-01-26 23:39:10.422] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:39:10.422] [INFO] NetworkManager initialized
+[2025-01-26 23:39:10.422] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:39:10.422] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:39:10.455] [INFO] LoginWindow initialized
+[2025-01-26 23:39:10.519] [INFO] Connected to server
+[2025-01-26 23:39:10.519] [INFO] Status update: Connected to server
+[2025-01-26 23:39:20.424] [INFO] Processing JSON: {
+    "timestamp": 1737931160424,
+    "type": "ping"
+}
+[2025-01-26 23:39:20.424] [DEBUG] Processing message type: ping
+[2025-01-26 23:39:20.424] [INFO] Received PING (timestamp: 1737931160424)
+[2025-01-26 23:39:20.424] [INFO] Sending message: {"timestamp":1737931160424,"type":"pong"}
+
+[2025-01-26 23:39:20.424] [INFO] Sent PONG (timestamp: 1737931160424)
+[2025-01-26 23:39:30.431] [INFO] Processing JSON: {
+    "timestamp": 1737931170431,
+    "type": "ping"
+}
+[2025-01-26 23:39:30.431] [DEBUG] Processing message type: ping
+[2025-01-26 23:39:30.431] [INFO] Received PING (timestamp: 1737931170431)
+[2025-01-26 23:39:30.431] [INFO] Sending message: {"timestamp":1737931170431,"type":"pong"}
+
+[2025-01-26 23:39:30.431] [INFO] Sent PONG (timestamp: 1737931170431)
+[2025-01-26 23:39:40.436] [INFO] Processing JSON: {
+    "timestamp": 1737931180436,
+    "type": "ping"
+}
+[2025-01-26 23:39:40.436] [DEBUG] Processing message type: ping
+[2025-01-26 23:39:40.436] [INFO] Received PING (timestamp: 1737931180436)
+[2025-01-26 23:39:40.436] [INFO] Sending message: {"timestamp":1737931180436,"type":"pong"}
+
+[2025-01-26 23:39:40.437] [INFO] Sent PONG (timestamp: 1737931180436)
+[2025-01-26 23:39:50.423] [INFO] Processing JSON: {
+    "timestamp": 1737931190423,
+    "type": "ping"
+}
+[2025-01-26 23:39:50.423] [DEBUG] Processing message type: ping
+[2025-01-26 23:39:50.423] [INFO] Received PING (timestamp: 1737931190423)
+[2025-01-26 23:39:50.423] [INFO] Sending message: {"timestamp":1737931190423,"type":"pong"}
+
+[2025-01-26 23:39:50.423] [INFO] Sent PONG (timestamp: 1737931190423)
+[2025-01-26 23:40:00.432] [INFO] Processing JSON: {
+    "timestamp": 1737931200432,
+    "type": "ping"
+}
+[2025-01-26 23:40:00.433] [DEBUG] Processing message type: ping
+[2025-01-26 23:40:00.433] [INFO] Received PING (timestamp: 1737931200432)
+[2025-01-26 23:40:00.433] [INFO] Sending message: {"timestamp":1737931200432,"type":"pong"}
+
+[2025-01-26 23:40:00.433] [INFO] Sent PONG (timestamp: 1737931200432)
+[2025-01-26 23:40:02.633] [INFO] Application shutting down
+[2025-01-26 23:40:04.751] [INFO] Application started
+[2025-01-26 23:40:04.751] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:40:04.751] [INFO] NetworkManager initialized
+[2025-01-26 23:40:04.751] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:40:04.751] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:40:04.792] [INFO] LoginWindow initialized
+[2025-01-26 23:40:04.855] [INFO] Connected to server
+[2025-01-26 23:40:04.855] [INFO] Status update: Connected to server
+[2025-01-26 23:40:08.094] [INFO] Application shutting down
+[2025-01-26 23:40:14.258] [INFO] Application started
+[2025-01-26 23:40:14.259] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:40:14.259] [INFO] NetworkManager initialized
+[2025-01-26 23:40:14.259] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:40:14.259] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:40:14.292] [INFO] LoginWindow initialized
+[2025-01-26 23:40:14.362] [INFO] Connected to server
+[2025-01-26 23:40:14.362] [INFO] Status update: Connected to server
+[2025-01-26 23:40:24.258] [INFO] Processing JSON: {
+    "timestamp": 1737931224257,
+    "type": "ping"
+}
+[2025-01-26 23:40:24.258] [DEBUG] Processing message type: ping
+[2025-01-26 23:40:24.258] [INFO] Received PING (timestamp: 1737931224257)
+[2025-01-26 23:40:24.258] [INFO] Sending message: {"timestamp":1737931224257,"type":"pong"}
+
+[2025-01-26 23:40:24.258] [INFO] Sent PONG (timestamp: 1737931224257)
+[2025-01-26 23:40:33.382] [INFO] Application shutting down
+[2025-01-26 23:40:36.560] [INFO] Application started
+[2025-01-26 23:40:36.560] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:40:36.560] [INFO] NetworkManager initialized
+[2025-01-26 23:40:36.560] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:40:36.560] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:40:36.593] [INFO] LoginWindow initialized
+[2025-01-26 23:40:36.655] [INFO] Connected to server
+[2025-01-26 23:40:36.655] [INFO] Status update: Connected to server
+[2025-01-26 23:40:39.760] [INFO] Application shutting down
+[2025-01-26 23:40:46.359] [INFO] Application started
+[2025-01-26 23:40:46.359] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:40:46.359] [INFO] NetworkManager initialized
+[2025-01-26 23:40:46.359] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:40:46.359] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:40:46.400] [INFO] LoginWindow initialized
+[2025-01-26 23:40:46.462] [INFO] Connected to server
+[2025-01-26 23:40:46.462] [INFO] Status update: Connected to server
+[2025-01-26 23:40:52.795] [INFO] Application shutting down
+[2025-01-26 23:41:13.693] [INFO] Application started
+[2025-01-26 23:41:13.693] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:41:13.693] [INFO] NetworkManager initialized
+[2025-01-26 23:41:13.693] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:41:13.693] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:41:13.727] [INFO] LoginWindow initialized
+[2025-01-26 23:41:13.789] [INFO] Connected to server
+[2025-01-26 23:41:13.789] [INFO] Status update: Connected to server
+[2025-01-26 23:41:23.703] [INFO] Processing JSON: {
+    "timestamp": 1737931283702,
+    "type": "ping"
+}
+[2025-01-26 23:41:23.703] [DEBUG] Processing message type: ping
+[2025-01-26 23:41:23.703] [INFO] Received PING (timestamp: 1737931283702)
+[2025-01-26 23:41:23.703] [INFO] Sending message: {"timestamp":1737931283702,"type":"pong"}
+
+[2025-01-26 23:41:23.703] [INFO] Sent PONG (timestamp: 1737931283702)
+[2025-01-26 23:41:30.575] [INFO] Application shutting down
+[2025-01-26 23:42:00.595] [INFO] Application started
+[2025-01-26 23:42:00.595] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:42:00.595] [INFO] NetworkManager initialized
+[2025-01-26 23:42:00.595] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:42:00.595] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:42:00.629] [INFO] LoginWindow initialized
+[2025-01-26 23:42:00.708] [INFO] Connected to server
+[2025-01-26 23:42:00.708] [INFO] Status update: Connected to server
+[2025-01-26 23:42:10.594] [INFO] Processing JSON: {
+    "timestamp": 1737931330594,
+    "type": "ping"
+}
+[2025-01-26 23:42:10.594] [DEBUG] Processing message type: ping
+[2025-01-26 23:42:10.594] [INFO] Received PING (timestamp: 1737931330594)
+[2025-01-26 23:42:10.595] [INFO] Sending message: {"timestamp":1737931330594,"type":"pong"}
+
+[2025-01-26 23:42:10.595] [INFO] Sent PONG (timestamp: 1737931330594)
+[2025-01-26 23:42:20.597] [INFO] Processing JSON: {
+    "timestamp": 1737931340597,
+    "type": "ping"
+}
+[2025-01-26 23:42:20.597] [DEBUG] Processing message type: ping
+[2025-01-26 23:42:20.597] [INFO] Received PING (timestamp: 1737931340597)
+[2025-01-26 23:42:20.597] [INFO] Sending message: {"timestamp":1737931340597,"type":"pong"}
+
+[2025-01-26 23:42:20.597] [INFO] Sent PONG (timestamp: 1737931340597)
+[2025-01-26 23:42:30.590] [INFO] Processing JSON: {
+    "timestamp": 1737931350590,
+    "type": "ping"
+}
+[2025-01-26 23:42:30.590] [DEBUG] Processing message type: ping
+[2025-01-26 23:42:30.590] [INFO] Received PING (timestamp: 1737931350590)
+[2025-01-26 23:42:30.590] [INFO] Sending message: {"timestamp":1737931350590,"type":"pong"}
+
+[2025-01-26 23:42:30.590] [INFO] Sent PONG (timestamp: 1737931350590)
+[2025-01-26 23:42:40.596] [INFO] Processing JSON: {
+    "timestamp": 1737931360595,
+    "type": "ping"
+}
+[2025-01-26 23:42:40.596] [DEBUG] Processing message type: ping
+[2025-01-26 23:42:40.596] [INFO] Received PING (timestamp: 1737931360595)
+[2025-01-26 23:42:40.596] [INFO] Sending message: {"timestamp":1737931360595,"type":"pong"}
+
+[2025-01-26 23:42:40.596] [INFO] Sent PONG (timestamp: 1737931360595)
+[2025-01-26 23:42:49.893] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 23:42:49.893] [INFO] Status update: Logging in...
+[2025-01-26 23:42:49.897] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737931369897,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 23:42:49.897] [DEBUG] Processing message type: login_response
+[2025-01-26 23:42:49.897] [INFO] Login successful
+[2025-01-26 23:42:49.897] [INFO] Sending message: {"status":"online","timestamp":1737931369897,"type":"status_response"}
+
+[2025-01-26 23:42:49.897] [INFO] Sending message: {"timestamp":1737931369897,"type":"get_friends_list"}
+
+[2025-01-26 23:42:49.897] [INFO] Status update: Login successful - Connected
+[2025-01-26 23:42:49.923] [INFO] UI initialized successfully
+[2025-01-26 23:42:49.923] [INFO] MainWindow initialized
+[2025-01-26 23:42:50.100] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 23:42:50.100] [DEBUG] Processing message type: unread_from
+[2025-01-26 23:42:50.100] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 23:42:50.101] [INFO] Received unread messages info from 0 users
+[2025-01-26 23:42:50.101] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931369899,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:42:50.101] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:42:50.101] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:42:50.101] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:42:50.101] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931369900,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:42:50.101] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:42:50.101] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:42:50.101] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:42:50.101] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931369900,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:42:50.101] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:42:50.101] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:42:50.101] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:42:50.116] [INFO] LoginWindow destroyed
+[2025-01-26 23:42:50.590] [INFO] Processing JSON: {
+    "timestamp": 1737931370590,
+    "type": "ping"
+}
+[2025-01-26 23:42:50.590] [DEBUG] Processing message type: ping
+[2025-01-26 23:42:50.590] [INFO] Received PING (timestamp: 1737931370590)
+[2025-01-26 23:42:50.590] [INFO] Sending message: {"timestamp":1737931370590,"type":"pong"}
+
+[2025-01-26 23:42:50.590] [INFO] Sent PONG (timestamp: 1737931370590)
+[2025-01-26 23:43:00.588] [INFO] Processing JSON: {
+    "timestamp": 1737931380587,
+    "type": "ping"
+}
+[2025-01-26 23:43:00.588] [DEBUG] Processing message type: ping
+[2025-01-26 23:43:00.588] [INFO] Received PING (timestamp: 1737931380587)
+[2025-01-26 23:43:00.588] [INFO] Sending message: {"timestamp":1737931380587,"type":"pong"}
+
+[2025-01-26 23:43:00.588] [INFO] Sent PONG (timestamp: 1737931380587)
+[2025-01-26 23:43:04.886] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931384886,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:43:04.886] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:43:04.886] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:43:04.886] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:43:06.556] [INFO] Sending message: {"timestamp":1737931386556,"type":"logout"}
+
+[2025-01-26 23:43:06.556] [INFO] MainWindow destroyed
+[2025-01-26 23:43:06.557] [INFO] Application shutting down
+[2025-01-26 23:43:08.151] [INFO] Application started
+[2025-01-26 23:43:08.152] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:43:08.152] [INFO] NetworkManager initialized
+[2025-01-26 23:43:08.152] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:43:08.152] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:43:08.185] [INFO] LoginWindow initialized
+[2025-01-26 23:43:08.254] [INFO] Connected to server
+[2025-01-26 23:43:08.254] [INFO] Status update: Connected to server
+[2025-01-26 23:43:18.157] [INFO] Processing JSON: {
+    "timestamp": 1737931398157,
+    "type": "ping"
+}
+[2025-01-26 23:43:18.157] [DEBUG] Processing message type: ping
+[2025-01-26 23:43:18.157] [INFO] Received PING (timestamp: 1737931398157)
+[2025-01-26 23:43:18.158] [INFO] Sending message: {"timestamp":1737931398157,"type":"pong"}
+
+[2025-01-26 23:43:18.158] [INFO] Sent PONG (timestamp: 1737931398157)
+[2025-01-26 23:43:21.969] [INFO] Application shutting down
+[2025-01-26 23:44:08.379] [INFO] Application started
+[2025-01-26 23:44:08.380] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:44:08.380] [INFO] NetworkManager initialized
+[2025-01-26 23:44:08.380] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:44:08.380] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:44:08.413] [INFO] LoginWindow initialized
+[2025-01-26 23:44:08.475] [INFO] Connected to server
+[2025-01-26 23:44:08.475] [INFO] Status update: Connected to server
+[2025-01-26 23:44:18.384] [INFO] Processing JSON: {
+    "timestamp": 1737931458383,
+    "type": "ping"
+}
+[2025-01-26 23:44:18.384] [DEBUG] Processing message type: ping
+[2025-01-26 23:44:18.384] [INFO] Received PING (timestamp: 1737931458383)
+[2025-01-26 23:44:18.384] [INFO] Sending message: {"timestamp":1737931458383,"type":"pong"}
+
+[2025-01-26 23:44:18.384] [INFO] Sent PONG (timestamp: 1737931458383)
+[2025-01-26 23:44:19.775] [INFO] Application shutting down
+[2025-01-26 23:44:33.843] [INFO] Application started
+[2025-01-26 23:44:33.844] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:44:33.844] [INFO] NetworkManager initialized
+[2025-01-26 23:44:33.844] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:44:33.844] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:44:33.882] [INFO] LoginWindow initialized
+[2025-01-26 23:44:33.946] [INFO] Connected to server
+[2025-01-26 23:44:33.946] [INFO] Status update: Connected to server
+[2025-01-26 23:44:36.051] [INFO] Application shutting down
+[2025-01-26 23:44:42.007] [INFO] Application started
+[2025-01-26 23:44:42.007] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:44:42.007] [INFO] NetworkManager initialized
+[2025-01-26 23:44:42.007] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:44:42.007] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:44:42.041] [INFO] LoginWindow initialized
+[2025-01-26 23:44:42.100] [INFO] Connected to server
+[2025-01-26 23:44:42.100] [INFO] Status update: Connected to server
+[2025-01-26 23:44:50.894] [INFO] Application shutting down
+[2025-01-26 23:44:57.026] [INFO] Application started
+[2025-01-26 23:44:57.026] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:44:57.026] [INFO] NetworkManager initialized
+[2025-01-26 23:44:57.026] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:44:57.026] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:44:57.067] [INFO] LoginWindow initialized
+[2025-01-26 23:44:57.130] [INFO] Connected to server
+[2025-01-26 23:44:57.131] [INFO] Status update: Connected to server
+[2025-01-26 23:45:07.042] [INFO] Processing JSON: {
+    "timestamp": 1737931507042,
+    "type": "ping"
+}
+[2025-01-26 23:45:07.042] [DEBUG] Processing message type: ping
+[2025-01-26 23:45:07.042] [INFO] Received PING (timestamp: 1737931507042)
+[2025-01-26 23:45:07.042] [INFO] Sending message: {"timestamp":1737931507042,"type":"pong"}
+
+[2025-01-26 23:45:07.042] [INFO] Sent PONG (timestamp: 1737931507042)
+[2025-01-26 23:45:17.033] [INFO] Processing JSON: {
+    "timestamp": 1737931517033,
+    "type": "ping"
+}
+[2025-01-26 23:45:17.033] [DEBUG] Processing message type: ping
+[2025-01-26 23:45:17.033] [INFO] Received PING (timestamp: 1737931517033)
+[2025-01-26 23:45:17.033] [INFO] Sending message: {"timestamp":1737931517033,"type":"pong"}
+
+[2025-01-26 23:45:17.033] [INFO] Sent PONG (timestamp: 1737931517033)
+[2025-01-26 23:45:27.033] [INFO] Processing JSON: {
+    "timestamp": 1737931527033,
+    "type": "ping"
+}
+[2025-01-26 23:45:27.033] [DEBUG] Processing message type: ping
+[2025-01-26 23:45:27.033] [INFO] Received PING (timestamp: 1737931527033)
+[2025-01-26 23:45:27.033] [INFO] Sending message: {"timestamp":1737931527033,"type":"pong"}
+
+[2025-01-26 23:45:27.033] [INFO] Sent PONG (timestamp: 1737931527033)
+[2025-01-26 23:45:37.031] [INFO] Processing JSON: {
+    "timestamp": 1737931537031,
+    "type": "ping"
+}
+[2025-01-26 23:45:37.031] [DEBUG] Processing message type: ping
+[2025-01-26 23:45:37.031] [INFO] Received PING (timestamp: 1737931537031)
+[2025-01-26 23:45:37.031] [INFO] Sending message: {"timestamp":1737931537031,"type":"pong"}
+
+[2025-01-26 23:45:37.031] [INFO] Sent PONG (timestamp: 1737931537031)
+[2025-01-26 23:45:47.042] [INFO] Processing JSON: {
+    "timestamp": 1737931547042,
+    "type": "ping"
+}
+[2025-01-26 23:45:47.042] [DEBUG] Processing message type: ping
+[2025-01-26 23:45:47.042] [INFO] Received PING (timestamp: 1737931547042)
+[2025-01-26 23:45:47.042] [INFO] Sending message: {"timestamp":1737931547042,"type":"pong"}
+
+[2025-01-26 23:45:47.042] [INFO] Sent PONG (timestamp: 1737931547042)
+[2025-01-26 23:45:57.045] [INFO] Processing JSON: {
+    "timestamp": 1737931557045,
+    "type": "ping"
+}
+[2025-01-26 23:45:57.045] [DEBUG] Processing message type: ping
+[2025-01-26 23:45:57.045] [INFO] Received PING (timestamp: 1737931557045)
+[2025-01-26 23:45:57.045] [INFO] Sending message: {"timestamp":1737931557045,"type":"pong"}
+
+[2025-01-26 23:45:57.045] [INFO] Sent PONG (timestamp: 1737931557045)
+[2025-01-26 23:46:07.037] [INFO] Processing JSON: {
+    "timestamp": 1737931567037,
+    "type": "ping"
+}
+[2025-01-26 23:46:07.037] [DEBUG] Processing message type: ping
+[2025-01-26 23:46:07.037] [INFO] Received PING (timestamp: 1737931567037)
+[2025-01-26 23:46:07.037] [INFO] Sending message: {"timestamp":1737931567037,"type":"pong"}
+
+[2025-01-26 23:46:07.037] [INFO] Sent PONG (timestamp: 1737931567037)
+[2025-01-26 23:46:17.041] [INFO] Processing JSON: {
+    "timestamp": 1737931577041,
+    "type": "ping"
+}
+[2025-01-26 23:46:17.041] [DEBUG] Processing message type: ping
+[2025-01-26 23:46:17.041] [INFO] Received PING (timestamp: 1737931577041)
+[2025-01-26 23:46:17.041] [INFO] Sending message: {"timestamp":1737931577041,"type":"pong"}
+
+[2025-01-26 23:46:17.041] [INFO] Sent PONG (timestamp: 1737931577041)
+[2025-01-26 23:46:27.038] [INFO] Processing JSON: {
+    "timestamp": 1737931587038,
+    "type": "ping"
+}
+[2025-01-26 23:46:27.038] [DEBUG] Processing message type: ping
+[2025-01-26 23:46:27.038] [INFO] Received PING (timestamp: 1737931587038)
+[2025-01-26 23:46:27.039] [INFO] Sending message: {"timestamp":1737931587038,"type":"pong"}
+
+[2025-01-26 23:46:27.039] [INFO] Sent PONG (timestamp: 1737931587038)
+[2025-01-26 23:46:37.042] [INFO] Processing JSON: {
+    "timestamp": 1737931597042,
+    "type": "ping"
+}
+[2025-01-26 23:46:37.042] [DEBUG] Processing message type: ping
+[2025-01-26 23:46:37.042] [INFO] Received PING (timestamp: 1737931597042)
+[2025-01-26 23:46:37.042] [INFO] Sending message: {"timestamp":1737931597042,"type":"pong"}
+
+[2025-01-26 23:46:37.043] [INFO] Sent PONG (timestamp: 1737931597042)
+[2025-01-26 23:46:47.036] [INFO] Processing JSON: {
+    "timestamp": 1737931607036,
+    "type": "ping"
+}
+[2025-01-26 23:46:47.036] [DEBUG] Processing message type: ping
+[2025-01-26 23:46:47.036] [INFO] Received PING (timestamp: 1737931607036)
+[2025-01-26 23:46:47.036] [INFO] Sending message: {"timestamp":1737931607036,"type":"pong"}
+
+[2025-01-26 23:46:47.036] [INFO] Sent PONG (timestamp: 1737931607036)
+[2025-01-26 23:46:57.044] [INFO] Processing JSON: {
+    "timestamp": 1737931617044,
+    "type": "ping"
+}
+[2025-01-26 23:46:57.044] [DEBUG] Processing message type: ping
+[2025-01-26 23:46:57.044] [INFO] Received PING (timestamp: 1737931617044)
+[2025-01-26 23:46:57.044] [INFO] Sending message: {"timestamp":1737931617044,"type":"pong"}
+
+[2025-01-26 23:46:57.044] [INFO] Sent PONG (timestamp: 1737931617044)
+[2025-01-26 23:47:07.047] [INFO] Processing JSON: {
+    "timestamp": 1737931627047,
+    "type": "ping"
+}
+[2025-01-26 23:47:07.047] [DEBUG] Processing message type: ping
+[2025-01-26 23:47:07.047] [INFO] Received PING (timestamp: 1737931627047)
+[2025-01-26 23:47:07.047] [INFO] Sending message: {"timestamp":1737931627047,"type":"pong"}
+
+[2025-01-26 23:47:07.047] [INFO] Sent PONG (timestamp: 1737931627047)
+[2025-01-26 23:47:17.046] [INFO] Processing JSON: {
+    "timestamp": 1737931637046,
+    "type": "ping"
+}
+[2025-01-26 23:47:17.046] [DEBUG] Processing message type: ping
+[2025-01-26 23:47:17.046] [INFO] Received PING (timestamp: 1737931637046)
+[2025-01-26 23:47:17.046] [INFO] Sending message: {"timestamp":1737931637046,"type":"pong"}
+
+[2025-01-26 23:47:17.046] [INFO] Sent PONG (timestamp: 1737931637046)
+[2025-01-26 23:47:27.037] [INFO] Processing JSON: {
+    "timestamp": 1737931647037,
+    "type": "ping"
+}
+[2025-01-26 23:47:27.037] [DEBUG] Processing message type: ping
+[2025-01-26 23:47:27.037] [INFO] Received PING (timestamp: 1737931647037)
+[2025-01-26 23:47:27.037] [INFO] Sending message: {"timestamp":1737931647037,"type":"pong"}
+
+[2025-01-26 23:47:27.037] [INFO] Sent PONG (timestamp: 1737931647037)
+[2025-01-26 23:47:37.043] [INFO] Processing JSON: {
+    "timestamp": 1737931657043,
+    "type": "ping"
+}
+[2025-01-26 23:47:37.043] [DEBUG] Processing message type: ping
+[2025-01-26 23:47:37.043] [INFO] Received PING (timestamp: 1737931657043)
+[2025-01-26 23:47:37.043] [INFO] Sending message: {"timestamp":1737931657043,"type":"pong"}
+
+[2025-01-26 23:47:37.043] [INFO] Sent PONG (timestamp: 1737931657043)
+[2025-01-26 23:47:47.042] [INFO] Processing JSON: {
+    "timestamp": 1737931667041,
+    "type": "ping"
+}
+[2025-01-26 23:47:47.042] [DEBUG] Processing message type: ping
+[2025-01-26 23:47:47.042] [INFO] Received PING (timestamp: 1737931667041)
+[2025-01-26 23:47:47.042] [INFO] Sending message: {"timestamp":1737931667041,"type":"pong"}
+
+[2025-01-26 23:47:47.042] [INFO] Sent PONG (timestamp: 1737931667041)
+[2025-01-26 23:47:57.035] [INFO] Processing JSON: {
+    "timestamp": 1737931677034,
+    "type": "ping"
+}
+[2025-01-26 23:47:57.035] [DEBUG] Processing message type: ping
+[2025-01-26 23:47:57.035] [INFO] Received PING (timestamp: 1737931677034)
+[2025-01-26 23:47:57.035] [INFO] Sending message: {"timestamp":1737931677034,"type":"pong"}
+
+[2025-01-26 23:47:57.035] [INFO] Sent PONG (timestamp: 1737931677034)
+[2025-01-26 23:48:07.049] [INFO] Processing JSON: {
+    "timestamp": 1737931687049,
+    "type": "ping"
+}
+[2025-01-26 23:48:07.049] [DEBUG] Processing message type: ping
+[2025-01-26 23:48:07.049] [INFO] Received PING (timestamp: 1737931687049)
+[2025-01-26 23:48:07.049] [INFO] Sending message: {"timestamp":1737931687049,"type":"pong"}
+
+[2025-01-26 23:48:07.049] [INFO] Sent PONG (timestamp: 1737931687049)
+[2025-01-26 23:48:17.041] [INFO] Processing JSON: {
+    "timestamp": 1737931697041,
+    "type": "ping"
+}
+[2025-01-26 23:48:17.041] [DEBUG] Processing message type: ping
+[2025-01-26 23:48:17.041] [INFO] Received PING (timestamp: 1737931697041)
+[2025-01-26 23:48:17.041] [INFO] Sending message: {"timestamp":1737931697041,"type":"pong"}
+
+[2025-01-26 23:48:17.041] [INFO] Sent PONG (timestamp: 1737931697041)
+[2025-01-26 23:48:27.047] [INFO] Processing JSON: {
+    "timestamp": 1737931707047,
+    "type": "ping"
+}
+[2025-01-26 23:48:27.047] [DEBUG] Processing message type: ping
+[2025-01-26 23:48:27.047] [INFO] Received PING (timestamp: 1737931707047)
+[2025-01-26 23:48:27.047] [INFO] Sending message: {"timestamp":1737931707047,"type":"pong"}
+
+[2025-01-26 23:48:27.047] [INFO] Sent PONG (timestamp: 1737931707047)
+[2025-01-26 23:48:33.573] [INFO] Application shutting down
+[2025-01-26 23:49:12.413] [INFO] Application started
+[2025-01-26 23:49:12.414] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:49:12.414] [INFO] NetworkManager initialized
+[2025-01-26 23:49:12.414] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:49:12.414] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:49:12.447] [INFO] LoginWindow initialized
+[2025-01-26 23:49:12.513] [INFO] Connected to server
+[2025-01-26 23:49:12.513] [INFO] Status update: Connected to server
+[2025-01-26 23:49:22.427] [INFO] Processing JSON: {
+    "timestamp": 1737931762427,
+    "type": "ping"
+}
+[2025-01-26 23:49:22.427] [DEBUG] Processing message type: ping
+[2025-01-26 23:49:22.427] [INFO] Received PING (timestamp: 1737931762427)
+[2025-01-26 23:49:22.427] [INFO] Sending message: {"timestamp":1737931762427,"type":"pong"}
+
+[2025-01-26 23:49:22.427] [INFO] Sent PONG (timestamp: 1737931762427)
+[2025-01-26 23:49:26.492] [INFO] Application shutting down
+[2025-01-26 23:50:06.727] [INFO] Application started
+[2025-01-26 23:50:06.727] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:50:06.727] [INFO] NetworkManager initialized
+[2025-01-26 23:50:06.727] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:50:06.727] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:50:06.761] [INFO] LoginWindow initialized
+[2025-01-26 23:50:06.823] [INFO] Connected to server
+[2025-01-26 23:50:06.823] [INFO] Status update: Connected to server
+[2025-01-26 23:50:09.693] [INFO] Application shutting down
+[2025-01-26 23:50:16.541] [INFO] Application started
+[2025-01-26 23:50:16.542] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:50:16.542] [INFO] NetworkManager initialized
+[2025-01-26 23:50:16.542] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:50:16.542] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:50:16.574] [INFO] LoginWindow initialized
+[2025-01-26 23:50:16.639] [INFO] Connected to server
+[2025-01-26 23:50:16.639] [INFO] Status update: Connected to server
+[2025-01-26 23:50:26.546] [INFO] Processing JSON: {
+    "timestamp": 1737931826545,
+    "type": "ping"
+}
+[2025-01-26 23:50:26.546] [DEBUG] Processing message type: ping
+[2025-01-26 23:50:26.546] [INFO] Received PING (timestamp: 1737931826545)
+[2025-01-26 23:50:26.546] [INFO] Sending message: {"timestamp":1737931826545,"type":"pong"}
+
+[2025-01-26 23:50:26.546] [INFO] Sent PONG (timestamp: 1737931826545)
+[2025-01-26 23:50:36.552] [INFO] Processing JSON: {
+    "timestamp": 1737931836551,
+    "type": "ping"
+}
+[2025-01-26 23:50:36.552] [DEBUG] Processing message type: ping
+[2025-01-26 23:50:36.552] [INFO] Received PING (timestamp: 1737931836551)
+[2025-01-26 23:50:36.552] [INFO] Sending message: {"timestamp":1737931836551,"type":"pong"}
+
+[2025-01-26 23:50:36.552] [INFO] Sent PONG (timestamp: 1737931836551)
+[2025-01-26 23:50:43.490] [INFO] Application shutting down
+[2025-01-26 23:51:19.685] [INFO] Application started
+[2025-01-26 23:51:19.686] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:51:19.686] [INFO] NetworkManager initialized
+[2025-01-26 23:51:19.686] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:51:19.686] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:51:19.719] [INFO] LoginWindow initialized
+[2025-01-26 23:51:19.787] [INFO] Connected to server
+[2025-01-26 23:51:19.787] [INFO] Status update: Connected to server
+[2025-01-26 23:51:29.683] [INFO] Processing JSON: {
+    "timestamp": 1737931889683,
+    "type": "ping"
+}
+[2025-01-26 23:51:29.683] [DEBUG] Processing message type: ping
+[2025-01-26 23:51:29.683] [INFO] Received PING (timestamp: 1737931889683)
+[2025-01-26 23:51:29.683] [INFO] Sending message: {"timestamp":1737931889683,"type":"pong"}
+
+[2025-01-26 23:51:29.683] [INFO] Sent PONG (timestamp: 1737931889683)
+[2025-01-26 23:51:39.690] [INFO] Processing JSON: {
+    "timestamp": 1737931899689,
+    "type": "ping"
+}
+[2025-01-26 23:51:39.690] [DEBUG] Processing message type: ping
+[2025-01-26 23:51:39.690] [INFO] Received PING (timestamp: 1737931899689)
+[2025-01-26 23:51:39.690] [INFO] Sending message: {"timestamp":1737931899689,"type":"pong"}
+
+[2025-01-26 23:51:39.690] [INFO] Sent PONG (timestamp: 1737931899689)
+[2025-01-26 23:51:49.686] [INFO] Processing JSON: {
+    "timestamp": 1737931909686,
+    "type": "ping"
+}
+[2025-01-26 23:51:49.686] [DEBUG] Processing message type: ping
+[2025-01-26 23:51:49.686] [INFO] Received PING (timestamp: 1737931909686)
+[2025-01-26 23:51:49.686] [INFO] Sending message: {"timestamp":1737931909686,"type":"pong"}
+
+[2025-01-26 23:51:49.686] [INFO] Sent PONG (timestamp: 1737931909686)
+[2025-01-26 23:51:59.687] [INFO] Processing JSON: {
+    "timestamp": 1737931919687,
+    "type": "ping"
+}
+[2025-01-26 23:51:59.687] [DEBUG] Processing message type: ping
+[2025-01-26 23:51:59.687] [INFO] Received PING (timestamp: 1737931919687)
+[2025-01-26 23:51:59.687] [INFO] Sending message: {"timestamp":1737931919687,"type":"pong"}
+
+[2025-01-26 23:51:59.687] [INFO] Sent PONG (timestamp: 1737931919687)
+[2025-01-26 23:52:09.684] [INFO] Processing JSON: {
+    "timestamp": 1737931929684,
+    "type": "ping"
+}
+[2025-01-26 23:52:09.684] [DEBUG] Processing message type: ping
+[2025-01-26 23:52:09.684] [INFO] Received PING (timestamp: 1737931929684)
+[2025-01-26 23:52:09.684] [INFO] Sending message: {"timestamp":1737931929684,"type":"pong"}
+
+[2025-01-26 23:52:09.684] [INFO] Sent PONG (timestamp: 1737931929684)
+[2025-01-26 23:52:19.686] [INFO] Processing JSON: {
+    "timestamp": 1737931939685,
+    "type": "ping"
+}
+[2025-01-26 23:52:19.686] [DEBUG] Processing message type: ping
+[2025-01-26 23:52:19.686] [INFO] Received PING (timestamp: 1737931939685)
+[2025-01-26 23:52:19.686] [INFO] Sending message: {"timestamp":1737931939685,"type":"pong"}
+
+[2025-01-26 23:52:19.686] [INFO] Sent PONG (timestamp: 1737931939685)
+[2025-01-26 23:52:29.687] [INFO] Processing JSON: {
+    "timestamp": 1737931949687,
+    "type": "ping"
+}
+[2025-01-26 23:52:29.688] [DEBUG] Processing message type: ping
+[2025-01-26 23:52:29.688] [INFO] Received PING (timestamp: 1737931949687)
+[2025-01-26 23:52:29.688] [INFO] Sending message: {"timestamp":1737931949687,"type":"pong"}
+
+[2025-01-26 23:52:29.688] [INFO] Sent PONG (timestamp: 1737931949687)
+[2025-01-26 23:52:39.699] [INFO] Processing JSON: {
+    "timestamp": 1737931959698,
+    "type": "ping"
+}
+[2025-01-26 23:52:39.699] [DEBUG] Processing message type: ping
+[2025-01-26 23:52:39.699] [INFO] Received PING (timestamp: 1737931959698)
+[2025-01-26 23:52:39.699] [INFO] Sending message: {"timestamp":1737931959698,"type":"pong"}
+
+[2025-01-26 23:52:39.699] [INFO] Sent PONG (timestamp: 1737931959698)
+[2025-01-26 23:52:49.697] [INFO] Processing JSON: {
+    "timestamp": 1737931969697,
+    "type": "ping"
+}
+[2025-01-26 23:52:49.697] [DEBUG] Processing message type: ping
+[2025-01-26 23:52:49.697] [INFO] Received PING (timestamp: 1737931969697)
+[2025-01-26 23:52:49.697] [INFO] Sending message: {"timestamp":1737931969697,"type":"pong"}
+
+[2025-01-26 23:52:49.697] [INFO] Sent PONG (timestamp: 1737931969697)
+[2025-01-26 23:52:59.440] [INFO] Application shutting down
+[2025-01-26 23:53:00.559] [INFO] Application started
+[2025-01-26 23:53:00.559] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:53:00.559] [INFO] NetworkManager initialized
+[2025-01-26 23:53:00.559] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:53:00.559] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:53:00.592] [INFO] LoginWindow initialized
+[2025-01-26 23:53:00.657] [INFO] Connected to server
+[2025-01-26 23:53:00.657] [INFO] Status update: Connected to server
+[2025-01-26 23:53:06.974] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 23:53:06.974] [INFO] Status update: Logging in...
+[2025-01-26 23:53:06.977] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737931986977,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 23:53:06.977] [DEBUG] Processing message type: login_response
+[2025-01-26 23:53:06.977] [INFO] Login successful
+[2025-01-26 23:53:06.977] [INFO] Sending message: {"status":"online","timestamp":1737931986977,"type":"status_response"}
+
+[2025-01-26 23:53:06.977] [INFO] Sending message: {"timestamp":1737931986977,"type":"get_friends_list"}
+
+[2025-01-26 23:53:06.977] [INFO] Status update: Login successful - Connected
+[2025-01-26 23:53:06.991] [INFO] UI initialized successfully
+[2025-01-26 23:53:06.991] [INFO] MainWindow initialized
+[2025-01-26 23:53:07.171] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 23:53:07.171] [DEBUG] Processing message type: unread_from
+[2025-01-26 23:53:07.171] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 23:53:07.171] [INFO] Received unread messages info from 0 users
+[2025-01-26 23:53:07.171] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931986979,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:53:07.171] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:53:07.171] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:53:07.171] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:53:07.172] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931986980,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:53:07.172] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:53:07.172] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:53:07.172] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:53:07.172] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737931986980,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:53:07.172] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:53:07.172] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:53:07.172] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:53:07.184] [INFO] LoginWindow destroyed
+[2025-01-26 23:53:10.574] [INFO] Processing JSON: {
+    "timestamp": 1737931990574,
+    "type": "ping"
+}
+[2025-01-26 23:53:10.574] [DEBUG] Processing message type: ping
+[2025-01-26 23:53:10.574] [INFO] Received PING (timestamp: 1737931990574)
+[2025-01-26 23:53:10.574] [INFO] Sending message: {"timestamp":1737931990574,"type":"pong"}
+
+[2025-01-26 23:53:10.574] [INFO] Sent PONG (timestamp: 1737931990574)
+[2025-01-26 23:53:15.648] [INFO] Sending message: {"timestamp":1737931995648,"type":"logout"}
+
+[2025-01-26 23:53:15.648] [INFO] MainWindow destroyed
+[2025-01-26 23:53:15.649] [INFO] Application shutting down
+[2025-01-26 23:53:18.758] [INFO] Application started
+[2025-01-26 23:53:18.759] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 23:53:18.759] [INFO] NetworkManager initialized
+[2025-01-26 23:53:18.759] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 23:53:18.759] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 23:53:18.791] [INFO] LoginWindow initialized
+[2025-01-26 23:53:18.860] [INFO] Connected to server
+[2025-01-26 23:53:18.860] [INFO] Status update: Connected to server
+[2025-01-26 23:53:25.806] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-26 23:53:25.806] [INFO] Status update: Logging in...
+[2025-01-26 23:53:25.809] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737932005809,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-26 23:53:25.809] [DEBUG] Processing message type: login_response
+[2025-01-26 23:53:25.809] [INFO] Login successful
+[2025-01-26 23:53:25.809] [INFO] Sending message: {"status":"online","timestamp":1737932005809,"type":"status_response"}
+
+[2025-01-26 23:53:25.809] [INFO] Sending message: {"timestamp":1737932005809,"type":"get_friends_list"}
+
+[2025-01-26 23:53:25.809] [INFO] Status update: Login successful - Connected
+[2025-01-26 23:53:25.829] [INFO] UI initialized successfully
+[2025-01-26 23:53:25.829] [INFO] MainWindow initialized
+[2025-01-26 23:53:26.006] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+    ]
+}
+[2025-01-26 23:53:26.006] [DEBUG] Processing message type: unread_from
+[2025-01-26 23:53:26.006] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-26 23:53:26.006] [INFO] Received unread messages info from 0 users
+[2025-01-26 23:53:26.006] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737932005811,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:53:26.006] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:53:26.006] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:53:26.006] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:53:26.006] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737932005812,
+    "type": "friends_status_update"
+}
+[2025-01-26 23:53:26.006] [DEBUG] Processing message type: friends_status_update
+[2025-01-26 23:53:26.006] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-26 23:53:26.006] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:53:26.006] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737932005813,
+    "type": "friends_list_response"
+}
+[2025-01-26 23:53:26.007] [DEBUG] Processing message type: friends_list_response
+[2025-01-26 23:53:26.007] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-26 23:53:26.007] [INFO] Updating friends list with 2 friends
+[2025-01-26 23:53:26.021] [INFO] LoginWindow destroyed
+[2025-01-26 23:53:28.752] [INFO] Processing JSON: {
+    "timestamp": 1737932008751,
+    "type": "ping"
+}
+[2025-01-26 23:53:28.752] [DEBUG] Processing message type: ping
+[2025-01-26 23:53:28.752] [INFO] Received PING (timestamp: 1737932008751)
+[2025-01-26 23:53:28.752] [INFO] Sending message: {"timestamp":1737932008751,"type":"pong"}
+
+[2025-01-26 23:53:28.752] [INFO] Sent PONG (timestamp: 1737932008751)
+[2025-01-26 23:53:30.370] [INFO] Sending message: {"timestamp":1737932010370,"type":"logout"}
+
+[2025-01-26 23:53:30.370] [INFO] MainWindow destroyed
+[2025-01-26 23:53:30.371] [INFO] Application shutting down
