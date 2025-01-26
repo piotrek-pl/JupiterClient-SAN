@@ -3,7 +3,7 @@
  * @file MainWindow.ui
  * @brief Main window user interface definition
  * @author piotrek-pl
- * @date 2025-01-26 20:28:11
+ * @date 2025-01-26 21:04:15
 -->
 <ui version="4.0">
  <class>MainWindow</class>
@@ -82,12 +82,12 @@ QComboBox {
 }
 QComboBox::drop-down {
     border: none;
-    width: 15px;  /* Zmniejszone z 20px */
+    width: 15px;
     padding-right: 5px;
 }
 QComboBox::down-arrow {
-    width: 12px;  /* Zmniejszone z 15px */
-    height: 12px; /* Zmniejszone z 15px */
+    width: 12px;
+    height: 12px;
 }
 QComboBox:hover {
     border-color: #2980b9;
@@ -111,7 +111,7 @@ QListWidget {
     font-family: 'Segoe UI';
     font-size: 13px;
     font-weight: 600;
-    outline: 0;  /* Dodane */
+    outline: 0;
 }
 QListWidget::item {
     padding: 8px 5px;
@@ -128,7 +128,7 @@ QListWidget::item:selected {
     background-color: #e3f2fd;
     color: #2c3e50;
 }
-QListWidget::item:focus {  /* Dodane */
+QListWidget::item:focus {
     outline: none;
     border: none;
 }
@@ -182,44 +182,96 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      <widget class="QWidget" name="leftPanel" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>15</number>
+        <number>10</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
        </property>
        <item>
-        <layout class="QHBoxLayout" name="statusLayout">
-         <property name="spacing">
-          <number>10</number>
-         </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="statusLabel">
+          <layout class="QVBoxLayout" name="labelsLayout">
+           <property name="spacing">
+            <number>15</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="statusLayout">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="statusLabel">
+               <property name="text">
+                <string>Status:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="statusComboBox"/>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>60</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="friendsLabel">
+             <property name="text">
+              <string>Friends:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="logoLabel">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Status:</string>
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="resources.qrc">:/resources/logo/jupiter_logo.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="statusComboBox"/>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer">
+          <spacer name="horizontalSpacerRight">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
+             <width>0</width>     <!-- Zmniejszone z 60 -->
              <height>20</height>
             </size>
            </property>
           </spacer>
          </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="friendsLabel">
-         <property name="text">
-          <string>Friends:</string>
-         </property>
-        </widget>
        </item>
        <item>
         <widget class="QListWidget" name="friendsList"/>
@@ -235,7 +287,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>25</height>
+     <height>36</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -278,6 +330,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

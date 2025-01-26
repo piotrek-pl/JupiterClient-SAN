@@ -37,11 +37,15 @@ public:
     QVBoxLayout *verticalLayout;
     QWidget *leftPanel;
     QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *labelsLayout;
     QHBoxLayout *statusLayout;
     QLabel *statusLabel;
     QComboBox *statusComboBox;
     QSpacerItem *horizontalSpacer;
     QLabel *friendsLabel;
+    QLabel *logoLabel;
+    QSpacerItem *horizontalSpacerRight;
     QListWidget *friendsList;
     QMenuBar *menubar;
     QMenu *menuFile;
@@ -111,12 +115,12 @@ public:
 "}\n"
 "QComboBox::drop-down {\n"
 "    border: none;\n"
-"    width: 15px;  /* Zmniejszone z 20px */\n"
+"    width: 15px;\n"
 "    padding-right: 5px;\n"
 "}\n"
 "QComboBox::down-arrow {\n"
-"    width: 12px;  /* Zmniejszone z 15px */\n"
-"    height: 12px; /* Zmniejszone z 15px */\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
 "}\n"
 "QComboBox:hover {\n"
 "    border-color: #2980b9;\n"
@@ -140,15 +144,15 @@ public:
 "    font-family: 'Segoe UI';\n"
 "    font-size: 13px;\n"
 "    font-weight: 600;\n"
-"    outline: 0;  /* Dodane */\n"
+"    outline: 0;\n"
 "}\n"
 "QListWidget::item {\n"
-"    padding: 8p"
-                        "x 5px;\n"
+"    padding: 8px 5px;\n"
 "    margin: 0px;\n"
 "    border-radius: 0px;\n"
 "    font-family: 'Segoe UI';\n"
-"    font-size: 13px;\n"
+""
+                        "    font-size: 13px;\n"
 "    font-weight: 600;\n"
 "}\n"
 "QListWidget::item:hover {\n"
@@ -158,7 +162,7 @@ public:
 "    background-color: #e3f2fd;\n"
 "    color: #2c3e50;\n"
 "}\n"
-"QListWidget::item:focus {  /* Dodane */\n"
+"QListWidget::item:focus {\n"
 "    outline: none;\n"
 "    border: none;\n"
 "}\n"
@@ -187,8 +191,7 @@ public:
 "QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
 "    background: none;\n"
 "}\n"
-"QScrollBar::add-page:vertica"
-                        "l, QScrollBar::sub-page:vertical {\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
 "    background: none;\n"
 "}"));
         actionSearch = new QAction(MainWindow);
@@ -208,8 +211,14 @@ public:
         leftPanel = new QWidget(centralwidget);
         leftPanel->setObjectName("leftPanel");
         verticalLayout_2 = new QVBoxLayout(leftPanel);
-        verticalLayout_2->setSpacing(15);
+        verticalLayout_2->setSpacing(10);
         verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalLayout_2->setContentsMargins(-1, 0, -1, -1);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
+        labelsLayout = new QVBoxLayout();
+        labelsLayout->setSpacing(15);
+        labelsLayout->setObjectName("labelsLayout");
         statusLayout = new QHBoxLayout();
         statusLayout->setSpacing(10);
         statusLayout->setObjectName("statusLayout");
@@ -223,17 +232,36 @@ public:
 
         statusLayout->addWidget(statusComboBox);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer = new QSpacerItem(60, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         statusLayout->addItem(horizontalSpacer);
 
 
-        verticalLayout_2->addLayout(statusLayout);
+        labelsLayout->addLayout(statusLayout);
 
         friendsLabel = new QLabel(leftPanel);
         friendsLabel->setObjectName("friendsLabel");
 
-        verticalLayout_2->addWidget(friendsLabel);
+        labelsLayout->addWidget(friendsLabel);
+
+
+        horizontalLayout->addLayout(labelsLayout);
+
+        logoLabel = new QLabel(leftPanel);
+        logoLabel->setObjectName("logoLabel");
+        logoLabel->setMinimumSize(QSize(80, 80));
+        logoLabel->setMaximumSize(QSize(80, 80));
+        logoLabel->setPixmap(QPixmap(QString::fromUtf8(":/resources/logo/jupiter_logo.png")));
+        logoLabel->setScaledContents(true);
+
+        horizontalLayout->addWidget(logoLabel);
+
+        horizontalSpacerRight = new QSpacerItem(0, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacerRight);
+
+
+        verticalLayout_2->addLayout(horizontalLayout);
 
         friendsList = new QListWidget(leftPanel);
         friendsList->setObjectName("friendsList");
@@ -246,7 +274,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 400, 25));
+        menubar->setGeometry(QRect(0, 0, 400, 36));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuHelp = new QMenu(menubar);
@@ -278,6 +306,7 @@ public:
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
         statusLabel->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         friendsLabel->setText(QCoreApplication::translate("MainWindow", "Friends:", nullptr));
+        logoLabel->setText(QString());
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
