@@ -218,14 +218,16 @@ void LoginWindow::switchToRegisterMode()
     ui->backToLoginButton->setVisible(true);
     ui->loginButton->setVisible(false);
     ui->registerButton->setText("Register");
-    ui->registerButton->setEnabled(false);
+
     isRegistering = false; // Reset flagi
+    isConnecting = false;  // Dodaj to
 
     // Wyczyść wszystkie pola
     ui->usernameLineEdit->clear();
     ui->passwordLineEdit->clear();
     ui->emailLineEdit->clear();
 
+    updateButtonStates(true);  // Dodaj to przed validateRegistrationFields
     updateStatus("Fill all fields to create account");
     validateRegistrationFields();
 }
@@ -352,7 +354,9 @@ void LoginWindow::onLoginSuccess()
 void LoginWindow::onRegistrationSuccess()
 {
     isRegistering = false;
+    isConnecting = false;  // Dodaj to
     switchToLoginMode();
+    updateButtonStates(true);  // Dodaj to
     updateStatus("Registration successful - please login");
 }
 

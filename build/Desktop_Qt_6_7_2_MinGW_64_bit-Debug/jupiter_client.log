@@ -1611,3 +1611,42 @@
 
 [2025-01-26 20:11:57.764] [INFO] Sent PONG (timestamp: 1737918717763)
 [2025-01-26 20:12:02.094] [INFO] Application shutting down
+[2025-01-26 20:13:51.873] [INFO] Application started
+[2025-01-26 20:13:51.874] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-26 20:13:51.874] [INFO] NetworkManager initialized
+[2025-01-26 20:13:51.874] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-26 20:13:51.874] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-26 20:13:51.878] [INFO] LoginWindow initialized
+[2025-01-26 20:13:51.942] [INFO] Connected to server
+[2025-01-26 20:13:51.942] [INFO] Status update: Connected to server
+[2025-01-26 20:14:01.869] [INFO] Processing JSON: {
+    "timestamp": 1737918841868,
+    "type": "ping"
+}
+[2025-01-26 20:14:01.869] [DEBUG] Processing message type: ping
+[2025-01-26 20:14:01.869] [INFO] Received PING (timestamp: 1737918841868)
+[2025-01-26 20:14:01.869] [INFO] Sending message: {"timestamp":1737918841868,"type":"pong"}
+
+[2025-01-26 20:14:01.869] [INFO] Sent PONG (timestamp: 1737918841868)
+[2025-01-26 20:14:05.418] [INFO] Sending message: {"email":"asdf@asfasdf.pl","password":"asdfasdf","protocol_version":1,"type":"register","username":"asdfasdf"}
+
+[2025-01-26 20:14:05.418] [INFO] Status update: Registering...
+[2025-01-26 20:14:05.421] [INFO] Processing JSON: {
+    "message": "Registration successful",
+    "status": "success",
+    "timestamp": 1737918845421,
+    "type": "register_response"
+}
+[2025-01-26 20:14:05.421] [DEBUG] Processing message type: register_response
+[2025-01-26 20:14:05.421] [INFO] Registration successful
+[2025-01-26 20:14:05.421] [INFO] Status update: Registration successful - please login
+[2025-01-26 20:14:11.866] [INFO] Processing JSON: {
+    "timestamp": 1737918851865,
+    "type": "ping"
+}
+[2025-01-26 20:14:11.866] [DEBUG] Processing message type: ping
+[2025-01-26 20:14:11.866] [INFO] Received PING (timestamp: 1737918851865)
+[2025-01-26 20:14:11.866] [INFO] Sending message: {"timestamp":1737918851865,"type":"pong"}
+
+[2025-01-26 20:14:11.866] [INFO] Sent PONG (timestamp: 1737918851865)
+[2025-01-26 20:14:12.767] [INFO] Application shutting down
