@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
@@ -58,6 +59,9 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(400, 600);
         MainWindow->setMinimumSize(QSize(400, 600));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/resources/icons/sun_icon.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        MainWindow->setWindowIcon(icon);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
 "    background-color: #f5f6fa;\n"
 "}\n"
