@@ -2,7 +2,7 @@
  * @file LoginWindow.cpp
  * @brief Login window class implementation
  * @author piotrek-pl
- * @date 2025-01-21 12:58:36
+ * @date 2025-01-26 08:53:26
  */
 
 #include "LoginWindow.h"
@@ -33,15 +33,17 @@ void LoginWindow::initializeUI()
 {
     connect(ui->loginButton, &QPushButton::clicked, this, &LoginWindow::onLoginButtonClicked);
     connect(ui->registerButton, &QPushButton::clicked, this, &LoginWindow::onRegisterButtonClicked);
+    connect(ui->backToLoginButton, &QPushButton::clicked, this, &LoginWindow::onBackToLoginClicked);
 
     // Ustaw placeholdery
     ui->usernameLineEdit->setPlaceholderText("Enter username");
     ui->passwordLineEdit->setPlaceholderText("Enter password");
     ui->emailLineEdit->setPlaceholderText("Enter email for registration");
 
-    // Ukryj pole email na początku
+    // Ukryj elementy początkowe
     ui->emailLineEdit->setVisible(false);
     ui->emailLabel->setVisible(false);
+    ui->backToLoginButton->setVisible(false);
 
     // Dodaj walidację
     ui->usernameLineEdit->setMaxLength(32);
@@ -53,18 +55,14 @@ void LoginWindow::initializeUI()
     updateStatus("Connecting to server...");
 }
 
-
 void LoginWindow::setupNetworkConnections()
 {
-    // Usuń poprzednie połączenia przed dodaniem nowych
     disconnect(&networkManager, nullptr, this, nullptr);
 
-    // Dodaj nowe połączenia dla stanu połączenia
     connect(&networkManager, &NetworkManager::connected,
             this, &LoginWindow::onNetworkConnected);
     connect(&networkManager, &NetworkManager::disconnected,
             this, &LoginWindow::onNetworkDisconnected);
-
     connect(&networkManager, &NetworkManager::connectionStatusChanged,
             this, &LoginWindow::onConnectionStatusChanged);
     connect(&networkManager, &NetworkManager::error,
@@ -75,17 +73,36 @@ void LoginWindow::setupNetworkConnections()
             this, &LoginWindow::onRegistrationSuccess);
 }
 
-void LoginWindow::onNetworkConnected() {
-    isConnecting = false;
-    updateButtonStates(true);
-    updateStatus("Connected to server");
+void LoginWindow::switchToLoginMode()
+{
+    setWindowTitle("Jupiter Client - Login");
+    ui->emailLineEdit->setVisible(false);
+    ui->emailLabel->setVisible(false);
+    ui->backToLoginButton->setVisible(false);
+    ui->loginButton->setVisible(true);
+    ui->registerButton->setText("Create Account");
+
+    // Wyczyść pola
+    ui->emailLineEdit->clear();
+    updateStatus("Enter your credentials to login");
 }
 
-void LoginWindow::onNetworkDisconnected()
+void LoginWindow::switchToRegisterMode()
 {
-    updateButtonStates(false);
-    updateStatus("Disconnected from server");
+    setWindowTitle("Jupiter Client - Registration");
+    ui->emailLineEdit->setVisible(true);
+    ui->emailLabel->setVisible(true);
+    ui->backToLoginButton->setVisible(true);
+    ui->loginButton->setVisible(false);
+    ui->registerButton->setText("Register");
+    updateStatus("Fill all fields to create account");
 }
+
+void LoginWindow::onBackToLoginClicked()
+{
+    switchToLoginMode();
+}
+
 void LoginWindow::onLoginButtonClicked()
 {
     validateAndSubmitLogin();
@@ -115,10 +132,7 @@ void LoginWindow::onRegisterButtonClicked()
     if (ui->emailLineEdit->isVisible()) {
         validateAndSubmitRegistration();
     } else {
-        ui->emailLineEdit->setVisible(true);
-        ui->emailLabel->setVisible(true);
-        ui->registerButton->setText("Complete Registration");
-        updateStatus("Please fill all fields to register");
+        switchToRegisterMode();
     }
 }
 
@@ -140,6 +154,19 @@ void LoginWindow::validateAndSubmitRegistration()
     }
 
     networkManager.registerUser(username, password, email);
+}
+
+void LoginWindow::onNetworkConnected()
+{
+    isConnecting = false;
+    updateButtonStates(true);
+    updateStatus("Connected to server");
+}
+
+void LoginWindow::onNetworkDisconnected()
+{
+    updateButtonStates(false);
+    updateStatus("Disconnected from server");
 }
 
 void LoginWindow::onConnectionStatusChanged(const QString& status)
@@ -167,14 +194,35 @@ void LoginWindow::onLoginSuccess()
 
 void LoginWindow::onRegistrationSuccess()
 {
-    ui->emailLineEdit->setVisible(false);
-    ui->emailLabel->setVisible(false);
-    ui->registerButton->setText("Register");
+    switchToLoginMode();
     updateStatus("Registration successful - please login");
 }
 
-void LoginWindow::updateStatus(const QString& status) {
+void LoginWindow::updateStatus(const QString& status)
+{
     ui->statusLabel->setText(status);
+}
+
+void LoginWindow::updateButtonStates(bool enabled)
+{
+    if (isConnecting) {
+        enabled = false;
+    }
+
+    ui->loginButton->setEnabled(enabled);
+    ui->registerButton->setEnabled(enabled);
+    ui->backToLoginButton->setEnabled(enabled);
+    ui->usernameLineEdit->setEnabled(enabled);
+    ui->passwordLineEdit->setEnabled(enabled);
+    if (ui->emailLineEdit->isVisible()) {
+        ui->emailLineEdit->setEnabled(enabled);
+    }
+}
+
+void LoginWindow::closeEvent(QCloseEvent* event)
+{
+    disconnect(&networkManager, nullptr, this, nullptr);
+    QWidget::closeEvent(event);
 }
 
 void LoginWindow::setupConnectionHandling()
@@ -190,26 +238,4 @@ void LoginWindow::setupConnectionHandling()
     connect(&networkManager, &NetworkManager::disconnected, this, [this]() {
         updateButtonStates(false);
     });
-}
-
-void LoginWindow::updateButtonStates(bool enabled)
-{
-    if (isConnecting) {
-        enabled = false;
-    }
-
-    ui->loginButton->setEnabled(enabled);
-    ui->registerButton->setEnabled(enabled);
-    ui->usernameLineEdit->setEnabled(enabled);
-    ui->passwordLineEdit->setEnabled(enabled);
-    if (ui->emailLineEdit->isVisible()) {
-        ui->emailLineEdit->setEnabled(enabled);
-    }
-}
-
-void LoginWindow::closeEvent(QCloseEvent* event)
-{
-    // Odłącz wszystkie połączenia z NetworkManager
-    disconnect(&networkManager, nullptr, this, nullptr);
-    QWidget::closeEvent(event);
 }

@@ -92,22 +92,25 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="loginButton">
-       <property name="text">
-        <string>Login</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="registerButton">
-       <property name="text">
-        <string>Register</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QPushButton" name="loginButton">
+     <property name="text">
+      <string>Login</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="registerButton">
+     <property name="text">
+      <string>Create Account</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="backToLoginButton">
+     <property name="text">
+      <string>Back to Login</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="statusLabel">

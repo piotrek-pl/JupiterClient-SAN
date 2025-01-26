@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFormLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -35,9 +34,9 @@ public:
     QLineEdit *passwordLineEdit;
     QLabel *emailLabel;
     QLineEdit *emailLineEdit;
-    QHBoxLayout *horizontalLayout;
     QPushButton *loginButton;
     QPushButton *registerButton;
+    QPushButton *backToLoginButton;
     QLabel *statusLabel;
 
     void setupUi(QWidget *LoginWindow)
@@ -99,20 +98,20 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
         loginButton = new QPushButton(LoginWindow);
         loginButton->setObjectName("loginButton");
 
-        horizontalLayout->addWidget(loginButton);
+        verticalLayout->addWidget(loginButton);
 
         registerButton = new QPushButton(LoginWindow);
         registerButton->setObjectName("registerButton");
 
-        horizontalLayout->addWidget(registerButton);
+        verticalLayout->addWidget(registerButton);
 
+        backToLoginButton = new QPushButton(LoginWindow);
+        backToLoginButton->setObjectName("backToLoginButton");
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout->addWidget(backToLoginButton);
 
         statusLabel = new QLabel(LoginWindow);
         statusLabel->setObjectName("statusLabel");
@@ -135,7 +134,8 @@ public:
         passwordLabel->setText(QCoreApplication::translate("LoginWindow", "Password:", nullptr));
         emailLabel->setText(QCoreApplication::translate("LoginWindow", "Email:", nullptr));
         loginButton->setText(QCoreApplication::translate("LoginWindow", "Login", nullptr));
-        registerButton->setText(QCoreApplication::translate("LoginWindow", "Register", nullptr));
+        registerButton->setText(QCoreApplication::translate("LoginWindow", "Create Account", nullptr));
+        backToLoginButton->setText(QCoreApplication::translate("LoginWindow", "Back to Login", nullptr));
         statusLabel->setText(QCoreApplication::translate("LoginWindow", "Ready", nullptr));
     } // retranslateUi
 

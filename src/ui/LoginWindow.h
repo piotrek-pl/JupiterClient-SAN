@@ -2,7 +2,7 @@
  * @file LoginWindow.h
  * @brief Login window class definition
  * @author piotrek-pl
- * @date 2025-01-21 12:58:36
+ * @date 2025-01-26 08:53:26
  */
 
 #pragma once
@@ -28,6 +28,7 @@ signals:
 private slots:
     void onLoginButtonClicked();
     void onRegisterButtonClicked();
+    void onBackToLoginClicked();
     void onConnectionStatusChanged(const QString& status);
     void onNetworkError(const QString& error);
     void onLoginSuccess();
@@ -43,6 +44,8 @@ private:
     void validateAndSubmitLogin();
     void updateButtonStates(bool enabled);
     void setupConnectionHandling();
+    void switchToLoginMode();
+    void switchToRegisterMode();
 
     Ui::LoginWindow *ui;
     NetworkManager& networkManager;
