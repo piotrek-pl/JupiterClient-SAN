@@ -2,12 +2,14 @@
  * @file LoginWindow.cpp
  * @brief Login window class implementation
  * @author piotrek-pl
- * @date 2025-01-26 08:53:26
+ * @date 2025-01-26 09:17:06
  */
 
 #include "LoginWindow.h"
 #include "ui_LoginWindow.h"
 #include <QMessageBox>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QWidget(parent)
@@ -29,6 +31,62 @@ LoginWindow::~LoginWindow()
     LOG_INFO("LoginWindow destroyed");
 }
 
+void LoginWindow::validateLoginFields()
+{
+    if (ui->emailLineEdit->isVisible()) {
+        return; // jesteśmy w trybie rejestracji
+    }
+
+    QString username = ui->usernameLineEdit->text().trimmed();
+    QString password = ui->passwordLineEdit->text();
+
+    bool isValid = !username.isEmpty() && !password.isEmpty();
+    ui->loginButton->setEnabled(isValid);
+
+    if (!isValid) {
+        updateStatus("Please enter both username and password");
+    } else {
+        updateStatus("Ready to login");
+    }
+}
+
+void LoginWindow::validateRegistrationFields()
+{
+    if (!ui->emailLineEdit->isVisible()) {
+        return; // jesteśmy w trybie logowania
+    }
+
+    QString username = ui->usernameLineEdit->text().trimmed();
+    QString password = ui->passwordLineEdit->text();
+    QString email = ui->emailLineEdit->text().trimmed();
+
+    bool isValid = true;
+    QString message;
+
+    // Sprawdź czy wszystkie pola są wypełnione
+    if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
+        isValid = false;
+        message = "Please fill all fields";
+    }
+
+    // Sprawdź format emaila
+    if (!email.isEmpty()) {
+        QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
+        QRegularExpressionMatch match = emailRegex.match(email);
+        if (!match.hasMatch()) {
+            isValid = false;
+            message = "Invalid email format";
+        }
+    }
+
+    ui->registerButton->setEnabled(isValid);
+    if (!message.isEmpty()) {
+        updateStatus(message);
+    } else if (isValid) {
+        updateStatus("Ready to register");
+    }
+}
+
 void LoginWindow::initializeUI()
 {
     connect(ui->loginButton, &QPushButton::clicked, this, &LoginWindow::onLoginButtonClicked);
@@ -48,6 +106,63 @@ void LoginWindow::initializeUI()
     // Dodaj walidację
     ui->usernameLineEdit->setMaxLength(32);
     ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
+
+    // Dodaj walidację email podczas wpisywania
+    connect(ui->emailLineEdit, &QLineEdit::textChanged, [this](const QString& text) {
+        if (ui->emailLineEdit->isVisible()) {
+            QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
+            QRegularExpressionMatch match = emailRegex.match(text.trimmed());
+
+            QPalette palette = ui->emailLineEdit->palette();
+            if (!text.isEmpty() && !match.hasMatch()) {
+                palette.setColor(QPalette::Text, Qt::red);
+            } else {
+                palette.setColor(QPalette::Text, Qt::black);
+            }
+            ui->emailLineEdit->setPalette(palette);
+            validateRegistrationFields();
+        }
+    });
+
+    // Dodaj walidację dla wszystkich pól
+    connect(ui->usernameLineEdit, &QLineEdit::textChanged, [this]() {
+        if (ui->emailLineEdit->isVisible()) {
+            validateRegistrationFields();
+        } else {
+            validateLoginFields();
+        }
+    });
+
+    connect(ui->passwordLineEdit, &QLineEdit::textChanged, [this]() {
+        if (ui->emailLineEdit->isVisible()) {
+            validateRegistrationFields();
+        } else {
+            validateLoginFields();
+        }
+    });
+
+    // Enter key handling
+    connect(ui->usernameLineEdit, &QLineEdit::returnPressed, [this]() {
+        if (ui->emailLineEdit->isVisible()) {
+            ui->passwordLineEdit->setFocus();
+        } else if (ui->loginButton->isEnabled()) {
+            validateAndSubmitLogin();
+        }
+    });
+
+    connect(ui->passwordLineEdit, &QLineEdit::returnPressed, [this]() {
+        if (ui->emailLineEdit->isVisible()) {
+            ui->emailLineEdit->setFocus();
+        } else if (ui->loginButton->isEnabled()) {
+            validateAndSubmitLogin();
+        }
+    });
+
+    connect(ui->emailLineEdit, &QLineEdit::returnPressed, [this]() {
+        if (ui->emailLineEdit->isVisible() && ui->registerButton->isEnabled()) {
+            validateAndSubmitRegistration();
+        }
+    });
 
     // Początkowo wyłącz przyciski
     isConnecting = true;
@@ -81,9 +196,14 @@ void LoginWindow::switchToLoginMode()
     ui->backToLoginButton->setVisible(false);
     ui->loginButton->setVisible(true);
     ui->registerButton->setText("Create Account");
+    ui->registerButton->setEnabled(true);
 
-    // Wyczyść pola
+    // Wyczyść wszystkie pola
+    ui->usernameLineEdit->clear();
+    ui->passwordLineEdit->clear();
     ui->emailLineEdit->clear();
+
+    validateLoginFields();  // Sprawdź stan pól logowania
     updateStatus("Enter your credentials to login");
 }
 
@@ -95,7 +215,15 @@ void LoginWindow::switchToRegisterMode()
     ui->backToLoginButton->setVisible(true);
     ui->loginButton->setVisible(false);
     ui->registerButton->setText("Register");
+    ui->registerButton->setEnabled(false);
+
+    // Wyczyść wszystkie pola
+    ui->usernameLineEdit->clear();
+    ui->passwordLineEdit->clear();
+    ui->emailLineEdit->clear();
+
     updateStatus("Fill all fields to create account");
+    validateRegistrationFields();
 }
 
 void LoginWindow::onBackToLoginClicked()
@@ -142,11 +270,23 @@ void LoginWindow::validateAndSubmitRegistration()
     QString password = ui->passwordLineEdit->text();
     QString email = ui->emailLineEdit->text().trimmed();
 
+    // Sprawdzenie czy pola nie są puste
     if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
         updateStatus("Please fill all fields");
         return;
     }
 
+    // Walidacja formatu email
+    QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
+    QRegularExpressionMatch match = emailRegex.match(email);
+
+    if (!match.hasMatch()) {
+        updateStatus("Invalid email format");
+        ui->emailLineEdit->setFocus();
+        return;
+    }
+
+    // Sprawdzenie połączenia z serwerem
     if (!networkManager.isConnected()) {
         updateStatus("Not connected to server - trying to reconnect...");
         networkManager.connectToServer();
@@ -216,6 +356,9 @@ void LoginWindow::updateButtonStates(bool enabled)
     ui->passwordLineEdit->setEnabled(enabled);
     if (ui->emailLineEdit->isVisible()) {
         ui->emailLineEdit->setEnabled(enabled);
+        validateRegistrationFields();
+    } else {
+        validateLoginFields();
     }
 }
 

@@ -46,6 +46,8 @@ private:
     void setupConnectionHandling();
     void switchToLoginMode();
     void switchToRegisterMode();
+    void validateRegistrationFields();
+    void validateLoginFields();
 
     Ui::LoginWindow *ui;
     NetworkManager& networkManager;
