@@ -7,7 +7,6 @@
 *****************************************************************************/
 
 #include "../../../../src/ui/SearchDialog.h"
-#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 #include <QtCore/QSet>
 

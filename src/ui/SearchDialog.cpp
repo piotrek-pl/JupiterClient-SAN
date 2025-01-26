@@ -2,12 +2,12 @@
  * @file SearchDialog.cpp
  * @brief Search dialog class implementation
  * @author piotrek-pl
- * @date 2025-01-24 22:53:39
+ * @date 2025-01-26 23:19:08
  */
 
 #include "SearchDialog.h"
+#include "ui_SearchDialog.h"
 #include "MainWindow.h"
-#include <QVBoxLayout>
 #include <QMenu>
 #include <QMessageBox>
 #include "network/Protocol.h"
@@ -15,14 +15,11 @@
 
 SearchDialog::SearchDialog(NetworkManager& networkManager, MainWindow* parent)
     : QDialog(parent)
+    , ui(new Ui::SearchDialog)
     , networkManager(networkManager)
     , mainWindow(parent)
 {
-    setWindowTitle("Search Users");
-    setMinimumWidth(300);
-    setMinimumHeight(400);
-
-    setupUI();
+    ui->setupUi(this);
 
     searchTimer = new QTimer(this);
     searchTimer->setSingleShot(true);
@@ -32,27 +29,18 @@ SearchDialog::SearchDialog(NetworkManager& networkManager, MainWindow* parent)
     connect(&networkManager, &NetworkManager::messageReceived,
             this, &SearchDialog::handleServerResponse);
 
+    ui->resultsList->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(ui->searchEdit, &QLineEdit::textChanged,
+            this, &SearchDialog::onSearchTextChanged);
+    connect(ui->resultsList, &QWidget::customContextMenuRequested,
+            this, &SearchDialog::showContextMenu);
+
     LOG_INFO("Search dialog initialized");
 }
 
-void SearchDialog::setupUI()
+SearchDialog::~SearchDialog()
 {
-    QVBoxLayout* layout = new QVBoxLayout(this);
-
-    searchEdit = new QLineEdit(this);
-    searchEdit->setPlaceholderText("Enter username to search...");
-    layout->addWidget(searchEdit);
-
-    resultsList = new QListWidget(this);
-    resultsList->setContextMenuPolicy(Qt::CustomContextMenu);
-    layout->addWidget(resultsList);
-
-    connect(searchEdit, &QLineEdit::textChanged,
-            this, &SearchDialog::onSearchTextChanged);
-    connect(resultsList, &QWidget::customContextMenuRequested,
-            this, &SearchDialog::showContextMenu);
-
-    LOG_DEBUG("Search dialog UI setup completed");
+    delete ui;
 }
 
 void SearchDialog::updatePendingInvitations(const QSet<int>& userIds)
@@ -78,7 +66,7 @@ void SearchDialog::onInvitationStatusChanged(int userId)
 void SearchDialog::onSearchResponse(const QJsonObject& response)
 {
     lastSearchResponse = response;
-    resultsList->clear();
+    ui->resultsList->clear();
     QJsonArray users = response["users"].toArray();
 
     for (const QJsonValue& userVal : users) {
@@ -100,7 +88,7 @@ void SearchDialog::onSearchResponse(const QJsonObject& response)
             LOG_DEBUG(QString("User %1 (ID: %2) has pending invitation").arg(username).arg(userId));
         }
 
-        resultsList->addItem(item);
+        ui->resultsList->addItem(item);
     }
 
     LOG_INFO(QString("Received search results: %1 users found").arg(users.size()));
@@ -108,7 +96,7 @@ void SearchDialog::onSearchResponse(const QJsonObject& response)
 
 void SearchDialog::showContextMenu(const QPoint& pos)
 {
-    QListWidgetItem* item = resultsList->itemAt(pos);
+    QListWidgetItem* item = ui->resultsList->itemAt(pos);
     if (!item) return;
 
     int userId = item->data(Qt::UserRole).toInt();
@@ -142,7 +130,7 @@ void SearchDialog::showContextMenu(const QPoint& pos)
         });
     }
 
-    contextMenu.exec(resultsList->mapToGlobal(pos));
+    contextMenu.exec(ui->resultsList->mapToGlobal(pos));
 }
 
 void SearchDialog::handleServerResponse(const QJsonObject& response)
@@ -190,13 +178,13 @@ void SearchDialog::onSearchTextChanged(const QString& text)
         searchTimer->start();
         LOG_DEBUG(QString("Search timer started for query: %1").arg(text));
     } else {
-        resultsList->clear();
+        ui->resultsList->clear();
     }
 }
 
 void SearchDialog::performSearch()
 {
-    QString query = searchEdit->text();
+    QString query = ui->searchEdit->text();
     if (query.length() >= 3) {
         QJsonObject searchRequest = Protocol::MessageStructure::createSearchUsersRequest(query);
         networkManager.sendMessage(searchRequest);

@@ -51,6 +51,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/network/NetworkManager.h
         src/network/NetworkManager.cpp
         src/ui/InvitationsDialog.h src/ui/InvitationsDialog.cpp
+        src/ui/SearchDialog.ui
     )
 else()
     if(ANDROID)

@@ -9,11 +9,13 @@
 #define SEARCHDIALOG_H
 
 #include <QDialog>
-#include <QLineEdit>
-#include <QListWidget>
 #include <QTimer>
 #include <QSet>
 #include "network/NetworkManager.h"
+
+namespace Ui {
+class SearchDialog;
+}
 
 class MainWindow;
 
@@ -23,6 +25,7 @@ class SearchDialog : public QDialog
 
 public:
     explicit SearchDialog(NetworkManager& networkManager, MainWindow* parent = nullptr);
+    ~SearchDialog();
 
 signals:
     void friendRequestSent();
@@ -39,14 +42,12 @@ private slots:
     void handleServerResponse(const QJsonObject& response);
 
 private:
-    void setupUI();
     void sendFriendRequest(int userId, const QString& username);
 
 private:
+    Ui::SearchDialog *ui;
     NetworkManager& networkManager;
     MainWindow* mainWindow;
-    QLineEdit* searchEdit;
-    QListWidget* resultsList;
     QTimer* searchTimer;
     QSet<int> pendingInvitations;  // Przechowuje ID użytkowników z aktywnymi zaproszeniami
     QJsonObject lastSearchResponse; // Przechowuje ostatnią odpowiedź wyszukiwania
