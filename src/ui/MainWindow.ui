@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * @file MainWindow.ui
+ * @brief Main window user interface definition
+ * @author piotrek-pl
+ * @date 2025-01-26 20:28:11
+-->
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
@@ -19,13 +25,170 @@
   <property name="windowTitle">
    <string>Jupiter Client</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #f5f6fa;
+}
+
+QMenuBar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 4px;
+    font-weight: bold;
+}
+QMenuBar::item {
+    padding: 4px 10px;
+    margin: 2px;
+    border-radius: 4px;
+}
+QMenuBar::item:selected {
+    background-color: #34495e;
+}
+QMenuBar::item:pressed {
+    background-color: #2980b9;
+}
+
+QMenu {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+QMenu::item {
+    padding: 8px 25px;
+    border-radius: 4px;
+}
+QMenu::item:selected {
+    background-color: #2980b9;
+}
+
+QStatusBar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 5px;
+}
+
+QComboBox {
+    background-color: white;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    padding: 5px 5px 5px 5px;
+    min-height: 25px;
+    max-width: 82px;
+    min-width: 82px;
+    font-family: 'Segoe UI';
+    font-size: 13px;
+    font-weight: 600;
+}
+QComboBox::drop-down {
+    border: none;
+    width: 15px;  /* Zmniejszone z 20px */
+    padding-right: 5px;
+}
+QComboBox::down-arrow {
+    width: 12px;  /* Zmniejszone z 15px */
+    height: 12px; /* Zmniejszone z 15px */
+}
+QComboBox:hover {
+    border-color: #2980b9;
+}
+QComboBox QAbstractItemView {
+    background-color: white;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    selection-background-color: #e3f2fd;
+    selection-color: #2c3e50;
+    font-family: 'Segoe UI';
+    font-size: 13px;
+    font-weight: 600;
+}
+
+QListWidget {
+    background-color: white;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 5px;
+    font-family: 'Segoe UI';
+    font-size: 13px;
+    font-weight: 600;
+    outline: 0;  /* Dodane */
+}
+QListWidget::item {
+    padding: 8px 5px;
+    margin: 0px;
+    border-radius: 0px;
+    font-family: 'Segoe UI';
+    font-size: 13px;
+    font-weight: 600;
+}
+QListWidget::item:hover {
+    background-color: #f0f2f5;
+}
+QListWidget::item:selected {
+    background-color: #e3f2fd;
+    color: #2c3e50;
+}
+QListWidget::item:focus {  /* Dodane */
+    outline: none;
+    border: none;
+}
+
+QLabel {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px;
+    font-family: 'Segoe UI';
+}
+
+QScrollBar:vertical {
+    border: none;
+    background-color: #f0f2f5;
+    width: 10px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical {
+    background-color: #bdc3c7;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background-color: #95a5a6;
+}
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>12</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
     <item>
      <widget class="QWidget" name="leftPanel" native="true">
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>15</number>
+       </property>
        <item>
         <layout class="QHBoxLayout" name="statusLayout">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item>
           <widget class="QLabel" name="statusLabel">
            <property name="text">
@@ -35,6 +198,19 @@
          </item>
          <item>
           <widget class="QComboBox" name="statusComboBox"/>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </item>
@@ -48,13 +224,6 @@
        <item>
         <widget class="QListWidget" name="friendsList"/>
        </item>
-       <item>
-        <widget class="QPushButton" name="refreshButton">
-         <property name="text">
-          <string>Refresh List</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -66,7 +235,7 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

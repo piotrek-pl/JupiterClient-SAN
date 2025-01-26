@@ -19,7 +19,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -40,9 +40,9 @@ public:
     QHBoxLayout *statusLayout;
     QLabel *statusLabel;
     QComboBox *statusComboBox;
+    QSpacerItem *horizontalSpacer;
     QLabel *friendsLabel;
     QListWidget *friendsList;
-    QPushButton *refreshButton;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuHelp;
@@ -54,6 +54,143 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(400, 600);
         MainWindow->setMinimumSize(QSize(400, 600));
+        MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
+"    background-color: #f5f6fa;\n"
+"}\n"
+"\n"
+"QMenuBar {\n"
+"    background-color: #2c3e50;\n"
+"    color: white;\n"
+"    padding: 4px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"QMenuBar::item {\n"
+"    padding: 4px 10px;\n"
+"    margin: 2px;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QMenuBar::item:selected {\n"
+"    background-color: #34495e;\n"
+"}\n"
+"QMenuBar::item:pressed {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"QMenu {\n"
+"    background-color: #2c3e50;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    padding: 5px;\n"
+"}\n"
+"QMenu::item {\n"
+"    padding: 8px 25px;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QMenu::item:selected {\n"
+"    background-color: #2980b9;\n"
+"}\n"
+"\n"
+"QStatusBar {\n"
+"    background-color: #2c3e50;\n"
+"    color: white;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QComboBox {\n"
+"    background-color: white;\n"
+"    border: 2px solid #3498db;\n"
+"    border-radius: 6px;\n"
+"    padding: 5px 5px 5px 5px;\n"
+"    min-height: 25px;\n"
+"    max-width: 82px;\n"
+"    min-wi"
+                        "dth: 82px;\n"
+"    font-family: 'Segoe UI';\n"
+"    font-size: 13px;\n"
+"    font-weight: 600;\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 15px;  /* Zmniejszone z 20px */\n"
+"    padding-right: 5px;\n"
+"}\n"
+"QComboBox::down-arrow {\n"
+"    width: 12px;  /* Zmniejszone z 15px */\n"
+"    height: 12px; /* Zmniejszone z 15px */\n"
+"}\n"
+"QComboBox:hover {\n"
+"    border-color: #2980b9;\n"
+"}\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: white;\n"
+"    border: 2px solid #3498db;\n"
+"    border-radius: 6px;\n"
+"    selection-background-color: #e3f2fd;\n"
+"    selection-color: #2c3e50;\n"
+"    font-family: 'Segoe UI';\n"
+"    font-size: 13px;\n"
+"    font-weight: 600;\n"
+"}\n"
+"\n"
+"QListWidget {\n"
+"    background-color: white;\n"
+"    border: 2px solid #e1e8ed;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    font-family: 'Segoe UI';\n"
+"    font-size: 13px;\n"
+"    font-weight: 600;\n"
+"    outline: 0;  /* Dodane */\n"
+"}\n"
+"QListWidget::item {\n"
+"    padding: 8p"
+                        "x 5px;\n"
+"    margin: 0px;\n"
+"    border-radius: 0px;\n"
+"    font-family: 'Segoe UI';\n"
+"    font-size: 13px;\n"
+"    font-weight: 600;\n"
+"}\n"
+"QListWidget::item:hover {\n"
+"    background-color: #f0f2f5;\n"
+"}\n"
+"QListWidget::item:selected {\n"
+"    background-color: #e3f2fd;\n"
+"    color: #2c3e50;\n"
+"}\n"
+"QListWidget::item:focus {  /* Dodane */\n"
+"    outline: none;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"    color: #2c3e50;\n"
+"    font-weight: bold;\n"
+"    font-size: 14px;\n"
+"    padding: 5px;\n"
+"    font-family: 'Segoe UI';\n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background-color: #f0f2f5;\n"
+"    width: 10px;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #bdc3c7;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"QScrollBar::handle:vertical:hover {\n"
+"    background-color: #95a5a6;\n"
+"}\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+"    background: none;\n"
+"}\n"
+"QScrollBar::add-page:vertica"
+                        "l, QScrollBar::sub-page:vertical {\n"
+"    background: none;\n"
+"}"));
         actionSearch = new QAction(MainWindow);
         actionSearch->setObjectName("actionSearch");
         actionSettings = new QAction(MainWindow);
@@ -65,12 +202,16 @@ public:
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
+        verticalLayout->setSpacing(12);
         verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(20, 20, 20, 20);
         leftPanel = new QWidget(centralwidget);
         leftPanel->setObjectName("leftPanel");
         verticalLayout_2 = new QVBoxLayout(leftPanel);
+        verticalLayout_2->setSpacing(15);
         verticalLayout_2->setObjectName("verticalLayout_2");
         statusLayout = new QHBoxLayout();
+        statusLayout->setSpacing(10);
         statusLayout->setObjectName("statusLayout");
         statusLabel = new QLabel(leftPanel);
         statusLabel->setObjectName("statusLabel");
@@ -81,6 +222,10 @@ public:
         statusComboBox->setObjectName("statusComboBox");
 
         statusLayout->addWidget(statusComboBox);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        statusLayout->addItem(horizontalSpacer);
 
 
         verticalLayout_2->addLayout(statusLayout);
@@ -95,18 +240,13 @@ public:
 
         verticalLayout_2->addWidget(friendsList);
 
-        refreshButton = new QPushButton(leftPanel);
-        refreshButton->setObjectName("refreshButton");
-
-        verticalLayout_2->addWidget(refreshButton);
-
 
         verticalLayout->addWidget(leftPanel);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 400, 21));
+        menubar->setGeometry(QRect(0, 0, 400, 25));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuHelp = new QMenu(menubar);
@@ -138,7 +278,6 @@ public:
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
         statusLabel->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         friendsLabel->setText(QCoreApplication::translate("MainWindow", "Friends:", nullptr));
-        refreshButton->setText(QCoreApplication::translate("MainWindow", "Refresh List", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi

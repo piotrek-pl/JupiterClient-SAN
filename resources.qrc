@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="">
+    <qresource prefix="/">
         <file>resources/icons/status_online.svg</file>
         <file>resources/icons/status_online_msg.svg</file>
         <file>resources/icons/status_away.svg</file>
@@ -8,5 +8,6 @@
         <file>resources/icons/status_busy_msg.svg</file>
         <file>resources/icons/status_offline.svg</file>
         <file>resources/icons/status_offline_msg.svg</file>
+        <file>resources/logo/jupiter_logo.png</file>
     </qresource>
 </RCC>

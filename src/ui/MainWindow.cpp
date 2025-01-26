@@ -67,13 +67,13 @@ bool MainWindow::isFriend(int userId) const
 
 void MainWindow::initializeUI()
 {
-    // Przyciski
-    connect(ui->refreshButton, &QPushButton::clicked, this, &MainWindow::onRefreshFriendsListClicked);
+    // Status combo box z ikonami
+    ui->statusComboBox->clear();
+    ui->statusComboBox->addItem(QIcon(":/resources/icons/status_online.svg"), "Online", Protocol::UserStatus::ONLINE);
+    ui->statusComboBox->addItem(QIcon(":/resources/icons/status_away.svg"), "Away", Protocol::UserStatus::AWAY);
+    ui->statusComboBox->addItem(QIcon(":/resources/icons/status_busy.svg"), "Busy", Protocol::UserStatus::BUSY);
 
-    // Status combo box
-    ui->statusComboBox->addItem("Online", Protocol::UserStatus::ONLINE);
-    ui->statusComboBox->addItem("Away", Protocol::UserStatus::AWAY);
-    ui->statusComboBox->addItem("Busy", Protocol::UserStatus::BUSY);
+    // Połączenie sygnału zmiany statusu
     connect(ui->statusComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::onStatusChanged);
 
@@ -87,14 +87,27 @@ void MainWindow::initializeUI()
     connect(ui->friendsList, &QListWidget::itemDoubleClicked,
             this, &MainWindow::openChatWindow);
 
+    // Inicjalizacja statusu połączenia
     updateConnectionStatus("Initializing...");
 
+    // Konfiguracja listy znajomych
     ui->friendsList->setIconSize(QSize(24, 24));
     ui->friendsList->setSpacing(0);
 
+    // Konfiguracja menu kontekstowego
     ui->friendsList->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->friendsList, &QWidget::customContextMenuRequested,
             this, &MainWindow::showFriendsContextMenu);
+
+    // Ustawienie stylu dla ComboBox
+    ui->statusComboBox->setIconSize(QSize(16, 16));
+
+    // Ustaw właściwość "status" dla każdego elementu w ComboBox
+    for (int i = 0; i < ui->statusComboBox->count(); i++) {
+        ui->statusComboBox->setItemData(i, ui->statusComboBox->itemText(i).toLower(), Qt::UserRole + 1);
+    }
+
+    LOG_INFO("UI initialized successfully");
 }
 
 void MainWindow::setupNetworkConnections()
