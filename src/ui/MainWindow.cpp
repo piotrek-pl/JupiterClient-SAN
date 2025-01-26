@@ -89,8 +89,8 @@ void MainWindow::initializeUI()
 
     updateConnectionStatus("Initializing...");
 
-    ui->friendsList->setIconSize(QSize(16, 16));
-    ui->friendsList->setSpacing(2);
+    ui->friendsList->setIconSize(QSize(24, 24));
+    ui->friendsList->setSpacing(0);
 
     ui->friendsList->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->friendsList, &QWidget::customContextMenuRequested,
