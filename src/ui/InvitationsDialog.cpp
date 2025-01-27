@@ -68,8 +68,8 @@ void InvitationsDialog::onMessageReceived(const QJsonObject& message)
             }
             refreshInvitations();
         }
-        QString resultMessage = message["message"].toString();
-        QMessageBox::information(this, "Accept Request", resultMessage);
+        //QString resultMessage = message["message"].toString();
+        //QMessageBox::information(this, "Accept Request", resultMessage);
     }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_REJECT_RESPONSE) {
         if (message["status"].toString() == "success") {
