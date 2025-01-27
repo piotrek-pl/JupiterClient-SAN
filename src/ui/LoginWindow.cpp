@@ -2,7 +2,7 @@
  * @file LoginWindow.cpp
  * @brief Login window class implementation
  * @author piotrek-pl
- * @date 2025-01-26 09:17:06
+ * @date 2025-01-27 08:55:55
  */
 
 #include "LoginWindow.h"
@@ -15,14 +15,13 @@ LoginWindow::LoginWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::LoginWindow)
     , networkManager(NetworkManager::getInstance())
+    , isConnecting(false)
     , isRegistering(false)
 {
     ui->setupUi(this);
     setWindowTitle("Jupiter Client - Login");
-
     initializeUI();
     setupNetworkConnections();
-
     LOG_INFO("LoginWindow initialized");
 }
 
@@ -32,119 +31,56 @@ LoginWindow::~LoginWindow()
     LOG_INFO("LoginWindow destroyed");
 }
 
-void LoginWindow::validateLoginFields()
+// UI Setup Methods
+void LoginWindow::setupPlaceholders()
 {
-    if (ui->emailLineEdit->isVisible()) {
-        return; // jesteśmy w trybie rejestracji
-    }
-
-    QString username = ui->usernameLineEdit->text().trimmed();
-    QString password = ui->passwordLineEdit->text();
-
-    bool isValid = !username.isEmpty() && !password.isEmpty();
-    ui->loginButton->setEnabled(isValid);
-
-    if (!isValid) {
-        updateStatus("Please enter both username and password");
-    } else {
-        updateStatus("Ready to login");
-    }
+    ui->usernameLineEdit->setPlaceholderText("Enter username");
+    ui->passwordLineEdit->setPlaceholderText("Enter password");
+    ui->emailLineEdit->setPlaceholderText("Enter email for registration");
 }
 
-void LoginWindow::validateRegistrationFields()
+void LoginWindow::setupVisibility()
 {
-    if (!ui->emailLineEdit->isVisible()) {
-        return; // jesteśmy w trybie logowania
-    }
-
-    QString username = ui->usernameLineEdit->text().trimmed();
-    QString password = ui->passwordLineEdit->text();
-    QString email = ui->emailLineEdit->text().trimmed();
-
-    bool isValid = true;
-    QString message;
-
-    // Sprawdź czy wszystkie pola są wypełnione
-    if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
-        isValid = false;
-        message = "Please fill all fields";
-    }
-
-    // Sprawdź format emaila
-    if (!email.isEmpty()) {
-        QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
-        QRegularExpressionMatch match = emailRegex.match(email);
-        if (!match.hasMatch()) {
-            isValid = false;
-            message = "Invalid email format";
-        }
-    }
-
-    ui->registerButton->setEnabled(isValid);
-
-    // Dodajemy warunek sprawdzający czy nie jesteśmy w trakcie błędu rejestracji
-    if (!message.isEmpty() && !isRegistering) {
-        updateStatus(message);
-    } else if (isValid && !isRegistering) {
-        updateStatus("Ready to register");
-    }
+    ui->emailLineEdit->setVisible(false);
+    ui->emailLabel->setVisible(false);
+    ui->backToLoginButton->setVisible(false);
 }
 
-void LoginWindow::initializeUI()
+void LoginWindow::setupValidation()
+{
+    ui->usernameLineEdit->setMaxLength(32);
+    ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
+}
+
+void LoginWindow::setupConnections()
 {
     connect(ui->loginButton, &QPushButton::clicked, this, &LoginWindow::onLoginButtonClicked);
     connect(ui->registerButton, &QPushButton::clicked, this, &LoginWindow::onRegisterButtonClicked);
     connect(ui->backToLoginButton, &QPushButton::clicked, this, &LoginWindow::onBackToLoginClicked);
 
-    // Ustaw placeholdery
-    ui->usernameLineEdit->setPlaceholderText("Enter username");
-    ui->passwordLineEdit->setPlaceholderText("Enter password");
-    ui->emailLineEdit->setPlaceholderText("Enter email for registration");
-
-    // Ukryj elementy początkowe
-    ui->emailLineEdit->setVisible(false);
-    ui->emailLabel->setVisible(false);
-    ui->backToLoginButton->setVisible(false);
-
-    // Dodaj walidację
-    ui->usernameLineEdit->setMaxLength(32);
-    ui->passwordLineEdit->setEchoMode(QLineEdit::Password);
-
-    // Dodaj walidację email podczas wpisywania
     connect(ui->emailLineEdit, &QLineEdit::textChanged, [this](const QString& text) {
         if (ui->emailLineEdit->isVisible()) {
-            QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
-            QRegularExpressionMatch match = emailRegex.match(text.trimmed());
+            QString errorMessage;
+            bool isValid = validateEmail(text.trimmed(), errorMessage);
 
             QPalette palette = ui->emailLineEdit->palette();
-            if (!text.isEmpty() && !match.hasMatch()) {
-                palette.setColor(QPalette::Text, Qt::red);
-            } else {
-                palette.setColor(QPalette::Text, Qt::black);
-            }
+            palette.setColor(QPalette::Text, isValid ? Qt::black : Qt::red);
             ui->emailLineEdit->setPalette(palette);
             validateRegistrationFields();
         }
     });
 
-    // Dodaj walidację dla wszystkich pól
     connect(ui->usernameLineEdit, &QLineEdit::textChanged, [this]() {
-        if (ui->emailLineEdit->isVisible()) {
-            validateRegistrationFields();
-        } else {
-            validateLoginFields();
-        }
+        ui->emailLineEdit->isVisible() ? validateRegistrationFields() : validateLoginFields();
     });
 
     connect(ui->passwordLineEdit, &QLineEdit::textChanged, [this]() {
-        if (ui->emailLineEdit->isVisible()) {
-            validateRegistrationFields();
-        } else {
-            validateLoginFields();
-        }
+        ui->emailLineEdit->isVisible() ? validateRegistrationFields() : validateLoginFields();
     });
+}
 
-    // Enter key handling
+void LoginWindow::setupEnterKeyHandling()
+{
     connect(ui->usernameLineEdit, &QLineEdit::returnPressed, [this]() {
         if (ui->emailLineEdit->isVisible()) {
             ui->passwordLineEdit->setFocus();
@@ -166,29 +102,154 @@ void LoginWindow::initializeUI()
             validateAndSubmitRegistration();
         }
     });
+}
 
-    // Początkowo wyłącz przyciski
+void LoginWindow::initializeUI()
+{
+    setupPlaceholders();
+    setupVisibility();
+    setupValidation();
+    setupConnections();
+    setupEnterKeyHandling();
+
     isConnecting = true;
     updateButtonStates(false);
     updateStatus("Connecting to server...");
 }
 
-void LoginWindow::setupNetworkConnections()
+// Validation Methods
+bool LoginWindow::validateEmail(const QString& email, QString& errorMessage)
 {
-    disconnect(&networkManager, nullptr, this, nullptr);
+    if (email.isEmpty()) {
+        errorMessage = "Email is required";
+        return false;
+    }
 
-    connect(&networkManager, &NetworkManager::connected,
-            this, &LoginWindow::onNetworkConnected);
-    connect(&networkManager, &NetworkManager::disconnected,
-            this, &LoginWindow::onNetworkDisconnected);
-    connect(&networkManager, &NetworkManager::connectionStatusChanged,
-            this, &LoginWindow::onConnectionStatusChanged);
-    connect(&networkManager, &NetworkManager::error,
-            this, &LoginWindow::onNetworkError);
-    connect(&networkManager, &NetworkManager::loginSuccessful,
-            this, &LoginWindow::onLoginSuccess);
-    connect(&networkManager, &NetworkManager::registrationSuccessful,
-            this, &LoginWindow::onRegistrationSuccess);
+    QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
+    QRegularExpressionMatch match = emailRegex.match(email);
+
+    if (!match.hasMatch()) {
+        errorMessage = "Invalid email format";
+        return false;
+    }
+
+    return true;
+}
+
+bool LoginWindow::areFieldsEmpty(const QString& username, const QString& password, const QString& email)
+{
+    if (username.isEmpty() || password.isEmpty()) return true;
+    if (!email.isNull() && email.isEmpty()) return true;
+    return false;
+}
+
+void LoginWindow::validateLoginFields()
+{
+    if (ui->emailLineEdit->isVisible()) return;
+
+    QString username = ui->usernameLineEdit->text().trimmed();
+    QString password = ui->passwordLineEdit->text();
+
+    bool isValid = !areFieldsEmpty(username, password);
+    ui->loginButton->setEnabled(isValid);
+
+    updateStatus(isValid ? "Ready to login" : "Please enter both username and password");
+}
+
+void LoginWindow::validateRegistrationFields()
+{
+    if (!ui->emailLineEdit->isVisible()) return;
+
+    QString username = ui->usernameLineEdit->text().trimmed();
+    QString password = ui->passwordLineEdit->text();
+    QString email = ui->emailLineEdit->text().trimmed();
+
+    bool isValid = true;
+    QString message;
+
+    if (areFieldsEmpty(username, password, email)) {
+        isValid = false;
+        message = "Please fill all fields";
+    } else {
+        isValid = validateEmail(email, message);
+    }
+
+    ui->registerButton->setEnabled(isValid);
+
+    if (!message.isEmpty() && !isRegistering) {
+        updateStatus(message);
+    } else if (isValid && !isRegistering) {
+        updateStatus("Ready to register");
+    }
+}
+
+// Form Submission Methods
+void LoginWindow::handleLoginSubmission(const QString& username, const QString& password)
+{
+    if (!networkManager.isConnected()) {
+        updateStatus("Not connected to server - trying to reconnect...");
+        networkManager.connectToServer();
+        return;
+    }
+
+    networkManager.login(username, password);
+}
+
+void LoginWindow::handleRegistrationSubmission(const QString& username, const QString& password, const QString& email)
+{
+    if (!networkManager.isConnected()) {
+        updateStatus("Not connected to server - trying to reconnect...");
+        networkManager.connectToServer();
+        return;
+    }
+
+    isRegistering = true;
+    updateButtonStates(false);
+    updateStatus("Registering...");
+
+    networkManager.registerUser(username, password, email);
+}
+
+void LoginWindow::validateAndSubmitLogin()
+{
+    QString username = ui->usernameLineEdit->text().trimmed();
+    QString password = ui->passwordLineEdit->text();
+
+    if (areFieldsEmpty(username, password)) {
+        updateStatus("Please enter both username and password");
+        return;
+    }
+
+    handleLoginSubmission(username, password);
+}
+
+void LoginWindow::validateAndSubmitRegistration()
+{
+    QString username = ui->usernameLineEdit->text().trimmed();
+    QString password = ui->passwordLineEdit->text();
+    QString email = ui->emailLineEdit->text().trimmed();
+    QString errorMessage;
+
+    if (areFieldsEmpty(username, password, email)) {
+        updateStatus("Please fill all fields");
+        return;
+    }
+
+    if (!validateEmail(email, errorMessage)) {
+        updateStatus(errorMessage);
+        ui->emailLineEdit->setFocus();
+        return;
+    }
+
+    handleRegistrationSubmission(username, password, email);
+}
+
+// Mode Switching Methods
+void LoginWindow::clearAllFields()
+{
+    ui->usernameLineEdit->clear();
+    ui->passwordLineEdit->clear();
+    ui->emailLineEdit->clear();
 }
 
 void LoginWindow::switchToLoginMode()
@@ -201,12 +262,8 @@ void LoginWindow::switchToLoginMode()
     ui->registerButton->setText("Create Account");
     ui->registerButton->setEnabled(true);
 
-    // Wyczyść wszystkie pola
-    ui->usernameLineEdit->clear();
-    ui->passwordLineEdit->clear();
-    ui->emailLineEdit->clear();
-
-    validateLoginFields();  // Sprawdź stan pól logowania
+    clearAllFields();
+    validateLoginFields();
     updateStatus("Enter your credentials to login");
 }
 
@@ -219,19 +276,35 @@ void LoginWindow::switchToRegisterMode()
     ui->loginButton->setVisible(false);
     ui->registerButton->setText("Register");
 
-    isRegistering = false; // Reset flagi
-    isConnecting = false;  // Dodaj to
+    isRegistering = false;
+    isConnecting = false;
 
-    // Wyczyść wszystkie pola
-    ui->usernameLineEdit->clear();
-    ui->passwordLineEdit->clear();
-    ui->emailLineEdit->clear();
-
-    updateButtonStates(true);  // Dodaj to przed validateRegistrationFields
+    clearAllFields();
+    updateButtonStates(true);
     updateStatus("Fill all fields to create account");
     validateRegistrationFields();
 }
 
+// Network State Methods
+void LoginWindow::handleNetworkState(bool connected, const QString& message)
+{
+    updateButtonStates(connected);
+    updateStatus(message);
+}
+
+void LoginWindow::setupNetworkConnections()
+{
+    disconnect(&networkManager, nullptr, this, nullptr);
+
+    connect(&networkManager, &NetworkManager::connected, this, &LoginWindow::onNetworkConnected);
+    connect(&networkManager, &NetworkManager::disconnected, this, &LoginWindow::onNetworkDisconnected);
+    connect(&networkManager, &NetworkManager::connectionStatusChanged, this, &LoginWindow::onConnectionStatusChanged);
+    connect(&networkManager, &NetworkManager::error, this, &LoginWindow::onNetworkError);
+    connect(&networkManager, &NetworkManager::loginSuccessful, this, &LoginWindow::onLoginSuccess);
+    connect(&networkManager, &NetworkManager::registrationSuccessful, this, &LoginWindow::onRegistrationSuccess);
+}
+
+// Event Handlers
 void LoginWindow::onBackToLoginClicked()
 {
     switchToLoginMode();
@@ -240,25 +313,6 @@ void LoginWindow::onBackToLoginClicked()
 void LoginWindow::onLoginButtonClicked()
 {
     validateAndSubmitLogin();
-}
-
-void LoginWindow::validateAndSubmitLogin()
-{
-    QString username = ui->usernameLineEdit->text().trimmed();
-    QString password = ui->passwordLineEdit->text();
-
-    if (username.isEmpty() || password.isEmpty()) {
-        updateStatus("Please enter both username and password");
-        return;
-    }
-
-    if (!networkManager.isConnected()) {
-        updateStatus("Not connected to server - trying to reconnect...");
-        networkManager.connectToServer();
-        return;
-    }
-
-    networkManager.login(username, password);
 }
 
 void LoginWindow::onRegisterButtonClicked()
@@ -270,54 +324,15 @@ void LoginWindow::onRegisterButtonClicked()
     }
 }
 
-void LoginWindow::validateAndSubmitRegistration()
-{
-    QString username = ui->usernameLineEdit->text().trimmed();
-    QString password = ui->passwordLineEdit->text();
-    QString email = ui->emailLineEdit->text().trimmed();
-
-    // Sprawdzenie czy pola nie są puste
-    if (username.isEmpty() || password.isEmpty() || email.isEmpty()) {
-        updateStatus("Please fill all fields");
-        return;
-    }
-
-    // Walidacja formatu email
-    QRegularExpression emailRegex(R"([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})");
-    QRegularExpressionMatch match = emailRegex.match(email);
-
-    if (!match.hasMatch()) {
-        updateStatus("Invalid email format");
-        ui->emailLineEdit->setFocus();
-        return;
-    }
-
-    // Sprawdzenie połączenia z serwerem
-    if (!networkManager.isConnected()) {
-        updateStatus("Not connected to server - trying to reconnect...");
-        networkManager.connectToServer();
-        return;
-    }
-
-    // Wyłącz przycisk i ustaw flagę
-    isRegistering = true;
-    updateButtonStates(false);
-    updateStatus("Registering...");
-
-    networkManager.registerUser(username, password, email);
-}
-
 void LoginWindow::onNetworkConnected()
 {
     isConnecting = false;
-    updateButtonStates(true);
-    updateStatus("Connected to server");
+    handleNetworkState(true, "Connected to server");
 }
 
 void LoginWindow::onNetworkDisconnected()
 {
-    updateButtonStates(false);
-    updateStatus("Disconnected from server");
+    handleNetworkState(false, "Disconnected from server");
 }
 
 void LoginWindow::onConnectionStatusChanged(const QString& status)
@@ -334,8 +349,8 @@ void LoginWindow::onNetworkError(const QString& error)
     if (isRegistering) {
         isRegistering = false;
         updateButtonStates(true);
-        validateRegistrationFields(); // Przywróć walidację pól
-        updateStatus(error); // Pokaż błąd z serwera w statusLabel
+        validateRegistrationFields();
+        updateStatus(error);
         LOG_DEBUG("Status updated to: " + error);
     } else {
         updateStatus("Error: " + error);
@@ -354,15 +369,23 @@ void LoginWindow::onLoginSuccess()
 void LoginWindow::onRegistrationSuccess()
 {
     isRegistering = false;
-    isConnecting = false;  // Dodaj to
+    isConnecting = false;
     switchToLoginMode();
-    updateButtonStates(true);  // Dodaj to
+    updateButtonStates(true);
     updateStatus("Registration successful - please login");
 }
 
+// UI Update Methods
 void LoginWindow::updateStatus(const QString& status)
 {
     ui->statusLabel->setText(status);
+}
+
+void LoginWindow::updateFieldsEnabled(bool enabled)
+{
+    ui->usernameLineEdit->setEnabled(enabled);
+    ui->passwordLineEdit->setEnabled(enabled);
+    ui->emailLineEdit->setEnabled(enabled && ui->emailLineEdit->isVisible());
 }
 
 void LoginWindow::updateButtonStates(bool enabled)
@@ -373,24 +396,14 @@ void LoginWindow::updateButtonStates(bool enabled)
 
     ui->loginButton->setEnabled(enabled);
     ui->registerButton->setEnabled(enabled);
-    ui->backToLoginButton->setEnabled(true); // Zawsze aktywny, żeby można było wrócić
-    ui->usernameLineEdit->setEnabled(enabled);
-    ui->passwordLineEdit->setEnabled(enabled);
+    ui->backToLoginButton->setEnabled(true);
+    updateFieldsEnabled(enabled);
 
     if (ui->emailLineEdit->isVisible()) {
-        ui->emailLineEdit->setEnabled(enabled);
-        if (enabled) {
-            validateRegistrationFields();
-        }
+        if (enabled) validateRegistrationFields();
     } else {
         validateLoginFields();
     }
-}
-
-void LoginWindow::closeEvent(QCloseEvent* event)
-{
-    disconnect(&networkManager, nullptr, this, nullptr);
-    QWidget::closeEvent(event);
 }
 
 void LoginWindow::setupConnectionHandling()
@@ -406,4 +419,10 @@ void LoginWindow::setupConnectionHandling()
     connect(&networkManager, &NetworkManager::disconnected, this, [this]() {
         updateButtonStates(false);
     });
+}
+
+void LoginWindow::closeEvent(QCloseEvent* event)
+{
+    disconnect(&networkManager, nullptr, this, nullptr);
+    QWidget::closeEvent(event);
 }

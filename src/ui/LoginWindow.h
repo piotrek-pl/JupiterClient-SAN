@@ -2,7 +2,7 @@
  * @file LoginWindow.h
  * @brief Login window class definition
  * @author piotrek-pl
- * @date 2025-01-26 08:53:26
+ * @date 2025-01-27 08:55:55
  */
 
 #pragma once
@@ -37,18 +37,42 @@ private slots:
     void onNetworkDisconnected();
 
 private:
+    // UI Setup
     void initializeUI();
-    void updateStatus(const QString& status);
+    void setupPlaceholders();
+    void setupVisibility();
+    void setupValidation();
+    void setupConnections();
+    void setupEnterKeyHandling();
     void setupNetworkConnections();
+    void setupConnectionHandling();
+
+    // UI Updates
+    void updateStatus(const QString& status);
+    void updateButtonStates(bool enabled);
+    void updateFieldsEnabled(bool enabled);
+    void clearAllFields();
+
+    // Validation
+    void validateLoginFields();
+    void validateRegistrationFields();
+    bool validateEmail(const QString& email, QString& errorMessage);
+    bool areFieldsEmpty(const QString& username, const QString& password, const QString& email = QString());
+
+    // Form Submission
     void validateAndSubmitRegistration();
     void validateAndSubmitLogin();
-    void updateButtonStates(bool enabled);
-    void setupConnectionHandling();
+    void handleLoginSubmission(const QString& username, const QString& password);
+    void handleRegistrationSubmission(const QString& username, const QString& password, const QString& email);
+
+    // Mode Switching
     void switchToLoginMode();
     void switchToRegisterMode();
-    void validateRegistrationFields();
-    void validateLoginFields();
 
+    // Network State
+    void handleNetworkState(bool connected, const QString& message);
+
+private:
     Ui::LoginWindow *ui;
     NetworkManager& networkManager;
     bool isConnecting;
