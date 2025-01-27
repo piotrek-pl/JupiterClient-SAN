@@ -344,18 +344,6 @@
 			null
 		],
 		[
-			"D:/programowanie/Qt/SAN/JupiterClient/src/models/User.h",
-			"MU",
-			"M4YTXQ7V2H/moc_User.cpp",
-			null
-		],
-		[
-			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.h",
-			"MU",
-			"UFQQIFJZKK/moc_Client.cpp",
-			null
-		],
-		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h",
 			"MU",
 			"UFQQIFJZKK/moc_NetworkManager.cpp",
@@ -486,16 +474,6 @@
 			null
 		],
 		[ "D:/programowanie/Qt/SAN/JupiterClient/src/main.cpp", "MU", null ],
-		[
-			"D:/programowanie/Qt/SAN/JupiterClient/src/models/User.cpp",
-			"MU",
-			null
-		],
-		[
-			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.cpp",
-			"MU",
-			null
-		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.cpp",
 			"MU",

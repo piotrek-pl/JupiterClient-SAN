@@ -18,18 +18,14 @@ set(PROJECT_SOURCES
     src/ui/MainWindow.cpp
     src/ui/ChatWindow.cpp
     src/ui/SearchDialog.cpp
-    src/network/Client.cpp
     src/network/Protocol.cpp
-    src/models/User.cpp
     src/config/ConfigManager.cpp
     src/utils/Logger.cpp
     src/ui/LoginWindow.h
     src/ui/MainWindow.h
     src/ui/ChatWindow.h
     src/ui/SearchDialog.h
-    src/network/Client.h
     src/network/Protocol.h
-    src/models/User.h
     src/config/ConfigManager.h
     src/utils/Logger.h
     src/ui/LoginWindow.ui

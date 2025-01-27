@@ -678,10 +678,6 @@ JupiterClient_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf \
 	D:/programowanie/Qt/SAN/JupiterClient/src/main.cpp \
-	D:/programowanie/Qt/SAN/JupiterClient/src/models/User.cpp \
-	D:/programowanie/Qt/SAN/JupiterClient/src/models/User.h \
-	D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.cpp \
-	D:/programowanie/Qt/SAN/JupiterClient/src/network/Client.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp \
