@@ -19894,3 +19894,105 @@ ng JSON: {
 
 [2025-01-27 09:32:22.030] [INFO] MainWindow destroyed
 [2025-01-27 09:32:22.031] [INFO] Application shutting down
+[2025-01-27 09:35:45.668] [INFO] Application started
+[2025-01-27 09:35:45.668] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-27 09:35:45.668] [INFO] NetworkManager initialized
+[2025-01-27 09:35:45.668] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-27 09:35:45.668] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-27 09:35:45.703] [INFO] LoginWindow initialized
+[2025-01-27 09:35:45.772] [INFO] Connected to server
+[2025-01-27 09:35:45.772] [INFO] Status update: Connected to server
+[2025-01-27 09:35:48.261] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-27 09:35:48.261] [INFO] Status update: Logging in...
+[2025-01-27 09:35:48.265] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1737966948264,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-27 09:35:48.265] [DEBUG] Processing message type: login_response
+[2025-01-27 09:35:48.265] [INFO] Login successful
+[2025-01-27 09:35:48.265] [INFO] Sending message: {"status":"online","timestamp":1737966948265,"type":"status_response"}
+
+[2025-01-27 09:35:48.265] [INFO] Sending message: {"timestamp":1737966948265,"type":"get_friends_list"}
+
+[2025-01-27 09:35:48.265] [INFO] Status update: Login successful - Connected
+[2025-01-27 09:35:48.279] [INFO] UI initialized successfully
+[2025-01-27 09:35:48.279] [INFO] MainWindow initialized
+[2025-01-27 09:35:48.421] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-27 09:35:48.421] [DEBUG] Processing message type: unread_from
+[2025-01-27 09:35:48.421] [DEBUG] Message type unread_from will be handled by appropriate dialog
+[2025-01-27 09:35:48.421] [INFO] Received unread messages info from 2 users
+[2025-01-27 09:35:48.422] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737966948266,
+    "type": "friends_list_response"
+}
+[2025-01-27 09:35:48.422] [DEBUG] Processing message type: friends_list_response
+[2025-01-27 09:35:48.422] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-27 09:35:48.422] [INFO] Updating friends list with 2 friends
+[2025-01-27 09:35:48.422] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737966948268,
+    "type": "friends_status_update"
+}
+[2025-01-27 09:35:48.422] [DEBUG] Processing message type: friends_status_update
+[2025-01-27 09:35:48.422] [DEBUG] Message type friends_status_update will be handled by appropriate dialog
+[2025-01-27 09:35:48.422] [INFO] Updating friends list with 2 friends
+[2025-01-27 09:35:48.422] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1737966948268,
+    "type": "friends_list_response"
+}
+[2025-01-27 09:35:48.422] [DEBUG] Processing message type: friends_list_response
+[2025-01-27 09:35:48.422] [DEBUG] Message type friends_list_response will be handled by appropriate dialog
+[2025-01-27 09:35:48.422] [INFO] Updating friends list with 2 friends
+[2025-01-27 09:35:48.434] [INFO] LoginWindow destroyed
+[2025-01-27 09:35:50.509] [INFO] Sending message: {"timestamp":1737966950509,"type":"logout"}
+
+[2025-01-27 09:35:50.509] [INFO] MainWindow destroyed
+[2025-01-27 09:35:50.509] [INFO] Application shutting down
