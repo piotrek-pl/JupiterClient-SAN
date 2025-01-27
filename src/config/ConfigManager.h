@@ -1,8 +1,9 @@
+// ConfigManager.h
 /**
  * @file ConfigManager.h
  * @brief Configuration manager class definition
  * @author piotrek-pl
- * @date 2025-01-20 13:36:46
+ * @date 2025-01-27 08:24:09
  */
 
 #pragma once
@@ -36,6 +37,7 @@ public:
 
     ConnectionConfig getConnectionConfig() const;
     LogConfig getLogConfig() const;
+    bool isConfigValid() const;
 
 private:
     ConfigManager();
@@ -44,5 +46,7 @@ private:
     ConfigManager& operator=(const ConfigManager&) = delete;
 
     void loadConfig();
+    bool validateConfig() const;
     std::unique_ptr<QSettings> settings;
+    bool configValid{false};
 };
