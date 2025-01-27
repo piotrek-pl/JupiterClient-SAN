@@ -98,6 +98,17 @@ void InvitationsDialog::onMessageReceived(const QJsonObject& message)
         emit invitationStatusChanged(userId);
         refreshInvitations();
     }
+    else if (type == Protocol::MessageType::FRIEND_REQUEST_CANCELLED_NOTIFICATION) {
+        int requestId = message["request_id"].toInt();
+        int fromUserId = message["from_user_id"].toInt();
+
+        // Odśwież listy zaproszeń
+        refreshInvitations();
+
+        // Opcjonalnie: Pokaż powiadomienie użytkownikowi
+        QMessageBox::information(this, "Friend Request Cancelled",
+                                 "A friend request has been cancelled.");
+    }
 }
 
 void InvitationsDialog::updateReceivedInvitations(const QJsonArray& invitations)

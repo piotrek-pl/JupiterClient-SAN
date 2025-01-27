@@ -79,6 +79,7 @@ const QString SENT_INVITATIONS_RESPONSE = "sent_invitations_response";
 const QString RECEIVED_INVITATIONS_RESPONSE = "received_invitations_response";
 const QString CANCEL_FRIEND_REQUEST = "cancel_friend_request";
 const QString CANCEL_FRIEND_REQUEST_RESPONSE = "cancel_friend_request_response";
+const QString FRIEND_REQUEST_CANCELLED_NOTIFICATION = "friend_request_cancelled_notification";
 
 // Invitation System Messages
 const QString SEND_INVITATION = "send_invitation";
@@ -162,6 +163,7 @@ const QStringList AUTHENTICATED = {
     MessageType::INVITATIONS_LIST,
     MessageType::INVITATION_ALREADY_EXISTS,
     MessageType::INVITATION_STATUS_CHANGED
+
 };
 
 const QStringList DISCONNECTING = {
@@ -226,6 +228,7 @@ QJsonObject createInvitationResponse(bool success, const QString& message = "");
 QJsonObject createInvitationsList(const QJsonArray& invitations, bool sent = true);
 QJsonObject createInvitationAlreadyExistsResponse(int userId, const QString& username);
 QJsonObject createInvitationStatusChangedNotification(int requestId, int userId, const QString& status);
+QJsonObject createFriendRequestCancelledNotification(int requestId, int fromUserId);
 }
 
 // Historia czatu

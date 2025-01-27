@@ -321,5 +321,14 @@ QJsonObject createInvitationStatusChangedNotification(int requestId, int userId,
     };
 }
 
+QJsonObject createFriendRequestCancelledNotification(int requestId, int fromUserId) {
+    return QJsonObject{
+        {"type", MessageType::FRIEND_REQUEST_CANCELLED_NOTIFICATION},
+        {"request_id", requestId},
+        {"from_user_id", fromUserId},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
 } // namespace MessageStructure
 } // namespace Protocol
