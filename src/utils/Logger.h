@@ -2,7 +2,7 @@
  * @file Logger.h
  * @brief Logger class definition
  * @author piotrek-pl
- * @date 2025-01-20 13:37:35
+ * @date 2025-01-27 09:13:35
  */
 
 #pragma once
@@ -29,15 +29,15 @@ public:
     static Logger& getInstance();
 
     void log(LogLevel level, const QString& message);
-    void setLogLevel(LogLevel level);
+    void setLogLevel(LogLevel level) { currentLevel = level; }
     void setLogFile(const QString& filename);
 
     // Convenience methods
-    void debug(const QString& message);
-    void info(const QString& message);
-    void warning(const QString& message);
-    void error(const QString& message);
-    void critical(const QString& message);
+    void debug(const QString& message) { log(LogLevel::DEBUG, message); }
+    void info(const QString& message) { log(LogLevel::INFO, message); }
+    void warning(const QString& message) { log(LogLevel::WARNING, message); }
+    void error(const QString& message) { log(LogLevel::ERROR, message); }
+    void critical(const QString& message) { log(LogLevel::CRITICAL, message); }
 
 private:
     Logger();
@@ -45,8 +45,26 @@ private:
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
 
+    // File management
     void rotateLogFile();
+    void ensureDirectoryExists(const QString& filename);
+    bool openLogFile(const QString& filename);
+    void closeCurrentFile();
+
+    // Log handling
+    QString createLogEntry(LogLevel level, const QString& message);
+    void writeLogEntry(const QString& entry);
+    void checkFileSize();
+
+    // File rotation
+    void removeOldestLog(const QString& baseFilename);
+    void rotateExistingLogs(const QString& baseFilename);
+    void createNewLogFile(const QString& baseFilename);
+
+    // Helpers
     QString levelToString(LogLevel level);
+    LogLevel parseLogLevel(const QString& levelStr);
+    void initializeFromConfig();
 
     std::unique_ptr<QFile> logFile;
     std::unique_ptr<QTextStream> logStream;
