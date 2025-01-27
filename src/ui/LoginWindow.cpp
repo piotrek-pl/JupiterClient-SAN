@@ -147,13 +147,22 @@ void LoginWindow::validateLoginFields()
 {
     if (ui->emailLineEdit->isVisible()) return;
 
+    // Najpierw sprawdź stan połączenia
+    if (!networkManager.isConnected()) {
+        ui->loginButton->setEnabled(false);
+        return; // Nie aktualizuj statusu, bo zostanie on zaktualizowany przez handleNetworkState
+    }
+
     QString username = ui->usernameLineEdit->text().trimmed();
     QString password = ui->passwordLineEdit->text();
 
     bool isValid = !areFieldsEmpty(username, password);
     ui->loginButton->setEnabled(isValid);
 
-    updateStatus(isValid ? "Ready to login" : "Please enter both username and password");
+    // Aktualizuj status tylko jeśli nie jesteśmy w trakcie łączenia
+    if (!isConnecting) {
+        updateStatus(isValid ? "Ready to login" : "Please enter both username and password");
+    }
 }
 
 void LoginWindow::validateRegistrationFields()
@@ -290,6 +299,13 @@ void LoginWindow::handleNetworkState(bool connected, const QString& message)
 {
     updateButtonStates(connected);
     updateStatus(message);
+
+    // Wymuszenie ponownej walidacji pól po zmianie stanu połączenia
+    if (ui->emailLineEdit->isVisible()) {
+        validateRegistrationFields();
+    } else {
+        validateLoginFields();
+    }
 }
 
 void LoginWindow::setupNetworkConnections()
@@ -332,6 +348,7 @@ void LoginWindow::onNetworkConnected()
 
 void LoginWindow::onNetworkDisconnected()
 {
+    isConnecting = false;
     handleNetworkState(false, "Disconnected from server");
 }
 
