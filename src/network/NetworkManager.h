@@ -2,7 +2,7 @@
  * @file NetworkManager.h
  * @brief Network manager class definition
  * @author piotrek-pl
- * @date 2025-01-21 12:56:05
+ * @date 2025-01-27 08:29:09
  */
 
 #pragma once
@@ -51,13 +51,27 @@ private:
     NetworkManager(const NetworkManager&) = delete;
     NetworkManager& operator=(const NetworkManager&) = delete;
 
+    // Initialization
     void initializeNetworking();
+
+    // Connection management
     void checkConnection();
-    void processIncomingMessage(const QJsonObject& json);
-    void sendPong(qint64 timestamp);
+    void handleConnectionTimeout();
     void scheduleReconnection();
     void emitConnectionStatus(const QString& status);
+
+    // Message processing
     void processBuffer();
+    void processIncomingMessage(const QJsonObject& json);
+    bool parseJsonFromBuffer(int startPos, int& endPos, QJsonObject& jsonObject);
+    void handleLoginResponse(const QJsonObject& json);
+    void handleRegisterResponse(const QJsonObject& json);
+    void handleErrorMessage(const QJsonObject& json);
+    void handlePingMessage(const QJsonObject& json);
+    void sendPong(qint64 timestamp);
+
+    // Socket handling
+    void handleSocketError(QAbstractSocket::SocketError socketError);
 
     QTcpSocket socket;
     QTimer* connectionCheckTimer;

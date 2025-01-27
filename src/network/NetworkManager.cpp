@@ -1,6 +1,8 @@
 /**
  * @file NetworkManager.cpp
  * @brief Network manager class implementation
+ * @author piotrek-pl
+ * @date 2025-01-27 08:29:09
  */
 
 #include "NetworkManager.h"
@@ -10,9 +12,9 @@
 
 NetworkManager& NetworkManager::getInstance() {
     static NetworkManager* instance = nullptr;
-    if (!instance && QApplication::instance()) {  // Sprawdź czy QApplication istnieje
+    if (!instance && QApplication::instance()) {
         instance = new NetworkManager();
-        instance->moveToThread(QApplication::instance()->thread());  // Przenieś do głównego wątku
+        instance->moveToThread(QApplication::instance()->thread());
     }
     return *instance;
 }
@@ -46,14 +48,12 @@ NetworkManager::~NetworkManager() {
 }
 
 void NetworkManager::initializeNetworking() {
-    // Socket connections
     connect(&socket, &QTcpSocket::connected, this, &NetworkManager::onConnected);
     connect(&socket, &QTcpSocket::disconnected, this, &NetworkManager::onDisconnected);
     connect(&socket, &QTcpSocket::readyRead, this, &NetworkManager::onReadyRead);
     connect(&socket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::errorOccurred),
             this, &NetworkManager::onError);
 
-    // Initialize connection check timer
     connectionCheckTimer = new QTimer(this);
     connectionCheckTimer->setInterval(Protocol::Timeouts::PING);
     connect(connectionCheckTimer, &QTimer::timeout, this, &NetworkManager::checkConnection);
@@ -84,8 +84,8 @@ void NetworkManager::sendMessage(const QJsonObject& message) {
         return;
     }
 
-    QByteArray data = QJsonDocument(message).toJson(QJsonDocument::Compact);  // Używamy formatu compact
-    data.append('\n');  // Dodajemy pojedynczy znak nowej linii
+    QByteArray data = QJsonDocument(message).toJson(QJsonDocument::Compact);
+    data.append('\n');
     LOG_INFO("Sending message: " + QString::fromUtf8(data));
     socket.write(data);
     socket.flush();
@@ -121,17 +121,21 @@ void NetworkManager::checkConnection() {
 
     if (socket.state() == QAbstractSocket::ConnectedState) {
         if (currentTime - lastPongTime > Protocol::Timeouts::CONNECTION) {
-            LOG_WARNING(QString("No ping from server for %1 ms").arg(currentTime - lastPongTime));
-            missedPings++;
-
-            if (missedPings >= 3) {
-                LOG_WARNING("Connection timeout - disconnecting");
-                socket.disconnectFromHost();
-                scheduleReconnection();
-            }
+            handleConnectionTimeout();
         }
     } else if (socket.state() == QAbstractSocket::UnconnectedState && !isReconnecting) {
         connectToServer();
+    }
+}
+
+void NetworkManager::handleConnectionTimeout() {
+    LOG_WARNING(QString("No ping from server for %1 ms").arg(QDateTime::currentMSecsSinceEpoch() - lastPongTime));
+    missedPings++;
+
+    if (missedPings >= 3) {
+        LOG_WARNING("Connection timeout - disconnecting");
+        socket.disconnectFromHost();
+        scheduleReconnection();
     }
 }
 
@@ -181,29 +185,35 @@ void NetworkManager::onDisconnected() {
     scheduleReconnection();
 }
 
-void NetworkManager::onError(QTcpSocket::SocketError socketError) {
+void NetworkManager::handleSocketError(QAbstractSocket::SocketError socketError) {
     QString errorMsg = socket.errorString();
     LOG_ERROR(QString("Socket error: %1 (%2)").arg(socketError).arg(errorMsg));
 
+    QString statusMessage;
     switch (socketError) {
-    case QAbstractSocket::RemoteHostClosedError:
-        emitConnectionStatus("Server closed connection - reconnecting...");
-        break;
-    case QAbstractSocket::ConnectionRefusedError:
-        emitConnectionStatus("Connection refused - check if server is running");
-        break;
-    case QAbstractSocket::HostNotFoundError:
-        emitConnectionStatus("Server not found - check server address");
-        break;
-    case QAbstractSocket::NetworkError:
-        emitConnectionStatus("Network error - check your connection");
-        break;
-    default:
-        emitConnectionStatus("Connection error: " + errorMsg);
-        break;
+        case QAbstractSocket::RemoteHostClosedError:
+            statusMessage = "Server closed connection - reconnecting...";
+            break;
+        case QAbstractSocket::ConnectionRefusedError:
+            statusMessage = "Connection refused - check if server is running";
+            break;
+        case QAbstractSocket::HostNotFoundError:
+            statusMessage = "Server not found - check server address";
+            break;
+        case QAbstractSocket::NetworkError:
+            statusMessage = "Network error - check your connection";
+            break;
+        default:
+            statusMessage = "Connection error: " + errorMsg;
+            break;
     }
 
+    emitConnectionStatus(statusMessage);
     emit error(errorMsg);
+}
+
+void NetworkManager::onError(QTcpSocket::SocketError socketError) {
+    handleSocketError(socketError);
     m_isAuthenticated = false;
     scheduleReconnection();
 }
@@ -221,37 +231,111 @@ void NetworkManager::processBuffer() {
         foundJson = false;
         int startPos = buffer.indexOf('{');
         if (startPos >= 0) {
-            int endPos = -1;
-            int braceCount = 1;
+            int endPos;
+            QJsonObject jsonObject;
 
-            for (int i = startPos + 1; i < buffer.size(); ++i) {
-                if (buffer[i] == '{') braceCount++;
-                else if (buffer[i] == '}') {
-                    braceCount--;
-                    if (braceCount == 0) {
-                        endPos = i;
-                        break;
-                    }
-                }
-            }
-
-            if (endPos > startPos) {
-                QByteArray jsonData = buffer.mid(startPos, endPos - startPos + 1);
-                LOG_INFO("Processing JSON: " + QString::fromUtf8(jsonData));
-
-                QJsonParseError error;
-                QJsonDocument doc = QJsonDocument::fromJson(jsonData, &error);
-
-                if (error.error == QJsonParseError::NoError) {
-                    processIncomingMessage(doc.object());
-                    buffer.remove(0, endPos + 1);
-                    foundJson = true;
-                } else {
-                    LOG_ERROR(QString("JSON parse error: %1").arg(error.errorString()));
-                }
+            if (parseJsonFromBuffer(startPos, endPos, jsonObject)) {
+                processIncomingMessage(jsonObject);
+                buffer.remove(0, endPos + 1);
+                foundJson = true;
             }
         }
     } while (foundJson);
+}
+
+bool NetworkManager::parseJsonFromBuffer(int startPos, int& endPos, QJsonObject& jsonObject) {
+    endPos = -1;
+    int braceCount = 1;
+
+    for (int i = startPos + 1; i < buffer.size(); ++i) {
+        if (buffer[i] == '{') braceCount++;
+        else if (buffer[i] == '}') {
+            braceCount--;
+            if (braceCount == 0) {
+                endPos = i;
+                break;
+            }
+        }
+    }
+
+    if (endPos > startPos) {
+        QByteArray jsonData = buffer.mid(startPos, endPos - startPos + 1);
+        LOG_INFO("Processing JSON: " + QString::fromUtf8(jsonData));
+
+        QJsonParseError error;
+        QJsonDocument doc = QJsonDocument::fromJson(jsonData, &error);
+
+        if (error.error == QJsonParseError::NoError) {
+            jsonObject = doc.object();
+            return true;
+        } else {
+            LOG_ERROR(QString("JSON parse error: %1").arg(error.errorString()));
+        }
+    }
+
+    return false;
+}
+
+void NetworkManager::handleLoginResponse(const QJsonObject& json) {
+    if (json["status"].toString() == "success") {
+        LOG_INFO("Login successful");
+        m_isAuthenticated = true;
+        lastPongTime = QDateTime::currentMSecsSinceEpoch();
+        missedPings = 0;
+
+        QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(Protocol::UserStatus::ONLINE);
+        sendMessage(statusUpdate);
+
+        QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
+        sendMessage(getFriendsRequest);
+
+        emitConnectionStatus("Login successful - Connected");
+        emit loginSuccessful();
+    } else {
+        LOG_WARNING(QString("Login failed: %1").arg(json["message"].toString()));
+        emitConnectionStatus("Login failed: " + json["message"].toString());
+        currentUsername.clear();
+        currentPassword.clear();
+        m_isAuthenticated = false;
+        emit error(json["message"].toString());
+    }
+}
+
+void NetworkManager::handleRegisterResponse(const QJsonObject& json) {
+    if (json["status"].toString() == "success") {
+        LOG_INFO("Registration successful");
+        emit registrationSuccessful();
+        emitConnectionStatus("Registration successful - please login");
+    } else {
+        LOG_WARNING(QString("Registration failed: %1").arg(json["message"].toString()));
+        emitConnectionStatus("Registration failed: " + json["message"].toString());
+        emit error(json["message"].toString());
+    }
+}
+
+void NetworkManager::handleErrorMessage(const QJsonObject& json) {
+    QString errorMsg = json["message"].toString();
+    LOG_ERROR(QString("Server error: %1").arg(errorMsg));
+
+    if (errorMsg == "Invalid JSON format") {
+        LOG_ERROR("Invalid JSON sent to server - check message format");
+    }
+
+    emitConnectionStatus("Server error: " + errorMsg);
+    emit error(errorMsg);
+
+    if (errorMsg == "Session expired" || errorMsg == "Authentication required") {
+        m_isAuthenticated = false;
+        emitConnectionStatus("Session expired - please login again");
+    }
+}
+
+void NetworkManager::handlePingMessage(const QJsonObject& json) {
+    qint64 timestamp = json["timestamp"].toInteger();
+    LOG_INFO(QString("Received PING (timestamp: %1)").arg(timestamp));
+    sendPong(timestamp);
+    lastPongTime = QDateTime::currentMSecsSinceEpoch();
+    missedPings = 0;
 }
 
 void NetworkManager::processIncomingMessage(const QJsonObject& json) {
@@ -267,80 +351,28 @@ void NetworkManager::processIncomingMessage(const QJsonObject& json) {
     }
 
     if (type == Protocol::MessageType::PING) {
-        qint64 timestamp = json["timestamp"].toInteger();
-        LOG_INFO(QString("Received PING (timestamp: %1)").arg(timestamp));
-        sendPong(timestamp);
-        lastPongTime = QDateTime::currentMSecsSinceEpoch();
-        missedPings = 0;
+        handlePingMessage(json);
         return;
     }
 
     if (type == Protocol::MessageType::LOGIN_RESPONSE) {
-        if (json["status"].toString() == "success") {
-            LOG_INFO("Login successful");
-            m_isAuthenticated = true;
-            lastPongTime = QDateTime::currentMSecsSinceEpoch();
-            missedPings = 0;
-
-            // Wysyłamy status online
-            QJsonObject statusUpdate = Protocol::MessageStructure::createStatusUpdate(Protocol::UserStatus::ONLINE);
-            sendMessage(statusUpdate);
-
-            // Pobierz listę znajomych
-            QJsonObject getFriendsRequest = Protocol::MessageStructure::createGetFriendsList();
-            sendMessage(getFriendsRequest);
-
-            emitConnectionStatus("Login successful - Connected");
-            emit loginSuccessful();
-        } else {
-            LOG_WARNING(QString("Login failed: %1").arg(json["message"].toString()));
-            emitConnectionStatus("Login failed: " + json["message"].toString());
-            currentUsername.clear();
-            currentPassword.clear();
-            m_isAuthenticated = false;
-            emit error(json["message"].toString());
-        }
+        handleLoginResponse(json);
     }
-
     else if (type == Protocol::MessageType::REGISTER_RESPONSE) {
-        if (json["status"].toString() == "success") {
-            LOG_INFO("Registration successful");
-            emit registrationSuccessful();
-            emitConnectionStatus("Registration successful - please login");
-        } else {
-            LOG_WARNING(QString("Registration failed: %1").arg(json["message"].toString()));
-            emitConnectionStatus("Registration failed: " + json["message"].toString());
-            emit error(json["message"].toString());
-        }
+        handleRegisterResponse(json);
     }
-
     else if (type == Protocol::MessageType::ERROR) {
-        QString errorMsg = json["message"].toString();
-        LOG_ERROR(QString("Server error: %1").arg(errorMsg));
-
-        if (errorMsg == "Invalid JSON format") {
-            LOG_ERROR("Invalid JSON sent to server - check message format");
-        }
-
-        emitConnectionStatus("Server error: " + errorMsg);
-        emit error(errorMsg);
-
-        if (errorMsg == "Session expired" || errorMsg == "Authentication required") {
-            m_isAuthenticated = false;
-            emitConnectionStatus("Session expired - please login again");
-        }
+        handleErrorMessage(json);
     }
-
-    // Dodane rozpoznawanie znanych typów wiadomości
+    // Znane typy wiadomości, które są obsługiwane przez odpowiednie dialogi
     else if (type == Protocol::MessageType::UNREAD_FROM ||
              type == Protocol::MessageType::FRIENDS_LIST_RESPONSE ||
              type == Protocol::MessageType::FRIENDS_STATUS_UPDATE ||
              type == Protocol::MessageType::RECEIVED_INVITATIONS_RESPONSE ||
              type == Protocol::MessageType::SENT_INVITATIONS_RESPONSE) {
-        // Te typy są obsługiwane przez odpowiednie dialogi
         LOG_DEBUG(QString("Message type %1 will be handled by appropriate dialog").arg(type));
     }
-    else if (type != Protocol::MessageType::ERROR) { // Dodajemy ten warunek, bo ERROR jest już obsługiwany wcześniej
+    else if (type != Protocol::MessageType::ERROR) {
         LOG_WARNING(QString("Received unknown message type: %1").arg(type));
     }
 
@@ -359,7 +391,7 @@ void NetworkManager::sendPong(qint64 timestamp) {
 
 void NetworkManager::emitConnectionStatus(const QString& status) {
     static QString lastStatus;
-    if (lastStatus != status) {  // Zapobieganie duplikatom
+    if (lastStatus != status) {
         lastStatus = status;
         LOG_INFO(QString("Status update: %1").arg(status));
         emit connectionStatusChanged(status);
