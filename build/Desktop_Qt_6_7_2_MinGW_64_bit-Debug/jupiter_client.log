@@ -19996,3 +19996,10 @@ ng JSON: {
 
 [2025-01-27 09:35:50.509] [INFO] MainWindow destroyed
 [2025-01-27 09:35:50.509] [INFO] Application shutting down
+[2025-01-27 09:46:39.429] [INFO] Application started
+[2025-01-27 09:46:39.429] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-27 09:46:39.429] [INFO] NetworkManager initialized
+[2025-01-27 09:46:39.429] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-27 09:46:39.429] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-27 09:46:39.464] [INFO] LoginWindow initialized
+[2025-01-27 09:46:40.766] [INFO] Application shutting down

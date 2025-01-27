@@ -2,7 +2,7 @@
  * @file InvitationsDialog.cpp
  * @brief Dialog for managing friend invitations implementation
  * @author piotrek-pl
- * @date 2025-01-24 10:54:24
+ * @date 2025-01-27 08:43:10
  */
 
 #include "InvitationsDialog.h"
@@ -30,13 +30,10 @@ void InvitationsDialog::setupConnections()
 {
     connect(ui->tabWidget, &QTabWidget::currentChanged,
             this, &InvitationsDialog::onTabChanged);
-
     connect(ui->acceptButton, &QPushButton::clicked,
             this, &InvitationsDialog::onAcceptClicked);
-
     connect(ui->rejectButton, &QPushButton::clicked,
             this, &InvitationsDialog::onRejectClicked);
-
     connect(ui->cancelButton, &QPushButton::clicked,
             this, &InvitationsDialog::onCancelClicked);
 }
@@ -50,64 +47,78 @@ void InvitationsDialog::refreshInvitations()
     networkManager.sendMessage(sentRequest);
 }
 
+void InvitationsDialog::handleReceivedInvitationsResponse(const QJsonObject& message)
+{
+    updateReceivedInvitations(message["invitations"].toArray());
+}
+
+void InvitationsDialog::handleSentInvitationsResponse(const QJsonObject& message)
+{
+    updateSentInvitations(message["invitations"].toArray());
+}
+
+void InvitationsDialog::handleFriendRequestAcceptResponse(const QJsonObject& message)
+{
+    if (message["status"].toString() == "success") {
+        handleInvitationStatusChange(message);
+        refreshInvitations();
+    }
+}
+
+void InvitationsDialog::handleFriendRequestRejectResponse(const QJsonObject& message)
+{
+    if (message["status"].toString() == "success") {
+        handleInvitationStatusChange(message);
+        refreshInvitations();
+    }
+    showResponseMessage("Reject Request", message["message"].toString());
+}
+
+void InvitationsDialog::handleCancelFriendRequestResponse(const QJsonObject& message)
+{
+    if (message["status"].toString() == "success") {
+        handleInvitationStatusChange(message);
+        refreshInvitations();
+    }
+    showResponseMessage("Cancel Request", message["message"].toString());
+}
+
+void InvitationsDialog::handleInvitationStatusChanged(const QJsonObject& message)
+{
+    handleInvitationStatusChange(message);
+    refreshInvitations();
+}
+
+void InvitationsDialog::handleFriendRequestCancelledNotification(const QJsonObject& message)
+{
+    refreshInvitations();
+    showResponseMessage("Friend Request Cancelled", "A friend request has been cancelled.");
+}
+
 void InvitationsDialog::onMessageReceived(const QJsonObject& message)
 {
     QString type = message["type"].toString();
 
     if (type == Protocol::MessageType::RECEIVED_INVITATIONS_RESPONSE) {
-        updateReceivedInvitations(message["invitations"].toArray());
+        handleReceivedInvitationsResponse(message);
     }
     else if (type == Protocol::MessageType::SENT_INVITATIONS_RESPONSE) {
-        updateSentInvitations(message["invitations"].toArray());
+        handleSentInvitationsResponse(message);
     }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_ACCEPT_RESPONSE) {
-        if (message["status"].toString() == "success") {
-            if (message.contains("user_id")) {
-                int userId = message["user_id"].toInt();
-                emit invitationStatusChanged(userId);
-            }
-            refreshInvitations();
-        }
-        //QString resultMessage = message["message"].toString();
-        //QMessageBox::information(this, "Accept Request", resultMessage);
+        handleFriendRequestAcceptResponse(message);
     }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_REJECT_RESPONSE) {
-        if (message["status"].toString() == "success") {
-            if (message.contains("user_id")) {
-                int userId = message["user_id"].toInt();
-                emit invitationStatusChanged(userId);
-            }
-            refreshInvitations();
-        }
-        QString resultMessage = message["message"].toString();
-        QMessageBox::information(this, "Reject Request", resultMessage);
+        handleFriendRequestRejectResponse(message);
     }
     else if (type == Protocol::MessageType::CANCEL_FRIEND_REQUEST_RESPONSE) {
-        if (message["status"].toString() == "success") {
-            if (message.contains("user_id")) {
-                int userId = message["user_id"].toInt();
-                emit invitationStatusChanged(userId);
-            }
-            refreshInvitations();
-        }
-        QString resultMessage = message["message"].toString();
-        QMessageBox::information(this, "Cancel Request", resultMessage);
+        handleCancelFriendRequestResponse(message);
     }
     else if (type == Protocol::MessageType::INVITATION_STATUS_CHANGED) {
-        int userId = message["user_id"].toInt();
-        emit invitationStatusChanged(userId);
-        refreshInvitations();
+        handleInvitationStatusChanged(message);
     }
     else if (type == Protocol::MessageType::FRIEND_REQUEST_CANCELLED_NOTIFICATION) {
-        int requestId = message["request_id"].toInt();
-        int fromUserId = message["from_user_id"].toInt();
-
-        // Odśwież listy zaproszeń
-        refreshInvitations();
-
-        // Opcjonalnie: Pokaż powiadomienie użytkownikowi
-        QMessageBox::information(this, "Friend Request Cancelled",
-                                 "A friend request has been cancelled.");
+        handleFriendRequestCancelledNotification(message);
     }
 }
 
@@ -166,6 +177,15 @@ void InvitationsDialog::updateSentInvitations(const QJsonArray& invitations)
     emit pendingInvitationsChanged(pendingUserIds);
 }
 
+InvitationsDialog::SelectedInvitation InvitationsDialog::getSelectedInvitation(QListWidget* list)
+{
+    QListWidgetItem* currentItem = list->currentItem();
+    if (currentItem) {
+        return SelectedInvitation(true, currentItem->data(Qt::UserRole).toInt());
+    }
+    return SelectedInvitation();
+}
+
 void InvitationsDialog::onTabChanged(int index)
 {
     ui->acceptButton->setVisible(index == 0);
@@ -175,40 +195,37 @@ void InvitationsDialog::onTabChanged(int index)
 
 void InvitationsDialog::onAcceptClicked()
 {
-    QListWidgetItem* currentItem = ui->receivedList->currentItem();
-    if (!currentItem) {
-        QMessageBox::warning(this, "Warning", "Please select an invitation first");
+    auto selected = getSelectedInvitation(ui->receivedList);
+    if (!selected.isValid) {
+        showResponseMessage("Warning", selected.errorMessage);
         return;
     }
 
-    int requestId = currentItem->data(Qt::UserRole).toInt();
-    QJsonObject request = Protocol::MessageStructure::createFriendRequestAccept(requestId);
+    QJsonObject request = Protocol::MessageStructure::createFriendRequestAccept(selected.requestId);
     networkManager.sendMessage(request);
 }
 
 void InvitationsDialog::onRejectClicked()
 {
-    QListWidgetItem* currentItem = ui->receivedList->currentItem();
-    if (!currentItem) {
-        QMessageBox::warning(this, "Warning", "Please select an invitation first");
+    auto selected = getSelectedInvitation(ui->receivedList);
+    if (!selected.isValid) {
+        showResponseMessage("Warning", selected.errorMessage);
         return;
     }
 
-    int requestId = currentItem->data(Qt::UserRole).toInt();
-    QJsonObject request = Protocol::MessageStructure::createFriendRequestReject(requestId);
+    QJsonObject request = Protocol::MessageStructure::createFriendRequestReject(selected.requestId);
     networkManager.sendMessage(request);
 }
 
 void InvitationsDialog::onCancelClicked()
 {
-    QListWidgetItem* currentItem = ui->sentList->currentItem();
-    if (!currentItem) {
-        QMessageBox::warning(this, "Warning", "Please select an invitation first");
+    auto selected = getSelectedInvitation(ui->sentList);
+    if (!selected.isValid) {
+        showResponseMessage("Warning", selected.errorMessage);
         return;
     }
 
-    int requestId = currentItem->data(Qt::UserRole).toInt();
-    QJsonObject request = Protocol::MessageStructure::createCancelFriendRequest(requestId);
+    QJsonObject request = Protocol::MessageStructure::createCancelFriendRequest(selected.requestId);
     networkManager.sendMessage(request);
 }
 
@@ -225,4 +242,16 @@ void InvitationsDialog::clearLists()
     receivedInvitations.clear();
     sentInvitations.clear();
     updateInvitationsCount();
+}
+
+void InvitationsDialog::showResponseMessage(const QString& title, const QString& message)
+{
+    QMessageBox::information(this, title, message);
+}
+
+void InvitationsDialog::handleInvitationStatusChange(const QJsonObject& message)
+{
+    if (message.contains("user_id")) {
+        emit invitationStatusChanged(message["user_id"].toInt());
+    }
 }

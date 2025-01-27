@@ -184,6 +184,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/QDialog \
+  C:/Qt/6.7.2/mingw_64/include/QtWidgets/QListWidget \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/QWidget \
   C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
