@@ -2,7 +2,7 @@
  * @file SearchDialog.h
  * @brief Search dialog for finding and adding friends
  * @author piotrek-pl
- * @date 2025-01-24 22:52:38
+ * @date 2025-01-27 09:11:39
  */
 
 #ifndef SEARCHDIALOG_H
@@ -42,6 +42,21 @@ private slots:
     void handleServerResponse(const QJsonObject& response);
 
 private:
+    // Initialization methods
+    void initializeUI();
+    void setupSearchTimer();
+    void setupConnections();
+
+    // Context menu methods
+    void createContextMenuForFriend(QMenu& menu, const QString& username);
+    void createContextMenuForPendingInvitation(QMenu& menu);
+    void createContextMenuForNewUser(QMenu& menu, int userId, const QString& username);
+
+    // Response handlers
+    void handleAddFriendResponse(const QJsonObject& response);
+    void handleInvitationExistsResponse(const QJsonObject& response);
+
+    // Helper methods
     void sendFriendRequest(int userId, const QString& username);
 
 private:
@@ -49,8 +64,8 @@ private:
     NetworkManager& networkManager;
     MainWindow* mainWindow;
     QTimer* searchTimer;
-    QSet<int> pendingInvitations;  // Przechowuje ID użytkowników z aktywnymi zaproszeniami
-    QJsonObject lastSearchResponse; // Przechowuje ostatnią odpowiedź wyszukiwania
+    QSet<int> pendingInvitations;
+    QJsonObject lastSearchResponse;
 };
 
 #endif // SEARCHDIALOG_H

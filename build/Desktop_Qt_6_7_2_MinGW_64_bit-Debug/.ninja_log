@@ -52,3 +52,11 @@
 721	3450	7596722120182525	CMakeFiles/JupiterClient.dir/JupiterClient_autogen/mocs_compilation.cpp.obj	a6a88e606fff8a50
 726	3505	7596722120232536	CMakeFiles/JupiterClient.dir/src/ui/MainWindow.cpp.obj	5ea84f264f482d1c
 3505	4429	7596722148023757	JupiterClient.exe	2d685fa5667d2a9
+28	855	7596723703233729	JupiterClient_autogen/timestamp	4a896badfb7f2a5d
+28	855	7596723703233729	JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
+28	855	7596723703233729	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/timestamp	4a896badfb7f2a5d
+28	855	7596723703233729	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
+861	3343	7596723703893758	CMakeFiles/JupiterClient.dir/src/ui/SearchDialog.cpp.obj	d8e5c3b34a7901cc
+855	3445	7596723703843755	CMakeFiles/JupiterClient.dir/JupiterClient_autogen/mocs_compilation.cpp.obj	a6a88e606fff8a50
+858	3682	7596723703873764	CMakeFiles/JupiterClient.dir/src/ui/MainWindow.cpp.obj	5ea84f264f482d1c
+3682	4620	7596723732114952	JupiterClient.exe	2d685fa5667d2a9
