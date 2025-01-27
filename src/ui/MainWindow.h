@@ -2,7 +2,7 @@
  * @file MainWindow.h
  * @brief Main window class definition
  * @author piotrek-pl
- * @date 2025-01-21 13:03:48
+ * @date 2025-01-27 08:58:55
  */
 
 #pragma once
@@ -45,7 +45,9 @@ private slots:
     void onMenuSettingsTriggered();
     void onMenuExitTriggered();
     void onMenuAboutTriggered();
-    void onMenuSearchTriggered();  // Nowy slot
+    void onMenuSearchTriggered();
+    void showFriendsContextMenu(const QPoint& pos);
+    void onInvitationsActionTriggered();
 
     // Network event handlers
     void onConnectionStatusChanged(const QString& status);
@@ -54,26 +56,56 @@ private slots:
     void onDisconnected();
     void onChatWindowClosed(int friendId);
 
-    void showFriendsContextMenu(const QPoint& pos);
-    void onInvitationsActionTriggered();
-
-
 private:
+    // Initialization
     void initializeUI();
     void setupNetworkConnections();
-    void updateConnectionStatus(const QString& status);
-    void updateFriendsList(const QJsonArray& friends);
-    void addMessageToChat(const QString& sender, const QString& content,
-                          const QDateTime& timestamp, bool isOwn);
-    void openChatWindow(QListWidgetItem* item);
-    void closeEvent(QCloseEvent *event);
     void setupInvitationsMenu();
+    void setupStatusComboBox();
+    void setupUIConnections();
+    void setupFriendsList();
 
-    QIcon getStatusIcon(const QString& status, bool hasUnreadMessages) const;
-    bool checkUnreadMessages(int friendId) const;
+    // Message handlers
+    void handleSearchResponse(const QJsonObject& json);
+    void handleFriendRequest(const QJsonObject& json);
+    void handleFriendRequestAcceptResponse(const QJsonObject& json);
+    void handleFriendRequestRejectResponse(const QJsonObject& json);
+    void handleUnreadMessages(const QJsonObject& json);
+    void handleLoginResponse(const QJsonObject& json);
+    void handleLatestMessages(const QJsonObject& json);
+    void handleMessageResponse(const QJsonObject& json);
+    void handleNewMessage(const QJsonObject& json);
+    void handleRemoveFriendResponse(const QJsonObject& json);
+    void handleFriendRemoved(const QJsonObject& json);
+    void handleFriendsListUpdate(const QJsonObject& json);
+
+    // Chat window management
+    void openChatWindow(QListWidgetItem* item);
+    void closeChatWindow(int friendId);
+    void processChatMessage(const QJsonObject& json, int chatWindowId);
+    void handleUnreadMessage(int fromId, const QString& status);
+
+    // Friends list management
+    void updateFriendsList(const QJsonArray& friends);
+    void sortFriendsListByStatus();
     void updateFriendStatus(int friendId, const QString& status);
     QString getFriendStatus(int friendId) const;
+    void removeFriend(QListWidgetItem* item);
 
+    // UI updates
+    void updateConnectionStatus(const QString& status);
+    void updateIconForUser(int userId, const QString& status, bool hasUnread);
+    void refreshInvitationsDialog();
+
+    // Helper methods
+    QIcon getStatusIcon(const QString& status, bool hasUnreadMessages) const;
+    bool checkUnreadMessages(int friendId) const;
+    void sendLogoutRequest();
+
+protected:
+    void closeEvent(QCloseEvent *event) override;
+
+private:
     Ui::MainWindow *ui;
     NetworkManager& networkManager;
     QString currentUsername;
@@ -81,8 +113,8 @@ private:
     ConfigManager::ConnectionConfig connectionConfig;
 
     QMap<int, ChatWindow*> chatWindows;
-    QMap<int, bool> unreadMessagesMap;  // Mapa przechowująca informacje o nieprzeczytanych wiadomościach
-    SearchDialog* searchDialog;  // Nowe pole
+    QMap<int, bool> unreadMessagesMap;
+    SearchDialog* searchDialog;
     InvitationsDialog* invitationsDialog;
 
     // Constants for UI configuration

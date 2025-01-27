@@ -46,6 +46,9 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "onMenuExitTriggered",
     "onMenuAboutTriggered",
     "onMenuSearchTriggered",
+    "showFriendsContextMenu",
+    "pos",
+    "onInvitationsActionTriggered",
     "onConnectionStatusChanged",
     "status",
     "onMessageReceived",
@@ -54,10 +57,7 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "error",
     "onDisconnected",
     "onChatWindowClosed",
-    "friendId",
-    "showFriendsContextMenu",
-    "pos",
-    "onInvitationsActionTriggered"
+    "friendId"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -86,12 +86,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        9,    0,  107,    2, 0x08,    8 /* Private */,
       10,    0,  108,    2, 0x08,    9 /* Private */,
       11,    1,  109,    2, 0x08,   10 /* Private */,
-      13,    1,  112,    2, 0x08,   12 /* Private */,
-      15,    1,  115,    2, 0x08,   14 /* Private */,
-      17,    0,  118,    2, 0x08,   16 /* Private */,
+      13,    0,  112,    2, 0x08,   12 /* Private */,
+      14,    1,  113,    2, 0x08,   13 /* Private */,
+      16,    1,  116,    2, 0x08,   15 /* Private */,
       18,    1,  119,    2, 0x08,   17 /* Private */,
-      20,    1,  122,    2, 0x08,   19 /* Private */,
-      22,    0,  125,    2, 0x08,   21 /* Private */,
+      20,    0,  122,    2, 0x08,   19 /* Private */,
+      21,    1,  123,    2, 0x08,   20 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -101,13 +101,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   12,
-    QMetaType::Void, QMetaType::QJsonObject,   14,
-    QMetaType::Void, QMetaType::QString,   16,
+    QMetaType::Void, QMetaType::QPoint,   12,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   19,
-    QMetaType::Void, QMetaType::QPoint,   21,
+    QMetaType::Void, QMetaType::QString,   15,
+    QMetaType::Void, QMetaType::QJsonObject,   17,
+    QMetaType::Void, QMetaType::QString,   19,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   22,
 
        0        // eod
 };
@@ -137,6 +137,11 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onMenuSearchTriggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showFriendsContextMenu'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>,
+        // method 'onInvitationsActionTriggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onConnectionStatusChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
@@ -150,12 +155,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onChatWindowClosed'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'showFriendsContextMenu'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>,
-        // method 'onInvitationsActionTriggered'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -173,13 +173,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 4: _t->onMenuExitTriggered(); break;
         case 5: _t->onMenuAboutTriggered(); break;
         case 6: _t->onMenuSearchTriggered(); break;
-        case 7: _t->onConnectionStatusChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 8: _t->onMessageReceived((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1]))); break;
-        case 9: _t->onNetworkError((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 10: _t->onDisconnected(); break;
-        case 11: _t->onChatWindowClosed((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 12: _t->showFriendsContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
-        case 13: _t->onInvitationsActionTriggered(); break;
+        case 7: _t->showFriendsContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 8: _t->onInvitationsActionTriggered(); break;
+        case 9: _t->onConnectionStatusChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 10: _t->onMessageReceived((*reinterpret_cast< std::add_pointer_t<QJsonObject>>(_a[1]))); break;
+        case 11: _t->onNetworkError((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 12: _t->onDisconnected(); break;
+        case 13: _t->onChatWindowClosed((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
