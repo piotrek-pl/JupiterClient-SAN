@@ -1,7 +1,11 @@
+// ChatWindow.cpp
+
 #include "ChatWindow.h"
 #include "ui_ChatWindow.h"
 #include <QScrollBar>
+#include <QTextCursor>
 #include "network/Protocol.h"
+#include "utils/Logger.h" // Assuming a LOG_INFO or similar macro is defined here
 
 ChatWindow::ChatWindow(const QString& friendName, int friendId, QWidget *parent)
     : QWidget(parent)
@@ -12,11 +16,14 @@ ChatWindow::ChatWindow(const QString& friendName, int friendId, QWidget *parent)
     , currentOffset(0)
     , hasMoreMessages(true)
     , isLoadingHistory(false)
-    , messagesMarkedAsRead(false)  // Inicjalizacja nowej flagi
+    , messagesMarkedAsRead(false)
 {
     ui->setupUi(this);
     setWindowTitle("Chat with " + friendName);
     initializeUI();
+
+    // Setup our dispatch map
+    setupMessageHandlers();
     loadInitialHistory();
 
     connect(&networkManager, &NetworkManager::messageReceived,
@@ -40,12 +47,171 @@ void ChatWindow::initializeUI()
     ui->chatTextEdit->setReadOnly(true);
 }
 
+void ChatWindow::setupMessageHandlers()
+{
+    using namespace Protocol::MessageType;
+
+    // Combine LATEST_MESSAGES_RESPONSE, CHAT_HISTORY_RESPONSE, and MORE_HISTORY_RESPONSE
+    // into one handler for clarity:
+    messageHandlers[LATEST_MESSAGES_RESPONSE] = [&](const QJsonObject& json) {
+        handleHistoryResponse(json);
+    };
+    messageHandlers[CHAT_HISTORY_RESPONSE] = [&](const QJsonObject& json) {
+        handleHistoryResponse(json);
+    };
+    messageHandlers[MORE_HISTORY_RESPONSE] = [&](const QJsonObject& json) {
+        handleHistoryResponse(json);
+    };
+
+    messageHandlers[MESSAGE_RESPONSE] = [&](const QJsonObject& json) {
+        handleMessageResponse(json);
+    };
+    messageHandlers[NEW_MESSAGES] = [&](const QJsonObject& json) {
+        handleNewMessages(json);
+    };
+}
+
+void ChatWindow::onMessageReceived(const QJsonObject& json)
+{
+    dispatchMessage(json);
+}
+
+void ChatWindow::dispatchMessage(const QJsonObject& json)
+{
+    QString type = json["type"].toString();
+    LOG_INFO(QString("ChatWindow::onMessageReceived - Received message type: %1").arg(type));
+
+    // Look for a matching handler
+    auto it = messageHandlers.find(type);
+    if (it != messageHandlers.end()) {
+        it->second(json);
+    } else {
+        LOG_INFO("ChatWindow::dispatchMessage - Unknown message type received.");
+    }
+}
+
+void ChatWindow::handleHistoryResponse(const QJsonObject& json)
+{
+    QJsonArray messages = json["messages"].toArray();
+    int oldScrollPos = ui->chatTextEdit->verticalScrollBar()->value();
+    int oldMax = ui->chatTextEdit->verticalScrollBar()->maximum();
+
+    QString type = json["type"].toString();
+    QString newMessages;
+    for (const QJsonValue& msgVal : messages)
+    {
+        QJsonObject msg = msgVal.toObject();
+        QString sender = msg["sender"].toString();
+        QString content = msg["content"].toString();
+        QDateTime timestamp = QDateTime::fromString(msg["timestamp"].toString(), Qt::ISODate);
+        bool isOwn = (sender != friendName);
+
+        QString timeStr = timestamp.toString("HH:mm:ss");
+        QString messageHtml;
+
+        if (isOwn) {
+            messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
+            .arg(sender)
+                .arg(timeStr)
+                .arg(content);
+        } else {
+            messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
+            .arg(sender)
+                .arg(timeStr)
+                .arg(content);
+        }
+
+        // If it's a MORE_HISTORY_RESPONSE, prepend older messages
+        if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
+            newMessages = messageHtml + newMessages;
+        } else {
+            newMessages += messageHtml;
+        }
+    }
+
+    // Insert the new messages in the correct position
+    QTextCursor cursor(ui->chatTextEdit->document());
+    if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
+        cursor.movePosition(QTextCursor::Start);
+        cursor.insertHtml(newMessages);
+        // If not empty, insert a newline
+        if (!ui->chatTextEdit->toPlainText().isEmpty()) {
+            cursor.movePosition(QTextCursor::Start);
+            cursor.insertText("\n");
+        }
+    } else {
+        cursor.movePosition(QTextCursor::End);
+        cursor.insertText("\n");
+        cursor.insertHtml(newMessages);
+    }
+
+    currentOffset += messages.size();
+    hasMoreMessages = json["has_more"].toBool();
+    isLoadingHistory = false;
+
+    if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
+        int newMax = ui->chatTextEdit->verticalScrollBar()->maximum();
+        ui->chatTextEdit->verticalScrollBar()->setValue(oldScrollPos + (newMax - oldMax));
+    } else {
+        ui->chatTextEdit->verticalScrollBar()->setValue(
+            ui->chatTextEdit->verticalScrollBar()->maximum());
+    }
+
+    // Mark messages as read if they are the latest messages and window is visible
+    if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE && isVisible() && !messagesMarkedAsRead) {
+        QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
+        networkManager.sendMessage(readNotification);
+        messagesMarkedAsRead = true;
+        emit messagesRead(friendId);
+    }
+}
+
+void ChatWindow::handleMessageResponse(const QJsonObject& json)
+{
+    QString sender = json["sender"].toString();
+    QString content = json["content"].toString();
+    QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(json["timestamp"].toInteger());
+
+    if (sender == friendName || json["recipient"].toString() == friendName) {
+        bool isOwn = (sender != friendName);
+        addMessageToChat(sender, content, timestamp, isOwn, true);
+    }
+}
+
+void ChatWindow::handleNewMessages(const QJsonObject& json)
+{
+    QString content = json["content"].toString();
+    int fromId = json["from"].toInt();
+    QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(static_cast<qint64>(json["timestamp"].toDouble()));
+
+    LOG_INFO(QString("Processing new message from user %1: %2").arg(fromId).arg(content));
+
+    if (fromId == friendId) {
+        LOG_INFO("Message is from friend, adding to chat");
+        addMessageToChat(friendName, content, timestamp, false, true);
+
+        // If window is visible, send read notification
+        if (isVisible()) {
+            if (!messagesMarkedAsRead) {
+                QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
+                networkManager.sendMessage(readNotification);
+                messagesMarkedAsRead = true;
+                emit messagesRead(friendId);
+            }
+        } else {
+            messagesMarkedAsRead = false;
+        }
+    } else {
+        LOG_INFO(QString("Message from %1 doesn't match friend ID %2").arg(fromId).arg(friendId));
+    }
+}
+
 void ChatWindow::loadInitialHistory()
 {
     QJsonObject request;
-    request["type"] = Protocol::MessageType::GET_LATEST_MESSAGES;  // Nowy typ wiadomości
+    request["type"] = Protocol::MessageType::GET_LATEST_MESSAGES;
     request["friend_id"] = friendId;
-    request["limit"] = Protocol::ChatHistory::MESSAGE_BATCH_SIZE;  // Domyślnie 20
+    request["limit"] = Protocol::ChatHistory::MESSAGE_BATCH_SIZE;
 
     networkManager.sendMessage(request);
     isLoadingHistory = true;
@@ -53,7 +219,8 @@ void ChatWindow::loadInitialHistory()
 
 void ChatWindow::loadMoreHistory()
 {
-    if (!hasMoreMessages || isLoadingHistory) return;
+    if (!hasMoreMessages || isLoadingHistory)
+        return;
 
     QJsonObject request;
     request["type"] = Protocol::MessageType::GET_MORE_HISTORY;
@@ -67,141 +234,8 @@ void ChatWindow::loadMoreHistory()
 void ChatWindow::onScrollValueChanged(int value)
 {
     QScrollBar* scrollBar = ui->chatTextEdit->verticalScrollBar();
-    if (value <= scrollBar->maximum() * 0.1) { // Gdy przewiniemy do górnych 10%
+    if (value <= scrollBar->maximum() * 0.1) {
         loadMoreHistory();
-    }
-}
-
-void ChatWindow::onMessageReceived(const QJsonObject& json)
-{
-    QString type = json["type"].toString();
-    LOG_INFO(QString("ChatWindow::onMessageReceived - Received message type: %1").arg(type));
-
-    if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE ||
-        type == Protocol::MessageType::CHAT_HISTORY_RESPONSE ||
-        type == Protocol::MessageType::MORE_HISTORY_RESPONSE)
-    {
-        QJsonArray messages = json["messages"].toArray();
-        int oldScrollPos = ui->chatTextEdit->verticalScrollBar()->value();
-        int oldMax = ui->chatTextEdit->verticalScrollBar()->maximum();
-
-        // Tekst do wstawienia
-        QString newMessages;
-
-        for (const QJsonValue& msgVal : messages)
-        {
-            QJsonObject msg = msgVal.toObject();
-            QString sender = msg["sender"].toString();
-            QString content = msg["content"].toString();
-            QDateTime timestamp = QDateTime::fromString(msg["timestamp"].toString(), Qt::ISODate);
-            bool isOwn = (sender != friendName);
-
-            QString timeStr = timestamp.toString("HH:mm:ss");
-            QString messageHtml;
-
-            if (isOwn) {
-                messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
-                .arg(sender)
-                    .arg(timeStr)
-                    .arg(content);
-            } else {
-                messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
-                .arg(sender)
-                    .arg(timeStr)
-                    .arg(content);
-            }
-
-            if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
-                // Dla starszych wiadomości dodaj na początek
-                newMessages = messageHtml + newMessages;
-            } else {
-                // Dla najnowszych wiadomości dodaj na koniec
-                newMessages += messageHtml;
-            }
-        }
-
-        // Wstaw tekst w odpowiednie miejsce
-        QTextCursor cursor(ui->chatTextEdit->document());
-
-        if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
-            // Wstaw na początku
-            cursor.movePosition(QTextCursor::Start);
-            cursor.insertHtml(newMessages);
-
-            // Jeśli są już jakieś wiadomości, dodaj pojedynczy znak nowego wiersza
-            if (!ui->chatTextEdit->toPlainText().isEmpty()) {
-                cursor.movePosition(QTextCursor::Start);
-                cursor.insertText("\n");
-            }
-        } else {
-            // Wstaw na końcu
-            cursor.movePosition(QTextCursor::End);
-            // Tutaj, zamiast sprawdzania czy pole jest puste, zawsze wstaw nowy wiersz
-            cursor.insertText("\n");
-            cursor.insertHtml(newMessages);
-        }
-
-        currentOffset += messages.size();
-        hasMoreMessages = json["has_more"].toBool();
-        isLoadingHistory = false;
-
-        if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
-            // Zachowaj pozycję przewijania dla starszych wiadomości
-            int newMax = ui->chatTextEdit->verticalScrollBar()->maximum();
-            ui->chatTextEdit->verticalScrollBar()->setValue(oldScrollPos + (newMax - oldMax));
-        } else {
-            // Przewiń na dół dla początkowej historii
-            ui->chatTextEdit->verticalScrollBar()->setValue(
-                ui->chatTextEdit->verticalScrollBar()->maximum());
-        }
-
-        // Jeśli to początkowa historia i okno jest widoczne, oznacz wiadomości jako przeczytane
-        if (type == Protocol::MessageType::LATEST_MESSAGES_RESPONSE && isVisible() && !messagesMarkedAsRead) {
-            QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
-            networkManager.sendMessage(readNotification);
-            messagesMarkedAsRead = true;
-            emit messagesRead(friendId);
-        }
-    }
-    else if (type == Protocol::MessageType::MESSAGE_RESPONSE)
-    {
-        QString sender = json["sender"].toString();
-        QString content = json["content"].toString();
-        QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(json["timestamp"].toInteger());
-
-        if (sender == friendName || json["recipient"].toString() == friendName) {
-            bool isOwn = (sender != friendName);
-            addMessageToChat(sender, content, timestamp, isOwn, true);
-        }
-    }
-    else if (type == Protocol::MessageType::NEW_MESSAGES)
-    {
-        QString content = json["content"].toString();
-        int fromId = json["from"].toInt();
-        QDateTime timestamp = QDateTime::fromMSecsSinceEpoch(static_cast<qint64>(json["timestamp"].toDouble()));
-
-        LOG_INFO(QString("Processing new message from user %1: %2").arg(fromId).arg(content));
-
-        if (fromId == friendId) {
-            LOG_INFO("Message is from friend, adding to chat");
-            // Użyj friendName jako sender, ponieważ wiemy, że wiadomość jest od przyjaciela
-            addMessageToChat(friendName, content, timestamp, false, true);
-
-            // Jeśli okno jest widoczne, wyślij powiadomienie o przeczytaniu
-            if (isVisible()) {
-                if (!messagesMarkedAsRead) {
-                    QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
-                    networkManager.sendMessage(readNotification);
-                    messagesMarkedAsRead = true;
-                    emit messagesRead(friendId);
-                }
-            } else {
-                // Jeśli okno nie jest widoczne, oznacz wiadomości jako nieprzeczytane
-                messagesMarkedAsRead = false;
-            }
-        } else {
-            LOG_INFO(QString("Message from %1 doesn't match friend ID %2").arg(fromId).arg(friendId));
-        }
     }
 }
 
@@ -211,21 +245,13 @@ void ChatWindow::onSendMessageClicked()
     if (message.isEmpty()) return;
 
     QJsonObject messageRequest = Protocol::MessageStructure::createMessage(friendId, message);
-
-    // Zapisz czas wysłania
     QDateTime currentTime = QDateTime::currentDateTime();
 
-    // Użyj tej samej nazwy użytkownika co w systemie
     QString sender = networkManager.getUsername();
     bool isOwn = (sender != friendName);
 
-    // Wyświetl wiadomość lokalnie
     addMessageToChat(sender, message, currentTime, isOwn, true);
-
-    // Wyślij wiadomość
     networkManager.sendMessage(messageRequest);
-
-    // Wyczyść pole tekstowe
     ui->messageLineEdit->clear();
 }
 
@@ -250,7 +276,6 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
     QTextCursor cursor(ui->chatTextEdit->document());
     cursor.movePosition(QTextCursor::End);
 
-    // Dodaj tylko początkową nową linię
     cursor.insertText("\n");
     cursor.insertHtml(messageHtml);
 
@@ -270,14 +295,11 @@ void ChatWindow::showEvent(QShowEvent* event)
     QWidget::showEvent(event);
 
     if (!messagesMarkedAsRead) {
-        // Tworzenie i wysyłanie powiadomienia o przeczytaniu
         QJsonObject readNotification = Protocol::MessageStructure::createMessageRead(friendId);
         networkManager.sendMessage(readNotification);
 
         LOG_INFO(QString("Sent read notification for messages from friend ID: %1").arg(friendId));
         messagesMarkedAsRead = true;
-
-        // Emituj sygnał, że wiadomości zostały przeczytane (można dodać do klasy)
         emit messagesRead(friendId);
     }
 }

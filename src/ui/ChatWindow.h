@@ -1,9 +1,4 @@
-/**
- * @file ChatWindow.h
- * @brief Chat window class definition
- * @author piotrek-pl
- * @date 2025-01-27 08:34:02
- */
+// ChatWindow.h
 
 #pragma once
 
@@ -11,6 +6,8 @@
 #include <QDateTime>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <functional>
+#include <unordered_map>
 #include "network/NetworkManager.h"
 
 namespace Ui {
@@ -39,11 +36,14 @@ private:
     // UI initialization
     void initializeUI();
 
-    // Message handling
-    void handleChatHistoryResponse(const QJsonObject& json, const QString& type);
+    // Message handling refactored
+    void setupMessageHandlers();
+    void dispatchMessage(const QJsonObject& json);
+
+    // Handlers for specific message types
+    void handleHistoryResponse(const QJsonObject& json);
     void handleMessageResponse(const QJsonObject& json);
-    void handleNewMessage(const QJsonObject& json);
-    void processHistoryMessages(const QJsonArray& messages, bool isOlderMessages);
+    void handleNewMessages(const QJsonObject& json);
 
     // Message display
     QString createMessageHtml(const QString& sender, const QString& content,
@@ -71,6 +71,9 @@ private:
     bool hasMoreMessages;
     bool isLoadingHistory;
     bool messagesMarkedAsRead;
+
+    // Dispatch map for message handling
+    std::unordered_map<QString, std::function<void(const QJsonObject&)>> messageHandlers;
 
 protected:
     void showEvent(QShowEvent* event) override;
