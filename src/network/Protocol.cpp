@@ -2,7 +2,7 @@
  * @file Protocol.cpp
  * @brief Network protocol implementation
  * @author piotrek-pl
- * @date 2025-01-24 14:35:53
+ * @date 2025-01-27 01:02:05
  */
 
 #include "Protocol.h"
@@ -29,8 +29,7 @@ QJsonObject createNewMessage(const QString& content, int from, qint64 timestamp)
     return message;
 }
 
-QJsonObject createMessageRead(int friendId)
-{
+QJsonObject createMessageRead(int friendId) {
     QJsonObject message;
     message["type"] = Protocol::MessageType::MESSAGE_READ;
     message["friendId"] = friendId;
@@ -317,6 +316,15 @@ QJsonObject createInvitationStatusChangedNotification(int requestId, int userId,
         {"request_id", requestId},
         {"user_id", userId},
         {"status", status},
+        {"timestamp", QDateTime::currentMSecsSinceEpoch()}
+    };
+}
+
+QJsonObject createFriendRequestAcceptedNotification(int userId, const QString& username) {
+    return QJsonObject{
+        {"type", MessageType::FRIEND_REQUEST_ACCEPTED_NOTIFICATION},
+        {"user_id", userId},
+        {"username", username},
         {"timestamp", QDateTime::currentMSecsSinceEpoch()}
     };
 }
