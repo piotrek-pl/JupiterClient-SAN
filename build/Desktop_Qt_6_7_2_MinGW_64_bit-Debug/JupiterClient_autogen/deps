@@ -379,6 +379,14 @@ JupiterClient_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestDependencies.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake \
 	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake \

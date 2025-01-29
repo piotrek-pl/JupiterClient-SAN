@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"tests/integration/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "integration_tests_autogen_timestamp_deps::@a40f6d277e0496dfeabf",
+	"isGeneratorProvided" : true,
+	"name" : "integration_tests_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "tests/integration",
+		"source" : "tests/integration"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

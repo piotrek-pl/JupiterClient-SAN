@@ -1,0 +1,30 @@
+[2025-01-29 18:58:13.258] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 18:58:13.258] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 18:58:17.312] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-29 18:58:17.312] [INFO] Status update: Connection refused - check if server is running
+[2025-01-29 18:58:17.312] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-29 18:58:18.247] [WARNING] Attempting to send message while not connected
+[2025-01-29 18:58:18.248] [INFO] Status update: Not connected to server
+[2025-01-29 18:58:22.310] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 18:58:22.310] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 18:58:23.257] [WARNING] Attempting to send message while not connected
+[2025-01-29 18:58:23.258] [INFO] Status update: Not connected to server
+[2025-01-29 18:58:23.258] [INFO] Status update: Logging in...
+[2025-01-29 18:58:26.405] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-29 18:58:26.405] [INFO] Status update: Connection refused - check if server is running
+[2025-01-29 18:58:26.405] [INFO] Scheduling reconnection attempt 2/5
+[2025-01-29 18:58:44.285] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 18:58:44.285] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 18:58:48.372] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-29 18:58:48.372] [INFO] Status update: Connection refused - check if server is running
+[2025-01-29 18:58:48.372] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-29 18:58:49.279] [WARNING] Attempting to send message while not connected
+[2025-01-29 18:58:49.279] [INFO] Status update: Not connected to server
+[2025-01-29 18:58:53.378] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 18:58:53.378] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 18:58:54.280] [WARNING] Attempting to send message while not connected
+[2025-01-29 18:58:54.280] [INFO] Status update: Not connected to server
+[2025-01-29 18:58:54.280] [INFO] Status update: Logging in...
+[2025-01-29 18:58:57.480] [ERROR] Socket error: 0 (Connection refused)
+[2025-01-29 18:58:57.480] [INFO] Status update: Connection refused - check if server is running
+[2025-01-29 18:58:57.480] [INFO] Scheduling reconnection attempt 2/5

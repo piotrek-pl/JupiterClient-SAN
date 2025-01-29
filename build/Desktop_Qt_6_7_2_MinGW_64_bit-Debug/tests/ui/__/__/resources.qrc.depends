@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/icons/status_online.svg</file>
+        <file>resources/icons/status_online_msg.svg</file>
+        <file>resources/icons/status_away.svg</file>
+        <file>resources/icons/status_away_msg.svg</file>
+        <file>resources/icons/status_busy.svg</file>
+        <file>resources/icons/status_busy_msg.svg</file>
+        <file>resources/icons/status_offline.svg</file>
+        <file>resources/icons/status_offline_msg.svg</file>
+        <file>resources/logo/jupiter_logo.png</file>
+        <file>resources/icons/sun_icon.png</file>
+    </qresource>
+</RCC>

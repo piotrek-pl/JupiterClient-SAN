@@ -1,0 +1,227 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-e81b5f19996e07bc97ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-tests-Debug-70e4927a02b591d5c1f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests"
+				},
+				{
+					"build" : "tests/unit",
+					"jsonFile" : "directory-tests.unit-Debug-977dfcdd9401f3083ae5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "tests/unit",
+					"targetIndexes" : 
+					[
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "tests/integration",
+					"jsonFile" : "directory-tests.integration-Debug-f64f654454dcab93f801.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "tests/integration",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "tests/ui",
+					"jsonFile" : "directory-tests.ui-Debug-f089fd1d9fbaeeb6f582.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "tests/ui",
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "JupiterClient",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "JupiterClient::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JupiterClient-Debug-97608db9de5c82ffbb28.json",
+					"name" : "JupiterClient",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JupiterClient_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JupiterClient_autogen-Debug-b4544050adab099ce7f2.json",
+					"name" : "JupiterClient_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JupiterClient_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JupiterClient_autogen_timestamp_deps-Debug-3ab1622192e616140df4.json",
+					"name" : "JupiterClient_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "integration_tests::@a40f6d277e0496dfeabf",
+					"jsonFile" : "target-integration_tests-Debug-ed95363d4c79e30cf98d.json",
+					"name" : "integration_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "integration_tests_autogen::@a40f6d277e0496dfeabf",
+					"jsonFile" : "target-integration_tests_autogen-Debug-4940766cfcb12c640bac.json",
+					"name" : "integration_tests_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "integration_tests_autogen_timestamp_deps::@a40f6d277e0496dfeabf",
+					"jsonFile" : "target-integration_tests_autogen_timestamp_deps-Debug-a179c26bb745b0a6ff7b.json",
+					"name" : "integration_tests_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ui_tests::@19d5e82ae68c461cf757",
+					"jsonFile" : "target-ui_tests-Debug-5eb273ed7de669cfd63a.json",
+					"name" : "ui_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ui_tests_autogen::@19d5e82ae68c461cf757",
+					"jsonFile" : "target-ui_tests_autogen-Debug-291b547255c015406029.json",
+					"name" : "ui_tests_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ui_tests_autogen_timestamp_deps::@19d5e82ae68c461cf757",
+					"jsonFile" : "target-ui_tests_autogen_timestamp_deps-Debug-8c8376192f02362e5a07.json",
+					"name" : "ui_tests_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "unit_tests::@17bd492d087794b9594e",
+					"jsonFile" : "target-unit_tests-Debug-9cab2d03ad7239b58222.json",
+					"name" : "unit_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "unit_tests_autogen::@17bd492d087794b9594e",
+					"jsonFile" : "target-unit_tests_autogen-Debug-23e284d894dd29eff887.json",
+					"name" : "unit_tests_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "unit_tests_autogen_timestamp_deps::@17bd492d087794b9594e",
+					"jsonFile" : "target-unit_tests_autogen_timestamp_deps-Debug-93f1975e589f37253224.json",
+					"name" : "unit_tests_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+		"source" : "D:/programowanie/Qt/SAN/JupiterClient"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

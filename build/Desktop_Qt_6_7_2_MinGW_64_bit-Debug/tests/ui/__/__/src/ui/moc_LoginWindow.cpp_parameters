@@ -1,0 +1,4 @@
+-DWIN32
+-o
+D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_LoginWindow.cpp
+D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h

@@ -165,6 +165,18 @@ build JupiterClient.exe: CXX_EXECUTABLE_LINKER__JupiterClient_Debug CMakeFiles/J
 
 
 #############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\ctest.exe --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
+
+#############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
@@ -268,9 +280,865 @@ build JupiterClient_autogen/EWIEGA46WW/qrc_resources.cpp | ${cmake_ninja_workdir
 build CMakeFiles/JupiterClient_autogen JupiterClient_autogen/include/src/ui/ui_LoginWindow.h JupiterClient_autogen/include/src/ui/ui_MainWindow.h JupiterClient_autogen/include/src/ui/ui_ChatWindow.h JupiterClient_autogen/include/src/ui/ui_InvitationsDialog.h JupiterClient_autogen/include/src/ui/ui_SearchDialog.h | ${cmake_ninja_workdir}CMakeFiles/JupiterClient_autogen ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_LoginWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_MainWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_ChatWindow.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_InvitationsDialog.h ${cmake_ninja_workdir}JupiterClient_autogen/include/src/ui/ui_SearchDialog.h: phony JupiterClient_autogen/timestamp || JupiterClient_autogen_timestamp_deps
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/programowanie/Qt/SAN/JupiterClient/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build tests/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests && C:\Qt\Tools\CMake_64\bin\ctest.exe --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build tests/test: phony tests/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests && C:\Qt\Tools\CMake_64\bin\cmake-gui.exe -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build tests/edit_cache: phony tests/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests && C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build tests/rebuild_cache: phony tests/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build tests/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build tests/CMakeFiles/install.util: CUSTOM_COMMAND tests/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests && C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build tests/install: phony tests/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build tests/CMakeFiles/install/local.util: CUSTOM_COMMAND tests/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build tests/install/local: phony tests/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build tests/CMakeFiles/install/strip.util: CUSTOM_COMMAND tests/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build tests/install/strip: phony tests/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/programowanie/Qt/SAN/JupiterClient/tests/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target unit_tests
+
+
+#############################################
+# Order-only phony target for unit_tests
+
+build cmake_object_order_depends_target_unit_tests: phony || tests/unit/unit_tests_autogen tests/unit/unit_tests_autogen/mocs_compilation.cpp tests/unit/unit_tests_autogen/timestamp tests/unit/unit_tests_autogen_timestamp_deps
+
+build tests/unit/CMakeFiles/unit_tests.dir/unit_tests_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__unit_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_unit_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/unit\" -DQT_TESTLIB_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\unit\CMakeFiles\unit_tests.dir\unit_tests_autogen\mocs_compilation.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = tests\unit\CMakeFiles\unit_tests.dir
+  OBJECT_FILE_DIR = tests\unit\CMakeFiles\unit_tests.dir\unit_tests_autogen
+
+build tests/unit/CMakeFiles/unit_tests.dir/test_unit.cpp.obj: CXX_COMPILER__unit_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/tests/unit/test_unit.cpp || cmake_object_order_depends_target_unit_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/unit\" -DQT_TESTLIB_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\unit\CMakeFiles\unit_tests.dir\test_unit.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = tests\unit\CMakeFiles\unit_tests.dir
+  OBJECT_FILE_DIR = tests\unit\CMakeFiles\unit_tests.dir
+
+build tests/unit/CMakeFiles/unit_tests.dir/__/__/src/network/Protocol.cpp.obj: CXX_COMPILER__unit_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp || cmake_object_order_depends_target_unit_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/unit\" -DQT_TESTLIB_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\unit\CMakeFiles\unit_tests.dir\__\__\src\network\Protocol.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = tests\unit\CMakeFiles\unit_tests.dir
+  OBJECT_FILE_DIR = tests\unit\CMakeFiles\unit_tests.dir\__\__\src\network
+
+build tests/unit/CMakeFiles/unit_tests.dir/__/__/src/config/ConfigManager.cpp.obj: CXX_COMPILER__unit_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp || cmake_object_order_depends_target_unit_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/unit\" -DQT_TESTLIB_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\unit\CMakeFiles\unit_tests.dir\__\__\src\config\ConfigManager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = tests\unit\CMakeFiles\unit_tests.dir
+  OBJECT_FILE_DIR = tests\unit\CMakeFiles\unit_tests.dir\__\__\src\config
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target unit_tests
+
+
+#############################################
+# Link the executable tests\unit\unit_tests.exe
+
+build tests/unit/unit_tests.exe: CXX_EXECUTABLE_LINKER__unit_tests_Debug tests/unit/CMakeFiles/unit_tests.dir/unit_tests_autogen/mocs_compilation.cpp.obj tests/unit/CMakeFiles/unit_tests.dir/test_unit.cpp.obj tests/unit/CMakeFiles/unit_tests.dir/__/__/src/network/Protocol.cpp.obj tests/unit/CMakeFiles/unit_tests.dir/__/__/src/config/ConfigManager.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Test.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a || tests/unit/unit_tests_autogen tests/unit/unit_tests_autogen_timestamp_deps
+  FLAGS = -DQT_QML_DEBUG -g
+  LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Test.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Network.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = tests\unit\CMakeFiles\unit_tests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tests\unit\unit_tests.exe
+  TARGET_IMPLIB = tests\unit\libunit_tests.dll.a
+  TARGET_PDB = unit_tests.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build tests/unit/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\ctest.exe --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build tests/unit/test: phony tests/unit/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build tests/unit/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\cmake-gui.exe -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build tests/unit/edit_cache: phony tests/unit/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build tests/unit/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build tests/unit/rebuild_cache: phony tests/unit/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build tests/unit/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build tests/unit/CMakeFiles/install.util: CUSTOM_COMMAND tests/unit/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build tests/unit/install: phony tests/unit/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build tests/unit/CMakeFiles/install/local.util: CUSTOM_COMMAND tests/unit/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build tests/unit/install/local: phony tests/unit/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build tests/unit/CMakeFiles/install/strip.util: CUSTOM_COMMAND tests/unit/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build tests/unit/install/strip: phony tests/unit/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for unit_tests_autogen_timestamp_deps
+
+build tests/unit/unit_tests_autogen_timestamp_deps: phony
+
+
+#############################################
+# Utility command for unit_tests_autogen
+
+build tests/unit/unit_tests_autogen: phony tests/unit/CMakeFiles/unit_tests_autogen tests/unit/unit_tests_autogen/timestamp tests/unit/unit_tests_autogen/mocs_compilation.cpp tests/unit/unit_tests_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for tests\unit\unit_tests_autogen\timestamp
+
+build tests/unit/unit_tests_autogen/timestamp tests/unit/unit_tests_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tests/unit/unit_tests_autogen/timestamp ${cmake_ninja_workdir}tests/unit/unit_tests_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/Qt/6.7.2/mingw_64/./bin/moc.exe C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/unit/unit_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\unit && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/CMakeFiles/unit_tests_autogen.dir/AutogenInfo.json Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/timestamp && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile D:/programowanie/Qt/SAN/JupiterClient D:/programowanie/Qt/SAN/JupiterClient/tests/unit D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/deps D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/d/db0b5ec3947ad9d1bfdd121ed843c6082f7165463f9c941c25c98008f96fee56.d"
+  DESC = Automatic MOC and UIC for target unit_tests
+  depfile = CMakeFiles\d\db0b5ec3947ad9d1bfdd121ed843c6082f7165463f9c941c25c98008f96fee56.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
+# Phony custom command for tests\unit\CMakeFiles\unit_tests_autogen
+
+build tests/unit/CMakeFiles/unit_tests_autogen | ${cmake_ninja_workdir}tests/unit/CMakeFiles/unit_tests_autogen: phony tests/unit/unit_tests_autogen/timestamp || tests/unit/unit_tests_autogen_timestamp_deps
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/programowanie/Qt/SAN/JupiterClient/tests/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target integration_tests
+
+
+#############################################
+# Order-only phony target for integration_tests
+
+build cmake_object_order_depends_target_integration_tests: phony || tests/integration/integration_tests_autogen tests/integration/integration_tests_autogen/mocs_compilation.cpp tests/integration/integration_tests_autogen/timestamp tests/integration/integration_tests_autogen_timestamp_deps
+
+build tests/integration/CMakeFiles/integration_tests.dir/integration_tests_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__integration_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_integration_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/integration\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\integration\CMakeFiles\integration_tests.dir\integration_tests_autogen\mocs_compilation.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  OBJECT_FILE_DIR = tests\integration\CMakeFiles\integration_tests.dir\integration_tests_autogen
+
+build tests/integration/CMakeFiles/integration_tests.dir/test_integration.cpp.obj: CXX_COMPILER__integration_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/tests/integration/test_integration.cpp || cmake_object_order_depends_target_integration_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/integration\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\integration\CMakeFiles\integration_tests.dir\test_integration.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  OBJECT_FILE_DIR = tests\integration\CMakeFiles\integration_tests.dir
+
+build tests/integration/CMakeFiles/integration_tests.dir/__/__/src/network/Protocol.cpp.obj: CXX_COMPILER__integration_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp || cmake_object_order_depends_target_integration_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/integration\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\network\Protocol.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  OBJECT_FILE_DIR = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\network
+
+build tests/integration/CMakeFiles/integration_tests.dir/__/__/src/config/ConfigManager.cpp.obj: CXX_COMPILER__integration_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp || cmake_object_order_depends_target_integration_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/integration\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\config\ConfigManager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  OBJECT_FILE_DIR = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\config
+
+build tests/integration/CMakeFiles/integration_tests.dir/__/__/src/network/NetworkManager.cpp.obj: CXX_COMPILER__integration_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.cpp || cmake_object_order_depends_target_integration_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/integration\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\network\NetworkManager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  OBJECT_FILE_DIR = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\network
+
+build tests/integration/CMakeFiles/integration_tests.dir/__/__/src/utils/Logger.cpp.obj: CXX_COMPILER__integration_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp || cmake_object_order_depends_target_integration_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/integration\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\utils\Logger.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  OBJECT_FILE_DIR = tests\integration\CMakeFiles\integration_tests.dir\__\__\src\utils
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target integration_tests
+
+
+#############################################
+# Link the executable tests\integration\integration_tests.exe
+
+build tests/integration/integration_tests.exe: CXX_EXECUTABLE_LINKER__integration_tests_Debug tests/integration/CMakeFiles/integration_tests.dir/integration_tests_autogen/mocs_compilation.cpp.obj tests/integration/CMakeFiles/integration_tests.dir/test_integration.cpp.obj tests/integration/CMakeFiles/integration_tests.dir/__/__/src/network/Protocol.cpp.obj tests/integration/CMakeFiles/integration_tests.dir/__/__/src/config/ConfigManager.cpp.obj tests/integration/CMakeFiles/integration_tests.dir/__/__/src/network/NetworkManager.cpp.obj tests/integration/CMakeFiles/integration_tests.dir/__/__/src/utils/Logger.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Test.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a || tests/integration/integration_tests_autogen tests/integration/integration_tests_autogen_timestamp_deps
+  FLAGS = -DQT_QML_DEBUG -g
+  LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Test.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Network.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  -lws2_32  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = tests\integration\CMakeFiles\integration_tests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tests\integration\integration_tests.exe
+  TARGET_IMPLIB = tests\integration\libintegration_tests.dll.a
+  TARGET_PDB = integration_tests.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build tests/integration/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\ctest.exe --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build tests/integration/test: phony tests/integration/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build tests/integration/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\cmake-gui.exe -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build tests/integration/edit_cache: phony tests/integration/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build tests/integration/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build tests/integration/rebuild_cache: phony tests/integration/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build tests/integration/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build tests/integration/CMakeFiles/install.util: CUSTOM_COMMAND tests/integration/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build tests/integration/install: phony tests/integration/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build tests/integration/CMakeFiles/install/local.util: CUSTOM_COMMAND tests/integration/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build tests/integration/install/local: phony tests/integration/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build tests/integration/CMakeFiles/install/strip.util: CUSTOM_COMMAND tests/integration/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build tests/integration/install/strip: phony tests/integration/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for integration_tests_autogen_timestamp_deps
+
+build tests/integration/integration_tests_autogen_timestamp_deps: phony
+
+
+#############################################
+# Utility command for integration_tests_autogen
+
+build tests/integration/integration_tests_autogen: phony tests/integration/CMakeFiles/integration_tests_autogen tests/integration/integration_tests_autogen/timestamp tests/integration/integration_tests_autogen/mocs_compilation.cpp tests/integration/integration_tests_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for tests\integration\integration_tests_autogen\timestamp
+
+build tests/integration/integration_tests_autogen/timestamp tests/integration/integration_tests_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tests/integration/integration_tests_autogen/timestamp ${cmake_ninja_workdir}tests/integration/integration_tests_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/Qt/6.7.2/mingw_64/./bin/moc.exe C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/integration/integration_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\integration && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/CMakeFiles/integration_tests_autogen.dir/AutogenInfo.json Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/timestamp && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile D:/programowanie/Qt/SAN/JupiterClient D:/programowanie/Qt/SAN/JupiterClient/tests/integration D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration/integration_tests_autogen/deps D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/d/b7116b8469da99f5d2dc0becff2ad8c1c322ae804ce49e996318fb67882a7149.d"
+  DESC = Automatic MOC and UIC for target integration_tests
+  depfile = CMakeFiles\d\b7116b8469da99f5d2dc0becff2ad8c1c322ae804ce49e996318fb67882a7149.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
+# Phony custom command for tests\integration\CMakeFiles\integration_tests_autogen
+
+build tests/integration/CMakeFiles/integration_tests_autogen | ${cmake_ninja_workdir}tests/integration/CMakeFiles/integration_tests_autogen: phony tests/integration/integration_tests_autogen/timestamp || tests/integration/integration_tests_autogen_timestamp_deps
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/programowanie/Qt/SAN/JupiterClient/tests/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ui_tests
+
+
+#############################################
+# Order-only phony target for ui_tests
+
+build cmake_object_order_depends_target_ui_tests: phony || tests/ui/__/__/src/ui/moc_ChatWindow.cpp tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp tests/ui/__/__/src/ui/moc_LoginWindow.cpp tests/ui/__/__/src/ui/moc_MainWindow.cpp tests/ui/__/__/src/ui/moc_SearchDialog.cpp tests/ui/__/__/src/utils/moc_Logger.cpp tests/ui/qrc_resources.cpp tests/ui/ui_ChatWindow.h tests/ui/ui_InvitationsDialog.h tests/ui/ui_LoginWindow.h tests/ui/ui_MainWindow.h tests/ui/ui_SearchDialog.h tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen/mocs_compilation.cpp tests/ui/ui_tests_autogen/timestamp tests/ui/ui_tests_autogen_timestamp_deps
+
+build tests/ui/CMakeFiles/ui_tests.dir/ui_tests_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\ui_tests_autogen\mocs_compilation.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\ui_tests_autogen
+
+build tests/ui/CMakeFiles/ui_tests.dir/test_ui.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/tests/ui/test_ui.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\test_ui.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/network/Protocol.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\network\Protocol.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\network
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/config/ConfigManager.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\config\ConfigManager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\config
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/network/NetworkManager.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\network\NetworkManager.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\network
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/LoginWindow.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\LoginWindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/MainWindow.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\MainWindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/SearchDialog.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\SearchDialog.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/ChatWindow.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\ChatWindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/InvitationsDialog.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\InvitationsDialog.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/utils/Logger.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\utils\Logger.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\utils
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_LoginWindow.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_LoginWindow.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\moc_LoginWindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_MainWindow.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_MainWindow.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\moc_MainWindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_SearchDialog.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_SearchDialog.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\moc_SearchDialog.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_ChatWindow.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_ChatWindow.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\moc_ChatWindow.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_InvitationsDialog.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui\moc_InvitationsDialog.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\ui
+
+build tests/ui/CMakeFiles/ui_tests.dir/__/__/src/utils/moc_Logger.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/utils/moc_Logger.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\utils\moc_Logger.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir\__\__\src\utils
+
+build tests/ui/CMakeFiles/ui_tests.dir/qrc_resources.cpp.obj: CXX_COMPILER__ui_tests_unscanned_Debug D$:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/qrc_resources.cpp || cmake_object_order_depends_target_ui_tests
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_TESTCASE_BUILDDIR=\"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui\" -DQT_TESTCASE_SOURCEDIR=\"D:/programowanie/Qt/SAN/JupiterClient/tests/ui\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = tests\ui\CMakeFiles\ui_tests.dir\qrc_resources.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/include -ID:/programowanie/Qt/SAN/JupiterClient/src -ID:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui -ID:/programowanie/Qt/SAN/JupiterClient -isystem C:/Qt/6.7.2/mingw_64/include/QtTest -isystem C:/Qt/6.7.2/mingw_64/include -isystem C:/Qt/6.7.2/mingw_64/include/QtCore -isystem C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.2/mingw_64/include/QtNetwork -isystem C:/Qt/6.7.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.2/mingw_64/include/QtGui
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  OBJECT_FILE_DIR = tests\ui\CMakeFiles\ui_tests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ui_tests
+
+
+#############################################
+# Link the executable tests\ui\ui_tests.exe
+
+build tests/ui/ui_tests.exe: CXX_EXECUTABLE_LINKER__ui_tests_Debug tests/ui/CMakeFiles/ui_tests.dir/ui_tests_autogen/mocs_compilation.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/test_ui.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/network/Protocol.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/config/ConfigManager.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/network/NetworkManager.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/LoginWindow.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/MainWindow.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/SearchDialog.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/ChatWindow.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/InvitationsDialog.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/utils/Logger.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_LoginWindow.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_MainWindow.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_SearchDialog.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_ChatWindow.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/moc_InvitationsDialog.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/__/__/src/utils/moc_Logger.cpp.obj tests/ui/CMakeFiles/ui_tests.dir/qrc_resources.cpp.obj | C$:/Qt/6.7.2/mingw_64/lib/libQt6Test.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.2/mingw_64/lib/libQt6Core.a || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  FLAGS = -DQT_QML_DEBUG -g
+  LINK_LIBRARIES = C:/Qt/6.7.2/mingw_64/lib/libQt6Test.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Network.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Widgets.a  -lws2_32  C:/Qt/6.7.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = tests\ui\CMakeFiles\ui_tests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tests\ui\ui_tests.exe
+  TARGET_IMPLIB = tests\ui\libui_tests.dll.a
+  TARGET_PDB = ui_tests.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build tests/ui/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\ctest.exe --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build tests/ui/test: phony tests/ui/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build tests/ui/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\cmake-gui.exe -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build tests/ui/edit_cache: phony tests/ui/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build tests/ui/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\programowanie\Qt\SAN\JupiterClient -BD:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build tests/ui/rebuild_cache: phony tests/ui/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build tests/ui/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build tests/ui/CMakeFiles/install.util: CUSTOM_COMMAND tests/ui/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\cmake.exe -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build tests/ui/install: phony tests/ui/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build tests/ui/CMakeFiles/install/local.util: CUSTOM_COMMAND tests/ui/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build tests/ui/install/local: phony tests/ui/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build tests/ui/CMakeFiles/install/strip.util: CUSTOM_COMMAND tests/ui/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build tests/ui/install/strip: phony tests/ui/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for ui_tests_autogen_timestamp_deps
+
+build tests/ui/ui_tests_autogen_timestamp_deps: phony
+
+
+#############################################
+# Utility command for ui_tests_autogen
+
+build tests/ui/ui_tests_autogen: phony tests/ui/CMakeFiles/ui_tests_autogen tests/ui/ui_tests_autogen/timestamp tests/ui/ui_tests_autogen/mocs_compilation.cpp tests/ui/ui_tests_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for tests\ui\ui_LoginWindow.h
+
+build tests/ui/ui_LoginWindow.h | ${cmake_ninja_workdir}tests/ui/ui_LoginWindow.h: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.ui C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\6.7.2\mingw_64\.\bin\uic.exe -o D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_LoginWindow.h D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.ui"
+  DESC = Generating ui_LoginWindow.h
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\ui_MainWindow.h
+
+build tests/ui/ui_MainWindow.h | ${cmake_ninja_workdir}tests/ui/ui_MainWindow.h: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.ui C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\6.7.2\mingw_64\.\bin\uic.exe -o D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_MainWindow.h D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.ui"
+  DESC = Generating ui_MainWindow.h
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\ui_SearchDialog.h
+
+build tests/ui/ui_SearchDialog.h | ${cmake_ninja_workdir}tests/ui/ui_SearchDialog.h: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.ui C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\6.7.2\mingw_64\.\bin\uic.exe -o D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_SearchDialog.h D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.ui"
+  DESC = Generating ui_SearchDialog.h
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\ui_ChatWindow.h
+
+build tests/ui/ui_ChatWindow.h | ${cmake_ninja_workdir}tests/ui/ui_ChatWindow.h: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.ui C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\6.7.2\mingw_64\.\bin\uic.exe -o D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_ChatWindow.h D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.ui"
+  DESC = Generating ui_ChatWindow.h
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\ui_InvitationsDialog.h
+
+build tests/ui/ui_InvitationsDialog.h | ${cmake_ninja_workdir}tests/ui/ui_InvitationsDialog.h: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.ui C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\6.7.2\mingw_64\.\bin\uic.exe -o D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_InvitationsDialog.h D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.ui"
+  DESC = Generating ui_InvitationsDialog.h
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\__\__\src\ui\moc_LoginWindow.cpp
+
+build tests/ui/__/__/src/ui/moc_LoginWindow.cpp | ${cmake_ninja_workdir}tests/ui/__/__/src/ui/moc_LoginWindow.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui\__\__\src\ui && C:\Qt\6.7.2\mingw_64\.\bin\moc.exe @D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_LoginWindow.cpp_parameters"
+  DESC = Generating __/__/src/ui/moc_LoginWindow.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\__\__\src\ui\moc_MainWindow.cpp
+
+build tests/ui/__/__/src/ui/moc_MainWindow.cpp | ${cmake_ninja_workdir}tests/ui/__/__/src/ui/moc_MainWindow.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.h || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui\__\__\src\ui && C:\Qt\6.7.2\mingw_64\.\bin\moc.exe @D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_MainWindow.cpp_parameters"
+  DESC = Generating __/__/src/ui/moc_MainWindow.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\__\__\src\ui\moc_SearchDialog.cpp
+
+build tests/ui/__/__/src/ui/moc_SearchDialog.cpp | ${cmake_ninja_workdir}tests/ui/__/__/src/ui/moc_SearchDialog.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.h || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui\__\__\src\ui && C:\Qt\6.7.2\mingw_64\.\bin\moc.exe @D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_SearchDialog.cpp_parameters"
+  DESC = Generating __/__/src/ui/moc_SearchDialog.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\__\__\src\ui\moc_ChatWindow.cpp
+
+build tests/ui/__/__/src/ui/moc_ChatWindow.cpp | ${cmake_ninja_workdir}tests/ui/__/__/src/ui/moc_ChatWindow.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui\__\__\src\ui && C:\Qt\6.7.2\mingw_64\.\bin\moc.exe @D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_ChatWindow.cpp_parameters"
+  DESC = Generating __/__/src/ui/moc_ChatWindow.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\__\__\src\ui\moc_InvitationsDialog.cpp
+
+build tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp | ${cmake_ninja_workdir}tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui\__\__\src\ui && C:\Qt\6.7.2\mingw_64\.\bin\moc.exe @D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp_parameters"
+  DESC = Generating __/__/src/ui/moc_InvitationsDialog.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\__\__\src\utils\moc_Logger.cpp
+
+build tests/ui/__/__/src/utils/moc_Logger.cpp | ${cmake_ninja_workdir}tests/ui/__/__/src/utils/moc_Logger.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui\__\__\src\utils && C:\Qt\6.7.2\mingw_64\.\bin\moc.exe @D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/utils/moc_Logger.cpp_parameters"
+  DESC = Generating __/__/src/utils/moc_Logger.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\qrc_resources.cpp
+
+build tests/ui/qrc_resources.cpp | ${cmake_ninja_workdir}tests/ui/qrc_resources.cpp: CUSTOM_COMMAND D$:/programowanie/Qt/SAN/JupiterClient/resources.qrc D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_online.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_online_msg.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_away.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_away_msg.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_busy.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_busy_msg.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_offline.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/status_offline_msg.svg D$:/programowanie/Qt/SAN/JupiterClient/resources/logo/jupiter_logo.png D$:/programowanie/Qt/SAN/JupiterClient/resources/icons/sun_icon.png tests/ui/__/__/resources.qrc.depends C$:/Qt/6.7.2/mingw_64/./bin/rcc.exe || tests/ui/ui_tests_autogen tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\6.7.2\mingw_64\.\bin\rcc.exe --no-zstd --name resources --output D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/qrc_resources.cpp D:/programowanie/Qt/SAN/JupiterClient/resources.qrc"
+  DESC = Generating qrc_resources.cpp
+  restat = 1
+
+
+#############################################
+# Custom command for tests\ui\ui_tests_autogen\timestamp
+
+build tests/ui/ui_tests_autogen/timestamp tests/ui/ui_tests_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}tests/ui/ui_tests_autogen/timestamp ${cmake_ninja_workdir}tests/ui/ui_tests_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/Qt/6.7.2/mingw_64/./bin/moc.exe C$:/Qt/6.7.2/mingw_64/./bin/uic.exe || tests/ui/ui_tests_autogen_timestamp_deps
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\programowanie\Qt\SAN\JupiterClient\build\Desktop_Qt_6_7_2_MinGW_64_bit-Debug\tests\ui && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/CMakeFiles/ui_tests_autogen.dir/AutogenInfo.json Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/timestamp && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile D:/programowanie/Qt/SAN/JupiterClient D:/programowanie/Qt/SAN/JupiterClient/tests/ui D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/deps D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/d/691ae166b703224846d4dd45b823c55a8310e877e7f544858d3929cf207afe7d.d"
+  DESC = Automatic MOC and UIC for target ui_tests
+  depfile = CMakeFiles\d\691ae166b703224846d4dd45b823c55a8310e877e7f544858d3929cf207afe7d.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
+# Phony custom command for tests\ui\CMakeFiles\ui_tests_autogen
+
+build tests/ui/CMakeFiles/ui_tests_autogen | ${cmake_ninja_workdir}tests/ui/CMakeFiles/ui_tests_autogen: phony tests/ui/ui_tests_autogen/timestamp || tests/ui/ui_tests_autogen_timestamp_deps
+
+# =============================================================================
 # Target aliases.
 
 build JupiterClient: phony JupiterClient.exe
+
+build integration_tests: phony tests/integration/integration_tests.exe
+
+build integration_tests.exe: phony tests/integration/integration_tests.exe
+
+build integration_tests_autogen: phony tests/integration/integration_tests_autogen
+
+build integration_tests_autogen_timestamp_deps: phony tests/integration/integration_tests_autogen_timestamp_deps
+
+build ui_tests: phony tests/ui/ui_tests.exe
+
+build ui_tests.exe: phony tests/ui/ui_tests.exe
+
+build ui_tests_autogen: phony tests/ui/ui_tests_autogen
+
+build ui_tests_autogen_timestamp_deps: phony tests/ui/ui_tests_autogen_timestamp_deps
+
+build unit_tests: phony tests/unit/unit_tests.exe
+
+build unit_tests.exe: phony tests/unit/unit_tests.exe
+
+build unit_tests_autogen: phony tests/unit/unit_tests_autogen
+
+build unit_tests_autogen_timestamp_deps: phony tests/unit/unit_tests_autogen_timestamp_deps
 
 # =============================================================================
 # Folder targets.
@@ -280,7 +1148,35 @@ build JupiterClient: phony JupiterClient.exe
 #############################################
 # Folder: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug
 
-build all: phony JupiterClient.exe
+build all: phony JupiterClient.exe tests/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests
+
+build tests/all: phony tests/unit/all tests/integration/all tests/ui/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/integration
+
+build tests/integration/all: phony tests/integration/integration_tests.exe
+
+# =============================================================================
+
+#############################################
+# Folder: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui
+
+build tests/ui/all: phony tests/ui/ui_tests.exe
+
+# =============================================================================
+
+#############################################
+# Folder: D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit
+
+build tests/unit/all: phony tests/unit/unit_tests.exe
 
 # =============================================================================
 # Built-in targets
@@ -289,14 +1185,14 @@ build all: phony JupiterClient.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | .qtc/package-manager/auto-setup.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/QtInstallPaths.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeature.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageMessage.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindVulkan.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeRCCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake D$:/programowanie/Qt/SAN/JupiterClient/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/resources.qrc D$:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf
+build build.ninja: RERUN_CMAKE | .qtc/package-manager/auto-setup.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/QtInstallPaths.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeature.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageMessage.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindVulkan.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeRCCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake D$:/programowanie/Qt/SAN/JupiterClient/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/resources.qrc D$:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf D$:/programowanie/Qt/SAN/JupiterClient/tests/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/tests/integration/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/tests/ui/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/tests/unit/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build .qtc/package-manager/auto-setup.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/QtInstallPaths.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeature.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageMessage.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindVulkan.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeRCCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake D$:/programowanie/Qt/SAN/JupiterClient/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/resources.qrc D$:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf: phony
+build .qtc/package-manager/auto-setup.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Core/QtInstallPaths.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QInsightTrackerPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QPdfPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QNLMNIPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QSchannelBackendPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeature.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindPackageMessage.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindThreads.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/FindVulkan.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows.cmake C$:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.29.3/CMakeCXXCompiler.cmake CMakeFiles/3.29.3/CMakeRCCompiler.cmake CMakeFiles/3.29.3/CMakeSystem.cmake D$:/programowanie/Qt/SAN/JupiterClient/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/resources.qrc D$:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf D$:/programowanie/Qt/SAN/JupiterClient/tests/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/tests/integration/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/tests/ui/CMakeLists.txt D$:/programowanie/Qt/SAN/JupiterClient/tests/unit/CMakeLists.txt: phony
 
 
 #############################################
