@@ -39,8 +39,8 @@ constexpr auto qt_meta_stringdata_CLASSIntegrationTestsENDCLASS = QtMocHelpers::
     "",
     "cleanupTestCase",
     "testNetworkProtocolIntegration",
-    "testMessageFlow",
-    "testAuthenticationFlow"
+    "testAuthenticationFlow",
+    "testMessageFlow"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -92,9 +92,9 @@ Q_CONSTINIT const QMetaObject IntegrationTests::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'testNetworkProtocolIntegration'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'testMessageFlow'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'testAuthenticationFlow'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'testMessageFlow'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -109,8 +109,8 @@ void IntegrationTests::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 0: _t->initTestCase(); break;
         case 1: _t->cleanupTestCase(); break;
         case 2: _t->testNetworkProtocolIntegration(); break;
-        case 3: _t->testMessageFlow(); break;
-        case 4: _t->testAuthenticationFlow(); break;
+        case 3: _t->testAuthenticationFlow(); break;
+        case 4: _t->testMessageFlow(); break;
         default: ;
         }
     }

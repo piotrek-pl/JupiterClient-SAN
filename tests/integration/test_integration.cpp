@@ -17,17 +17,19 @@ private:
 private slots:
     void initTestCase()
     {
-        // Inicjalizacja QApplication jeśli nie istnieje
         if (!QApplication::instance()) {
             static int argc = 1;
             static char* argv[] = { (char*)"test" };
             app = new QApplication(argc, argv);
         }
 
-        // Inicjalizacja loggera
-        Logger::getInstance().setLogFile("logs/test.log");
+        Logger::getInstance().setLogFile("logs/integration_test.log");
 
-        QVERIFY(&networkManager != nullptr);
+        // Sprawdź czy serwer jest dostępny
+        QTcpSocket socket;
+        socket.connectToHost("127.0.0.1", 1234);
+        QVERIFY2(socket.waitForConnected(1000), "Server is not running!");
+        socket.disconnectFromHost();
     }
 
     void cleanupTestCase()
@@ -39,55 +41,53 @@ private slots:
         }
     }
 
-    // Test integracji
+    // Test 1: Połączenie z serwerem
     void testNetworkProtocolIntegration()
     {
-        // Tworzymy wiadomość za pomocą namespace Protocol
-        QJsonObject loginRequest = Protocol::MessageStructure::createLoginRequest("testuser", "password");
-
-        // Sprawdzamy czy wiadomość jest dozwolona w obecnym stanie
-        QVERIFY(Protocol::MessageValidation::isMessageAllowedInState(
-            Protocol::MessageType::LOGIN,
-            Protocol::SessionState::INITIAL
-            ));
-
-        // Test połączenia
         QSignalSpy connectSpy(&networkManager, SIGNAL(connected()));
         QVERIFY(connectSpy.isValid());
 
-        // Próba połączenia
         networkManager.connectToServer();
-
-        // Czekamy na sygnał connected (z timeoutem 5 sekund)
-        QVERIFY(connectSpy.wait(5000));
+        QVERIFY2(connectSpy.wait(5000), "Failed to connect to server");
+        QVERIFY(networkManager.isConnected());
     }
 
-    void testMessageFlow()
-    {
-        // Sprawdzamy czy możemy wysyłać wiadomości
-        QSignalSpy messageSpy(&networkManager, SIGNAL(messageReceived(QJsonObject)));
-        QVERIFY(messageSpy.isValid());
-
-        // Tworzymy i wysyłamy testową wiadomość
-        QJsonObject chatMessage = Protocol::MessageStructure::createMessage(1, "Hello");
-        networkManager.sendMessage(chatMessage);
-
-        // Czekamy na odpowiedź (z timeoutem 5 sekund)
-        QVERIFY(messageSpy.wait(5000));
-    }
-
+    // Test 2: Logowanie
     void testAuthenticationFlow()
     {
-        // Test procesu logowania
+        QVERIFY2(networkManager.isConnected(), "Not connected to server");
+
         QSignalSpy loginSpy(&networkManager, SIGNAL(loginSuccessful()));
         QVERIFY(loginSpy.isValid());
 
-        // Próba logowania
-        networkManager.login("testuser", "password");
-
-        // Czekamy na sygnał sukcesu logowania
-        QVERIFY(loginSpy.wait(5000));
+        networkManager.login("test1", "test1");  // Używamy prawidłowych danych logowania
+        QVERIFY2(loginSpy.wait(5000), "Login failed");
         QVERIFY(networkManager.isAuthenticated());
+    }
+
+    // Test 3: Wysyłanie wiadomości (po zalogowaniu)
+    void testMessageFlow()
+    {
+        QVERIFY2(networkManager.isConnected(), "Not connected to server");
+        QVERIFY2(networkManager.isAuthenticated(), "Not authenticated");
+
+        QSignalSpy messageSpy(&networkManager, SIGNAL(messageReceived(QJsonObject)));
+        QVERIFY(messageSpy.isValid());
+
+        // Czekamy krótko, aby upewnić się, że poprzednie operacje się zakończyły
+        QTest::qWait(500);
+
+        QJsonObject chatMessage = Protocol::MessageStructure::createMessage(1, "Hello");
+        networkManager.sendMessage(chatMessage);
+        QVERIFY2(messageSpy.wait(5000), "No response received from server");
+
+        // Sprawdź odpowiedź serwera
+        if (!messageSpy.isEmpty()) {
+            QList<QVariant> arguments = messageSpy.takeFirst();
+            QJsonObject response = arguments.at(0).toJsonObject();
+            QVERIFY(response.contains("type"));
+            // Możemy dodać więcej weryfikacji odpowiedzi
+        }
     }
 };
 

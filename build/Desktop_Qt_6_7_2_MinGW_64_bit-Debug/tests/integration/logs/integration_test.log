@@ -1,0 +1,226 @@
+[2025-01-29 19:10:49.800] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 19:10:49.800] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 19:10:49.822] [INFO] Connected to server
+[2025-01-29 19:10:49.822] [INFO] Status update: Connected to server
+[2025-01-29 19:10:49.822] [INFO] Sending message: {"content":"Hello","receiver_id":1,"timestamp":1738174249822,"type":"send_message"}
+
+[2025-01-29 19:10:49.823] [INFO] Processing JSON: {
+    "message": "Not authenticated",
+    "timestamp": 1738174249822,
+    "type": "error"
+}
+[2025-01-29 19:10:54.831] [INFO] Sending message: {"password":"password","protocol_version":1,"type":"login","username":"testuser"}
+
+[2025-01-29 19:10:54.831] [INFO] Status update: Logging in...
+[2025-01-29 19:10:54.833] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1738174254833,
+    "type": "error"
+}
+[2025-01-29 19:10:54.833] [ERROR] Server error: Authentication failed
+[2025-01-29 19:10:54.833] [INFO] Status update: Server error: Authentication failed
+[2025-01-29 19:10:59.813] [INFO] Processing JSON: {
+    "timestamp": 1738174259812,
+    "type": "ping"
+}
+[2025-01-29 19:10:59.813] [INFO] Received PING (timestamp: 1738174259812)
+[2025-01-29 19:10:59.813] [INFO] Sending message: {"timestamp":1738174259812,"type":"pong"}
+
+[2025-01-29 19:10:59.813] [INFO] Sent PONG (timestamp: 1738174259812)
+[2025-01-29 19:10:59.823] [INFO] Disconnecting from server
+[2025-01-29 19:10:59.823] [WARNING] Disconnected from server
+[2025-01-29 19:10:59.823] [INFO] Status update: Disconnected from server
+[2025-01-29 19:10:59.823] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-29 19:11:39.017] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 19:11:39.017] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 19:11:39.036] [INFO] Connected to server
+[2025-01-29 19:11:39.036] [INFO] Status update: Connected to server
+[2025-01-29 19:11:39.036] [INFO] Sending message: {"content":"Hello","receiver_id":1,"timestamp":1738174299036,"type":"send_message"}
+
+[2025-01-29 19:11:39.036] [INFO] Processing JSON: {
+    "message": "Not authenticated",
+    "timestamp": 1738174299036,
+    "type": "error"
+}
+[2025-01-29 19:11:44.037] [INFO] Sending message: {"password":"password","protocol_version":1,"type":"login","username":"testuser"}
+
+[2025-01-29 19:11:44.037] [INFO] Status update: Logging in...
+[2025-01-29 19:11:44.039] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1738174304039,
+    "type": "error"
+}
+[2025-01-29 19:11:44.039] [ERROR] Server error: Authentication failed
+[2025-01-29 19:11:44.039] [INFO] Status update: Server error: Authentication failed
+[2025-01-29 19:11:49.017] [INFO] Processing JSON: {
+    "timestamp": 1738174309017,
+    "type": "ping"
+}
+[2025-01-29 19:11:49.018] [INFO] Received PING (timestamp: 1738174309017)
+[2025-01-29 19:11:49.018] [INFO] Sending message: {"timestamp":1738174309017,"type":"pong"}
+
+[2025-01-29 19:11:49.018] [INFO] Sent PONG (timestamp: 1738174309017)
+[2025-01-29 19:11:49.028] [INFO] Disconnecting from server
+[2025-01-29 19:11:49.028] [WARNING] Disconnected from server
+[2025-01-29 19:11:49.028] [INFO] Status update: Disconnected from server
+[2025-01-29 19:11:49.028] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-29 19:12:30.480] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 19:12:30.480] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 19:12:30.491] [INFO] Connected to server
+[2025-01-29 19:12:30.491] [INFO] Status update: Connected to server
+[2025-01-29 19:12:30.491] [INFO] Sending message: {"content":"Hello","receiver_id":1,"timestamp":1738174350491,"type":"send_message"}
+
+[2025-01-29 19:12:30.491] [INFO] Processing JSON: {
+    "message": "Not authenticated",
+    "timestamp": 1738174350491,
+    "type": "error"
+}
+[2025-01-29 19:12:35.496] [INFO] Sending message: {"password":"password","protocol_version":1,"type":"login","username":"testuser"}
+
+[2025-01-29 19:12:35.496] [INFO] Status update: Logging in...
+[2025-01-29 19:12:35.497] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1738174355497,
+    "type": "error"
+}
+[2025-01-29 19:12:35.497] [ERROR] Server error: Authentication failed
+[2025-01-29 19:12:35.497] [INFO] Status update: Server error: Authentication failed
+[2025-01-29 19:12:40.468] [INFO] Processing JSON: {
+    "timestamp": 1738174360468,
+    "type": "ping"
+}
+[2025-01-29 19:12:40.468] [INFO] Received PING (timestamp: 1738174360468)
+[2025-01-29 19:12:40.468] [INFO] Sending message: {"timestamp":1738174360468,"type":"pong"}
+
+[2025-01-29 19:12:40.468] [INFO] Sent PONG (timestamp: 1738174360468)
+[2025-01-29 19:12:40.483] [INFO] Disconnecting from server
+[2025-01-29 19:12:40.483] [WARNING] Disconnected from server
+[2025-01-29 19:12:40.483] [INFO] Status update: Disconnected from server
+[2025-01-29 19:12:40.483] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-29 19:13:38.982] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 19:13:38.982] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 19:13:39.001] [INFO] Connected to server
+[2025-01-29 19:13:39.001] [INFO] Status update: Connected to server
+[2025-01-29 19:13:39.001] [INFO] Sending message: {"content":"Hello","receiver_id":1,"timestamp":1738174419001,"type":"send_message"}
+
+[2025-01-29 19:13:39.001] [INFO] Processing JSON: {
+    "message": "Not authenticated",
+    "timestamp": 1738174419001,
+    "type": "error"
+}
+[2025-01-29 19:13:43.999] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-29 19:13:43.999] [INFO] Status update: Logging in...
+[2025-01-29 19:13:44.002] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1738174424002,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-29 19:13:44.002] [INFO] Login successful
+[2025-01-29 19:13:44.002] [INFO] Sending message: {"status":"online","timestamp":1738174424002,"type":"status_response"}
+
+[2025-01-29 19:13:44.002] [INFO] Sending message: {"timestamp":1738174424002,"type":"get_friends_list"}
+
+[2025-01-29 19:13:44.002] [INFO] Status update: Login successful - Connected
+[2025-01-29 19:13:44.002] [INFO] Disconnecting from server
+[2025-01-29 19:13:44.002] [WARNING] Disconnected from server
+[2025-01-29 19:13:44.002] [INFO] Status update: Disconnected from server
+[2025-01-29 19:13:44.003] [INFO] Scheduling reconnection attempt 1/5
+[2025-01-29 19:15:14.624] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 19:15:14.624] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 19:15:14.648] [INFO] Connected to server
+[2025-01-29 19:15:14.648] [INFO] Status update: Connected to server
+[2025-01-29 19:15:14.648] [INFO] Sending message: {"password":"test1","protocol_version":1,"type":"login","username":"test1"}
+
+[2025-01-29 19:15:14.648] [INFO] Status update: Logging in...
+[2025-01-29 19:15:14.651] [INFO] Processing JSON: {
+    "status": "success",
+    "timestamp": 1738174514651,
+    "type": "login_response",
+    "userId": 1
+}
+[2025-01-29 19:15:14.651] [INFO] Login successful
+[2025-01-29 19:15:14.651] [INFO] Sending message: {"status":"online","timestamp":1738174514651,"type":"status_response"}
+
+[2025-01-29 19:15:14.651] [INFO] Sending message: {"timestamp":1738174514651,"type":"get_friends_list"}
+
+[2025-01-29 19:15:14.651] [INFO] Status update: Login successful - Connected
+[2025-01-29 19:15:14.664] [INFO] Processing JSON: {
+    "type": "unread_from",
+    "users": [
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        }
+    ]
+}
+[2025-01-29 19:15:14.664] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1738174514653,
+    "type": "friends_list_response"
+}
+[2025-01-29 19:15:14.664] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1738174514654,
+    "type": "friends_status_update"
+}
+[2025-01-29 19:15:14.664] [INFO] Processing JSON: {
+    "friends": [
+        {
+            "id": 2,
+            "status": "online",
+            "username": "test2"
+        },
+        {
+            "id": 3,
+            "status": "offline",
+            "username": "test3"
+        }
+    ],
+    "timestamp": 1738174514655,
+    "type": "friends_list_response"
+}
+[2025-01-29 19:15:15.158] [INFO] Sending message: {"content":"Hello","receiver_id":1,"timestamp":1738174515158,"type":"send_message"}
+
+[2025-01-29 19:15:15.176] [INFO] Processing JSON: {
+    "message_id": "{a9659821-a521-40cb-b690-a7927ac49595}",
+    "timestamp": 1738174515176,
+    "type": "message_ack"
+}
+[2025-01-29 19:15:15.176] [WARNING] Received unknown message type: message_ack
+[2025-01-29 19:15:15.176] [INFO] Processing JSON: {
+    "content": "Hello",
+    "from": 1,
+    "timestamp": 1738174515176,
+    "type": "new_messages"
+}
+[2025-01-29 19:15:15.176] [WARNING] Received unknown message type: new_messages
+[2025-01-29 19:15:15.176] [INFO] Disconnecting from server
+[2025-01-29 19:15:15.176] [WARNING] Disconnected from server
+[2025-01-29 19:15:15.176] [INFO] Status update: Disconnected from server
+[2025-01-29 19:15:15.176] [INFO] Scheduling reconnection attempt 1/5

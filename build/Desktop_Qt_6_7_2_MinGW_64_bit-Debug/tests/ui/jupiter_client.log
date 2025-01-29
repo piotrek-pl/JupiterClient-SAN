@@ -4,3 +4,9 @@
 [2025-01-29 18:58:59.720] [INFO] MainWindow initialized
 [2025-01-29 18:58:59.720] [INFO] LoginWindow destroyed
 [2025-01-29 18:58:59.721] [INFO] MainWindow destroyed
+[2025-01-29 19:01:50.225] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:01:50.226] [INFO] NetworkManager initialized
+[2025-01-29 19:01:50.257] [INFO] LoginWindow initialized
+[2025-01-29 19:01:50.271] [INFO] MainWindow initialized
+[2025-01-29 19:01:50.271] [INFO] LoginWindow destroyed
+[2025-01-29 19:01:50.271] [INFO] MainWindow destroyed
