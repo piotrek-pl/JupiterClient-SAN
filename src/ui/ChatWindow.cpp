@@ -73,6 +73,15 @@ void ChatWindow::setupMessageHandlers()
 
 void ChatWindow::onMessageReceived(const QJsonObject& json)
 {
+    QString type = json["type"].toString();
+
+    // Jeśli to nowa wiadomość, obsługuj ją tylko gdy przychodzi bezpośrednio z NetworkManager
+    if (type == Protocol::MessageType::NEW_MESSAGES && !sender()) {
+        // Ignoruj wiadomości przekazane z MainWindow (gdy sender() == nullptr)
+        return;
+    }
+
+    LOG_INFO(QString("ChatWindow::onMessageReceived - Received message type: %1").arg(type));
     dispatchMessage(json);
 }
 
