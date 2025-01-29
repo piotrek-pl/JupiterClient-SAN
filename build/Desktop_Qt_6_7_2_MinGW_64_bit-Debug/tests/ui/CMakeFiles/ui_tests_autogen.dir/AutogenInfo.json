@@ -32,8 +32,7 @@
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
-		"D:/programowanie/Qt/SAN/JupiterClient/resources.qrc",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf"
+		"D:/programowanie/Qt/SAN/JupiterClient/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/programowanie/Qt/SAN/JupiterClient",
 	"CROSS_CONFIG" : false,
@@ -61,38 +60,38 @@
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h",
-			"mU",
-			"",
+			"MU",
+			"RF5KSEWXUK/moc_ChatWindow.cpp",
 			null
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h",
-			"mU",
-			"",
+			"MU",
+			"RF5KSEWXUK/moc_InvitationsDialog.cpp",
 			null
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h",
-			"mU",
-			"",
+			"MU",
+			"RF5KSEWXUK/moc_LoginWindow.cpp",
 			null
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.h",
-			"mU",
-			"",
+			"MU",
+			"RF5KSEWXUK/moc_MainWindow.cpp",
 			null
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.h",
-			"mU",
-			"",
+			"MU",
+			"RF5KSEWXUK/moc_SearchDialog.cpp",
 			null
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h",
-			"mU",
-			"",
+			"MU",
+			"7KRDZL6R5E/moc_Logger.cpp",
 			null
 		]
 	],
@@ -127,14 +126,13 @@
 	[
 		"D:/programowanie/Qt/SAN/JupiterClient/src",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui",
-		"D:/programowanie/Qt/SAN/JupiterClient",
 		"C:/Qt/6.7.2/mingw_64/include/QtTest",
 		"C:/Qt/6.7.2/mingw_64/include",
 		"C:/Qt/6.7.2/mingw_64/include/QtCore",
 		"C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++",
-		"C:/Qt/6.7.2/mingw_64/include/QtNetwork",
 		"C:/Qt/6.7.2/mingw_64/include/QtWidgets",
 		"C:/Qt/6.7.2/mingw_64/include/QtGui",
+		"C:/Qt/6.7.2/mingw_64/include/QtNetwork",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward",
@@ -166,24 +164,12 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_ChatWindow.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_LoginWindow.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_MainWindow.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_SearchDialog.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/utils/moc_Logger.cpp",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/qrc_resources.cpp",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_ChatWindow.h",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_InvitationsDialog.h",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_LoginWindow.h",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_MainWindow.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_SearchDialog.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.h",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h"
+		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_SearchDialog.h"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
@@ -250,12 +236,6 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_ChatWindow.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_InvitationsDialog.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_LoginWindow.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_MainWindow.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/ui/moc_SearchDialog.cpp",
-		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/__/__/src/utils/moc_Logger.cpp",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/qrc_resources.cpp",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_ChatWindow.h",
 		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_InvitationsDialog.h",

@@ -3,6 +3,7 @@ unit_tests_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QCoreApplication \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QDateTime \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QDeadlineTimer \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/QFile \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QFlags \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QHash \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QIODevice \
@@ -17,6 +18,7 @@ unit_tests_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QSharedDataPointer \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QString \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList \
+	C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QUrl \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
 	C:/Qt/6.7.2/mingw_64/include/QtCore/QtCore \
@@ -304,6 +306,7 @@ unit_tests_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
 	C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
 	C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+	C:/Qt/6.7.2/mingw_64/include/QtTest/QSignalSpy \
 	C:/Qt/6.7.2/mingw_64/include/QtTest/QtTest \
 	C:/Qt/6.7.2/mingw_64/include/QtTest/QtTestDepends \
 	C:/Qt/6.7.2/mingw_64/include/QtTest/qabstractitemmodeltester.h \
@@ -321,6 +324,29 @@ unit_tests_autogen/timestamp: \
 	C:/Qt/6.7.2/mingw_64/include/QtTest/qttestglobal.h \
 	C:/Qt/6.7.2/mingw_64/include/QtTest/qttestlib-config.h \
 	C:/Qt/6.7.2/mingw_64/include/QtTest/qttestversion.h \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeature.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake \
+	C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake \
+	C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake \
+	C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/adxintrin.h \
@@ -648,9 +674,10 @@ unit_tests_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit/unit_tests_autogen/moc_predefs.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h \
-	D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
+	D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h \
 	D:/programowanie/Qt/SAN/JupiterClient/tests/unit/CMakeLists.txt \
 	D:/programowanie/Qt/SAN/JupiterClient/tests/unit/test_unit.cpp \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

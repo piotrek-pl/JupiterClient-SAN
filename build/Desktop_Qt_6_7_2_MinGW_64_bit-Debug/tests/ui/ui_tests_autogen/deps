@@ -782,17 +782,22 @@ ui_tests_autogen/timestamp: \
 	D:/programowanie/Qt/SAN/JupiterClient/resources.qrc \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h \
-	D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/NetworkManager.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/InvitationsDialog.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/LoginWindow.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/MainWindow.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/ui/SearchDialog.h \
 	D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp \
+	D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h \
 	D:/programowanie/Qt/SAN/JupiterClient/tests/ui/CMakeLists.txt \
 	D:/programowanie/Qt/SAN/JupiterClient/tests/ui/test_ui.cpp \
 	D:/programowanie/Qt/SAN/JupiterClient/src/ui/ChatWindow.ui \

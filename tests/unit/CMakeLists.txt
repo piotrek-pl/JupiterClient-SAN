@@ -1,11 +1,18 @@
 set(TEST_NAME unit_tests)
 
-# Lista źródeł potrzebnych do testów
 set(TEST_SOURCES
     test_unit.cpp
     ${CMAKE_SOURCE_DIR}/src/network/Protocol.cpp
-    ${CMAKE_SOURCE_DIR}/src/config/ConfigManager.cpp  # Dodano ConfigManager
+    ${CMAKE_SOURCE_DIR}/src/config/ConfigManager.cpp
+    ${CMAKE_SOURCE_DIR}/src/utils/Logger.cpp
 )
+
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Test Core Network REQUIRED)
+
+# Konfiguracja Qt
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
 
 add_executable(${TEST_NAME} ${TEST_SOURCES})
 
@@ -17,13 +24,7 @@ target_link_libraries(${TEST_NAME} PRIVATE
 
 target_include_directories(${TEST_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src
-)
-
-# Kopiowanie pliku konfiguracyjnego do katalogu testów
-configure_file(
-    ${CMAKE_SOURCE_DIR}/src/config/jupiter.conf
-    ${CMAKE_CURRENT_BINARY_DIR}/config/jupiter.conf
-    COPYONLY
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})

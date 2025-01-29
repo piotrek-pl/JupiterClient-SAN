@@ -4,6 +4,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtCore/QCoreApplication \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QDateTime \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QDeadlineTimer \
+  C:/Qt/6.7.2/mingw_64/include/QtCore/QFile \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QFlags \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QHash \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QIODevice \
@@ -18,6 +19,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtCore/QSharedDataPointer \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QString \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QStringList \
+  C:/Qt/6.7.2/mingw_64/include/QtCore/QTextStream \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QUrl \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QVariant \
   C:/Qt/6.7.2/mingw_64/include/QtCore/QtCore \
@@ -305,6 +307,7 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetwork-config.h \
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkexports.h \
   C:/Qt/6.7.2/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+  C:/Qt/6.7.2/mingw_64/include/QtTest/QSignalSpy \
   C:/Qt/6.7.2/mingw_64/include/QtTest/QtTest \
   C:/Qt/6.7.2/mingw_64/include/QtTest/QtTestDepends \
   C:/Qt/6.7.2/mingw_64/include/QtTest/qabstractitemmodeltester.h \
@@ -647,4 +650,5 @@ D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
   D:/programowanie/Qt/SAN/JupiterClient/src/config/ConfigManager.h \
-  D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h
+  D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h \
+  D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h

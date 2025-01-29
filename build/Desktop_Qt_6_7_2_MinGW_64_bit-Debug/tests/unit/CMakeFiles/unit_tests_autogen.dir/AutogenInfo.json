@@ -8,7 +8,30 @@
 	"CMAKE_LIST_FILES" : 
 	[
 		"D:/programowanie/Qt/SAN/JupiterClient/tests/unit/CMakeLists.txt",
-		"D:/programowanie/Qt/SAN/JupiterClient/src/config/jupiter.conf"
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Targets.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6VersionlessTargets.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeature.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.7.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/programowanie/Qt/SAN/JupiterClient",
 	"CROSS_CONFIG" : false,
@@ -26,6 +49,12 @@
 			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.h",
 			"MU",
 			"4KSEZJVZ5M/moc_Protocol.cpp",
+			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.h",
+			"MU",
+			"7KRDZL6R5E/moc_Logger.cpp",
 			null
 		]
 	],
@@ -57,6 +86,7 @@
 	"MOC_INCLUDES" : 
 	[
 		"D:/programowanie/Qt/SAN/JupiterClient/src",
+		"D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/unit",
 		"C:/Qt/6.7.2/mingw_64/include/QtTest",
 		"C:/Qt/6.7.2/mingw_64/include",
 		"C:/Qt/6.7.2/mingw_64/include/QtCore",
@@ -109,6 +139,11 @@
 		],
 		[
 			"D:/programowanie/Qt/SAN/JupiterClient/src/network/Protocol.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/programowanie/Qt/SAN/JupiterClient/src/utils/Logger.cpp",
 			"MU",
 			null
 		],
