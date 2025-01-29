@@ -10,3 +10,172 @@
 [2025-01-29 19:01:50.271] [INFO] MainWindow initialized
 [2025-01-29 19:01:50.271] [INFO] LoginWindow destroyed
 [2025-01-29 19:01:50.271] [INFO] MainWindow destroyed
+[2025-01-29 19:36:11.489] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:36:11.489] [INFO] NetworkManager initialized
+[2025-01-29 19:36:11.521] [INFO] LoginWindow initialized
+[2025-01-29 19:36:11.535] [INFO] MainWindow initialized
+[2025-01-29 19:36:11.535] [INFO] LoginWindow destroyed
+[2025-01-29 19:36:11.535] [INFO] MainWindow destroyed
+[2025-01-29 19:39:51.103] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:39:51.103] [INFO] NetworkManager initialized
+[2025-01-29 19:39:51.136] [INFO] LoginWindow initialized
+[2025-01-29 19:39:51.150] [INFO] MainWindow initialized
+[2025-01-29 19:39:51.308] [INFO] LoginWindow destroyed
+[2025-01-29 19:39:51.308] [INFO] MainWindow destroyed
+[2025-01-29 19:41:32.870] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:41:32.871] [INFO] NetworkManager initialized
+[2025-01-29 19:41:32.903] [INFO] LoginWindow initialized
+[2025-01-29 19:41:32.917] [INFO] MainWindow initialized
+[2025-01-29 19:41:33.410] [INFO] LoginWindow destroyed
+[2025-01-29 19:41:33.411] [INFO] MainWindow destroyed
+[2025-01-29 19:41:40.509] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:41:40.509] [INFO] NetworkManager initialized
+[2025-01-29 19:41:40.542] [INFO] LoginWindow initialized
+[2025-01-29 19:41:40.555] [INFO] MainWindow initialized
+[2025-01-29 19:41:41.031] [INFO] LoginWindow destroyed
+[2025-01-29 19:41:41.032] [INFO] MainWindow destroyed
+[2025-01-29 19:42:54.912] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:42:54.912] [INFO] NetworkManager initialized
+[2025-01-29 19:42:54.945] [INFO] LoginWindow initialized
+[2025-01-29 19:42:54.959] [INFO] MainWindow initialized
+[2025-01-29 19:42:55.655] [INFO] LoginWindow destroyed
+[2025-01-29 19:42:55.658] [INFO] MainWindow destroyed
+[2025-01-29 19:43:29.980] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:43:29.980] [INFO] NetworkManager initialized
+[2025-01-29 19:43:30.013] [INFO] LoginWindow initialized
+[2025-01-29 19:43:30.027] [INFO] MainWindow initialized
+[2025-01-29 19:43:30.718] [INFO] LoginWindow destroyed
+[2025-01-29 19:43:30.720] [INFO] MainWindow destroyed
+[2025-01-29 19:44:31.496] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:44:31.496] [INFO] NetworkManager initialized
+[2025-01-29 19:44:31.529] [INFO] LoginWindow initialized
+[2025-01-29 19:44:31.543] [INFO] MainWindow initialized
+[2025-01-29 19:44:32.230] [INFO] LoginWindow destroyed
+[2025-01-29 19:44:32.232] [INFO] MainWindow destroyed
+[2025-01-29 19:48:25.614] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:48:25.614] [INFO] NetworkManager initialized
+[2025-01-29 19:48:25.648] [INFO] LoginWindow initialized
+[2025-01-29 19:48:25.662] [INFO] MainWindow initialized
+[2025-01-29 19:48:26.524] [INFO] LoginWindow destroyed
+[2025-01-29 19:48:26.525] [INFO] MainWindow destroyed
+[2025-01-29 19:54:06.998] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:54:06.998] [INFO] NetworkManager initialized
+[2025-01-29 19:54:07.032] [INFO] LoginWindow initialized
+[2025-01-29 19:54:07.046] [INFO] MainWindow initialized
+[2025-01-29 19:54:07.900] [INFO] LoginWindow destroyed
+[2025-01-29 19:54:07.902] [INFO] MainWindow destroyed
+[2025-01-29 19:59:43.493] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 19:59:43.493] [INFO] NetworkManager initialized
+[2025-01-29 19:59:43.527] [INFO] LoginWindow initialized
+[2025-01-29 19:59:43.541] [INFO] MainWindow initialized
+[2025-01-29 19:59:44.503] [INFO] LoginWindow destroyed
+[2025-01-29 19:59:44.505] [INFO] MainWindow destroyed
+[2025-01-29 20:03:02.269] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:03:02.270] [INFO] NetworkManager initialized
+[2025-01-29 20:03:02.302] [INFO] LoginWindow initialized
+[2025-01-29 20:03:02.316] [INFO] MainWindow initialized
+[2025-01-29 20:03:03.926] [INFO] LoginWindow destroyed
+[2025-01-29 20:03:03.928] [INFO] MainWindow destroyed
+[2025-01-29 20:03:25.614] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:03:25.614] [INFO] NetworkManager initialized
+[2025-01-29 20:03:25.648] [INFO] LoginWindow initialized
+[2025-01-29 20:03:25.662] [INFO] MainWindow initialized
+[2025-01-29 20:03:27.269] [INFO] LoginWindow destroyed
+[2025-01-29 20:03:27.271] [INFO] MainWindow destroyed
+[2025-01-29 20:07:41.052] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:07:41.052] [INFO] NetworkManager initialized
+[2025-01-29 20:07:41.086] [INFO] LoginWindow initialized
+[2025-01-29 20:07:41.100] [INFO] MainWindow initialized
+[2025-01-29 20:07:42.710] [INFO] LoginWindow destroyed
+[2025-01-29 20:07:42.712] [INFO] MainWindow destroyed
+[2025-01-29 20:14:30.159] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:14:30.159] [INFO] NetworkManager initialized
+[2025-01-29 20:14:30.193] [INFO] LoginWindow initialized
+[2025-01-29 20:14:30.207] [INFO] MainWindow initialized
+[2025-01-29 20:14:31.820] [INFO] LoginWindow destroyed
+[2025-01-29 20:14:31.821] [INFO] MainWindow destroyed
+[2025-01-29 20:14:59.732] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:14:59.733] [INFO] NetworkManager initialized
+[2025-01-29 20:14:59.765] [INFO] LoginWindow initialized
+[2025-01-29 20:14:59.780] [INFO] MainWindow initialized
+[2025-01-29 20:15:01.388] [INFO] LoginWindow destroyed
+[2025-01-29 20:15:01.389] [INFO] MainWindow destroyed
+[2025-01-29 20:17:39.080] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:17:39.080] [INFO] NetworkManager initialized
+[2025-01-29 20:17:39.113] [INFO] LoginWindow initialized
+[2025-01-29 20:17:39.127] [INFO] MainWindow initialized
+[2025-01-29 20:17:40.222] [INFO] LoginWindow destroyed
+[2025-01-29 20:17:40.224] [INFO] MainWindow destroyed
+[2025-01-29 20:19:05.993] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:19:05.994] [INFO] NetworkManager initialized
+[2025-01-29 20:19:06.027] [INFO] LoginWindow initialized
+[2025-01-29 20:19:06.041] [INFO] MainWindow initialized
+[2025-01-29 20:19:06.774] [INFO] LoginWindow destroyed
+[2025-01-29 20:19:06.776] [INFO] MainWindow destroyed
+[2025-01-29 20:20:49.119] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:20:49.120] [INFO] NetworkManager initialized
+[2025-01-29 20:20:49.153] [INFO] LoginWindow initialized
+[2025-01-29 20:20:49.167] [INFO] MainWindow initialized
+[2025-01-29 20:20:51.923] [INFO] LoginWindow destroyed
+[2025-01-29 20:20:51.925] [INFO] MainWindow destroyed
+[2025-01-29 20:22:00.152] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:22:00.152] [INFO] NetworkManager initialized
+[2025-01-29 20:22:00.185] [INFO] LoginWindow initialized
+[2025-01-29 20:22:00.199] [INFO] MainWindow initialized
+[2025-01-29 20:22:01.712] [INFO] LoginWindow destroyed
+[2025-01-29 20:22:01.714] [INFO] MainWindow destroyed
+[2025-01-29 20:27:56.118] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:27:56.118] [INFO] NetworkManager initialized
+[2025-01-29 20:27:56.152] [INFO] LoginWindow initialized
+[2025-01-29 20:27:56.166] [INFO] MainWindow initialized
+[2025-01-29 20:27:58.984] [INFO] LoginWindow destroyed
+[2025-01-29 20:27:58.986] [INFO] MainWindow destroyed
+[2025-01-29 20:29:40.854] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:29:40.854] [INFO] NetworkManager initialized
+[2025-01-29 20:29:40.887] [INFO] LoginWindow initialized
+[2025-01-29 20:29:40.901] [INFO] MainWindow initialized
+[2025-01-29 20:29:43.981] [INFO] LoginWindow destroyed
+[2025-01-29 20:29:43.983] [INFO] MainWindow destroyed
+[2025-01-29 20:31:09.829] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:31:09.829] [INFO] NetworkManager initialized
+[2025-01-29 20:31:09.863] [INFO] LoginWindow initialized
+[2025-01-29 20:31:09.877] [INFO] MainWindow initialized
+[2025-01-29 20:31:12.934] [INFO] LoginWindow destroyed
+[2025-01-29 20:31:12.935] [INFO] MainWindow destroyed
+[2025-01-29 20:31:58.777] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:31:58.777] [INFO] NetworkManager initialized
+[2025-01-29 20:31:58.810] [INFO] LoginWindow initialized
+[2025-01-29 20:31:58.824] [INFO] MainWindow initialized
+[2025-01-29 20:32:01.928] [INFO] LoginWindow destroyed
+[2025-01-29 20:32:01.929] [INFO] MainWindow destroyed
+[2025-01-29 20:35:21.039] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:35:21.040] [INFO] NetworkManager initialized
+[2025-01-29 20:35:21.073] [INFO] LoginWindow initialized
+[2025-01-29 20:35:21.087] [INFO] MainWindow initialized
+[2025-01-29 20:35:21.567] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 20:35:21.567] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 20:35:25.199] [INFO] LoginWindow destroyed
+[2025-01-29 20:35:25.200] [INFO] MainWindow destroyed
+[2025-01-29 20:35:58.614] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-29 20:35:58.615] [INFO] NetworkManager initialized
+[2025-01-29 20:35:58.647] [INFO] LoginWindow initialized
+[2025-01-29 20:35:58.661] [INFO] MainWindow initialized
+[2025-01-29 20:35:59.143] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-29 20:35:59.143] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-29 20:35:59.159] [INFO] Connected to server
+[2025-01-29 20:35:59.159] [INFO] Status update: Connected to server
+[2025-01-29 20:36:01.445] [INFO] Sending message: {"password":"password","protocol_version":1,"type":"login","username":"testuser"}
+
+[2025-01-29 20:36:01.445] [INFO] Status update: Logging in...
+[2025-01-29 20:36:01.460] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1738179361447,
+    "type": "error"
+}
+[2025-01-29 20:36:01.460] [ERROR] Server error: Authentication failed
+[2025-01-29 20:36:01.460] [INFO] Status update: Server error: Authentication failed
+[2025-01-29 20:36:01.460] [ERROR] Network error: Authentication failed
+[2025-01-29 20:36:03.268] [INFO] LoginWindow destroyed
+[2025-01-29 20:36:03.269] [INFO] Sending message: {"timestamp":1738179363269,"type":"logout"}
+
+[2025-01-29 20:36:03.269] [INFO] MainWindow destroyed
