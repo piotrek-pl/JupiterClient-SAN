@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"tests/ui/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "ui_tests_autogen_timestamp_deps::@19d5e82ae68c461cf757",
+	"isGeneratorProvided" : true,
+	"name" : "ui_tests_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "tests/ui",
+		"source" : "tests/ui"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

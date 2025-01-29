@@ -60,23 +60,45 @@ private slots:
     void testLogger()
     {
         Logger& logger = Logger::getInstance();
+        QString testFile = "logs/unit_test.log";
 
-        // Test logowania różnych poziomów
-        logger.debug("Test debug message");
-        logger.info("Test info message");
-        logger.warning("Test warning message");
-        logger.error("Test error message");
+        // Ustaw plik logów
+        logger.setLogFile(testFile);
+
+        // Małe opóźnienie na utworzenie pliku
+        QTest::qWait(100);
+
+        // Test logowania
+        QString infoMsg = "Test info message";
+        QString warningMsg = "Test warning message";
+        QString errorMsg = "Test error message";
+
+        logger.info(infoMsg);
+        logger.warning(warningMsg);
+        logger.error(errorMsg);
+
+        // Małe opóźnienie na zapisanie wiadomości
+        QTest::qWait(100);
 
         // Weryfikacja pliku logu
-        QFile logFile("logs/unit_test.log");
-        QVERIFY(logFile.exists());
-        QVERIFY(logFile.open(QIODevice::ReadOnly | QIODevice::Text));
+        QFile logFile(testFile);
+        QVERIFY2(logFile.exists(), "Log file does not exist");
+        QVERIFY2(logFile.open(QIODevice::ReadOnly | QIODevice::Text), "Cannot open log file");
         QString logContent = QString::fromUtf8(logFile.readAll());
+        logFile.close();
 
-        QVERIFY(logContent.contains("Test debug message"));
-        QVERIFY(logContent.contains("Test info message"));
-        QVERIFY(logContent.contains("Test warning message"));
-        QVERIFY(logContent.contains("Test error message"));
+        // Debug output w przypadku błędu
+        qDebug() << "Log file content:";
+        qDebug().noquote() << logContent;
+
+        // Sprawdź czy wiadomości zostały zapisane
+        QVERIFY2(logContent.contains(infoMsg), "Info message not found in log");
+        QVERIFY2(logContent.contains(warningMsg), "Warning message not found in log");
+        QVERIFY2(logContent.contains(errorMsg), "Error message not found in log");
+
+        // Sprawdź format timestampa używając QRegularExpression
+        QRegularExpression timestampRegex("\\[\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}\\]");
+        QVERIFY2(timestampRegex.match(logContent).hasMatch(), "Invalid timestamp format in log");
     }
 };
 
