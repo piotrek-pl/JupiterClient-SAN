@@ -179,3 +179,49 @@
 [2025-01-29 20:36:03.269] [INFO] Sending message: {"timestamp":1738179363269,"type":"logout"}
 
 [2025-01-29 20:36:03.269] [INFO] MainWindow destroyed
+[2025-01-30 13:09:44.735] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-30 13:09:44.736] [INFO] NetworkManager initialized
+[2025-01-30 13:09:44.767] [INFO] LoginWindow initialized
+[2025-01-30 13:09:44.781] [INFO] MainWindow initialized
+[2025-01-30 13:09:45.270] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-30 13:09:45.270] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-30 13:09:45.275] [INFO] Connected to server
+[2025-01-30 13:09:45.275] [INFO] Status update: Connected to server
+[2025-01-30 13:09:47.576] [INFO] Sending message: {"password":"password","protocol_version":1,"type":"login","username":"testuser"}
+
+[2025-01-30 13:09:47.576] [INFO] Status update: Logging in...
+[2025-01-30 13:09:47.577] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1738238987577,
+    "type": "error"
+}
+[2025-01-30 13:09:47.577] [ERROR] Server error: Authentication failed
+[2025-01-30 13:09:47.577] [INFO] Status update: Server error: Authentication failed
+[2025-01-30 13:09:47.577] [ERROR] Network error: Authentication failed
+[2025-01-30 13:09:49.393] [INFO] LoginWindow destroyed
+[2025-01-30 13:09:49.395] [INFO] Sending message: {"timestamp":1738238989395,"type":"logout"}
+
+[2025-01-30 13:09:49.395] [INFO] MainWindow destroyed
+[2025-01-30 13:09:57.954] [INFO] Connection check timer started with interval: 10000 ms
+[2025-01-30 13:09:57.955] [INFO] NetworkManager initialized
+[2025-01-30 13:09:57.987] [INFO] LoginWindow initialized
+[2025-01-30 13:09:58.000] [INFO] MainWindow initialized
+[2025-01-30 13:09:58.471] [INFO] Connecting to 127.0.0.1:1234
+[2025-01-30 13:09:58.471] [INFO] Status update: Connecting to 127.0.0.1:1234...
+[2025-01-30 13:09:58.477] [INFO] Connected to server
+[2025-01-30 13:09:58.477] [INFO] Status update: Connected to server
+[2025-01-30 13:10:00.779] [INFO] Sending message: {"password":"password","protocol_version":1,"type":"login","username":"testuser"}
+
+[2025-01-30 13:10:00.779] [INFO] Status update: Logging in...
+[2025-01-30 13:10:00.780] [INFO] Processing JSON: {
+    "message": "Authentication failed",
+    "timestamp": 1738239000780,
+    "type": "error"
+}
+[2025-01-30 13:10:00.780] [ERROR] Server error: Authentication failed
+[2025-01-30 13:10:00.780] [INFO] Status update: Server error: Authentication failed
+[2025-01-30 13:10:00.780] [ERROR] Network error: Authentication failed
+[2025-01-30 13:10:01.806] [INFO] LoginWindow destroyed
+[2025-01-30 13:10:01.807] [INFO] Sending message: {"timestamp":1738239001807,"type":"logout"}
+
+[2025-01-30 13:10:01.807] [INFO] MainWindow destroyed

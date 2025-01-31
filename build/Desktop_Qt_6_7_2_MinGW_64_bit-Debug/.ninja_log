@@ -166,3 +166,15 @@
 29	1038	7598825122342103	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/mocs_compilation.cpp	1c677937a31e9522
 1039	4274	7598825132442508	tests/ui/CMakeFiles/ui_tests.dir/test_ui.cpp.obj	4fd3dc433b13004c
 4274	5321	7598825164803780	tests/ui/ui_tests.exe	e21e1ac6f8dd997f
+16	184	7600156314108818	JupiterClient_autogen/timestamp	4a896badfb7f2a5d
+16	184	7600156314108818	JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
+16	184	7600156314108818	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/timestamp	4a896badfb7f2a5d
+16	184	7600156314108818	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/JupiterClient_autogen/mocs_compilation.cpp	4a896badfb7f2a5d
+21	193	7600156314158829	tests/ui/ui_tests_autogen/timestamp	1c677937a31e9522
+21	193	7600156314158829	tests/ui/ui_tests_autogen/mocs_compilation.cpp	1c677937a31e9522
+21	193	7600156314158829	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/timestamp	1c677937a31e9522
+21	193	7600156314158829	D:/programowanie/Qt/SAN/JupiterClient/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/tests/ui/ui_tests_autogen/mocs_compilation.cpp	1c677937a31e9522
+194	2522	7600156315892127	tests/ui/CMakeFiles/ui_tests.dir/__/__/src/ui/ChatWindow.cpp.obj	707eb61db2fd7fac
+184	2527	7600156315802125	CMakeFiles/JupiterClient.dir/src/ui/ChatWindow.cpp.obj	80143d2ff387bb09
+2527	3816	7600156339233068	JupiterClient.exe	2d685fa5667d2a9
+2522	3892	7600156339173099	tests/ui/ui_tests.exe	e21e1ac6f8dd997f

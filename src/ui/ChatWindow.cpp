@@ -113,22 +113,13 @@ void ChatWindow::handleHistoryResponse(const QJsonObject& json)
         QString sender = msg["sender"].toString();
         QString content = msg["content"].toString();
         QDateTime timestamp = QDateTime::fromString(msg["timestamp"].toString(), Qt::ISODate);
-        bool isOwn = (sender != friendName);
 
+        // Usuwamy sprawdzanie isOwn, wszystkie wiadomości będą po lewej
         QString timeStr = timestamp.toString("HH:mm:ss");
-        QString messageHtml;
-
-        if (isOwn) {
-            messageHtml = QString("<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
-            .arg(sender)
-                .arg(timeStr)
-                .arg(content);
-        } else {
-            messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
-            .arg(sender)
-                .arg(timeStr)
-                .arg(content);
-        }
+        QString messageHtml = QString("<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
+                                  .arg(sender)
+                                  .arg(timeStr)
+                                  .arg(content);
 
         // If it's a MORE_HISTORY_RESPONSE, prepend older messages
         if (type == Protocol::MessageType::MORE_HISTORY_RESPONSE) {
@@ -268,23 +259,15 @@ void ChatWindow::addMessageToChat(const QString& sender, const QString& content,
                                   const QDateTime& timestamp, bool isOwn, bool atEnd)
 {
     QString timeStr = timestamp.toString("HH:mm:ss");
-    QString messageHtml;
 
-    if (isOwn) {
-        messageHtml = QString("\n<div style='text-align: right;'><b>%1</b> [%2]<br>%3</div>")
-        .arg(sender)
-            .arg(timeStr)
-            .arg(content);
-    } else {
-        messageHtml = QString("\n<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
-        .arg(sender)
-            .arg(timeStr)
-            .arg(content);
-    }
+    // Usuwamy sprawdzanie isOwn, wszystkie wiadomości będą po lewej
+    QString messageHtml = QString("\n<div style='text-align: left;'><b>%1</b> [%2]<br>%3</div>")
+                              .arg(sender)
+                              .arg(timeStr)
+                              .arg(content);
 
     QTextCursor cursor(ui->chatTextEdit->document());
     cursor.movePosition(QTextCursor::End);
-
     cursor.insertText("\n");
     cursor.insertHtml(messageHtml);
 
